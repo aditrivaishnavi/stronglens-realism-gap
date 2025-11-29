@@ -1,0 +1,45 @@
+# stronglens_calibration: Pinned dependencies for reproducibility
+# MNRAS paper: "Calibrating CNN-Based Strong Gravitational Lens Finders in DESI DR10"
+#
+# Tested on: Lambda Cloud (NVIDIA GH200), Ubuntu 22.04, Python 3.11
+# Date: 2026-02-11
+#
+# Install: pip install -r requirements.txt
+# Note: PyTorch/torchvision may need CUDA-specific install (see pytorch.org)
+
+# ==== Core ML ====
+# Pinned to avoid torchvision::nms operator mismatch errors.
+# Previously used >=, which allowed incompatible version combinations.
+torch==2.7.0
+torchvision==0.22.0
+
+# ==== Numerical / Data ====
+numpy>=1.26.4
+pandas>=2.1.4
+pyarrow>=15.0.0            # Parquet I/O
+
+# ==== Metrics & ML utilities ====
+scikit-learn>=1.4.1         # AUC, classification metrics
+scipy>=1.12.0               # Bayesian binomial CI (beta distribution)
+
+# ==== Astronomy ====
+healpy>=1.16.0              # HEALPix spatial splits (nside=128)
+astropy>=5.0                # Coordinate transforms, FITS (optional)
+
+# ==== Configuration ====
+pyyaml>=6.0                 # YAML config parsing
+
+# ==== AWS (Lambda data transfer) ====
+# awscli is typically installed system-wide; not pinned here
+# boto3>=1.34.0             # Uncomment if using AWS SDK directly
+
+# ==== Testing: injection engine cross-validation ====
+lenstronomy>=1.11.0          # Peer-reviewed lensing code; used ONLY in
+                             # tests/test_injection_engine.py to cross-validate
+                             # our SIE deflection and magnification against an
+                             # independent implementation. Tests gracefully skip
+                             # if not installed. NOT used in production pipeline.
+
+# ==== Visualization & Dimensionality Reduction ====
+matplotlib>=3.8.0
+umap-learn>=0.5.5           # UMAP for embedding visualization (D02 diagnostics)
