@@ -1,0 +1,92 @@
+# =============================================================================
+# Injection Prior Registry — Single Source of Truth
+# =============================================================================
+#
+# This file defines the EXACT parameter values used by the injection engine
+# (dhs/injection_engine.py::sample_source_params and sample_lens_params).
+#
+# PURPOSE: Prevent code-to-paper drift. The validation test
+# (tests/test_injection_priors.py) asserts that the code defaults match
+# these values. If either the code or this file is changed without updating
+# the other, the test fails.
+#
+# PAPER: When writing the MNRAS paper, cite these values — they are what
+# the code actually uses. Do NOT invent different numbers.
+#
+# CREATED: 2026-02-13 (after code review identified mismatch
+#          between code defaults and paper description)
+# UPDATED: 2026-02-16 — six realism fixes based on manual visual inspection
+#          of injected vs real Tier-A lenses (see injection_engine.py docstring)
+# =============================================================================
+
+source_params:
+  # Source r-band magnitude range (AB)
+  r_mag_range: [23.0, 26.0]
+
+  # Source position: beta_frac = beta / theta_E
+  # Area-weighted sampling: beta_frac = sqrt(U(lo^2, hi^2))
+  # FIX (2026-02-16): narrowed from [0.1, 1.0] — old range biased toward
+  # high beta_frac (separated doubles), not arc-like morphologies.
+  beta_frac_range: [0.10, 0.40]
+
+  # Source effective radius (arcsec)
+  # FIX (2026-02-16): raised minimum from 0.05 to 0.15 — sources below
+  # 0.15" are unresolved at ~1" seeing and produce binary-star artefacts.
+  re_arcsec_range: [0.15, 0.50]
+
+  # Sersic index
+  # FIX (2026-02-16): narrowed from [0.5, 4.0] to [0.5, 2.0] — concentrated
+  # profiles (n>2) produce compact doubles, not smooth arcs. High-z lensed
+  # sources are predominantly disk galaxies (n~1, Collett 2015).
+  n_range: [0.5, 2.0]
+
+  # Source axis ratio (b/a)
+  q_range: [0.3, 1.0]
+
+  # Source color: g-r drawn from N(mu, sigma)
+  # FIX (2026-02-16): changed from [0.2, 0.25] — old values were rest-frame
+  # blue and missed K-correction. Measured from 388 real Tier-A arc annuli:
+  # mean=1.23, std=0.39. Conservative N(1.15, 0.30).
+  g_minus_r_mu_sigma: [1.15, 0.30]
+
+  # Source color: r-z drawn from N(mu, sigma)
+  # FIX (2026-02-16): changed from [0.1, 0.25] — same K-correction issue.
+  # Measured from Tier-A arc annuli: mean=0.95, std=0.27. Conservative N(0.85, 0.20).
+  r_minus_z_mu_sigma: [0.85, 0.20]
+
+  # Probability of adding clumps to the source
+  # FIX (2026-02-16): disabled from 0.6 — clumps create multi-blob artefacts
+  # at separate lensed image positions. Disabled until base morphology validated.
+  clumps_prob: 0.0
+
+  # When clumps are added: n_clumps ~ integers(1, 4), frac ~ U(0.15, 0.45)
+  # (retained for future re-enabling; currently inactive since clumps_prob=0.0)
+  clumps_n_range: [1, 4]
+  clumps_frac_range: [0.15, 0.45]
+
+lens_params:
+  # External shear sigma (|gamma| ~ half-normal with this sigma)
+  shear_sigma: 0.05
+
+  # Lens center jitter sigma (arcsec)
+  center_sigma_arcsec: 0.05
+
+  # Lens axis ratio range (uniform)
+  q_lens_range: [0.5, 1.0]
+
+model2_conditioning:
+  # Model 2: q_lens = clip(q_host + N(0, q_scatter), q_floor, 1.0)
+  q_scatter: 0.05
+  q_floor: 0.5
+  # NOTE: This is Gaussian ADDITIVE scatter, NOT multiplicative uniform.
+  # The paper draft incorrectly described it as q_host * U[0.8, 1.2]
+  # clipped to [0.3, 1.0]. The code has always used the values above.
+
+preprocessing:
+  # Normalization annulus (current defaults, locked to trained models)
+  annulus_r_in: 20
+  annulus_r_out: 32
+  clip_range: 10.0
+  # KNOWN ISSUE: (20, 32) is suboptimal for 101x101 stamps.
+  # Corrected values from default_annulus_radii(101, 101): (32.5, 45.0)
+  # Activation requires retraining.
