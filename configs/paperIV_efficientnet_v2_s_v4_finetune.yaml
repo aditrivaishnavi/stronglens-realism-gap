@@ -1,0 +1,61 @@
+# Paper IV Parity: EfficientNetV2-S — v4 fine-tune from v2 best checkpoint
+# ~20.2M params, matches Paper IV's EfficientNetV2 architecture
+# Protocol: 60 epochs of low-LR cosine fine-tuning from v2's E19 peak (AUC=0.9915)
+# Date: 2026-02-12
+#
+# Rationale for this run:
+#   v2 (step LR) peaked at val_auc=0.9915 at epoch 19. After that, the constant
+#   LR=3.88e-4 caused gradual overfitting (train loss -> 0.001, val AUC -> 0.97).
+#   Rather than training from scratch (like v3 cosine), this run loads the
+#   peak-performing E19 weights and continues with 8x lower LR (5e-5) + cosine
+#   decay over 60 epochs. This is "Phase 2 fine-tuning" — the model already
+#   knows the features, we just need gentle optimization to push past 0.9915.
+#
+# Key differences vs v2:
+#   - init_weights: loads model weights from v2/best.pt (epoch 19, AUC=0.9915)
+#   - lr: 5e-5 (8x lower than v2's 3.88e-4)
+#   - lr_schedule: cosine (continuous decay, not step)
+#   - epochs: 60 (not 160 — we're fine-tuning, not training from scratch)
+#   - freeze_backbone_epochs: 0 (model is already adapted, no need to freeze)
+#   - warmup_epochs: 3 (brief warmup since we're starting with adapted weights)
+#   - pretrained: false (we load OUR weights via init_weights, not ImageNet)
+#
+# IMPORTANT: out_dir is DIFFERENT from v2's to prevent any checkpoint overwrites.
+
+dataset:
+  parquet_path: ""
+  manifest_path: /lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/manifests/training_parity_70_30_v1.parquet
+  mode: file_manifest
+  preprocessing: raw_robust
+  label_col: label
+  cutout_path_col: cutout_path
+  sample_weight_col: sample_weight
+  seed: 42
+  crop: false           # Keep 101x101 for Paper IV parity
+  crop_size: 0
+
+augment:
+  hflip: true
+  vflip: true
+  rot90: true
+
+train:
+  arch: efficientnet_v2_s
+  epochs: 60            # Short fine-tuning run (not 160 from scratch)
+  batch_size: 64        # Same micro-batch as v2/v3
+  effective_batch: 512  # Same effective batch as v2/v3
+  lr: 0.00005           # 5e-5 (8x lower than v2's 3.88e-4)
+  weight_decay: 0.0001
+  lr_schedule: cosine   # Continuous decay from 5e-5 to ~0 over 60 epochs
+  lr_step_epoch: 130    # Ignored by cosine schedule
+  lr_gamma: 0.5         # Ignored by cosine schedule
+  num_workers: 8
+  device: cuda
+  early_stopping_patience: 0   # Run all 60 epochs
+  out_dir: /lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/checkpoints/paperIV_efficientnet_v2_s_v4_finetune
+  mixed_precision: true
+  unweighted_loss: true
+  pretrained: false     # NOT loading ImageNet weights — we load our own via init_weights
+  freeze_backbone_epochs: 0    # No freezing — model is already adapted
+  warmup_epochs: 3             # Brief 3-epoch warmup from lr/100 to lr
+  init_weights: /lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/checkpoints/paperIV_efficientnet_v2_s_v2/best.pt
