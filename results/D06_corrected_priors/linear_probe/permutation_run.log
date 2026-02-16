@@ -1,0 +1,10 @@
+Loading embeddings...
+Real Tier-A: (112, 1280), Injections: (500, 1280)
+Combined: X=(612, 1280), y=(612,), n_real=112, n_inj=500
+
+--- Reproducing original AUC (5-fold CV) ---
+AUC: 0.998393  (30.6s)
+Per-fold: ['0.9996', '0.9952', '1.0000', '0.9936', '1.0000']
+
+--- Permutation test (1000 iterations, single-split) ---
+Single-split observed AUC: 0.997826

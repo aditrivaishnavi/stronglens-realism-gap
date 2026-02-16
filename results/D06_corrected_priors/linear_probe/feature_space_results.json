@@ -1,0 +1,40 @@
+{
+  "timestamp_utc": "2026-02-16T13:54:13.705667+00:00",
+  "checkpoint": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/checkpoints/paperIV_efficientnet_v2_s_v4_finetune/best.pt",
+  "n_real_tier_a": 112,
+  "n_inj_low_bf": 500,
+  "n_inj_high_bf": 500,
+  "n_negatives": 500,
+  "target_mag": 19.0,
+  "theta_e": 1.5,
+  "add_sky_noise": false,
+  "add_poisson_noise": false,
+  "gain_e_per_nmgy": null,
+  "linear_probe": {
+    "task": "real_tier_a vs inj_low_bf",
+    "cv_auc_mean": 0.9970355731225297,
+    "cv_auc_std": 0.003276391372703714,
+    "interpretation": "AUC near 1.0 means CNN encodes injection-ness direction"
+  },
+  "frechet_distance_per_layer": {
+    "features_0": 0.13947746503510677,
+    "features_1": 1.4494887756579178,
+    "features_2": 10.91268979078811,
+    "features_3": 47.239780169562344,
+    "features_4": NaN,
+    "features_5": NaN,
+    "features_6": NaN,
+    "features_7": NaN
+  },
+  "frechet_distance": {
+    "real_vs_low_bf": 214.9780617233113,
+    "real_vs_high_bf": 219.05976171224796,
+    "interpretation": "Higher FD = more different in feature space"
+  },
+  "median_scores": {
+    "real_tier_a": 0.9946459531784058,
+    "inj_low_bf": 0.19066233932971954,
+    "inj_high_bf": 0.01897384040057659,
+    "negatives": 1.4959452528273687e-05
+  }
+}

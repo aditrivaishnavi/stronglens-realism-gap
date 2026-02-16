@@ -1,0 +1,839 @@
+{
+  "paired_delta": {
+    "n_total_paired": 1600,
+    "results_by_bin": {
+      "18-19": {
+        "n_paired": 200,
+        "mean_delta": 0.004169284304149232,
+        "median_delta": -0.0037607995025498867,
+        "std_delta": 0.10129345316530776,
+        "pct_positive": 42.0,
+        "pct_negative": 57.99999999999999,
+        "pct_zero": 0.0,
+        "p25_delta": -0.04029140508183725,
+        "p75_delta": 0.047441943147521384,
+        "min_delta": -0.35479145518573657,
+        "max_delta": 0.41812873815489754,
+        "n_gained_above_03": 7,
+        "n_lost_below_03": 7,
+        "net_crossings": 0,
+        "baseline_median_score": 0.15397403245251673,
+        "poisson_median_score": 0.12720412080702115,
+        "baseline_detection_rate": 0.29,
+        "poisson_detection_rate": 0.29
+      },
+      "19-20": {
+        "n_paired": 200,
+        "mean_delta": 0.007822204738563035,
+        "median_delta": -0.007318193536373183,
+        "std_delta": 0.15371287272672693,
+        "pct_positive": 36.0,
+        "pct_negative": 64.0,
+        "pct_zero": 0.0,
+        "p25_delta": -0.05596722652687451,
+        "p75_delta": 0.04292433734451151,
+        "min_delta": -0.47475788909262684,
+        "max_delta": 0.7383221157693349,
+        "n_gained_above_03": 11,
+        "n_lost_below_03": 11,
+        "net_crossings": 0,
+        "baseline_median_score": 0.165108048531716,
+        "poisson_median_score": 0.13054411332149202,
+        "baseline_detection_rate": 0.335,
+        "poisson_detection_rate": 0.335
+      },
+      "20-21": {
+        "n_paired": 200,
+        "mean_delta": 0.03806537888730696,
+        "median_delta": -8.608693035268598e-05,
+        "std_delta": 0.22730397260923438,
+        "pct_positive": 46.0,
+        "pct_negative": 54.0,
+        "pct_zero": 0.0,
+        "p25_delta": -0.06153388173404992,
+        "p75_delta": 0.12523058444709662,
+        "min_delta": -0.6146952880839914,
+        "max_delta": 0.8318568222732008,
+        "n_gained_above_03": 25,
+        "n_lost_below_03": 19,
+        "net_crossings": 6,
+        "baseline_median_score": 0.2077760999912304,
+        "poisson_median_score": 0.20410903933652297,
+        "baseline_detection_rate": 0.385,
+        "poisson_detection_rate": 0.415
+      },
+      "21-22": {
+        "n_paired": 200,
+        "mean_delta": 0.08926945294895935,
+        "median_delta": 0.0057514972117687635,
+        "std_delta": 0.22225273554915506,
+        "pct_positive": 56.99999999999999,
+        "pct_negative": 43.0,
+        "pct_zero": 0.0,
+        "p25_delta": -0.011897019523354077,
+        "p75_delta": 0.15726362635559307,
+        "min_delta": -0.4334491641152418,
+        "max_delta": 0.9241091840035012,
+        "n_gained_above_03": 27,
+        "n_lost_below_03": 6,
+        "net_crossings": 21,
+        "baseline_median_score": 0.08462448921288632,
+        "poisson_median_score": 0.16068964549172488,
+        "baseline_detection_rate": 0.33,
+        "poisson_detection_rate": 0.435
+      },
+      "22-23": {
+        "n_paired": 200,
+        "mean_delta": 0.0500105983822482,
+        "median_delta": -1.9870573600327458e-07,
+        "std_delta": 0.18959438808963147,
+        "pct_positive": 49.5,
+        "pct_negative": 50.5,
+        "pct_zero": 0.0,
+        "p25_delta": -0.0028124831984459053,
+        "p75_delta": 0.03277320116355133,
+        "min_delta": -0.4215899689069917,
+        "max_delta": 0.7947487850880613,
+        "n_gained_above_03": 21,
+        "n_lost_below_03": 3,
+        "net_crossings": 18,
+        "baseline_median_score": 0.016752464631976067,
+        "poisson_median_score": 0.015515217132837319,
+        "baseline_detection_rate": 0.235,
+        "poisson_detection_rate": 0.325
+      },
+      "23-24": {
+        "n_paired": 200,
+        "mean_delta": 0.011203699031611862,
+        "median_delta": 9.502584732800488e-07,
+        "std_delta": 0.17391657369827848,
+        "pct_positive": 56.49999999999999,
+        "pct_negative": 43.5,
+        "pct_zero": 0.0,
+        "p25_delta": -0.00019712237109321542,
+        "p75_delta": 0.002417190384855212,
+        "min_delta": -0.8324247427424698,
+        "max_delta": 0.971312612310345,
+        "n_gained_above_03": 8,
+        "n_lost_below_03": 5,
+        "net_crossings": 3,
+        "baseline_median_score": 0.00039616502642791164,
+        "poisson_median_score": 0.0006886667424685689,
+        "baseline_detection_rate": 0.11,
+        "poisson_detection_rate": 0.125
+      },
+      "24-25": {
+        "n_paired": 200,
+        "mean_delta": -0.0017556822498718122,
+        "median_delta": -6.163262213869512e-08,
+        "std_delta": 0.06769991758562524,
+        "pct_positive": 48.5,
+        "pct_negative": 51.5,
+        "pct_zero": 0.0,
+        "p25_delta": -8.449814192746342e-06,
+        "p75_delta": 2.6373121144661827e-05,
+        "min_delta": -0.8024193134344098,
+        "max_delta": 0.412518044067523,
+        "n_gained_above_03": 0,
+        "n_lost_below_03": 1,
+        "net_crossings": -1,
+        "baseline_median_score": 3.8224481164969744e-05,
+        "poisson_median_score": 4.267777234717444e-05,
+        "baseline_detection_rate": 0.02,
+        "poisson_detection_rate": 0.015
+      },
+      "25-26": {
+        "n_paired": 200,
+        "mean_delta": -0.0016668517372230025,
+        "median_delta": 5.791089436580036e-07,
+        "std_delta": 0.04550363520177032,
+        "pct_positive": 58.5,
+        "pct_negative": 41.5,
+        "pct_zero": 0.0,
+        "p25_delta": -8.911305540661507e-07,
+        "p75_delta": 5.109681988902635e-06,
+        "min_delta": -0.598774919711604,
+        "max_delta": 0.21409889337857527,
+        "n_gained_above_03": 1,
+        "n_lost_below_03": 1,
+        "net_crossings": 0,
+        "baseline_median_score": 1.988671640133761e-05,
+        "poisson_median_score": 2.2158105568511852e-05,
+        "baseline_detection_rate": 0.005,
+        "poisson_detection_rate": 0.005
+      }
+    },
+    "mechanism_assessment": {
+      "18-19": "A_threshold_scatter",
+      "19-20": "A_threshold_scatter",
+      "20-21": "mixed",
+      "21-22": "mixed",
+      "22-23": "mixed",
+      "23-24": "mixed",
+      "24-25": "mixed",
+      "25-26": "A_threshold_scatter"
+    }
+  },
+  "conditioned_grid": {
+    "by_condition": {
+      "no_poisson": {
+        "by_theta_e": {
+          "0.50": {
+            "n_injections": 10000,
+            "n_detected": 22,
+            "completeness": 0.0022
+          },
+          "0.75": {
+            "n_injections": 10000,
+            "n_detected": 33,
+            "completeness": 0.0033
+          },
+          "1.00": {
+            "n_injections": 10000,
+            "n_detected": 153,
+            "completeness": 0.0153
+          },
+          "1.25": {
+            "n_injections": 10000,
+            "n_detected": 339,
+            "completeness": 0.0339
+          },
+          "1.50": {
+            "n_injections": 10000,
+            "n_detected": 559,
+            "completeness": 0.0559
+          },
+          "1.75": {
+            "n_injections": 10000,
+            "n_detected": 652,
+            "completeness": 0.0652
+          },
+          "2.00": {
+            "n_injections": 10000,
+            "n_detected": 799,
+            "completeness": 0.0799
+          },
+          "2.25": {
+            "n_injections": 10000,
+            "n_detected": 802,
+            "completeness": 0.0802
+          },
+          "2.50": {
+            "n_injections": 10000,
+            "n_detected": 833,
+            "completeness": 0.0833
+          },
+          "2.75": {
+            "n_injections": 10000,
+            "n_detected": 790,
+            "completeness": 0.079
+          },
+          "3.00": {
+            "n_injections": 10000,
+            "n_detected": 715,
+            "completeness": 0.0715
+          }
+        },
+        "by_lensed_mag": {
+          "lensed_20-22": {
+            "n_injections": 41535,
+            "n_detected": 5141,
+            "completeness": 0.12377512940893222
+          },
+          "lensed_22-24": {
+            "n_injections": 65071,
+            "n_detected": 477,
+            "completeness": 0.00733045442670314
+          },
+          "lensed_24-27": {
+            "n_injections": 2659,
+            "n_detected": 12,
+            "completeness": 0.0045129748025573525
+          }
+        },
+        "cross_tab_theta_e_x_lensed_mag": {
+          "0.50": {
+            "lensed_20-22": {
+              "n_injections": 2372,
+              "n_detected": 1,
+              "completeness": 0.00042158516020236085
+            },
+            "lensed_22-24": {
+              "n_injections": 6554,
+              "n_detected": 17,
+              "completeness": 0.0025938358254501068
+            },
+            "lensed_24-27": {
+              "n_injections": 1074,
+              "n_detected": 4,
+              "completeness": 0.0037243947858473
+            }
+          },
+          "0.75": {
+            "lensed_20-22": {
+              "n_injections": 3166,
+              "n_detected": 19,
+              "completeness": 0.006001263423878711
+            },
+            "lensed_22-24": {
+              "n_injections": 6353,
+              "n_detected": 11,
+              "completeness": 0.001731465449393987
+            },
+            "lensed_24-27": {
+              "n_injections": 481,
+              "n_detected": 3,
+              "completeness": 0.006237006237006237
+            }
+          },
+          "1.00": {
+            "lensed_20-22": {
+              "n_injections": 3578,
+              "n_detected": 133,
+              "completeness": 0.037171604248183346
+            },
+            "lensed_22-24": {
+              "n_injections": 6135,
+              "n_detected": 19,
+              "completeness": 0.0030969845150774244
+            },
+            "lensed_24-27": {
+              "n_injections": 278,
+              "n_detected": 1,
+              "completeness": 0.0035971223021582736
+            }
+          },
+          "1.25": {
+            "lensed_20-22": {
+              "n_injections": 3760,
+              "n_detected": 307,
+              "completeness": 0.08164893617021277
+            },
+            "lensed_22-24": {
+              "n_injections": 6045,
+              "n_detected": 28,
+              "completeness": 0.004631927212572374
+            },
+            "lensed_24-27": {
+              "n_injections": 135,
+              "n_detected": 3,
+              "completeness": 0.022222222222222223
+            }
+          },
+          "1.50": {
+            "lensed_20-22": {
+              "n_injections": 3919,
+              "n_detected": 506,
+              "completeness": 0.12911457004337842
+            },
+            "lensed_22-24": {
+              "n_injections": 5903,
+              "n_detected": 52,
+              "completeness": 0.008809080128748094
+            },
+            "lensed_24-27": {
+              "n_injections": 94,
+              "n_detected": 0,
+              "completeness": 0.0
+            }
+          },
+          "1.75": {
+            "lensed_20-22": {
+              "n_injections": 4008,
+              "n_detected": 593,
+              "completeness": 0.14795409181636726
+            },
+            "lensed_22-24": {
+              "n_injections": 5820,
+              "n_detected": 55,
+              "completeness": 0.009450171821305841
+            },
+            "lensed_24-27": {
+              "n_injections": 73,
+              "n_detected": 0,
+              "completeness": 0.0
+            }
+          },
+          "2.00": {
+            "lensed_20-22": {
+              "n_injections": 4056,
+              "n_detected": 716,
+              "completeness": 0.1765285996055227
+            },
+            "lensed_22-24": {
+              "n_injections": 5786,
+              "n_detected": 75,
+              "completeness": 0.012962322848254408
+            },
+            "lensed_24-27": {
+              "n_injections": 55,
+              "n_detected": 0,
+              "completeness": 0.0
+            }
+          },
+          "2.25": {
+            "lensed_20-22": {
+              "n_injections": 4114,
+              "n_detected": 742,
+              "completeness": 0.180359747204667
+            },
+            "lensed_22-24": {
+              "n_injections": 5708,
+              "n_detected": 52,
+              "completeness": 0.009110021023125438
+            },
+            "lensed_24-27": {
+              "n_injections": 65,
+              "n_detected": 0,
+              "completeness": 0.0
+            }
+          },
+          "2.50": {
+            "lensed_20-22": {
+              "n_injections": 4237,
+              "n_detected": 758,
+              "completeness": 0.17890016521123436
+            },
+            "lensed_22-24": {
+              "n_injections": 5566,
+              "n_detected": 66,
+              "completeness": 0.011857707509881422
+            },
+            "lensed_24-27": {
+              "n_injections": 117,
+              "n_detected": 1,
+              "completeness": 0.008547008547008548
+            }
+          },
+          "2.75": {
+            "lensed_20-22": {
+              "n_injections": 4164,
+              "n_detected": 727,
+              "completeness": 0.17459173871277617
+            },
+            "lensed_22-24": {
+              "n_injections": 5606,
+              "n_detected": 48,
+              "completeness": 0.00856225472707813
+            },
+            "lensed_24-27": {
+              "n_injections": 139,
+              "n_detected": 0,
+              "completeness": 0.0
+            }
+          },
+          "3.00": {
+            "lensed_20-22": {
+              "n_injections": 4161,
+              "n_detected": 639,
+              "completeness": 0.15356885364095169
+            },
+            "lensed_22-24": {
+              "n_injections": 5595,
+              "n_detected": 54,
+              "completeness": 0.0096514745308311
+            },
+            "lensed_24-27": {
+              "n_injections": 148,
+              "n_detected": 0,
+              "completeness": 0.0
+            }
+          }
+        }
+      },
+      "poisson": {
+        "by_theta_e": {
+          "0.50": {
+            "n_injections": 10000,
+            "n_detected": 47,
+            "completeness": 0.0047
+          },
+          "0.75": {
+            "n_injections": 10000,
+            "n_detected": 80,
+            "completeness": 0.008
+          },
+          "1.00": {
+            "n_injections": 10000,
+            "n_detected": 234,
+            "completeness": 0.0234
+          },
+          "1.25": {
+            "n_injections": 10000,
+            "n_detected": 379,
+            "completeness": 0.0379
+          },
+          "1.50": {
+            "n_injections": 10000,
+            "n_detected": 460,
+            "completeness": 0.046
+          },
+          "1.75": {
+            "n_injections": 10000,
+            "n_detected": 491,
+            "completeness": 0.0491
+          },
+          "2.00": {
+            "n_injections": 10000,
+            "n_detected": 566,
+            "completeness": 0.0566
+          },
+          "2.25": {
+            "n_injections": 10000,
+            "n_detected": 522,
+            "completeness": 0.0522
+          },
+          "2.50": {
+            "n_injections": 10000,
+            "n_detected": 508,
+            "completeness": 0.0508
+          },
+          "2.75": {
+            "n_injections": 10000,
+            "n_detected": 473,
+            "completeness": 0.0473
+          },
+          "3.00": {
+            "n_injections": 10000,
+            "n_detected": 414,
+            "completeness": 0.0414
+          }
+        },
+        "by_lensed_mag": {
+          "lensed_20-22": {
+            "n_injections": 41510,
+            "n_detected": 3744,
+            "completeness": 0.09019513370272224
+          },
+          "lensed_22-24": {
+            "n_injections": 64530,
+            "n_detected": 347,
+            "completeness": 0.00537734387106772
+          },
+          "lensed_24-27": {
+            "n_injections": 3495,
+            "n_detected": 20,
+            "completeness": 0.005722460658082976
+          }
+        },
+        "cross_tab_theta_e_x_lensed_mag": {
+          "0.50": {
+            "lensed_20-22": {
+              "n_injections": 2387,
+              "n_detected": 17,
+              "completeness": 0.007121910347716799
+            },
+            "lensed_22-24": {
+              "n_injections": 6520,
+              "n_detected": 27,
+              "completeness": 0.004141104294478528
+            },
+            "lensed_24-27": {
+              "n_injections": 1093,
+              "n_detected": 3,
+              "completeness": 0.0027447392497712718
+            }
+          },
+          "0.75": {
+            "lensed_20-22": {
+              "n_injections": 3157,
+              "n_detected": 55,
+              "completeness": 0.017421602787456445
+            },
+            "lensed_22-24": {
+              "n_injections": 6304,
+              "n_detected": 20,
+              "completeness": 0.0031725888324873096
+            },
+            "lensed_24-27": {
+              "n_injections": 539,
+              "n_detected": 5,
+              "completeness": 0.00927643784786642
+            }
+          },
+          "1.00": {
+            "lensed_20-22": {
+              "n_injections": 3561,
+              "n_detected": 197,
+              "completeness": 0.05532153889356922
+            },
+            "lensed_22-24": {
+              "n_injections": 6095,
+              "n_detected": 36,
+              "completeness": 0.005906480721903199
+            },
+            "lensed_24-27": {
+              "n_injections": 344,
+              "n_detected": 1,
+              "completeness": 0.0029069767441860465
+            }
+          },
+          "1.25": {
+            "lensed_20-22": {
+              "n_injections": 3747,
+              "n_detected": 334,
+              "completeness": 0.08913797704830531
+            },
+            "lensed_22-24": {
+              "n_injections": 5994,
+              "n_detected": 39,
+              "completeness": 0.0065065065065065065
+            },
+            "lensed_24-27": {
+              "n_injections": 232,
+              "n_detected": 4,
+              "completeness": 0.017241379310344827
+            }
+          },
+          "1.50": {
+            "lensed_20-22": {
+              "n_injections": 3905,
+              "n_detected": 431,
+              "completeness": 0.11037131882202304
+            },
+            "lensed_22-24": {
+              "n_injections": 5858,
+              "n_detected": 28,
+              "completeness": 0.004779788323659952
+            },
+            "lensed_24-27": {
+              "n_injections": 182,
+              "n_detected": 0,
+              "completeness": 0.0
+            }
+          },
+          "1.75": {
+            "lensed_20-22": {
+              "n_injections": 4021,
+              "n_detected": 452,
+              "completeness": 0.11240984829644367
+            },
+            "lensed_22-24": {
+              "n_injections": 5747,
+              "n_detected": 35,
+              "completeness": 0.0060901339829476245
+            },
+            "lensed_24-27": {
+              "n_injections": 191,
+              "n_detected": 2,
+              "completeness": 0.010471204188481676
+            }
+          },
+          "2.00": {
+            "lensed_20-22": {
+              "n_injections": 4070,
+              "n_detected": 511,
+              "completeness": 0.12555282555282554
+            },
+            "lensed_22-24": {
+              "n_injections": 5730,
+              "n_detected": 48,
+              "completeness": 0.008376963350785341
+            },
+            "lensed_24-27": {
+              "n_injections": 121,
+              "n_detected": 0,
+              "completeness": 0.0
+            }
+          },
+          "2.25": {
+            "lensed_20-22": {
+              "n_injections": 4116,
+              "n_detected": 486,
+              "completeness": 0.11807580174927114
+            },
+            "lensed_22-24": {
+              "n_injections": 5656,
+              "n_detected": 29,
+              "completeness": 0.005127298444130127
+            },
+            "lensed_24-27": {
+              "n_injections": 171,
+              "n_detected": 1,
+              "completeness": 0.005847953216374269
+            }
+          },
+          "2.50": {
+            "lensed_20-22": {
+              "n_injections": 4221,
+              "n_detected": 464,
+              "completeness": 0.10992655768775171
+            },
+            "lensed_22-24": {
+              "n_injections": 5537,
+              "n_detected": 33,
+              "completeness": 0.005959906086328337
+            },
+            "lensed_24-27": {
+              "n_injections": 171,
+              "n_detected": 3,
+              "completeness": 0.017543859649122806
+            }
+          },
+          "2.75": {
+            "lensed_20-22": {
+              "n_injections": 4169,
+              "n_detected": 436,
+              "completeness": 0.10458143439673782
+            },
+            "lensed_22-24": {
+              "n_injections": 5548,
+              "n_detected": 22,
+              "completeness": 0.003965392934390771
+            },
+            "lensed_24-27": {
+              "n_injections": 228,
+              "n_detected": 0,
+              "completeness": 0.0
+            }
+          },
+          "3.00": {
+            "lensed_20-22": {
+              "n_injections": 4156,
+              "n_detected": 361,
+              "completeness": 0.0868623676612127
+            },
+            "lensed_22-24": {
+              "n_injections": 5541,
+              "n_detected": 30,
+              "completeness": 0.005414185165132647
+            },
+            "lensed_24-27": {
+              "n_injections": 223,
+              "n_detected": 1,
+              "completeness": 0.004484304932735426
+            }
+          }
+        }
+      }
+    },
+    "poisson_delta_by_theta_e": {
+      "0.50": {
+        "no_poisson": 0.0022,
+        "poisson": 0.0047,
+        "delta_pp": 0.25,
+        "poisson_helps": true
+      },
+      "0.75": {
+        "no_poisson": 0.0033,
+        "poisson": 0.008,
+        "delta_pp": 0.47000000000000003,
+        "poisson_helps": true
+      },
+      "1.00": {
+        "no_poisson": 0.0153,
+        "poisson": 0.0234,
+        "delta_pp": 0.8100000000000002,
+        "poisson_helps": true
+      },
+      "1.25": {
+        "no_poisson": 0.0339,
+        "poisson": 0.0379,
+        "delta_pp": 0.40000000000000036,
+        "poisson_helps": true
+      },
+      "1.50": {
+        "no_poisson": 0.0559,
+        "poisson": 0.046,
+        "delta_pp": -0.9899999999999999,
+        "poisson_helps": false
+      },
+      "1.75": {
+        "no_poisson": 0.0652,
+        "poisson": 0.0491,
+        "delta_pp": -1.6099999999999997,
+        "poisson_helps": false
+      },
+      "2.00": {
+        "no_poisson": 0.0799,
+        "poisson": 0.0566,
+        "delta_pp": -2.33,
+        "poisson_helps": false
+      },
+      "2.25": {
+        "no_poisson": 0.0802,
+        "poisson": 0.0522,
+        "delta_pp": -2.799999999999999,
+        "poisson_helps": false
+      },
+      "2.50": {
+        "no_poisson": 0.0833,
+        "poisson": 0.0508,
+        "delta_pp": -3.25,
+        "poisson_helps": false
+      },
+      "2.75": {
+        "no_poisson": 0.079,
+        "poisson": 0.0473,
+        "delta_pp": -3.17,
+        "poisson_helps": false
+      },
+      "3.00": {
+        "no_poisson": 0.0715,
+        "poisson": 0.0414,
+        "delta_pp": -3.0099999999999993,
+        "poisson_helps": false
+      }
+    },
+    "poisson_delta_by_lensed_mag": {
+      "lensed_20-22": {
+        "no_poisson": 0.12377512940893222,
+        "poisson": 0.09019513370272224,
+        "delta_pp": -3.357999570620998,
+        "poisson_helps": false
+      },
+      "lensed_22-24": {
+        "no_poisson": 0.00733045442670314,
+        "poisson": 0.00537734387106772,
+        "delta_pp": -0.19531105556354197,
+        "poisson_helps": false
+      },
+      "lensed_24-27": {
+        "no_poisson": 0.0045129748025573525,
+        "poisson": 0.005722460658082976,
+        "delta_pp": 0.12094858555256231,
+        "poisson_helps": true
+      }
+    },
+    "conditioned_subset_te1p5_mag20_23": {
+      "no_poisson": {
+        "theta_e": "1.50",
+        "lensed_mag_range": "20-23",
+        "bins": {
+          "lensed_20-22": {
+            "n_injections": 3919,
+            "n_detected": 506,
+            "completeness": 0.12911457004337842
+          },
+          "lensed_22-24": {
+            "n_injections": 5903,
+            "n_detected": 52,
+            "completeness": 0.008809080128748094
+          }
+        },
+        "total_injections": 9822,
+        "total_detected": 558,
+        "completeness": 0.056811240073304826
+      },
+      "poisson": {
+        "theta_e": "1.50",
+        "lensed_mag_range": "20-23",
+        "bins": {
+          "lensed_20-22": {
+            "n_injections": 3905,
+            "n_detected": 431,
+            "completeness": 0.11037131882202304
+          },
+          "lensed_22-24": {
+            "n_injections": 5858,
+            "n_detected": 28,
+            "completeness": 0.004779788323659952
+          }
+        },
+        "total_injections": 9763,
+        "total_detected": 459,
+        "completeness": 0.047014237427020385
+      }
+    }
+  }
+}

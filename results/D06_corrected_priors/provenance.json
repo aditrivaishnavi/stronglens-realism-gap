@@ -1,0 +1,16 @@
+{
+  "generated_utc": "2026-02-16T19:34:09Z",
+  "hostname": "192-222-50-120",
+  "files": {
+    "dhs/injection_engine.py": {"sha256": "b94bbcd69009265fb09c0c966b9c47647e298a489101d3dd9fb475b4fe60356d", "size_bytes": 37406},
+    "scripts/selection_function_grid.py": {"sha256": "c561dd772909361fb1562c19c64e762d29d7be5319c0325848940d79b64f6ff7", "size_bytes": 45014},
+    "scripts/feature_space_analysis.py": {"sha256": "832732884624c2c1c5eb9a9c5c5841c785251166f76f7ce845294f3b6e3e5119", "size_bytes": 22545},
+    "sim_to_real_validations/bright_arc_injection_test.py": {"sha256": "d7cf763569eb5c38473b8b9ee4feba5a2a451968bcd6a0455faf22e73ec18ef3", "size_bytes": 26496},
+    "scripts/run_d06_corrected_priors.sh": {"sha256": "8d2b4f538d48c1beb77df021c23a17106e8a62d114da69517aa76ecb6ae36c24", "size_bytes": 11205},
+    "configs/injection_priors.yaml": {"sha256": "82942b9a02a0d66519e59caaa02ad72425ee1226df4dd0d6179b10996ddec001", "size_bytes": 3855},
+    "scripts/analyze_d06_results.py": {"sha256": "43ef2d12008d398b33bc17c148171bc5eb2b4a5f0854f358edc185962f8e9d24", "size_bytes": 14122},
+    "scripts/analyze_poisson_diagnostics.py": {"sha256": "6972a41da48c48df4e271908dfa8222cd7fe087c3c22afe86110b9cbde75e697", "size_bytes": 19028},
+    "checkpoints/paperIV_efficientnet_v2_s_v4_finetune/best.pt": {"sha256": "bb4c0d55d8962f4a3ccc4eb162528b165d0462a0d14b0409726f64d44440e239", "size_bytes": 243326493},
+    "manifests/training_parity_70_30_v1.parquet": {"sha256": "2920f6a125a2dc02b48dfbcd62466886b33a272c691db63dba42f646f7dbce5d", "size_bytes": 30094939}
+  }
+}

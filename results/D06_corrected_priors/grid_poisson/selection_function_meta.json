@@ -1,0 +1,88 @@
+{
+  "timestamp_utc": "2026-02-16T13:52:09.057493+00:00",
+  "checkpoint": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/checkpoints/paperIV_efficientnet_v2_s_v4_finetune/best.pt",
+  "manifest": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/manifests/training_parity_70_30_v1.parquet",
+  "arch": "efficientnet_v2_s",
+  "epoch": 1,
+  "host_split": "val",
+  "host_max": 20000,
+  "thresholds": [
+    0.3,
+    0.5,
+    0.7,
+    0.8058655117092153,
+    0.9950980914444324
+  ],
+  "injections_per_cell": 500,
+  "grid": {
+    "theta_e": [
+      0.5,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      1.75,
+      2.0,
+      2.25,
+      2.5,
+      2.75,
+      3.0
+    ],
+    "psf_fwhm": [
+      0.9,
+      1.05,
+      1.2,
+      1.35,
+      1.5,
+      1.65,
+      1.8
+    ],
+    "depth_5sig": [
+      22.5,
+      23.0,
+      23.5,
+      24.0,
+      24.5
+    ]
+  },
+  "preprocessing": "raw_robust",
+  "crop": false,
+  "pixscale": 0.262,
+  "seed": 1337,
+  "n_cells": 385,
+  "n_sufficient_cells": 220,
+  "n_empty_cells": 165,
+  "total_injections_ok": 110000,
+  "total_injections_failed": 0,
+  "failure_rate_pct": 0.0,
+  "max_retries_per_injection": 5,
+  "failure_log_sample": [],
+  "fpr_targets": [
+    0.001,
+    0.0001
+  ],
+  "fpr_derived_thresholds": {
+    "0.001": 0.8058655117092153,
+    "0.0001": 0.9950980914444324
+  },
+  "add_poisson_noise": true,
+  "gain_e_per_nmgy": 150.0,
+  "add_sky_noise": false,
+  "save_cutouts": true,
+  "save_cutouts_dir": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_poisson/cutouts",
+  "injection_engine": "SIE+shear (dhs.injection_engine)",
+  "source_model": "Sersic (clumps disabled, clumps_prob=0.0)",
+  "injection_overrides": {},
+  "notes": [
+    "Injection uses SIS+shear ray-shooting with Sersic source model.",
+    "Flux units: nanomaggies (AB ZP=22.5) throughout.",
+    "PSF blur via FFT-based Gaussian per band.",
+    "Preprocessing: raw_robust outer-annulus median/MAD, clip [-10, 10].",
+    "Scores are sigmoid(logit) from the frozen model.",
+    "CIs are Bayesian binomial (Jeffreys prior, Beta(0.5, 0.5)).",
+    "arc_annulus_snr reported per cell (mean over injections).",
+    "Failed injections are retried with new hosts (up to MAX_RETRIES).",
+    "Only successful injections count toward n_injections and completeness.",
+    "n_failed column tracks failures per cell for transparency."
+  ]
+}

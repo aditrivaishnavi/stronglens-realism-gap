@@ -1,0 +1,26 @@
+{
+  "observed_auc_mean": 0.997683794466403,
+  "observed_auc_std": 0.002710505829243844,
+  "observed_auc_folds": [
+    0.9995652173913043,
+    0.9952173913043477,
+    1.0,
+    0.9936363636363637,
+    1.0
+  ],
+  "permutation_test": {
+    "n_permutations": 10000,
+    "p_value": 9.999000099990002e-05,
+    "n_exceeding": 0,
+    "max_perm_auc": 0.6625138339920948,
+    "mean_perm_auc": 0.5000986806324111
+  },
+  "bootstrap_ci": {
+    "n_bootstrap": 5000,
+    "n_valid": 5000,
+    "ci_95_lower": 0.9925709340753847,
+    "ci_95_upper": 1.0,
+    "mean": 0.9983069897238293,
+    "std": 0.0021784198242313893
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "timestamp_utc": "2026-02-16T13:55:35.142531+00:00",
+  "checkpoint": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/checkpoints/paperIV_efficientnet_v2_s_v4_finetune/best.pt",
+  "manifest": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/manifests/training_parity_70_30_v1.parquet",
+  "host_split": "val",
+  "arch": "efficientnet_v2_s",
+  "epoch": 1,
+  "device": "cuda",
+  "seed": 42,
+  "real_lens": {
+    "n_total": 112,
+    "n_valid": 112,
+    "n_errors": 0,
+    "recall_at_thresholds": {
+      "p>0.3": 0.8928571428571429,
+      "p>0.5": 0.8392857142857143,
+      "p>0.806 (FPR-derived)": 0.7946428571428571,
+      "p>0.995 (FPR-derived)": 0.48214285714285715
+    },
+    "score_stats": {
+      "p5": 0.014425127691176386,
+      "p25": 0.9133452034535368,
+      "median": 0.9946520975962589,
+      "p75": 0.9991312661262226,
+      "p95": 0.9997863566179604,
+      "mean": 0.8371993761177536,
+      "frac_above_0.9": 0.7678571428571429,
+      "frac_below_0.1": 0.08928571428571429
+    }
+  },
+  "negatives": {
+    "n_total": 3000,
+    "n_valid": 3000,
+    "n_errors": 0,
+    "fpr_at_thresholds": {
+      "p>0.3": 0.004333333333333333,
+      "p>0.5": 0.0033333333333333335,
+      "p>0.806 (FPR-derived)": 0.0013333333333333333,
+      "p>0.995 (FPR-derived)": 0.0003333333333333333
+    },
+    "score_stats": {
+      "p5": 2.2325409083634885e-06,
+      "p25": 5.472431679244436e-06,
+      "median": 1.407924883193096e-05,
+      "p75": 5.620531619022721e-05,
+      "p95": 0.0012814414698329088,
+      "mean": 0.003916861649776231,
+      "frac_above_0.9": 0.0006666666666666666,
+      "frac_below_0.1": 0.9936666666666667
+    }
+  },
+  "recall_by_tier": {
+    "tier_A": {
+      "n_total": 112,
+      "n_valid": 112,
+      "p>0.3": {
+        "recall": 0.8928571428571429,
+        "n_detected": 100,
+        "ci_95": [
+          0.8256760628820957,
+          0.9400779199264687
+        ]
+      },
+      "p>0.5": {
+        "recall": 0.8392857142857143,
+        "n_detected": 94,
+        "ci_95": [
+          0.7630313729157816,
+          0.8982798290332469
+        ]
+      },
+      "p>0.806 (FPR-derived)": {
+        "recall": 0.7946428571428571,
+        "n_detected": 89,
+        "ci_95": [
+          0.7129018855930249,
+          0.8613866342760664
+        ]
+      },
+      "p>0.995 (FPR-derived)": {
+        "recall": 0.48214285714285715,
+        "n_detected": 54,
+        "ci_95": [
+          0.3910460547044155,
+          0.5741493897822424
+        ]
+      }
+    }
+  }
+}

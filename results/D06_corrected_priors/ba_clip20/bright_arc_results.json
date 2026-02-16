@@ -1,0 +1,117 @@
+{
+  "timestamp_utc": "2026-02-16T09:55:13.027461+00:00",
+  "checkpoint": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/checkpoints/paperIV_efficientnet_v2_s_v4_finetune/best.pt",
+  "arch": "efficientnet_v2_s",
+  "epoch": 1,
+  "device": "cuda",
+  "clip_range_override": 20.0,
+  "preprocessing": {
+    "mode": "raw_robust",
+    "crop": false,
+    "clip_range": 20.0
+  },
+  "phase1_config": {
+    "phase": "both",
+    "manifest": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/manifests/training_parity_70_30_v1.parquet",
+    "host_split": "val",
+    "n_hosts": 200,
+    "theta_e": 1.5,
+    "beta_frac_range": null,
+    "add_poisson_noise": false,
+    "gain_e_per_nmgy": 150.0,
+    "add_sky_noise": false,
+    "resume": false,
+    "seed": 42,
+    "checkpoint": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/checkpoints/paperIV_efficientnet_v2_s_v4_finetune/best.pt",
+    "clip_range": 20.0,
+    "device": "cuda",
+    "out_dir": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/ba_clip20"
+  },
+  "n_total_injections": 1600,
+  "n_scored": 1600,
+  "n_failed": 0,
+  "magnitude_bins": [
+    "18-19",
+    "19-20",
+    "20-21",
+    "21-22",
+    "22-23",
+    "23-24",
+    "24-25",
+    "25-26"
+  ],
+  "results_by_bin": {
+    "18-19": {
+      "mag_bin": "18-19",
+      "n_scored": 200,
+      "detection_rate_p03": 0.45,
+      "detection_rate_p05": 0.23,
+      "median_score": 0.26054633585585674,
+      "median_arc_snr": 2344.6004638671875
+    },
+    "19-20": {
+      "mag_bin": "19-20",
+      "n_scored": 200,
+      "detection_rate_p03": 0.465,
+      "detection_rate_p05": 0.26,
+      "median_score": 0.2595928543221246,
+      "median_arc_snr": 1002.3538208007812
+    },
+    "20-21": {
+      "mag_bin": "20-21",
+      "n_scored": 200,
+      "detection_rate_p03": 0.495,
+      "detection_rate_p05": 0.325,
+      "median_score": 0.29819699735164396,
+      "median_arc_snr": 428.13621520996094
+    },
+    "21-22": {
+      "mag_bin": "21-22",
+      "n_scored": 200,
+      "detection_rate_p03": 0.375,
+      "detection_rate_p05": 0.245,
+      "median_score": 0.12086734242861996,
+      "median_arc_snr": 185.27804565429688
+    },
+    "22-23": {
+      "mag_bin": "22-23",
+      "n_scored": 200,
+      "detection_rate_p03": 0.21,
+      "detection_rate_p05": 0.145,
+      "median_score": 0.015805060162267466,
+      "median_arc_snr": 65.98700714111328
+    },
+    "23-24": {
+      "mag_bin": "23-24",
+      "n_scored": 200,
+      "detection_rate_p03": 0.04,
+      "detection_rate_p05": 0.03,
+      "median_score": 0.00027563419584886146,
+      "median_arc_snr": 26.054494857788086
+    },
+    "24-25": {
+      "mag_bin": "24-25",
+      "n_scored": 200,
+      "detection_rate_p03": 0.01,
+      "detection_rate_p05": 0.005,
+      "median_score": 3.723658033687905e-05,
+      "median_arc_snr": 10.509872913360596
+    },
+    "25-26": {
+      "mag_bin": "25-26",
+      "n_scored": 200,
+      "detection_rate_p03": 0.0,
+      "detection_rate_p05": 0.0,
+      "median_score": 2.3519159962663974e-05,
+      "median_arc_snr": 4.193365573883057
+    }
+  },
+  "notes": [
+    "Phase 2 scoring of pre-generated injections from Phase 1.",
+    "Tests whether sim-to-real gap (~70 pp) is explained by brightness.",
+    "Real lens recall ~73% at p>0.5; standard injection completeness 4\u20138%.",
+    "FIX (2026-02-16): uses corrected injection priors (K-corrected colours,",
+    "  narrowed beta_frac, raised Re_min, lowered n_max, disabled clumps,",
+    "  add_sky_noise for background texture matching)."
+  ]
+}

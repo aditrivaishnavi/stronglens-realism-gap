@@ -1,0 +1,129 @@
+{
+  "per_bin": {
+    "18-19": {
+      "n_paired": 200,
+      "gained_b": 7,
+      "lost_c": 7,
+      "both_detected": 51,
+      "both_undetected": 135,
+      "mcnemar_chi2": 0.0714,
+      "mcnemar_p_chi2": 0.7892680261342813,
+      "mcnemar_p_exact": 1.0,
+      "baseline_det_rate": 0.29,
+      "poisson_det_rate": 0.29
+    },
+    "19-20": {
+      "n_paired": 200,
+      "gained_b": 11,
+      "lost_c": 11,
+      "both_detected": 56,
+      "both_undetected": 122,
+      "mcnemar_chi2": 0.0455,
+      "mcnemar_p_chi2": 0.8311704095417624,
+      "mcnemar_p_exact": 1.0,
+      "baseline_det_rate": 0.335,
+      "poisson_det_rate": 0.335
+    },
+    "20-21": {
+      "n_paired": 200,
+      "gained_b": 25,
+      "lost_c": 19,
+      "both_detected": 58,
+      "both_undetected": 98,
+      "mcnemar_chi2": 0.5682,
+      "mcnemar_p_chi2": 0.45098231926888255,
+      "mcnemar_p_exact": 0.4513808323961257,
+      "baseline_det_rate": 0.385,
+      "poisson_det_rate": 0.415
+    },
+    "21-22": {
+      "n_paired": 200,
+      "gained_b": 27,
+      "lost_c": 6,
+      "both_detected": 60,
+      "both_undetected": 107,
+      "mcnemar_chi2": 12.1212,
+      "mcnemar_p_chi2": 0.0004985148935752058,
+      "mcnemar_p_exact": 0.0003240634687244892,
+      "baseline_det_rate": 0.33,
+      "poisson_det_rate": 0.435
+    },
+    "22-23": {
+      "n_paired": 200,
+      "gained_b": 21,
+      "lost_c": 3,
+      "both_detected": 44,
+      "both_undetected": 132,
+      "mcnemar_chi2": 12.0417,
+      "mcnemar_p_chi2": 0.0005202443475902312,
+      "mcnemar_p_exact": 0.0002771615982055664,
+      "baseline_det_rate": 0.235,
+      "poisson_det_rate": 0.325
+    },
+    "23-24": {
+      "n_paired": 200,
+      "gained_b": 8,
+      "lost_c": 5,
+      "both_detected": 17,
+      "both_undetected": 170,
+      "mcnemar_chi2": 0.3077,
+      "mcnemar_p_chi2": 0.5790997419539188,
+      "mcnemar_p_exact": 0.5810546875,
+      "baseline_det_rate": 0.11,
+      "poisson_det_rate": 0.125
+    },
+    "24-25": {
+      "n_paired": 200,
+      "gained_b": 0,
+      "lost_c": 1,
+      "both_detected": 3,
+      "both_undetected": 196,
+      "mcnemar_chi2": 0.0,
+      "mcnemar_p_chi2": 1.0,
+      "mcnemar_p_exact": 1.0,
+      "baseline_det_rate": 0.02,
+      "poisson_det_rate": 0.015
+    },
+    "25-26": {
+      "n_paired": 200,
+      "gained_b": 1,
+      "lost_c": 1,
+      "both_detected": 0,
+      "both_undetected": 198,
+      "mcnemar_chi2": 0.5,
+      "mcnemar_p_chi2": 0.47950012218695337,
+      "mcnemar_p_exact": 1.0,
+      "baseline_det_rate": 0.005,
+      "poisson_det_rate": 0.005
+    }
+  },
+  "aggregate_20_23": {
+    "bins_included": [
+      "20-21",
+      "21-22",
+      "22-23"
+    ],
+    "total_gained": 73,
+    "total_lost": 28,
+    "mcnemar_chi2": 19.1683,
+    "mcnemar_p_chi2": 1.1968347738990216e-05,
+    "mcnemar_p_exact": 8.635781314660544e-06
+  },
+  "aggregate_all": {
+    "bins_included": [
+      "18-19",
+      "19-20",
+      "20-21",
+      "21-22",
+      "22-23",
+      "23-24",
+      "24-25",
+      "25-26"
+    ],
+    "total_gained": 100,
+    "total_lost": 53,
+    "mcnemar_chi2": 13.8301,
+    "mcnemar_p_chi2": 0.000200108412008214,
+    "mcnemar_p_exact": 0.00017985288236372864
+  }
+}
