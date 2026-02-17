@@ -1,0 +1,102 @@
+{
+  "timestamp_utc": "2026-02-17T08:54:14.267644+00:00",
+  "version": "v4_large_cutouts",
+  "rng_seed": 42,
+  "description": "4-row x 3-col layout at 7-inch width (MNRAS textwidth): (a) 6 randomly sampled real Tier-A lenses sorted by r-mag, (b) 6 randomly sampled injections (2 per theta_E). No pairing or brightness matching.",
+  "target_theta_e": [
+    0.75,
+    1.5,
+    2.5
+  ],
+  "n_per_theta": 2,
+  "n_tier_a_total": 112,
+  "n_tier_a_shown": 6,
+  "panel_a_real_lenses": [
+    {
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1574p205_1976.npz",
+      "r_mag": 16.304805278778076,
+      "score": 0.4897690713405609
+    },
+    {
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0517m370_9517.npz",
+      "r_mag": 17.54219651222229,
+      "score": 0.596216082572937
+    },
+    {
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0557m285_5699.npz",
+      "r_mag": 18.045658469200134,
+      "score": 0.96656733751297
+    },
+    {
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0044m117_1809.npz",
+      "r_mag": 18.07837665081024,
+      "score": 0.9855505228042603
+    },
+    {
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0629m190_7991.npz",
+      "r_mag": 18.193173110485077,
+      "score": 0.0013463282957673073
+    },
+    {
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1401p090_3418.npz",
+      "r_mag": 18.458555042743683,
+      "score": 0.39066198468208313
+    }
+  ],
+  "panel_b_injections": {
+    "0.75": [
+      {
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00063_inj00007.npz",
+        "r_mag": 20.589568316936493,
+        "score": 1.7124527857959038e-06,
+        "theta_e": 0.75,
+        "cell_idx": 63,
+        "inj_idx": 7
+      },
+      {
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00049_inj00004.npz",
+        "r_mag": 19.134150743484497,
+        "score": 1.2452112969185691e-05,
+        "theta_e": 0.75,
+        "cell_idx": 49,
+        "inj_idx": 4
+      }
+    ],
+    "1.5": [
+      {
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00160_inj00000.npz",
+        "r_mag": 18.081032037734985,
+        "score": 2.3947732188389637e-06,
+        "theta_e": 1.5,
+        "cell_idx": 160,
+        "inj_idx": 0
+      },
+      {
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00140_inj00006.npz",
+        "r_mag": 19.759415090084076,
+        "score": 1.1796460967161693e-05,
+        "theta_e": 1.5,
+        "cell_idx": 140,
+        "inj_idx": 6
+      }
+    ],
+    "2.5": [
+      {
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00305_inj00005.npz",
+        "r_mag": 18.55833500623703,
+        "score": 0.00010178131924476475,
+        "theta_e": 2.5,
+        "cell_idx": 305,
+        "inj_idx": 5
+      },
+      {
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00310_inj00009.npz",
+        "r_mag": 18.904721438884735,
+        "score": 0.004065391141921282,
+        "theta_e": 2.5,
+        "cell_idx": 310,
+        "inj_idx": 9
+      }
+    ]
+  }
+}

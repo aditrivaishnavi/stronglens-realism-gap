@@ -1,0 +1,2387 @@
+{
+  "timestamp_utc": "2026-02-17T09:15:51.500991+00:00",
+  "real_lenses": [
+    {
+      "uid": "REAL_001",
+      "thumb": "thumbs/REAL_001.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0008m627_3575.npz",
+      "r_mag": 18.48,
+      "score": 0.0325
+    },
+    {
+      "uid": "REAL_002",
+      "thumb": "thumbs/REAL_002.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0019m325_10322.npz",
+      "r_mag": 17.07,
+      "score": 0.9951
+    },
+    {
+      "uid": "REAL_003",
+      "thumb": "thumbs/REAL_003.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0033m562_4746.npz",
+      "r_mag": 19.9,
+      "score": 0.9981
+    },
+    {
+      "uid": "REAL_004",
+      "thumb": "thumbs/REAL_004.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0037m135_2121.npz",
+      "r_mag": 17.67,
+      "score": 0.9471
+    },
+    {
+      "uid": "REAL_005",
+      "thumb": "thumbs/REAL_005.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0044m117_1809.npz",
+      "r_mag": 18.08,
+      "score": 0.9856
+    },
+    {
+      "uid": "REAL_006",
+      "thumb": "thumbs/REAL_006.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0061m287_3421.npz",
+      "r_mag": 18.36,
+      "score": 0.9991
+    },
+    {
+      "uid": "REAL_007",
+      "thumb": "thumbs/REAL_007.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0069m485_8664.npz",
+      "r_mag": 17.07,
+      "score": 0.9994
+    },
+    {
+      "uid": "REAL_008",
+      "thumb": "thumbs/REAL_008.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0088m125_2718.npz",
+      "r_mag": 19.82,
+      "score": 0.9928
+    },
+    {
+      "uid": "REAL_009",
+      "thumb": "thumbs/REAL_009.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0103m520_10665.npz",
+      "r_mag": 17.3,
+      "score": 0.9096
+    },
+    {
+      "uid": "REAL_010",
+      "thumb": "thumbs/REAL_010.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0110m500_2642.npz",
+      "r_mag": 19.35,
+      "score": 0.9995
+    },
+    {
+      "uid": "REAL_011",
+      "thumb": "thumbs/REAL_011.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0120m327_4116.npz",
+      "r_mag": 18.38,
+      "score": 0.0022
+    },
+    {
+      "uid": "REAL_012",
+      "thumb": "thumbs/REAL_012.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0147m072_2922.npz",
+      "r_mag": 18.1,
+      "score": 0.0006
+    },
+    {
+      "uid": "REAL_013",
+      "thumb": "thumbs/REAL_013.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0164m342_12704.npz",
+      "r_mag": 16.24,
+      "score": 0.9942
+    },
+    {
+      "uid": "REAL_014",
+      "thumb": "thumbs/REAL_014.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0166p005_1255.npz",
+      "r_mag": 19.15,
+      "score": 0.9848
+    },
+    {
+      "uid": "REAL_015",
+      "thumb": "thumbs/REAL_015.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0168m315_3277.npz",
+      "r_mag": 18.15,
+      "score": 0.9943
+    },
+    {
+      "uid": "REAL_016",
+      "thumb": "thumbs/REAL_016.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0224m292_7312.npz",
+      "r_mag": 20.39,
+      "score": 0.9854
+    },
+    {
+      "uid": "REAL_017",
+      "thumb": "thumbs/REAL_017.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0248p220_629.npz",
+      "r_mag": 18.49,
+      "score": 0.9273
+    },
+    {
+      "uid": "REAL_018",
+      "thumb": "thumbs/REAL_018.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0253m142_9319.npz",
+      "r_mag": 16.26,
+      "score": 0.9985
+    },
+    {
+      "uid": "REAL_019",
+      "thumb": "thumbs/REAL_019.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0262p102_3144.npz",
+      "r_mag": 18.39,
+      "score": 0.9588
+    },
+    {
+      "uid": "REAL_020",
+      "thumb": "thumbs/REAL_020.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0273m457_7190.npz",
+      "r_mag": 18.2,
+      "score": 0.9989
+    },
+    {
+      "uid": "REAL_021",
+      "thumb": "thumbs/REAL_021.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0279m040_4819.npz",
+      "r_mag": 19.25,
+      "score": 0.9968
+    },
+    {
+      "uid": "REAL_022",
+      "thumb": "thumbs/REAL_022.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0285m325_3995.npz",
+      "r_mag": 19.58,
+      "score": 0.9969
+    },
+    {
+      "uid": "REAL_023",
+      "thumb": "thumbs/REAL_023.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0304p037_4436.npz",
+      "r_mag": 15.98,
+      "score": 0.0451
+    },
+    {
+      "uid": "REAL_024",
+      "thumb": "thumbs/REAL_024.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0312p155_2054.npz",
+      "r_mag": 18.92,
+      "score": 0.8726
+    },
+    {
+      "uid": "REAL_025",
+      "thumb": "thumbs/REAL_025.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0317m507_6868.npz",
+      "r_mag": 18.49,
+      "score": 0.9972
+    },
+    {
+      "uid": "REAL_026",
+      "thumb": "thumbs/REAL_026.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0330m600_2956.npz",
+      "r_mag": 17.28,
+      "score": 0.188
+    },
+    {
+      "uid": "REAL_027",
+      "thumb": "thumbs/REAL_027.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0358m227_2383.npz",
+      "r_mag": 19.93,
+      "score": 0.9995
+    },
+    {
+      "uid": "REAL_028",
+      "thumb": "thumbs/REAL_028.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0359m617_7061.npz",
+      "r_mag": 17.75,
+      "score": 0.9704
+    },
+    {
+      "uid": "REAL_029",
+      "thumb": "thumbs/REAL_029.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0367m242_6454.npz",
+      "r_mag": 17.31,
+      "score": 0.7366
+    },
+    {
+      "uid": "REAL_030",
+      "thumb": "thumbs/REAL_030.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0371m295_3523.npz",
+      "r_mag": 17.41,
+      "score": 0.999
+    },
+    {
+      "uid": "REAL_031",
+      "thumb": "thumbs/REAL_031.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0401m117_4082.npz",
+      "r_mag": 19.68,
+      "score": 0.8826
+    },
+    {
+      "uid": "REAL_032",
+      "thumb": "thumbs/REAL_032.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0402m057_2357.npz",
+      "r_mag": 19.08,
+      "score": 0.9994
+    },
+    {
+      "uid": "REAL_033",
+      "thumb": "thumbs/REAL_033.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0405m250_4498.npz",
+      "r_mag": 16.91,
+      "score": 0.9968
+    },
+    {
+      "uid": "REAL_034",
+      "thumb": "thumbs/REAL_034.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0432m132_4258.npz",
+      "r_mag": 17.98,
+      "score": 0.9081
+    },
+    {
+      "uid": "REAL_035",
+      "thumb": "thumbs/REAL_035.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0434m287_9151.npz",
+      "r_mag": 19.47,
+      "score": 0.9946
+    },
+    {
+      "uid": "REAL_036",
+      "thumb": "thumbs/REAL_036.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0436m042_3855.npz",
+      "r_mag": 17.7,
+      "score": 0.9998
+    },
+    {
+      "uid": "REAL_037",
+      "thumb": "thumbs/REAL_037.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0468m065_397.npz",
+      "r_mag": 17.27,
+      "score": 0.9443
+    },
+    {
+      "uid": "REAL_038",
+      "thumb": "thumbs/REAL_038.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0478m442_6842.npz",
+      "r_mag": 18.82,
+      "score": 0.9996
+    },
+    {
+      "uid": "REAL_039",
+      "thumb": "thumbs/REAL_039.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0489m600_2345.npz",
+      "r_mag": 17.88,
+      "score": 0.9971
+    },
+    {
+      "uid": "REAL_040",
+      "thumb": "thumbs/REAL_040.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0492m435_9373.npz",
+      "r_mag": 19.89,
+      "score": 0.0176
+    },
+    {
+      "uid": "REAL_041",
+      "thumb": "thumbs/REAL_041.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0517m370_9517.npz",
+      "r_mag": 17.54,
+      "score": 0.5962
+    },
+    {
+      "uid": "REAL_042",
+      "thumb": "thumbs/REAL_042.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0541m435_9788.npz",
+      "r_mag": 19.54,
+      "score": 0.9996
+    },
+    {
+      "uid": "REAL_043",
+      "thumb": "thumbs/REAL_043.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0557m285_5699.npz",
+      "r_mag": 18.05,
+      "score": 0.9666
+    },
+    {
+      "uid": "REAL_044",
+      "thumb": "thumbs/REAL_044.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0578m077_5119.npz",
+      "r_mag": 19.73,
+      "score": 0.9995
+    },
+    {
+      "uid": "REAL_045",
+      "thumb": "thumbs/REAL_045.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0601m140_10496.npz",
+      "r_mag": 18.76,
+      "score": 0.9985
+    },
+    {
+      "uid": "REAL_046",
+      "thumb": "thumbs/REAL_046.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0603m487_14239.npz",
+      "r_mag": 19.71,
+      "score": 0.9971
+    },
+    {
+      "uid": "REAL_047",
+      "thumb": "thumbs/REAL_047.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0611m270_8154.npz",
+      "r_mag": 14.64,
+      "score": 0.9932
+    },
+    {
+      "uid": "REAL_048",
+      "thumb": "thumbs/REAL_048.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0629m190_7991.npz",
+      "r_mag": 18.19,
+      "score": 0.0013
+    },
+    {
+      "uid": "REAL_049",
+      "thumb": "thumbs/REAL_049.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0647m252_10183.npz",
+      "r_mag": 17.67,
+      "score": 0.9991
+    },
+    {
+      "uid": "REAL_050",
+      "thumb": "thumbs/REAL_050.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0651m565_6433.npz",
+      "r_mag": 18.04,
+      "score": 0.9984
+    },
+    {
+      "uid": "REAL_051",
+      "thumb": "thumbs/REAL_051.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0664m577_4878.npz",
+      "r_mag": 18.17,
+      "score": 0.9986
+    },
+    {
+      "uid": "REAL_052",
+      "thumb": "thumbs/REAL_052.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0703m097_5749.npz",
+      "r_mag": 17.32,
+      "score": 0.0025
+    },
+    {
+      "uid": "REAL_053",
+      "thumb": "thumbs/REAL_053.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0747m452_7792.npz",
+      "r_mag": 17.97,
+      "score": 0.9827
+    },
+    {
+      "uid": "REAL_054",
+      "thumb": "thumbs/REAL_054.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0782m307_10246.npz",
+      "r_mag": 15.7,
+      "score": 0.9998
+    },
+    {
+      "uid": "REAL_055",
+      "thumb": "thumbs/REAL_055.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0816m190_8125.npz",
+      "r_mag": 17.92,
+      "score": 0.9996
+    },
+    {
+      "uid": "REAL_056",
+      "thumb": "thumbs/REAL_056.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0839m382_781.npz",
+      "r_mag": 19.61,
+      "score": 0.9993
+    },
+    {
+      "uid": "REAL_057",
+      "thumb": "thumbs/REAL_057.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0858m365_7505.npz",
+      "r_mag": 19.04,
+      "score": 0.9947
+    },
+    {
+      "uid": "REAL_058",
+      "thumb": "thumbs/REAL_058.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0919m590_948.npz",
+      "r_mag": 18.06,
+      "score": 0.9997
+    },
+    {
+      "uid": "REAL_059",
+      "thumb": "thumbs/REAL_059.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/0954m612_2720.npz",
+      "r_mag": 16.67,
+      "score": 0.9997
+    },
+    {
+      "uid": "REAL_060",
+      "thumb": "thumbs/REAL_060.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1162p337_3491.npz",
+      "r_mag": 16.94,
+      "score": 1.0
+    },
+    {
+      "uid": "REAL_061",
+      "thumb": "thumbs/REAL_061.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1260p150_273.npz",
+      "r_mag": 17.93,
+      "score": 0.9978
+    },
+    {
+      "uid": "REAL_062",
+      "thumb": "thumbs/REAL_062.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1336p102_2685.npz",
+      "r_mag": 16.79,
+      "score": 0.9999
+    },
+    {
+      "uid": "REAL_063",
+      "thumb": "thumbs/REAL_063.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1365p130_1842.npz",
+      "r_mag": 19.05,
+      "score": 0.9948
+    },
+    {
+      "uid": "REAL_064",
+      "thumb": "thumbs/REAL_064.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1378p142_1859.npz",
+      "r_mag": 18.11,
+      "score": 0.9993
+    },
+    {
+      "uid": "REAL_065",
+      "thumb": "thumbs/REAL_065.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1383p250_2518.npz",
+      "r_mag": 17.27,
+      "score": 0.993
+    },
+    {
+      "uid": "REAL_066",
+      "thumb": "thumbs/REAL_066.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1401p090_3418.npz",
+      "r_mag": 18.46,
+      "score": 0.3907
+    },
+    {
+      "uid": "REAL_067",
+      "thumb": "thumbs/REAL_067.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1429m067_6684.npz",
+      "r_mag": 15.99,
+      "score": 0.9526
+    },
+    {
+      "uid": "REAL_068",
+      "thumb": "thumbs/REAL_068.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1479p075_3976.npz",
+      "r_mag": 17.94,
+      "score": 0.998
+    },
+    {
+      "uid": "REAL_069",
+      "thumb": "thumbs/REAL_069.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1532p060_1071.npz",
+      "r_mag": 17.83,
+      "score": 0.9996
+    },
+    {
+      "uid": "REAL_070",
+      "thumb": "thumbs/REAL_070.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1574p205_1976.npz",
+      "r_mag": 16.3,
+      "score": 0.4898
+    },
+    {
+      "uid": "REAL_071",
+      "thumb": "thumbs/REAL_071.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1575m067_11755.npz",
+      "r_mag": 18.29,
+      "score": 0.9996
+    },
+    {
+      "uid": "REAL_072",
+      "thumb": "thumbs/REAL_072.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1601m010_7664.npz",
+      "r_mag": 16.49,
+      "score": 0.9996
+    },
+    {
+      "uid": "REAL_073",
+      "thumb": "thumbs/REAL_073.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1611p312_1573.npz",
+      "r_mag": 18.91,
+      "score": 0.9845
+    },
+    {
+      "uid": "REAL_074",
+      "thumb": "thumbs/REAL_074.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1700p147_1110.npz",
+      "r_mag": 18.53,
+      "score": 0.9661
+    },
+    {
+      "uid": "REAL_075",
+      "thumb": "thumbs/REAL_075.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1768p335_1574.npz",
+      "r_mag": 16.56,
+      "score": 0.9999
+    },
+    {
+      "uid": "REAL_076",
+      "thumb": "thumbs/REAL_076.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1829p275_5724.npz",
+      "r_mag": 17.48,
+      "score": 0.9908
+    },
+    {
+      "uid": "REAL_077",
+      "thumb": "thumbs/REAL_077.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1863m005_2887.npz",
+      "r_mag": 17.47,
+      "score": 0.3123
+    },
+    {
+      "uid": "REAL_078",
+      "thumb": "thumbs/REAL_078.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1869m070_610.npz",
+      "r_mag": 19.35,
+      "score": 0.0105
+    },
+    {
+      "uid": "REAL_079",
+      "thumb": "thumbs/REAL_079.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1869p175_671.npz",
+      "r_mag": 16.74,
+      "score": 0.9605
+    },
+    {
+      "uid": "REAL_080",
+      "thumb": "thumbs/REAL_080.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1901p127_101.npz",
+      "r_mag": 16.81,
+      "score": 0.3049
+    },
+    {
+      "uid": "REAL_081",
+      "thumb": "thumbs/REAL_081.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1923p032_10192.npz",
+      "r_mag": 18.12,
+      "score": 0.9989
+    },
+    {
+      "uid": "REAL_082",
+      "thumb": "thumbs/REAL_082.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1964p230_3690.npz",
+      "r_mag": 18.43,
+      "score": 0.9998
+    },
+    {
+      "uid": "REAL_083",
+      "thumb": "thumbs/REAL_083.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/1982p080_2626.npz",
+      "r_mag": 18.55,
+      "score": 0.9814
+    },
+    {
+      "uid": "REAL_084",
+      "thumb": "thumbs/REAL_084.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/2002p067_1702.npz",
+      "r_mag": 20.11,
+      "score": 0.9146
+    },
+    {
+      "uid": "REAL_085",
+      "thumb": "thumbs/REAL_085.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/2053p200_4743.npz",
+      "r_mag": 17.9,
+      "score": 0.9371
+    },
+    {
+      "uid": "REAL_086",
+      "thumb": "thumbs/REAL_086.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/2061p162_515.npz",
+      "r_mag": 18.88,
+      "score": 0.1504
+    },
+    {
+      "uid": "REAL_087",
+      "thumb": "thumbs/REAL_087.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/2117p087_1692.npz",
+      "r_mag": 19.18,
+      "score": 0.0405
+    },
+    {
+      "uid": "REAL_088",
+      "thumb": "thumbs/REAL_088.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/2169p082_2714.npz",
+      "r_mag": 18.38,
+      "score": 0.9983
+    },
+    {
+      "uid": "REAL_089",
+      "thumb": "thumbs/REAL_089.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/2181m072_5806.npz",
+      "r_mag": 16.42,
+      "score": 0.9996
+    },
+    {
+      "uid": "REAL_090",
+      "thumb": "thumbs/REAL_090.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/2213p280_2725.npz",
+      "r_mag": 17.59,
+      "score": 0.4747
+    },
+    {
+      "uid": "REAL_091",
+      "thumb": "thumbs/REAL_091.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/2328m002_4389.npz",
+      "r_mag": 19.12,
+      "score": 0.7081
+    },
+    {
+      "uid": "REAL_092",
+      "thumb": "thumbs/REAL_092.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/2458p215_749.npz",
+      "r_mag": 19.09,
+      "score": 0.996
+    },
+    {
+      "uid": "REAL_093",
+      "thumb": "thumbs/REAL_093.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/2461p015_292.npz",
+      "r_mag": 19.55,
+      "score": 0.998
+    },
+    {
+      "uid": "REAL_094",
+      "thumb": "thumbs/REAL_094.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/2532p270_4037.npz",
+      "r_mag": 19.23,
+      "score": 0.9992
+    },
+    {
+      "uid": "REAL_095",
+      "thumb": "thumbs/REAL_095.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3153m437_6882.npz",
+      "r_mag": 19.07,
+      "score": 0.0024
+    },
+    {
+      "uid": "REAL_096",
+      "thumb": "thumbs/REAL_096.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3181m017_1911.npz",
+      "r_mag": 16.81,
+      "score": 0.9996
+    },
+    {
+      "uid": "REAL_097",
+      "thumb": "thumbs/REAL_097.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3211m615_4345.npz",
+      "r_mag": 18.53,
+      "score": 0.9861
+    },
+    {
+      "uid": "REAL_098",
+      "thumb": "thumbs/REAL_098.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3265m440_13042.npz",
+      "r_mag": 18.89,
+      "score": 0.9817
+    },
+    {
+      "uid": "REAL_099",
+      "thumb": "thumbs/REAL_099.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3296p030_4539.npz",
+      "r_mag": 17.32,
+      "score": 0.9998
+    },
+    {
+      "uid": "REAL_100",
+      "thumb": "thumbs/REAL_100.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3357m635_8197.npz",
+      "r_mag": 17.98,
+      "score": 0.9938
+    },
+    {
+      "uid": "REAL_101",
+      "thumb": "thumbs/REAL_101.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3398m045_4055.npz",
+      "r_mag": 18.65,
+      "score": 0.9997
+    },
+    {
+      "uid": "REAL_102",
+      "thumb": "thumbs/REAL_102.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3412m592_3183.npz",
+      "r_mag": 19.83,
+      "score": 0.9991
+    },
+    {
+      "uid": "REAL_103",
+      "thumb": "thumbs/REAL_103.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3494m110_5794.npz",
+      "r_mag": 19.32,
+      "score": 0.999
+    },
+    {
+      "uid": "REAL_104",
+      "thumb": "thumbs/REAL_104.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3499m545_18610.npz",
+      "r_mag": 17.56,
+      "score": 0.9991
+    },
+    {
+      "uid": "REAL_105",
+      "thumb": "thumbs/REAL_105.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3500m402_1948.npz",
+      "r_mag": 18.01,
+      "score": 0.9977
+    },
+    {
+      "uid": "REAL_106",
+      "thumb": "thumbs/REAL_106.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3511m145_85.npz",
+      "r_mag": 18.18,
+      "score": 0.8101
+    },
+    {
+      "uid": "REAL_107",
+      "thumb": "thumbs/REAL_107.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3518p205_379.npz",
+      "r_mag": 21.12,
+      "score": 0.472
+    },
+    {
+      "uid": "REAL_108",
+      "thumb": "thumbs/REAL_108.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3531m507_1305.npz",
+      "r_mag": 18.05,
+      "score": 0.6609
+    },
+    {
+      "uid": "REAL_109",
+      "thumb": "thumbs/REAL_109.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3534m145_4338.npz",
+      "r_mag": 18.89,
+      "score": 0.9981
+    },
+    {
+      "uid": "REAL_110",
+      "thumb": "thumbs/REAL_110.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3558m467_670.npz",
+      "r_mag": 16.96,
+      "score": 0.992
+    },
+    {
+      "uid": "REAL_111",
+      "thumb": "thumbs/REAL_111.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3597m615_5855.npz",
+      "r_mag": 17.11,
+      "score": 0.9999
+    },
+    {
+      "uid": "REAL_112",
+      "thumb": "thumbs/REAL_112.png",
+      "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/cutouts/positives/3598m002_3444.npz",
+      "r_mag": 18.73,
+      "score": 0.5627
+    }
+  ],
+  "injections": {
+    "0.75": [
+      {
+        "uid": "INJ_075_001",
+        "thumb": "thumbs/INJ_075_001.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00035_inj00000.npz",
+        "r_mag": 17.54,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 35,
+        "inj_idx": 0
+      },
+      {
+        "uid": "INJ_075_002",
+        "thumb": "thumbs/INJ_075_002.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00035_inj00001.npz",
+        "r_mag": 20.52,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 35,
+        "inj_idx": 1
+      },
+      {
+        "uid": "INJ_075_003",
+        "thumb": "thumbs/INJ_075_003.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00035_inj00002.npz",
+        "r_mag": 19.07,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 35,
+        "inj_idx": 2
+      },
+      {
+        "uid": "INJ_075_004",
+        "thumb": "thumbs/INJ_075_004.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00035_inj00003.npz",
+        "r_mag": 17.55,
+        "score": 0.0002,
+        "theta_e": 0.75,
+        "cell_idx": 35,
+        "inj_idx": 3
+      },
+      {
+        "uid": "INJ_075_005",
+        "thumb": "thumbs/INJ_075_005.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00035_inj00004.npz",
+        "r_mag": 18.91,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 35,
+        "inj_idx": 4
+      },
+      {
+        "uid": "INJ_075_006",
+        "thumb": "thumbs/INJ_075_006.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00035_inj00005.npz",
+        "r_mag": 18.0,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 35,
+        "inj_idx": 5
+      },
+      {
+        "uid": "INJ_075_007",
+        "thumb": "thumbs/INJ_075_007.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00035_inj00006.npz",
+        "r_mag": 18.35,
+        "score": 0.0011,
+        "theta_e": 0.75,
+        "cell_idx": 35,
+        "inj_idx": 6
+      },
+      {
+        "uid": "INJ_075_008",
+        "thumb": "thumbs/INJ_075_008.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00035_inj00007.npz",
+        "r_mag": 18.01,
+        "score": 0.0001,
+        "theta_e": 0.75,
+        "cell_idx": 35,
+        "inj_idx": 7
+      },
+      {
+        "uid": "INJ_075_009",
+        "thumb": "thumbs/INJ_075_009.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00035_inj00008.npz",
+        "r_mag": 19.5,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 35,
+        "inj_idx": 8
+      },
+      {
+        "uid": "INJ_075_010",
+        "thumb": "thumbs/INJ_075_010.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00035_inj00009.npz",
+        "r_mag": 19.64,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 35,
+        "inj_idx": 9
+      },
+      {
+        "uid": "INJ_075_011",
+        "thumb": "thumbs/INJ_075_011.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00039_inj00000.npz",
+        "r_mag": 19.96,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 39,
+        "inj_idx": 0
+      },
+      {
+        "uid": "INJ_075_012",
+        "thumb": "thumbs/INJ_075_012.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00039_inj00001.npz",
+        "r_mag": 19.95,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 39,
+        "inj_idx": 1
+      },
+      {
+        "uid": "INJ_075_013",
+        "thumb": "thumbs/INJ_075_013.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00039_inj00002.npz",
+        "r_mag": 19.99,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 39,
+        "inj_idx": 2
+      },
+      {
+        "uid": "INJ_075_014",
+        "thumb": "thumbs/INJ_075_014.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00039_inj00003.npz",
+        "r_mag": 19.97,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 39,
+        "inj_idx": 3
+      },
+      {
+        "uid": "INJ_075_015",
+        "thumb": "thumbs/INJ_075_015.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00039_inj00004.npz",
+        "r_mag": 19.98,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 39,
+        "inj_idx": 4
+      },
+      {
+        "uid": "INJ_075_016",
+        "thumb": "thumbs/INJ_075_016.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00039_inj00005.npz",
+        "r_mag": 19.83,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 39,
+        "inj_idx": 5
+      },
+      {
+        "uid": "INJ_075_017",
+        "thumb": "thumbs/INJ_075_017.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00039_inj00006.npz",
+        "r_mag": 19.91,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 39,
+        "inj_idx": 6
+      },
+      {
+        "uid": "INJ_075_018",
+        "thumb": "thumbs/INJ_075_018.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00039_inj00007.npz",
+        "r_mag": 19.96,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 39,
+        "inj_idx": 7
+      },
+      {
+        "uid": "INJ_075_019",
+        "thumb": "thumbs/INJ_075_019.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00039_inj00008.npz",
+        "r_mag": 19.74,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 39,
+        "inj_idx": 8
+      },
+      {
+        "uid": "INJ_075_020",
+        "thumb": "thumbs/INJ_075_020.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00039_inj00009.npz",
+        "r_mag": 19.98,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 39,
+        "inj_idx": 9
+      },
+      {
+        "uid": "INJ_075_021",
+        "thumb": "thumbs/INJ_075_021.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00040_inj00000.npz",
+        "r_mag": 18.47,
+        "score": 0.0004,
+        "theta_e": 0.75,
+        "cell_idx": 40,
+        "inj_idx": 0
+      },
+      {
+        "uid": "INJ_075_022",
+        "thumb": "thumbs/INJ_075_022.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00040_inj00001.npz",
+        "r_mag": 21.08,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 40,
+        "inj_idx": 1
+      },
+      {
+        "uid": "INJ_075_023",
+        "thumb": "thumbs/INJ_075_023.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00040_inj00002.npz",
+        "r_mag": 21.1,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 40,
+        "inj_idx": 2
+      },
+      {
+        "uid": "INJ_075_024",
+        "thumb": "thumbs/INJ_075_024.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00040_inj00003.npz",
+        "r_mag": 19.37,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 40,
+        "inj_idx": 3
+      },
+      {
+        "uid": "INJ_075_025",
+        "thumb": "thumbs/INJ_075_025.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00040_inj00004.npz",
+        "r_mag": 20.91,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 40,
+        "inj_idx": 4
+      },
+      {
+        "uid": "INJ_075_026",
+        "thumb": "thumbs/INJ_075_026.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00040_inj00005.npz",
+        "r_mag": 19.07,
+        "score": 0.0001,
+        "theta_e": 0.75,
+        "cell_idx": 40,
+        "inj_idx": 5
+      },
+      {
+        "uid": "INJ_075_027",
+        "thumb": "thumbs/INJ_075_027.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00040_inj00006.npz",
+        "r_mag": 21.06,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 40,
+        "inj_idx": 6
+      },
+      {
+        "uid": "INJ_075_028",
+        "thumb": "thumbs/INJ_075_028.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00040_inj00007.npz",
+        "r_mag": 20.69,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 40,
+        "inj_idx": 7
+      },
+      {
+        "uid": "INJ_075_029",
+        "thumb": "thumbs/INJ_075_029.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00040_inj00008.npz",
+        "r_mag": 18.53,
+        "score": 0.0018,
+        "theta_e": 0.75,
+        "cell_idx": 40,
+        "inj_idx": 8
+      },
+      {
+        "uid": "INJ_075_030",
+        "thumb": "thumbs/INJ_075_030.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00040_inj00009.npz",
+        "r_mag": 19.35,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 40,
+        "inj_idx": 9
+      },
+      {
+        "uid": "INJ_075_031",
+        "thumb": "thumbs/INJ_075_031.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00044_inj00000.npz",
+        "r_mag": 20.19,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 44,
+        "inj_idx": 0
+      },
+      {
+        "uid": "INJ_075_032",
+        "thumb": "thumbs/INJ_075_032.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00044_inj00001.npz",
+        "r_mag": 18.63,
+        "score": 0.0002,
+        "theta_e": 0.75,
+        "cell_idx": 44,
+        "inj_idx": 1
+      },
+      {
+        "uid": "INJ_075_033",
+        "thumb": "thumbs/INJ_075_033.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00044_inj00002.npz",
+        "r_mag": 16.46,
+        "score": 0.0002,
+        "theta_e": 0.75,
+        "cell_idx": 44,
+        "inj_idx": 2
+      },
+      {
+        "uid": "INJ_075_034",
+        "thumb": "thumbs/INJ_075_034.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00044_inj00003.npz",
+        "r_mag": 17.06,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 44,
+        "inj_idx": 3
+      },
+      {
+        "uid": "INJ_075_035",
+        "thumb": "thumbs/INJ_075_035.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00044_inj00004.npz",
+        "r_mag": 18.5,
+        "score": 0.0001,
+        "theta_e": 0.75,
+        "cell_idx": 44,
+        "inj_idx": 4
+      },
+      {
+        "uid": "INJ_075_036",
+        "thumb": "thumbs/INJ_075_036.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00044_inj00005.npz",
+        "r_mag": 18.69,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 44,
+        "inj_idx": 5
+      },
+      {
+        "uid": "INJ_075_037",
+        "thumb": "thumbs/INJ_075_037.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00044_inj00006.npz",
+        "r_mag": 18.76,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 44,
+        "inj_idx": 6
+      },
+      {
+        "uid": "INJ_075_038",
+        "thumb": "thumbs/INJ_075_038.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00044_inj00007.npz",
+        "r_mag": 20.36,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 44,
+        "inj_idx": 7
+      },
+      {
+        "uid": "INJ_075_039",
+        "thumb": "thumbs/INJ_075_039.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00044_inj00008.npz",
+        "r_mag": 17.64,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 44,
+        "inj_idx": 8
+      },
+      {
+        "uid": "INJ_075_040",
+        "thumb": "thumbs/INJ_075_040.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00044_inj00009.npz",
+        "r_mag": 19.21,
+        "score": 0.0009,
+        "theta_e": 0.75,
+        "cell_idx": 44,
+        "inj_idx": 9
+      },
+      {
+        "uid": "INJ_075_041",
+        "thumb": "thumbs/INJ_075_041.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00045_inj00000.npz",
+        "r_mag": 21.3,
+        "score": 0.0001,
+        "theta_e": 0.75,
+        "cell_idx": 45,
+        "inj_idx": 0
+      },
+      {
+        "uid": "INJ_075_042",
+        "thumb": "thumbs/INJ_075_042.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00045_inj00001.npz",
+        "r_mag": 17.11,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 45,
+        "inj_idx": 1
+      },
+      {
+        "uid": "INJ_075_043",
+        "thumb": "thumbs/INJ_075_043.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00045_inj00002.npz",
+        "r_mag": 19.81,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 45,
+        "inj_idx": 2
+      },
+      {
+        "uid": "INJ_075_044",
+        "thumb": "thumbs/INJ_075_044.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00045_inj00003.npz",
+        "r_mag": 19.5,
+        "score": 0.0001,
+        "theta_e": 0.75,
+        "cell_idx": 45,
+        "inj_idx": 3
+      },
+      {
+        "uid": "INJ_075_045",
+        "thumb": "thumbs/INJ_075_045.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00045_inj00004.npz",
+        "r_mag": 19.69,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 45,
+        "inj_idx": 4
+      },
+      {
+        "uid": "INJ_075_046",
+        "thumb": "thumbs/INJ_075_046.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00045_inj00005.npz",
+        "r_mag": 19.38,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 45,
+        "inj_idx": 5
+      },
+      {
+        "uid": "INJ_075_047",
+        "thumb": "thumbs/INJ_075_047.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00045_inj00006.npz",
+        "r_mag": 18.94,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 45,
+        "inj_idx": 6
+      },
+      {
+        "uid": "INJ_075_048",
+        "thumb": "thumbs/INJ_075_048.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00045_inj00007.npz",
+        "r_mag": 19.75,
+        "score": 0.0001,
+        "theta_e": 0.75,
+        "cell_idx": 45,
+        "inj_idx": 7
+      },
+      {
+        "uid": "INJ_075_049",
+        "thumb": "thumbs/INJ_075_049.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00045_inj00008.npz",
+        "r_mag": 18.59,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 45,
+        "inj_idx": 8
+      },
+      {
+        "uid": "INJ_075_050",
+        "thumb": "thumbs/INJ_075_050.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00045_inj00009.npz",
+        "r_mag": 18.94,
+        "score": 0.0,
+        "theta_e": 0.75,
+        "cell_idx": 45,
+        "inj_idx": 9
+      }
+    ],
+    "1.5": [
+      {
+        "uid": "INJ_15_001",
+        "thumb": "thumbs/INJ_15_001.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00140_inj00000.npz",
+        "r_mag": 18.38,
+        "score": 0.0299,
+        "theta_e": 1.5,
+        "cell_idx": 140,
+        "inj_idx": 0
+      },
+      {
+        "uid": "INJ_15_002",
+        "thumb": "thumbs/INJ_15_002.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00140_inj00001.npz",
+        "r_mag": 20.45,
+        "score": 0.0002,
+        "theta_e": 1.5,
+        "cell_idx": 140,
+        "inj_idx": 1
+      },
+      {
+        "uid": "INJ_15_003",
+        "thumb": "thumbs/INJ_15_003.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00140_inj00002.npz",
+        "r_mag": 19.18,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 140,
+        "inj_idx": 2
+      },
+      {
+        "uid": "INJ_15_004",
+        "thumb": "thumbs/INJ_15_004.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00140_inj00003.npz",
+        "r_mag": 18.04,
+        "score": 0.0003,
+        "theta_e": 1.5,
+        "cell_idx": 140,
+        "inj_idx": 3
+      },
+      {
+        "uid": "INJ_15_005",
+        "thumb": "thumbs/INJ_15_005.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00140_inj00004.npz",
+        "r_mag": 19.58,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 140,
+        "inj_idx": 4
+      },
+      {
+        "uid": "INJ_15_006",
+        "thumb": "thumbs/INJ_15_006.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00140_inj00005.npz",
+        "r_mag": 19.93,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 140,
+        "inj_idx": 5
+      },
+      {
+        "uid": "INJ_15_007",
+        "thumb": "thumbs/INJ_15_007.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00140_inj00006.npz",
+        "r_mag": 19.76,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 140,
+        "inj_idx": 6
+      },
+      {
+        "uid": "INJ_15_008",
+        "thumb": "thumbs/INJ_15_008.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00140_inj00007.npz",
+        "r_mag": 19.37,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 140,
+        "inj_idx": 7
+      },
+      {
+        "uid": "INJ_15_009",
+        "thumb": "thumbs/INJ_15_009.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00140_inj00008.npz",
+        "r_mag": 19.84,
+        "score": 0.3013,
+        "theta_e": 1.5,
+        "cell_idx": 140,
+        "inj_idx": 8
+      },
+      {
+        "uid": "INJ_15_010",
+        "thumb": "thumbs/INJ_15_010.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00140_inj00009.npz",
+        "r_mag": 19.69,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 140,
+        "inj_idx": 9
+      },
+      {
+        "uid": "INJ_15_011",
+        "thumb": "thumbs/INJ_15_011.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00144_inj00000.npz",
+        "r_mag": 19.92,
+        "score": 0.0001,
+        "theta_e": 1.5,
+        "cell_idx": 144,
+        "inj_idx": 0
+      },
+      {
+        "uid": "INJ_15_012",
+        "thumb": "thumbs/INJ_15_012.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00144_inj00001.npz",
+        "r_mag": 19.96,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 144,
+        "inj_idx": 1
+      },
+      {
+        "uid": "INJ_15_013",
+        "thumb": "thumbs/INJ_15_013.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00144_inj00002.npz",
+        "r_mag": 19.74,
+        "score": 0.027,
+        "theta_e": 1.5,
+        "cell_idx": 144,
+        "inj_idx": 2
+      },
+      {
+        "uid": "INJ_15_014",
+        "thumb": "thumbs/INJ_15_014.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00144_inj00003.npz",
+        "r_mag": 19.91,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 144,
+        "inj_idx": 3
+      },
+      {
+        "uid": "INJ_15_015",
+        "thumb": "thumbs/INJ_15_015.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00144_inj00004.npz",
+        "r_mag": 19.99,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 144,
+        "inj_idx": 4
+      },
+      {
+        "uid": "INJ_15_016",
+        "thumb": "thumbs/INJ_15_016.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00144_inj00005.npz",
+        "r_mag": 19.63,
+        "score": 0.8452,
+        "theta_e": 1.5,
+        "cell_idx": 144,
+        "inj_idx": 5
+      },
+      {
+        "uid": "INJ_15_017",
+        "thumb": "thumbs/INJ_15_017.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00144_inj00006.npz",
+        "r_mag": 19.7,
+        "score": 0.1842,
+        "theta_e": 1.5,
+        "cell_idx": 144,
+        "inj_idx": 6
+      },
+      {
+        "uid": "INJ_15_018",
+        "thumb": "thumbs/INJ_15_018.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00144_inj00007.npz",
+        "r_mag": 19.65,
+        "score": 0.0004,
+        "theta_e": 1.5,
+        "cell_idx": 144,
+        "inj_idx": 7
+      },
+      {
+        "uid": "INJ_15_019",
+        "thumb": "thumbs/INJ_15_019.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00144_inj00008.npz",
+        "r_mag": 19.95,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 144,
+        "inj_idx": 8
+      },
+      {
+        "uid": "INJ_15_020",
+        "thumb": "thumbs/INJ_15_020.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00144_inj00009.npz",
+        "r_mag": 19.77,
+        "score": 0.0002,
+        "theta_e": 1.5,
+        "cell_idx": 144,
+        "inj_idx": 9
+      },
+      {
+        "uid": "INJ_15_021",
+        "thumb": "thumbs/INJ_15_021.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00145_inj00000.npz",
+        "r_mag": 19.18,
+        "score": 0.0521,
+        "theta_e": 1.5,
+        "cell_idx": 145,
+        "inj_idx": 0
+      },
+      {
+        "uid": "INJ_15_022",
+        "thumb": "thumbs/INJ_15_022.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00145_inj00001.npz",
+        "r_mag": 19.32,
+        "score": 0.7498,
+        "theta_e": 1.5,
+        "cell_idx": 145,
+        "inj_idx": 1
+      },
+      {
+        "uid": "INJ_15_023",
+        "thumb": "thumbs/INJ_15_023.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00145_inj00002.npz",
+        "r_mag": 18.46,
+        "score": 0.0008,
+        "theta_e": 1.5,
+        "cell_idx": 145,
+        "inj_idx": 2
+      },
+      {
+        "uid": "INJ_15_024",
+        "thumb": "thumbs/INJ_15_024.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00145_inj00003.npz",
+        "r_mag": 19.92,
+        "score": 0.0004,
+        "theta_e": 1.5,
+        "cell_idx": 145,
+        "inj_idx": 3
+      },
+      {
+        "uid": "INJ_15_025",
+        "thumb": "thumbs/INJ_15_025.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00145_inj00004.npz",
+        "r_mag": 18.46,
+        "score": 0.0008,
+        "theta_e": 1.5,
+        "cell_idx": 145,
+        "inj_idx": 4
+      },
+      {
+        "uid": "INJ_15_026",
+        "thumb": "thumbs/INJ_15_026.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00145_inj00005.npz",
+        "r_mag": 21.1,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 145,
+        "inj_idx": 5
+      },
+      {
+        "uid": "INJ_15_027",
+        "thumb": "thumbs/INJ_15_027.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00145_inj00006.npz",
+        "r_mag": 19.71,
+        "score": 0.0001,
+        "theta_e": 1.5,
+        "cell_idx": 145,
+        "inj_idx": 6
+      },
+      {
+        "uid": "INJ_15_028",
+        "thumb": "thumbs/INJ_15_028.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00145_inj00007.npz",
+        "r_mag": 18.45,
+        "score": 0.0009,
+        "theta_e": 1.5,
+        "cell_idx": 145,
+        "inj_idx": 7
+      },
+      {
+        "uid": "INJ_15_029",
+        "thumb": "thumbs/INJ_15_029.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00145_inj00008.npz",
+        "r_mag": 20.74,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 145,
+        "inj_idx": 8
+      },
+      {
+        "uid": "INJ_15_030",
+        "thumb": "thumbs/INJ_15_030.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00145_inj00009.npz",
+        "r_mag": 19.67,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 145,
+        "inj_idx": 9
+      },
+      {
+        "uid": "INJ_15_031",
+        "thumb": "thumbs/INJ_15_031.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00149_inj00000.npz",
+        "r_mag": 18.12,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 149,
+        "inj_idx": 0
+      },
+      {
+        "uid": "INJ_15_032",
+        "thumb": "thumbs/INJ_15_032.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00149_inj00001.npz",
+        "r_mag": 19.92,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 149,
+        "inj_idx": 1
+      },
+      {
+        "uid": "INJ_15_033",
+        "thumb": "thumbs/INJ_15_033.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00149_inj00002.npz",
+        "r_mag": 18.16,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 149,
+        "inj_idx": 2
+      },
+      {
+        "uid": "INJ_15_034",
+        "thumb": "thumbs/INJ_15_034.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00149_inj00003.npz",
+        "r_mag": 18.45,
+        "score": 0.0005,
+        "theta_e": 1.5,
+        "cell_idx": 149,
+        "inj_idx": 3
+      },
+      {
+        "uid": "INJ_15_035",
+        "thumb": "thumbs/INJ_15_035.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00149_inj00004.npz",
+        "r_mag": 19.02,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 149,
+        "inj_idx": 4
+      },
+      {
+        "uid": "INJ_15_036",
+        "thumb": "thumbs/INJ_15_036.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00149_inj00005.npz",
+        "r_mag": 19.71,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 149,
+        "inj_idx": 5
+      },
+      {
+        "uid": "INJ_15_037",
+        "thumb": "thumbs/INJ_15_037.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00149_inj00006.npz",
+        "r_mag": 19.38,
+        "score": 0.0002,
+        "theta_e": 1.5,
+        "cell_idx": 149,
+        "inj_idx": 6
+      },
+      {
+        "uid": "INJ_15_038",
+        "thumb": "thumbs/INJ_15_038.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00149_inj00007.npz",
+        "r_mag": 19.29,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 149,
+        "inj_idx": 7
+      },
+      {
+        "uid": "INJ_15_039",
+        "thumb": "thumbs/INJ_15_039.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00149_inj00008.npz",
+        "r_mag": 20.04,
+        "score": 0.394,
+        "theta_e": 1.5,
+        "cell_idx": 149,
+        "inj_idx": 8
+      },
+      {
+        "uid": "INJ_15_040",
+        "thumb": "thumbs/INJ_15_040.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00149_inj00009.npz",
+        "r_mag": 17.38,
+        "score": 0.0001,
+        "theta_e": 1.5,
+        "cell_idx": 149,
+        "inj_idx": 9
+      },
+      {
+        "uid": "INJ_15_041",
+        "thumb": "thumbs/INJ_15_041.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00150_inj00000.npz",
+        "r_mag": 16.52,
+        "score": 0.0003,
+        "theta_e": 1.5,
+        "cell_idx": 150,
+        "inj_idx": 0
+      },
+      {
+        "uid": "INJ_15_042",
+        "thumb": "thumbs/INJ_15_042.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00150_inj00001.npz",
+        "r_mag": 19.86,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 150,
+        "inj_idx": 1
+      },
+      {
+        "uid": "INJ_15_043",
+        "thumb": "thumbs/INJ_15_043.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00150_inj00003.npz",
+        "r_mag": 18.59,
+        "score": 0.0181,
+        "theta_e": 1.5,
+        "cell_idx": 150,
+        "inj_idx": 3
+      },
+      {
+        "uid": "INJ_15_044",
+        "thumb": "thumbs/INJ_15_044.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00150_inj00004.npz",
+        "r_mag": 18.37,
+        "score": 0.1533,
+        "theta_e": 1.5,
+        "cell_idx": 150,
+        "inj_idx": 4
+      },
+      {
+        "uid": "INJ_15_045",
+        "thumb": "thumbs/INJ_15_045.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00150_inj00005.npz",
+        "r_mag": 18.95,
+        "score": 0.0001,
+        "theta_e": 1.5,
+        "cell_idx": 150,
+        "inj_idx": 5
+      },
+      {
+        "uid": "INJ_15_046",
+        "thumb": "thumbs/INJ_15_046.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00150_inj00006.npz",
+        "r_mag": 19.16,
+        "score": 0.0001,
+        "theta_e": 1.5,
+        "cell_idx": 150,
+        "inj_idx": 6
+      },
+      {
+        "uid": "INJ_15_047",
+        "thumb": "thumbs/INJ_15_047.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00150_inj00007.npz",
+        "r_mag": 19.82,
+        "score": 0.0001,
+        "theta_e": 1.5,
+        "cell_idx": 150,
+        "inj_idx": 7
+      },
+      {
+        "uid": "INJ_15_048",
+        "thumb": "thumbs/INJ_15_048.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00150_inj00008.npz",
+        "r_mag": 20.11,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 150,
+        "inj_idx": 8
+      },
+      {
+        "uid": "INJ_15_049",
+        "thumb": "thumbs/INJ_15_049.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00150_inj00009.npz",
+        "r_mag": 20.35,
+        "score": 0.0001,
+        "theta_e": 1.5,
+        "cell_idx": 150,
+        "inj_idx": 9
+      },
+      {
+        "uid": "INJ_15_050",
+        "thumb": "thumbs/INJ_15_050.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00153_inj00000.npz",
+        "r_mag": 18.52,
+        "score": 0.0096,
+        "theta_e": 1.5,
+        "cell_idx": 153,
+        "inj_idx": 0
+      },
+      {
+        "uid": "INJ_15_051",
+        "thumb": "thumbs/INJ_15_051.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00153_inj00001.npz",
+        "r_mag": 18.54,
+        "score": 0.7373,
+        "theta_e": 1.5,
+        "cell_idx": 153,
+        "inj_idx": 1
+      },
+      {
+        "uid": "INJ_15_052",
+        "thumb": "thumbs/INJ_15_052.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00153_inj00002.npz",
+        "r_mag": 18.63,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 153,
+        "inj_idx": 2
+      },
+      {
+        "uid": "INJ_15_053",
+        "thumb": "thumbs/INJ_15_053.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00153_inj00003.npz",
+        "r_mag": 18.49,
+        "score": 0.9071,
+        "theta_e": 1.5,
+        "cell_idx": 153,
+        "inj_idx": 3
+      },
+      {
+        "uid": "INJ_15_054",
+        "thumb": "thumbs/INJ_15_054.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00153_inj00004.npz",
+        "r_mag": 18.57,
+        "score": 0.0343,
+        "theta_e": 1.5,
+        "cell_idx": 153,
+        "inj_idx": 4
+      },
+      {
+        "uid": "INJ_15_055",
+        "thumb": "thumbs/INJ_15_055.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00153_inj00005.npz",
+        "r_mag": 18.61,
+        "score": 0.0,
+        "theta_e": 1.5,
+        "cell_idx": 153,
+        "inj_idx": 5
+      },
+      {
+        "uid": "INJ_15_056",
+        "thumb": "thumbs/INJ_15_056.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00153_inj00006.npz",
+        "r_mag": 18.49,
+        "score": 0.6667,
+        "theta_e": 1.5,
+        "cell_idx": 153,
+        "inj_idx": 6
+      },
+      {
+        "uid": "INJ_15_057",
+        "thumb": "thumbs/INJ_15_057.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00153_inj00007.npz",
+        "r_mag": 18.53,
+        "score": 0.9801,
+        "theta_e": 1.5,
+        "cell_idx": 153,
+        "inj_idx": 7
+      },
+      {
+        "uid": "INJ_15_058",
+        "thumb": "thumbs/INJ_15_058.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00153_inj00008.npz",
+        "r_mag": 18.6,
+        "score": 0.2181,
+        "theta_e": 1.5,
+        "cell_idx": 153,
+        "inj_idx": 8
+      },
+      {
+        "uid": "INJ_15_059",
+        "thumb": "thumbs/INJ_15_059.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00153_inj00009.npz",
+        "r_mag": 18.6,
+        "score": 0.2618,
+        "theta_e": 1.5,
+        "cell_idx": 153,
+        "inj_idx": 9
+      }
+    ],
+    "2.5": [
+      {
+        "uid": "INJ_25_001",
+        "thumb": "thumbs/INJ_25_001.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00280_inj00000.npz",
+        "r_mag": 19.11,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 280,
+        "inj_idx": 0
+      },
+      {
+        "uid": "INJ_25_002",
+        "thumb": "thumbs/INJ_25_002.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00280_inj00001.npz",
+        "r_mag": 20.35,
+        "score": 0.0001,
+        "theta_e": 2.5,
+        "cell_idx": 280,
+        "inj_idx": 1
+      },
+      {
+        "uid": "INJ_25_003",
+        "thumb": "thumbs/INJ_25_003.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00280_inj00002.npz",
+        "r_mag": 20.31,
+        "score": 0.0001,
+        "theta_e": 2.5,
+        "cell_idx": 280,
+        "inj_idx": 2
+      },
+      {
+        "uid": "INJ_25_004",
+        "thumb": "thumbs/INJ_25_004.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00280_inj00003.npz",
+        "r_mag": 19.1,
+        "score": 0.0001,
+        "theta_e": 2.5,
+        "cell_idx": 280,
+        "inj_idx": 3
+      },
+      {
+        "uid": "INJ_25_005",
+        "thumb": "thumbs/INJ_25_005.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00280_inj00004.npz",
+        "r_mag": 16.69,
+        "score": 0.0004,
+        "theta_e": 2.5,
+        "cell_idx": 280,
+        "inj_idx": 4
+      },
+      {
+        "uid": "INJ_25_006",
+        "thumb": "thumbs/INJ_25_006.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00280_inj00005.npz",
+        "r_mag": 20.92,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 280,
+        "inj_idx": 5
+      },
+      {
+        "uid": "INJ_25_007",
+        "thumb": "thumbs/INJ_25_007.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00280_inj00006.npz",
+        "r_mag": 18.37,
+        "score": 0.0008,
+        "theta_e": 2.5,
+        "cell_idx": 280,
+        "inj_idx": 6
+      },
+      {
+        "uid": "INJ_25_008",
+        "thumb": "thumbs/INJ_25_008.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00280_inj00007.npz",
+        "r_mag": 19.13,
+        "score": 0.0001,
+        "theta_e": 2.5,
+        "cell_idx": 280,
+        "inj_idx": 7
+      },
+      {
+        "uid": "INJ_25_009",
+        "thumb": "thumbs/INJ_25_009.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00280_inj00008.npz",
+        "r_mag": 18.82,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 280,
+        "inj_idx": 8
+      },
+      {
+        "uid": "INJ_25_010",
+        "thumb": "thumbs/INJ_25_010.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00280_inj00009.npz",
+        "r_mag": 17.48,
+        "score": 0.0006,
+        "theta_e": 2.5,
+        "cell_idx": 280,
+        "inj_idx": 9
+      },
+      {
+        "uid": "INJ_25_011",
+        "thumb": "thumbs/INJ_25_011.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00284_inj00000.npz",
+        "r_mag": 19.82,
+        "score": 0.0013,
+        "theta_e": 2.5,
+        "cell_idx": 284,
+        "inj_idx": 0
+      },
+      {
+        "uid": "INJ_25_012",
+        "thumb": "thumbs/INJ_25_012.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00284_inj00001.npz",
+        "r_mag": 19.97,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 284,
+        "inj_idx": 1
+      },
+      {
+        "uid": "INJ_25_013",
+        "thumb": "thumbs/INJ_25_013.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00284_inj00002.npz",
+        "r_mag": 19.91,
+        "score": 0.0002,
+        "theta_e": 2.5,
+        "cell_idx": 284,
+        "inj_idx": 2
+      },
+      {
+        "uid": "INJ_25_014",
+        "thumb": "thumbs/INJ_25_014.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00284_inj00003.npz",
+        "r_mag": 19.83,
+        "score": 0.0019,
+        "theta_e": 2.5,
+        "cell_idx": 284,
+        "inj_idx": 3
+      },
+      {
+        "uid": "INJ_25_015",
+        "thumb": "thumbs/INJ_25_015.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00284_inj00004.npz",
+        "r_mag": 19.79,
+        "score": 0.0008,
+        "theta_e": 2.5,
+        "cell_idx": 284,
+        "inj_idx": 4
+      },
+      {
+        "uid": "INJ_25_016",
+        "thumb": "thumbs/INJ_25_016.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00284_inj00005.npz",
+        "r_mag": 19.91,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 284,
+        "inj_idx": 5
+      },
+      {
+        "uid": "INJ_25_017",
+        "thumb": "thumbs/INJ_25_017.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00284_inj00006.npz",
+        "r_mag": 19.99,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 284,
+        "inj_idx": 6
+      },
+      {
+        "uid": "INJ_25_018",
+        "thumb": "thumbs/INJ_25_018.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00284_inj00007.npz",
+        "r_mag": 19.89,
+        "score": 0.0002,
+        "theta_e": 2.5,
+        "cell_idx": 284,
+        "inj_idx": 7
+      },
+      {
+        "uid": "INJ_25_019",
+        "thumb": "thumbs/INJ_25_019.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00284_inj00008.npz",
+        "r_mag": 19.89,
+        "score": 0.0006,
+        "theta_e": 2.5,
+        "cell_idx": 284,
+        "inj_idx": 8
+      },
+      {
+        "uid": "INJ_25_020",
+        "thumb": "thumbs/INJ_25_020.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00284_inj00009.npz",
+        "r_mag": 19.71,
+        "score": 0.4581,
+        "theta_e": 2.5,
+        "cell_idx": 284,
+        "inj_idx": 9
+      },
+      {
+        "uid": "INJ_25_021",
+        "thumb": "thumbs/INJ_25_021.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00285_inj00000.npz",
+        "r_mag": 18.41,
+        "score": 0.0031,
+        "theta_e": 2.5,
+        "cell_idx": 285,
+        "inj_idx": 0
+      },
+      {
+        "uid": "INJ_25_022",
+        "thumb": "thumbs/INJ_25_022.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00285_inj00001.npz",
+        "r_mag": 19.08,
+        "score": 0.4576,
+        "theta_e": 2.5,
+        "cell_idx": 285,
+        "inj_idx": 1
+      },
+      {
+        "uid": "INJ_25_023",
+        "thumb": "thumbs/INJ_25_023.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00285_inj00002.npz",
+        "r_mag": 19.27,
+        "score": 0.6913,
+        "theta_e": 2.5,
+        "cell_idx": 285,
+        "inj_idx": 2
+      },
+      {
+        "uid": "INJ_25_024",
+        "thumb": "thumbs/INJ_25_024.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00285_inj00003.npz",
+        "r_mag": 19.21,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 285,
+        "inj_idx": 3
+      },
+      {
+        "uid": "INJ_25_025",
+        "thumb": "thumbs/INJ_25_025.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00285_inj00004.npz",
+        "r_mag": 20.59,
+        "score": 0.0065,
+        "theta_e": 2.5,
+        "cell_idx": 285,
+        "inj_idx": 4
+      },
+      {
+        "uid": "INJ_25_026",
+        "thumb": "thumbs/INJ_25_026.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00285_inj00005.npz",
+        "r_mag": 19.56,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 285,
+        "inj_idx": 5
+      },
+      {
+        "uid": "INJ_25_027",
+        "thumb": "thumbs/INJ_25_027.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00285_inj00006.npz",
+        "r_mag": 18.52,
+        "score": 0.0527,
+        "theta_e": 2.5,
+        "cell_idx": 285,
+        "inj_idx": 6
+      },
+      {
+        "uid": "INJ_25_028",
+        "thumb": "thumbs/INJ_25_028.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00285_inj00007.npz",
+        "r_mag": 18.52,
+        "score": 0.0564,
+        "theta_e": 2.5,
+        "cell_idx": 285,
+        "inj_idx": 7
+      },
+      {
+        "uid": "INJ_25_029",
+        "thumb": "thumbs/INJ_25_029.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00285_inj00008.npz",
+        "r_mag": 20.83,
+        "score": 0.6004,
+        "theta_e": 2.5,
+        "cell_idx": 285,
+        "inj_idx": 8
+      },
+      {
+        "uid": "INJ_25_030",
+        "thumb": "thumbs/INJ_25_030.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00285_inj00009.npz",
+        "r_mag": 19.49,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 285,
+        "inj_idx": 9
+      },
+      {
+        "uid": "INJ_25_031",
+        "thumb": "thumbs/INJ_25_031.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00289_inj00000.npz",
+        "r_mag": 19.22,
+        "score": 0.0002,
+        "theta_e": 2.5,
+        "cell_idx": 289,
+        "inj_idx": 0
+      },
+      {
+        "uid": "INJ_25_032",
+        "thumb": "thumbs/INJ_25_032.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00289_inj00001.npz",
+        "r_mag": 18.8,
+        "score": 0.9437,
+        "theta_e": 2.5,
+        "cell_idx": 289,
+        "inj_idx": 1
+      },
+      {
+        "uid": "INJ_25_033",
+        "thumb": "thumbs/INJ_25_033.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00289_inj00002.npz",
+        "r_mag": 19.86,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 289,
+        "inj_idx": 2
+      },
+      {
+        "uid": "INJ_25_034",
+        "thumb": "thumbs/INJ_25_034.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00289_inj00003.npz",
+        "r_mag": 19.45,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 289,
+        "inj_idx": 3
+      },
+      {
+        "uid": "INJ_25_035",
+        "thumb": "thumbs/INJ_25_035.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00289_inj00004.npz",
+        "r_mag": 19.64,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 289,
+        "inj_idx": 4
+      },
+      {
+        "uid": "INJ_25_036",
+        "thumb": "thumbs/INJ_25_036.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00289_inj00005.npz",
+        "r_mag": 20.96,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 289,
+        "inj_idx": 5
+      },
+      {
+        "uid": "INJ_25_037",
+        "thumb": "thumbs/INJ_25_037.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00289_inj00006.npz",
+        "r_mag": 18.71,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 289,
+        "inj_idx": 6
+      },
+      {
+        "uid": "INJ_25_038",
+        "thumb": "thumbs/INJ_25_038.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00289_inj00007.npz",
+        "r_mag": 18.15,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 289,
+        "inj_idx": 7
+      },
+      {
+        "uid": "INJ_25_039",
+        "thumb": "thumbs/INJ_25_039.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00289_inj00008.npz",
+        "r_mag": 19.65,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 289,
+        "inj_idx": 8
+      },
+      {
+        "uid": "INJ_25_040",
+        "thumb": "thumbs/INJ_25_040.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00289_inj00009.npz",
+        "r_mag": 20.89,
+        "score": 0.2676,
+        "theta_e": 2.5,
+        "cell_idx": 289,
+        "inj_idx": 9
+      },
+      {
+        "uid": "INJ_25_041",
+        "thumb": "thumbs/INJ_25_041.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00290_inj00000.npz",
+        "r_mag": 19.23,
+        "score": 0.0001,
+        "theta_e": 2.5,
+        "cell_idx": 290,
+        "inj_idx": 0
+      },
+      {
+        "uid": "INJ_25_042",
+        "thumb": "thumbs/INJ_25_042.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00290_inj00001.npz",
+        "r_mag": 18.77,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 290,
+        "inj_idx": 1
+      },
+      {
+        "uid": "INJ_25_043",
+        "thumb": "thumbs/INJ_25_043.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00290_inj00002.npz",
+        "r_mag": 19.87,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 290,
+        "inj_idx": 2
+      },
+      {
+        "uid": "INJ_25_044",
+        "thumb": "thumbs/INJ_25_044.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00290_inj00003.npz",
+        "r_mag": 20.89,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 290,
+        "inj_idx": 3
+      },
+      {
+        "uid": "INJ_25_045",
+        "thumb": "thumbs/INJ_25_045.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00290_inj00004.npz",
+        "r_mag": 18.04,
+        "score": 0.0189,
+        "theta_e": 2.5,
+        "cell_idx": 290,
+        "inj_idx": 4
+      },
+      {
+        "uid": "INJ_25_046",
+        "thumb": "thumbs/INJ_25_046.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00290_inj00005.npz",
+        "r_mag": 17.93,
+        "score": 0.0473,
+        "theta_e": 2.5,
+        "cell_idx": 290,
+        "inj_idx": 5
+      },
+      {
+        "uid": "INJ_25_047",
+        "thumb": "thumbs/INJ_25_047.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00290_inj00006.npz",
+        "r_mag": 19.15,
+        "score": 0.0002,
+        "theta_e": 2.5,
+        "cell_idx": 290,
+        "inj_idx": 6
+      },
+      {
+        "uid": "INJ_25_048",
+        "thumb": "thumbs/INJ_25_048.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00290_inj00007.npz",
+        "r_mag": 18.84,
+        "score": 0.0004,
+        "theta_e": 2.5,
+        "cell_idx": 290,
+        "inj_idx": 7
+      },
+      {
+        "uid": "INJ_25_049",
+        "thumb": "thumbs/INJ_25_049.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00290_inj00008.npz",
+        "r_mag": 19.8,
+        "score": 0.0002,
+        "theta_e": 2.5,
+        "cell_idx": 290,
+        "inj_idx": 8
+      },
+      {
+        "uid": "INJ_25_050",
+        "thumb": "thumbs/INJ_25_050.png",
+        "cutout_path": "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results/D06_corrected_priors/grid_no_poisson/cutouts/cell00290_inj00009.npz",
+        "r_mag": 18.98,
+        "score": 0.0,
+        "theta_e": 2.5,
+        "cell_idx": 290,
+        "inj_idx": 9
+      }
+    ]
+  }
+}

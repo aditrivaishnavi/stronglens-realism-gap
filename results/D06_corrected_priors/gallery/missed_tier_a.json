@@ -1,0 +1,134 @@
+[
+  {
+    "uid": "REAL_012",
+    "r_mag": 18.1,
+    "score": 0.0006,
+    "brick_ra": 14.7,
+    "brick_dec": -7.2,
+    "desi_name": "DESI-014.7032-07.3658",
+    "zlens": 0.619,
+    "grading": "confident",
+    "match_sep_deg": 0.1657
+  },
+  {
+    "uid": "REAL_048",
+    "r_mag": 18.19,
+    "score": 0.0013,
+    "brick_ra": 62.9,
+    "brick_dec": -19.0,
+    "desi_name": "DESI-063.0145-18.9874",
+    "zlens": 0.572,
+    "grading": "confident",
+    "match_sep_deg": 0.109
+  },
+  {
+    "uid": "REAL_011",
+    "r_mag": 18.38,
+    "score": 0.0022,
+    "brick_ra": 12.0,
+    "brick_dec": -32.7,
+    "desi_name": "DESI-011.9630-32.8146",
+    "zlens": 0.229,
+    "grading": "confident",
+    "match_sep_deg": 0.1187
+  },
+  {
+    "uid": "REAL_095",
+    "r_mag": 19.07,
+    "score": 0.0024,
+    "brick_ra": 315.3,
+    "brick_dec": -43.7,
+    "desi_name": "DESI-315.3666-43.8105",
+    "zlens": 0.436,
+    "grading": "confident",
+    "match_sep_deg": 0.1204
+  },
+  {
+    "uid": "REAL_052",
+    "r_mag": 17.32,
+    "score": 0.0025,
+    "brick_ra": 70.3,
+    "brick_dec": -9.7,
+    "desi_name": "DESI-070.4130-09.7774",
+    "zlens": 0.437,
+    "grading": "confident",
+    "match_sep_deg": 0.1356
+  },
+  {
+    "uid": "REAL_078",
+    "r_mag": 19.35,
+    "score": 0.0105,
+    "brick_ra": 186.9,
+    "brick_dec": -7.0,
+    "desi_name": "DESI-186.8276-07.1227",
+    "zlens": 0.617,
+    "grading": "confident",
+    "match_sep_deg": 0.1422
+  },
+  {
+    "uid": "REAL_040",
+    "r_mag": 19.89,
+    "score": 0.0176,
+    "brick_ra": 49.2,
+    "brick_dec": -43.5,
+    "desi_name": "DESI-049.2773-43.4571",
+    "zlens": 0.8239642,
+    "grading": "confident",
+    "match_sep_deg": 0.0706
+  },
+  {
+    "uid": "REAL_001",
+    "r_mag": 18.48,
+    "score": 0.0325,
+    "brick_ra": 0.8,
+    "brick_dec": -62.7,
+    "desi_name": "DESI-000.7487-62.6672",
+    "zlens": 0.452,
+    "grading": "confident",
+    "match_sep_deg": 0.0404
+  },
+  {
+    "uid": "REAL_087",
+    "r_mag": 19.18,
+    "score": 0.0405,
+    "brick_ra": 211.7,
+    "brick_dec": 8.7,
+    "desi_name": "DESI-211.6718+08.7580",
+    "zlens": 0.185711,
+    "grading": "confident",
+    "match_sep_deg": 0.0644
+  },
+  {
+    "uid": "REAL_023",
+    "r_mag": 15.98,
+    "score": 0.0451,
+    "brick_ra": 30.4,
+    "brick_dec": 3.7,
+    "desi_name": "DESI-030.4025+03.7476",
+    "zlens": 0.16961,
+    "grading": "confident",
+    "match_sep_deg": 0.0477
+  },
+  {
+    "uid": "REAL_086",
+    "r_mag": 18.88,
+    "score": 0.1504,
+    "brick_ra": 206.1,
+    "brick_dec": 16.2,
+    "desi_name": "DESI-206.0349+16.3570",
+    "zlens": 0.4957,
+    "grading": "confident",
+    "match_sep_deg": 0.1696
+  },
+  {
+    "uid": "REAL_026",
+    "r_mag": 17.28,
+    "score": 0.188,
+    "brick_ra": 33.0,
+    "brick_dec": -60.0,
+    "desi_name": "DESI-032.9976-59.9403",
+    "zlens": 0.206,
+    "grading": "confident",
+    "match_sep_deg": 0.0597
+  }
+]
