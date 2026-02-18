@@ -1,0 +1,24 @@
+{
+  "version": "v5_handpicked_8x8",
+  "description": "Hand-picked 8 real Tier-A lenses + 8 parametric injections. Real lenses sorted by r-mag, include 2 missed (p<0.3) and 2 moderate. Injections span 3 theta_E regimes (0.75, 1.50, 2.50) with 1 detected. No pairing or brightness matching.",
+  "real_picks": [
+    "REAL_070",
+    "REAL_075",
+    "REAL_051",
+    "REAL_017",
+    "REAL_086",
+    "REAL_063",
+    "REAL_040",
+    "REAL_107"
+  ],
+  "injection_picks": [
+    "INJ_075_033",
+    "INJ_075_032",
+    "INJ_075_041",
+    "INJ_15_004",
+    "INJ_15_020",
+    "INJ_15_002",
+    "INJ_25_046",
+    "INJ_25_023"
+  ]
+}
