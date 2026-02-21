@@ -23,7 +23,7 @@ Usage:
         --injection-validation-csv results/injection_validation_v4/injection_validation.csv \
         --out-dir results/sim_to_real_validation
 
-Author: stronglens_calibration project
+Author: stronglens-realism-gap project
 Date: 2026-02-13
 """
 from __future__ import annotations

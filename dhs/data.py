@@ -36,7 +36,7 @@ class DatasetConfig:
     crop: bool = True         # False = keep 101x101 for Paper IV parity
     crop_size: int = 0        # 0 = default STAMP_SIZE; >0 = custom crop size
     # Annulus override for corrected normalization (see KNOWN ISSUE in dhs/utils.py).
-    # Q1.8: Sentinel value 0.0 means "use normalize_outer_annulus defaults (20, 32)",
+    # Sentinel value 0.0 means "use normalize_outer_annulus defaults (20, 32)",
     # which are locked to all existing trained models. Negative values also default.
     # For retraining with corrected annulus, set BOTH to default_annulus_radii output:
     #   annulus_r_in: 32.5   annulus_r_out: 45.0  (for 101x101 stamps)
@@ -94,7 +94,7 @@ class LensDataset:
         row = self.df.iloc[i]
         path = row[self.dcfg.cutout_path_col]
         label = int(row[self.dcfg.label_col])
-        # Q4.3 fix: explicit None check avoids semantically odd row.get(None, 1.0)
+        # Explicit None check avoids semantically odd row.get(None, 1.0)
         if self.dcfg.sample_weight_col is not None:
             weight = float(row.get(self.dcfg.sample_weight_col, 1.0))
         else:

@@ -95,7 +95,7 @@ def build_efficientnet_v2_s(in_ch: int = 3, pretrained: bool = True) -> nn.Modul
     m = models.efficientnet_v2_s(weights=weights)
 
     # Adapt first conv for non-3-channel inputs if needed.
-    # NOTE (Q4.2): When in_ch != 3, pretrained weights for the first conv layer
+    # NOTE: When in_ch != 3, pretrained weights for the first conv layer
     # are discarded and replaced with a freshly initialized Conv2d. This means
     # the model loses the benefit of pretrained low-level features for non-RGB inputs.
     if in_ch != 3:

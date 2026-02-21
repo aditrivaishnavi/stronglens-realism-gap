@@ -60,7 +60,7 @@ def preprocess_stack(img3: np.ndarray, mode: str, crop: bool = True,
     if crop and target > 0 and img3.shape[1] != target:
         img3 = center_crop(img3, target)
     
-    # Validate annulus radii: must be set together (Q1.6 fix)
+    # Validate annulus radii: must be set together
     if (annulus_r_in is None) != (annulus_r_out is None):
         raise ValueError(
             "annulus_r_in and annulus_r_out must both be set or both be None. "

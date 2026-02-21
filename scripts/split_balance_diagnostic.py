@@ -3,22 +3,17 @@
 Split Balance Diagnostic: Verify PSF/depth balance and positive spatial
 distribution across train/val/test splits.
 
-Code review:
-  Q3.9: "Are positives spatially correlated? Many DESI candidates from
-         deep-coverage regions. If most positives in a few pixels,
-         train/val split heavily unbalanced."
-  Q3.10: "Your spatial splits prevent field-level leakage. But do they
-          prevent PSF/depth condition leakage? If high-PSF in train and
-          low-PSF in val, the model learns PSF-specific features."
+Verifies that train/val/test splits are balanced with respect to
+observing conditions and spatial distribution of positives.
 
 This script loads the manifest and reports:
   1. Distribution of positives per HEALPix pixel
   2. PSF/depth distributions in train vs val vs test (KS test)
   3. Tier-A counts per split
-  4. Masked pixel fraction statistics (Q3.3 overlap)
+  4. Masked pixel fraction statistics
 
 Usage:
-    cd stronglens_calibration
+    cd stronglens-realism-gap
     export PYTHONPATH=.
 
     python scripts/split_balance_diagnostic.py \\

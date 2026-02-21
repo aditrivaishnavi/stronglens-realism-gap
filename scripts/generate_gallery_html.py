@@ -14,7 +14,7 @@ Outputs:
   <out-dir>/gallery_data.json  — all metadata for programmatic use
 
 Usage (on lambda3):
-    cd /lambda/nfs/darkhaloscope-training-dc/stronglens_calibration
+    cd /lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap
     PYTHONPATH=. python scripts/generate_gallery_html.py \
         --out-dir results/D06_corrected_priors/gallery
 
@@ -40,7 +40,7 @@ N_DEPTH = 5
 STRIDE = N_PSF * N_DEPTH
 TARGET_THETA_E = [0.75, 1.50, 2.50]
 
-BASE = Path("/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration")
+BASE = Path("/lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap")
 D06 = BASE / "results" / "D06_corrected_priors"
 GRID_CUTOUTS = D06 / "grid_no_poisson" / "cutouts"
 MANIFEST = BASE / "manifests" / "training_parity_70_30_v1.parquet"

@@ -72,7 +72,7 @@ def default_annulus_radii(H: int, W: int) -> tuple[float, float]:
     return r_in, r_out
 
 
-# Module-level flag: emit the annulus-mismatch warning at most once (Q1.4 fix).
+# Module-level flag: emit the annulus-mismatch warning at most once.
 _warned_annulus = False
 
 
@@ -93,7 +93,7 @@ def normalize_outer_annulus(img: np.ndarray, r_in: float = 20, r_out: float = 32
     """
     global _warned_annulus  # noqa: PLW0603
 
-    # --- Validation (Q1.6 fix) ---
+    # --- Validation ---
     if r_in >= r_out:
         raise ValueError(
             f"r_in ({r_in}) must be strictly less than r_out ({r_out}). "
@@ -109,7 +109,7 @@ def normalize_outer_annulus(img: np.ndarray, r_in: float = 20, r_out: float = 32
             f"(need >= 100 for reliable median/MAD). Check radii."
         )
 
-    # Warn once if the annulus is likely not sky-dominated (Q1.4 fix: warn-once)
+    # Warn once if the annulus is likely not sky-dominated
     if not _warned_annulus:
         half = min(H, W) // 2
         if half > 0 and r_out / half < 0.70 and H > 64:

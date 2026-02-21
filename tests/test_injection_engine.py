@@ -18,14 +18,14 @@ issues (MNRAS_RAW_NOTES.md Section 7.7).  They serve as a regression gate:
 any future code change that breaks these tests has introduced a physics error.
 
 Usage:
-    cd stronglens_calibration
+    cd stronglens-realism-gap
     export PYTHONPATH=.
     python -m pytest tests/test_injection_engine.py -v
 
     # Or run standalone:
     python tests/test_injection_engine.py
 
-Author: stronglens_calibration project
+Author: stronglens-realism-gap project
 Date: 2026-02-10
 References:
   - MNRAS_RAW_NOTES.md Section 7.7
@@ -65,7 +65,7 @@ try:
     )
 except ImportError as e:
     print(f"Import error: {e}")
-    print("Run with PYTHONPATH=. from the stronglens_calibration directory.")
+    print("Run with PYTHONPATH=. from the stronglens-realism-gap directory.")
     sys.exit(1)
 
 # ---------------------------------------------------------------------------

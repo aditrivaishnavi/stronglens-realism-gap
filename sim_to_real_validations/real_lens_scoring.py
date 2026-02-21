@@ -16,7 +16,7 @@ Outputs:
   - Console summary table
 
 Usage:
-    cd stronglens_calibration
+    cd stronglens-realism-gap
     export PYTHONPATH=.
 
     python sim_to_real_validations/real_lens_scoring.py \\
@@ -26,7 +26,7 @@ Usage:
         --host-split val \\
         --n-negatives 3000
 
-Author: stronglens_calibration project
+Author: stronglens-realism-gap project
 Date: 2026-02-13
 """
 from __future__ import annotations
@@ -292,7 +292,7 @@ def main():
     print(f"Loading manifest: {args.manifest}")
     df = pd.read_parquet(args.manifest)
 
-    # --- Training-split leakage guard per code review ---
+    # --- Training-split leakage guard ---
     # Report Tier-A counts per split so user can verify no leakage
     if TIER_COL in df.columns:
         print("\n  Tier-A counts per split (leakage guard):")

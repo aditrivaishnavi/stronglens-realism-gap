@@ -58,7 +58,7 @@ Usage:
         --manifest manifests/training_parity_70_30_v1.parquet \
         --out-dir s3://my-bucket/selection_function_run1
 
-Author: stronglens_calibration project
+Author: stronglens-realism-gap project
 Date: 2026-02-11
 References:
   - MNRAS_RAW_NOTES.md Section 9.3
@@ -331,7 +331,7 @@ def run_selection_function(
     eff_manifest = manifest_path
     eff_ckpt = checkpoint_path
     if data_root:
-        default_root = "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration"
+        default_root = "/lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap"
         eff_manifest = manifest_path.replace(default_root, data_root.rstrip("/"), 1)
         eff_ckpt = checkpoint_path.replace(default_root, data_root.rstrip("/"), 1)
 
@@ -866,7 +866,7 @@ def main():
                          "by scoring negatives. Appended to --thresholds.")
     ap.add_argument("--injections-per-cell", type=int, default=500,
                     help="Injections per grid cell (default: 500). "
-                         "Increased from 200 per code review: "
+                         "Increased from 200: "
                          "at n=200 and p=3.5%%, 95%% CI is [1.7%%, 7.0%%] (too wide).")
     # Grid ranges
     ap.add_argument("--theta-e-min", type=float, default=0.5)

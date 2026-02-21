@@ -16,7 +16,7 @@ flux (red galaxies dominate at faint magnitudes in nanomaggies). If bands were
 swapped (e.g., g<->z), we'd see the opposite pattern.
 
 Usage:
-    cd stronglens_calibration
+    cd stronglens-realism-gap
     export PYTHONPATH=.
     python -m pytest tests/test_band_order.py -v
 """

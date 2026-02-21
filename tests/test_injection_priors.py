@@ -13,10 +13,10 @@ NOTE: This test uses AST parsing to read defaults from the source code
 directly, avoiding heavy imports (torch, etc.) that may not be available
 in all test environments.
 
-Created: 2026-02-13 (after code review)
+Created: 2026-02-13
 
 Usage:
-    cd stronglens_calibration
+    cd stronglens-realism-gap
     export PYTHONPATH=.
     python -m pytest tests/test_injection_priors.py -v
     # Or standalone:
@@ -62,7 +62,7 @@ def _extract_function_defaults(source_path: Path, func_name: str) -> dict:
             for name, default_node in zip(default_params, args.defaults):
                 val = _ast_to_value(default_node)
                 if val is _SENTINEL:
-                    # Q1.15 fix: fail loudly instead of silently skipping.
+                    # Fail loudly instead of silently skipping.
                     # If a default becomes a computed expression (e.g. 0.5 * MAX_RE),
                     # we want to know about it so the test can be updated.
                     raise ValueError(
@@ -165,14 +165,14 @@ class TestSourceParamsMatchRegistry(unittest.TestCase):
         )
 
     def test_clumps_n_range(self):
-        """Q1.16 fix: clumps_n_range is now an explicit parameter."""
+        """clumps_n_range is now an explicit parameter."""
         self.assertEqual(
             list(self.defaults["clumps_n_range"]),
             self.registry["clumps_n_range"],
         )
 
     def test_clumps_frac_range(self):
-        """Q1.16 fix: clumps_frac_range is now an explicit parameter."""
+        """clumps_frac_range is now an explicit parameter."""
         self.assertEqual(
             list(self.defaults["clumps_frac_range"]),
             self.registry["clumps_frac_range"],
@@ -209,7 +209,7 @@ class TestRegistryCompleteness(unittest.TestCase):
     """Verify the registry covers all relevant defaults."""
 
     def test_source_params_extracted_keys_match_expected(self):
-        """Q1.15 fix: verify the AST parser extracts ALL expected keys.
+        """Verify the AST parser extracts ALL expected keys.
 
         If this fails, either a new parameter was added to the code (update
         this test), or the AST parser is silently skipping a parameter.

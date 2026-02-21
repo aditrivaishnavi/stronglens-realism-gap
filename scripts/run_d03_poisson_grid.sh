@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # run_d03_poisson_grid.sh — D03: Selection function grid with Poisson noise + combined diagnostic
-# Expects to be run from the stronglens_calibration/ directory with venv active.
+# Expects to be run from the stronglens-realism-gap/ directory with venv active.
 #
-# Phase 1 computations from the code review action plan:
+# Phase 1 computations:
 #   1. Full selection function grid with --add-poisson-noise (~4 GPU-hours)
 #   2. Combined Poisson + clip_range=20 bright-arc diagnostic (~10 min GPU)
 #
 # Run:
-#   cd /lambda/nfs/darkhaloscope-training-dc/stronglens_calibration
+#   cd /lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap
 #   source .venv-lambda3/bin/activate
 #   export PYTHONPATH=.
 #   bash scripts/run_d03_poisson_grid.sh
@@ -17,9 +17,9 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
 # --- Configuration ---
-MANIFEST="/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/manifests/training_parity_70_30_v1.parquet"
-CHECKPOINT="/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/checkpoints/paperIV_efficientnet_v2_s_v4_finetune/best.pt"
-RESULTS_BASE="/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results"
+MANIFEST="/lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap/manifests/training_parity_70_30_v1.parquet"
+CHECKPOINT="/lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap/checkpoints/paperIV_efficientnet_v2_s_v4_finetune/best.pt"
+RESULTS_BASE="/lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap/results"
 RUN_ID="D03_$(date +%Y%m%d)_poisson_grid"
 OUT_DIR="$RESULTS_BASE/$RUN_ID"
 
@@ -33,8 +33,7 @@ mkdir -p "$OUT_DIR"
 # ============================================================
 # [1/2] Selection Function Grid with Poisson Noise
 # ============================================================
-# This is the highest-priority computation from the code review
-# action plan. Code review confirmed this is essential.
+# This is the highest-priority computation for the Poisson analysis.
 #
 # Compared to the previous grid run (without Poisson noise):
 #   - Adds shot noise to injected arcs (gain=150 e-/nmgy)

@@ -4,7 +4,7 @@ Feature Space Analysis: Compare CNN embeddings of real lenses vs injections.
 
 SCIENTIFIC MOTIVATION
 ====================
-Code review recommended analyzing whether the CNN's penultimate-layer
+We analyze whether the CNN's penultimate-layer
 embeddings can distinguish real lenses from synthetic injections. If a simple
 linear probe achieves AUC near 1.0 for "real vs injection", this proves the
 CNN encodes an "injection-ness" direction and identifies which feature
@@ -21,7 +21,7 @@ This script:
   4. Saves embeddings for downstream UMAP/t-SNE visualization
 
 Usage:
-    cd stronglens_calibration
+    cd stronglens-realism-gap
     export PYTHONPATH=.
 
     python scripts/feature_space_analysis.py \\

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Investigate NaN healpix_128 for positive samples in the training manifest.
 
-Code review flagged that ALL 4,788 positives have NaN in healpix_128.
+ALL 4,788 positives have NaN in healpix_128.
 This script determines:
   1. Whether ra/dec columns exist with valid values for positives
   2. If so, recomputes healpix_128 and checks spatial overlap between splits

@@ -7,9 +7,6 @@ preprocess_stack with the same parameters used in training, and verifies
 the output matches a known checksum. This prevents silent drift in
 preprocessing behavior across code changes.
 
-Per code review:
-  "A tiny checksum-style test on 1-2 reference NPZs prevents silent drift."
-
 Tests cover:
   1. raw_robust preprocessing (101x101, no crop) — Paper IV parity mode
   2. raw_robust preprocessing (101x101 -> 64x64 center crop) — legacy mode
@@ -19,14 +16,14 @@ Tests cover:
   6. Outer-annulus normalization correctness
 
 Usage:
-    cd stronglens_calibration
+    cd stronglens-realism-gap
     export PYTHONPATH=.
     python -m pytest tests/test_preprocess_regression.py -v
 
     # Or run standalone:
     python tests/test_preprocess_regression.py
 
-Author: stronglens_calibration project
+Author: stronglens-realism-gap project
 Date: 2026-02-11
 Aligned with: preprocessing consistency check
 """
@@ -111,7 +108,7 @@ class TestPreprocessRegression(unittest.TestCase):
     def test_raw_robust_no_crop_regression(self):
         """raw_robust locks preprocessing behavior via tolerance-based regression.
 
-        Q1.14/Q3.4 fix: replaced brittle bitwise checksum with np.allclose-based
+        Replaced brittle bitwise checksum with np.allclose-based
         test using a golden reference array. This is robust across CPU architectures
         (ARM vs x86), BLAS implementations, and minor NumPy version changes.
 
@@ -441,7 +438,7 @@ class TestAnnulusBehavioral(unittest.TestCase):
 
         This test checks the BEHAVIOR of the full preprocess_stack pipeline.
 
-        Q1.12 fix: Added assertions. With the current (20, 32) annulus and
+        Added assertions. With the current (20, 32) annulus and
         this test galaxy, sky median is around -2.5. We assert this known
         value so the test catches unexpected changes.
         """
@@ -473,12 +470,11 @@ class TestAnnulusBehavioral(unittest.TestCase):
             #       msg=f"Band {band}: sky median should be near zero with corrected annulus")
 
     def test_annulus_contamination_devaucouleurs_profiles(self):
-        """Q1.2/Q1.13 fix: Test annulus contamination for realistic de Vaucouleurs (n=4) LRGs.
+        """Test annulus contamination for realistic de Vaucouleurs (n=4) LRGs.
 
         The original test used only an exponential (n=1) with scale=8 px (R_e ≈ 13.4 px),
-        which is at the extreme end of the LRG size distribution. Code review
-        recommended testing with de Vaucouleurs profiles at R_e = 4, 8, 12 px to bound
-        the real impact.
+        which is at the extreme end of the LRG size distribution. Added
+        de Vaucouleurs profiles at R_e = 4, 8, 12 px to bound the real impact.
 
         For de Vaucouleurs: I(r) = I_e * exp(-b_4 * [(r/R_e)^(1/4) - 1]), b_4 ≈ 7.67.
         """

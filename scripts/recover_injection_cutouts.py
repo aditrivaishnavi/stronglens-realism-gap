@@ -27,7 +27,7 @@ Safety features:
   - Failure logging instead of silent swallowing
 
 Usage (run on lambda3):
-    cd /lambda/nfs/darkhaloscope-training-dc/stronglens_calibration
+    cd /lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap
     export PYTHONPATH=.
 
     python scripts/recover_injection_cutouts.py --mode bright_arc \

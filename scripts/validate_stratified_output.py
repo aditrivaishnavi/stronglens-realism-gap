@@ -14,7 +14,7 @@ Usage:
     python scripts/validate_stratified_output.py --input /path/to/output/data/
     python scripts/validate_stratified_output.py --input s3://bucket/prefix/data/ --summary s3://bucket/prefix/summary.json
 
-Author: Generated for stronglens_calibration project
+Author: Generated for stronglens-realism-gap project
 Date: 2026-02-11
 """
 import argparse
@@ -149,7 +149,7 @@ def validate(input_path: str, min_rows: int = 200000) -> dict:
     # ---------------------------------------------------------------
     
     # 8. Per-stratum availability: counts by (nobs_z_bin, type_bin, pool, split)
-    #    Ensure N2 exists across bins"
+    #    Ensure N2 exists across bins
     if all(c in df.columns for c in ["nobs_z_bin", "type_bin", "pool", "split"]):
         stratum_detail = df.groupby(["nobs_z_bin", "type_bin", "pool", "split"]).size()
         details["per_stratum_counts"] = {
@@ -178,7 +178,7 @@ def validate(input_path: str, min_rows: int = 200000) -> dict:
         checks["n2_global_ratio_ok"] = 5.0 <= n2_global_pct <= 25.0
     
     # 10. Distribution sanity: compare neg type distribution vs expected
-    #     Compare negatives vs positives distributions for (nobs_z, type)"
+    #     Compare negatives vs positives distributions for (nobs_z, type)
     if "type_bin" in df.columns:
         type_dist = df["type_bin"].value_counts(normalize=True).to_dict()
         details["type_distribution_pct"] = {
@@ -191,7 +191,7 @@ def validate(input_path: str, min_rows: int = 200000) -> dict:
         }
     
     # 11. Deterministic sampling check: no duplicates implies stable hash ordering
-    #     Use stable hash ordering + window for determinism"
+    #     Use stable hash ordering + window for determinism
     #     (Already checked via no_duplicates above)
 
     # Summary

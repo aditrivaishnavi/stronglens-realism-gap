@@ -24,7 +24,7 @@
 #   itself." Adding extra Gaussian noise would double-count background variance
 #   and contradict the paper's physical story. Only Poisson shot noise
 #   (--add-poisson-noise) is the physically justified additional noise term.
-#   Code review confirmed this assessment.
+#   This is the physically correct approach.
 #
 # CORRECTED PRIORS (now engine defaults, cross-checked vs configs/injection_priors.yaml):
 #   beta_frac_range: (0.10, 0.40)   [was (0.1, 1.0)  — engine default pre-fix]
@@ -58,7 +58,7 @@
 #   Total: ~23 GB
 #
 # Run:
-#   cd /lambda/nfs/darkhaloscope-training-dc/stronglens_calibration
+#   cd /lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap
 #   source .venv-lambda3/bin/activate
 #   export PYTHONPATH=.
 #   nohup bash scripts/run_d06_corrected_priors.sh > d06_log.txt 2>&1 &
@@ -68,9 +68,9 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
 # --- Configuration ---
-MANIFEST="/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/manifests/training_parity_70_30_v1.parquet"
-CHECKPOINT="/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/checkpoints/paperIV_efficientnet_v2_s_v4_finetune/best.pt"
-RESULTS_BASE="/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results"
+MANIFEST="/lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap/manifests/training_parity_70_30_v1.parquet"
+CHECKPOINT="/lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap/checkpoints/paperIV_efficientnet_v2_s_v4_finetune/best.pt"
+RESULTS_BASE="/lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap/results"
 RUN_ID="D06_$(date +%Y%m%d)_corrected_priors"
 OUT_DIR="$RESULTS_BASE/$RUN_ID"
 

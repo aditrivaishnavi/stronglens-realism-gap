@@ -4,7 +4,6 @@ Generate all 4 publication figures for the MNRAS paper.
 Includes auto-validation checks for each figure.
 
 Usage:
-    cd stronglens_calibration
     python paper/generate_all_figures.py
 """
 import json

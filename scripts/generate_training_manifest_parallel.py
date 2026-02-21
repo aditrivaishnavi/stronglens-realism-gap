@@ -12,7 +12,7 @@ Usage:
         --output /lambda/nfs/.../manifests/training_manifest.parquet \
         --workers 16
 
-Author: Generated for stronglens_calibration project
+Author: Generated for stronglens-realism-gap project
 Date: 2026-02-10
 """
 import argparse

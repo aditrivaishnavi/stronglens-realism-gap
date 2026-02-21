@@ -26,7 +26,7 @@ PREREQUISITES:
   - All other parameters (beta_frac, magnitude, lens, host) are fixed
 
 Usage:
-    cd stronglens_calibration
+    cd stronglens-realism-gap
     export PYTHONPATH=.
 
     python scripts/real_arc_morphology_experiment.py \\

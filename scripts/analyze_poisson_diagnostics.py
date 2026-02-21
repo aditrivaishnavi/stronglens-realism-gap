@@ -2,9 +2,9 @@
 """
 Poisson Diagnostics for D06 — Paired delta, conditioned grid, score histograms.
 
-Three targeted analyses requested by code review:
+Three targeted analyses:
 
-1. PAIRED DELTA ANALYSIS (all 3 reviewers: must-have)
+1. PAIRED DELTA ANALYSIS
    For each injection in the bright-arc test, compute delta_p = score_poisson -
    score_baseline. Same seed (42), same hosts, same geometry — only Poisson
    differs. Reports per-magnitude-bin statistics to distinguish "systematic
@@ -15,12 +15,12 @@ Three targeted analyses requested by code review:
    to directly reconcile the grid vs bright-arc Poisson results. Also produces
    a full 2D cross-tabulation: theta_E x lensed_mag for both conditions.
 
-3. SCORE HISTOGRAMS (all reviewers: nice-to-have)
+3. SCORE HISTOGRAMS
    Plots score distributions from bright-arc scored parquets (baseline vs
    Poisson) per magnitude bin. Saves as PNG.
 
 Usage:
-    cd /lambda/nfs/darkhaloscope-training-dc/stronglens_calibration
+    cd /lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap
     PYTHONPATH=. python scripts/analyze_poisson_diagnostics.py \
         --d06-dir results/D06_corrected_priors \
         --out-dir results/D06_corrected_priors/poisson_diagnostics

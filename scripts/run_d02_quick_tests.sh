@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
-# run_d02_quick_tests.sh — Phase 1-2 quick-win diagnostics from code review
-# Expects to be run from the stronglens_calibration/ directory with venv active.
+# run_d02_quick_tests.sh — Phase 1-2 quick-win diagnostics
+# Expects to be run from the stronglens-realism-gap/ directory with venv active.
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
 # --- Configuration ---
-MANIFEST="/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/manifests/training_parity_70_30_v1.parquet"
-CHECKPOINT="/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/checkpoints/paperIV_efficientnet_v2_s_v4_finetune/best.pt"
-RESULTS_BASE="/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/results"
+MANIFEST="/lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap/manifests/training_parity_70_30_v1.parquet"
+CHECKPOINT="/lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap/checkpoints/paperIV_efficientnet_v2_s_v4_finetune/best.pt"
+RESULTS_BASE="/lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap/results"
 RUN_ID="D02_$(date +%Y%m%d)_quick_tests"
 OUT_DIR="$RESULTS_BASE/$RUN_ID"
 

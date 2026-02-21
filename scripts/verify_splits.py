@@ -13,15 +13,31 @@ import json
 from pathlib import Path
 from typing import Dict, Set
 
-from common.manifest_utils import (
-    CUTOUT_PATH_COL,
-    GALAXY_ID_COL,
-    LABEL_COL,
-    SPLIT_COL,
-    ensure_split_values,
-    load_manifest,
-    safe_json_dump,
-)
+import pandas as pd
+
+CUTOUT_PATH_COL = "cutout_path"
+GALAXY_ID_COL = "galaxy_id"
+LABEL_COL = "label"
+SPLIT_COL = "split"
+
+VALID_SPLITS = {"train", "val", "test"}
+
+
+def load_manifest(path: str) -> pd.DataFrame:
+    p = Path(path)
+    if p.suffix == ".parquet":
+        return pd.read_parquet(p)
+    return pd.read_csv(p)
+
+
+def ensure_split_values(df: pd.DataFrame) -> None:
+    bad = set(df[SPLIT_COL].dropna().unique()) - VALID_SPLITS
+    if bad:
+        raise ValueError(f"Unexpected split values: {bad}")
+
+
+def safe_json_dump(obj, path: str) -> None:
+    Path(path).write_text(json.dumps(obj, indent=2, sort_keys=True))
 
 
 def main() -> None:

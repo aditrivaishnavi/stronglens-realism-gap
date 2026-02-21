@@ -29,14 +29,14 @@ A random-negative baseline provides context: typical negatives should score low.
 Confusers that score similarly high would indicate potential shortcut learning.
 
 Usage:
-    cd stronglens_calibration
+    cd stronglens-realism-gap
     export PYTHONPATH=.
     python sim_to_real_validations/confuser_morphology_test.py \\
         --checkpoint checkpoints/paperIV_efficientnet_v2_s/best.pt \\
         --manifest manifests/training_parity_70_30_v1.parquet \\
         --out-dir results/confuser_morphology_test
 
-Author: stronglens_calibration project
+Author: stronglens-realism-gap project
 Date: 2026-02-13
 """
 from __future__ import annotations

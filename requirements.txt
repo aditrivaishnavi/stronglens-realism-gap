@@ -1,4 +1,4 @@
-# stronglens_calibration: Pinned dependencies for reproducibility
+# stronglens-realism-gap: Pinned dependencies for reproducibility
 # MNRAS paper: "Calibrating CNN-Based Strong Gravitational Lens Finders in DESI DR10"
 #
 # Tested on: Lambda Cloud (NVIDIA GH200), Ubuntu 22.04, Python 3.11

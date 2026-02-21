@@ -35,7 +35,7 @@ For 70/15/15 audit manifest:
         --split test \\
         --output results/eval_resnet18_test.json
 
-Author: stronglens_calibration project
+Author: stronglens-realism-gap project
 Date: 2026-02-11
 Aligned with: MNRAS_RAW_NOTES.md Section 9, Paper IV (Inchausti et al. 2025)
 """
@@ -192,7 +192,7 @@ def compute_binary_metrics(
     auc = float(roc_auc_score(y, y_score)) if n_pos > 0 and n_neg > 0 else float("nan")
 
     # Partial AUC at low FPR regimes (scientifically relevant for lens finding,
-    # where FPR < 0.1% matters). Added per code review.
+    # where FPR < 0.1% matters).
     pauc_001 = float("nan")  # pAUC at FPR < 0.1%
     pauc_01 = float("nan")   # pAUC at FPR < 1%
     if n_pos > 0 and n_neg > 0:
@@ -202,9 +202,8 @@ def compute_binary_metrics(
         except ValueError:
             pass  # can fail if too few samples
 
-    # TPR at fixed FPR thresholds (code review recommendation).
+    # TPR at fixed FPR thresholds.
     # For lens finding, the relevant operating point is FPR < 0.1%.
-    # Both reviewers: "report TPR at FPR=1e-3, not only AUC."
     tpr_at_fpr_001 = float("nan")  # TPR at FPR = 0.1%
     tpr_at_fpr_01 = float("nan")   # TPR at FPR = 1%
     if n_pos > 0 and n_neg > 0:
@@ -451,7 +450,7 @@ def evaluate(
     effective_manifest = manifest_path
     effective_ckpt = checkpoint_path
     if data_root:
-        default_root = "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration"
+        default_root = "/lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap"
         effective_manifest = manifest_path.replace(default_root, data_root.rstrip("/"), 1)
         effective_ckpt = checkpoint_path.replace(default_root, data_root.rstrip("/"), 1)
         print(f"Data root override: {data_root}")
@@ -509,7 +508,7 @@ def evaluate(
     print(f"  ECE (n_bins={n_bins}): {ece:.6f}")
     print(f"  MCE: {mce:.6f}")
 
-    # Positive-class calibration per code review:
+    # Positive-class calibration:
     # Overall ECE is dominated by negatives (93:1 ratio). For the positive
     # class, assess calibration separately: among samples with p > threshold,
     # what fraction are true positives? This is the "precision at predicted
@@ -615,8 +614,7 @@ def evaluate(
             "note": (
                 "ECE is dominated by the majority class (negatives). "
                 "It does NOT certify calibration on the positive class. "
-                "pos_ece/pos_mce assess calibration on positives only "
-                "per code review. "
+                "pos_ece/pos_mce assess calibration on positives only. "
                 "See MNRAS_RAW_NOTES.md Section 7.5."
             ),
         },

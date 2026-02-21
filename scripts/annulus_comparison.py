@@ -15,7 +15,7 @@ What this decides:
     -> annulus may inject condition-dependent distortions worth retraining
 
 Usage:
-    cd stronglens_calibration
+    cd stronglens-realism-gap
     export PYTHONPATH=.
 
     python scripts/annulus_comparison.py \\

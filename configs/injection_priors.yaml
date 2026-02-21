@@ -13,8 +13,8 @@
 # PAPER: When writing the MNRAS paper, cite these values — they are what
 # the code actually uses. Do NOT invent different numbers.
 #
-# CREATED: 2026-02-13 (after code review identified mismatch
-#          between code defaults and paper description)
+# CREATED: 2026-02-13 (identified mismatch between code defaults
+#          and paper description)
 # UPDATED: 2026-02-16 — six realism fixes based on manual visual inspection
 #          of injected vs real Tier-A lenses (see injection_engine.py docstring)
 # =============================================================================

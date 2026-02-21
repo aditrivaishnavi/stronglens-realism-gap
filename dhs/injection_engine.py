@@ -396,7 +396,7 @@ def inject_sis_shear(
 ) -> InjectionResult:
     """Inject a lensed source into a single host cutout.
 
-    Format boundary (Q3.2):
+    Format boundary:
         Input:  host_nmgy_hwc is (H, W, 3) HWC torch float32 in nanomaggies.
         Output: InjectionResult.injected and .injection_only are (1, 3, H, W) CHW torch.
         Callers must transpose HWC->CHW before feeding to preprocess_stack.
@@ -646,7 +646,7 @@ def sample_source_params(
     g_minus_r_mu_sigma: Tuple[float, float] = (1.15, 0.30),
     r_minus_z_mu_sigma: Tuple[float, float] = (0.85, 0.20),
     clumps_prob: float = 0.0,
-    # Q1.16 fix: clumps params were previously hardcoded in the function body.
+    # Clumps params were previously hardcoded in the function body.
     # Now they are explicit parameters so the AST-based prior validator can
     # check them against configs/injection_priors.yaml.
     clumps_n_range: Tuple[int, int] = (1, 4),
@@ -661,7 +661,7 @@ def sample_source_params(
     We sample beta as a fraction of theta_E. For SIS, beta < theta_E produces
     multiple images and a realistic magnification distribution.
 
-    Prior ranges (updated 2026-02-13 after code review):
+    Prior ranges (updated 2026-02-13):
 
     g_minus_r_mu_sigma: (1.15, 0.30) -- changed from (0.2, 0.25).
         BUG FIX (2026-02-16): Previous defaults were rest-frame blue galaxy

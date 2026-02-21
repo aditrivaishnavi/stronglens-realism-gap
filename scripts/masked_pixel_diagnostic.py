@@ -13,7 +13,7 @@ This script samples cutouts from the manifest and reports:
   - Summary statistics
 
 Usage:
-    cd stronglens_calibration
+    cd stronglens-realism-gap
     export PYTHONPATH=.
 
     python scripts/masked_pixel_diagnostic.py \\

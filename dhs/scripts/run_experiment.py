@@ -15,7 +15,7 @@ from dhs.transforms import AugmentConfig
 from dhs.train import TrainConfig, train_one
 
 # Default Lambda NFS root; replaced by --data_root when provided for portability.
-DEFAULT_DATA_ROOT = "/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration"
+DEFAULT_DATA_ROOT = "/lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap"
 
 
 def _git_commit(cwd: str | None = None) -> str:

@@ -41,10 +41,10 @@ results/
 
 ## Usage
 
-All scripts require `PYTHONPATH=.` from the `stronglens_calibration/code` directory on NFS, and a CUDA GPU.
+All scripts require `PYTHONPATH=.` from the `stronglens-realism-gap/code` directory on NFS, and a CUDA GPU.
 
 ```bash
-cd /lambda/nfs/.../stronglens_calibration/code
+cd /lambda/nfs/.../stronglens-realism-gap/code
 export PYTHONPATH=.
 
 # 1. Score real lenses

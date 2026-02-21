@@ -3,7 +3,7 @@
 Beta_frac Ceiling Diagnostic: Investigate why bright-arc recovery
 plateaus at ~30%.
 
-IMPORTANT LIMITATION (Code review finding):
+IMPORTANT LIMITATION:
   This script uses an arc-annulus SNR proxy on BLANK (noise-only) hosts
   to measure "detection." It does NOT use the CNN model. Therefore:
   - Results are UPPER BOUNDS on detection probability (real hosts add
@@ -14,7 +14,7 @@ IMPORTANT LIMITATION (Code review finding):
   - For CNN-based beta_frac analysis, use bright_arc_injection_test.py
     with --beta-frac-range instead.
 
-HYPOTHESIS (code review finding):
+HYPOTHESIS:
   The area-weighted sampling beta_frac = sqrt(U(lo^2, hi^2)) with
   lo=0.1, hi=1.0 produces P(beta_frac < 0.55) ≈ 29.5%. For SIS/SIE
   lenses, sources near the Einstein radius (beta_frac ~ 0.5-0.6) form
@@ -31,14 +31,14 @@ EXPERIMENTAL PLAN:
      bright-arc recovery jumps to ~80-90%.
 
 USAGE (requires torch, numpy):
-    cd stronglens_calibration
+    cd stronglens-realism-gap
     PYTHONPATH=. python scripts/beta_frac_ceiling_diagnostic.py \\
         --n-trials 200 --theta-e 1.5 --output results/beta_frac_diagnostic.json
 
     # Quick math-only check (no torch needed):
     PYTHONPATH=. python scripts/beta_frac_ceiling_diagnostic.py --math-only
 
-Created: 2026-02-13 (code review finding)
+Created: 2026-02-13
 """
 from __future__ import annotations
 
@@ -222,14 +222,14 @@ def run_injection_experiment(
             "snr_threshold": snr_threshold,
         }
 
-    # --- Q1.20 fix: compute P(detected | beta_frac) in bins ---
+    # Compute P(detected | beta_frac) in bins
     # Use the bf_max=1.0 run (full prior) for binned analysis
     full_key = str(max(beta_frac_maxes))
     if full_key in results:
         print("\n" + "=" * 60)
-        print("P(detected | beta_frac) in bins  [Q1.20]")
+        print("P(detected | beta_frac) in bins")
         print("  NOTE: These are blank-host detection rates, which are strict")
-        print("  upper bounds on real-host detection (Q1.18). Real hosts add")
+        print("  upper bounds on real-host detection. Real hosts add")
         print("  galaxy light gradients and color context that can confuse")
         print("  or suppress arc detection.")
         print("=" * 60)
@@ -299,11 +299,11 @@ def run_injection_experiment(
         print(f"{bf_max:>8.2f} {r['detection_rate']:>11.1%} "
               f"{r['mean_snr']:>10.1f} {r['median_beta_frac']:>8.3f}")
 
-    print("\n  NOTE (Q1.18): All detection rates above are on BLANK hosts (noise-only).")
+    print("\n  NOTE: All detection rates above are on BLANK hosts (noise-only).")
     print("  They represent strict upper bounds. Real hosts with galaxy light")
     print("  will have lower detection rates due to annulus contamination,")
     print("  color gradients, and morphological confusion.")
-    print("  NOTE (Q5.6): To test whether clipping artifacts contribute to the")
+    print("  NOTE: To test whether clipping artifacts contribute to the")
     print("  ceiling, rerun with --clip-range-test to compare clip_range=10 vs 50.")
 
     if output_path:

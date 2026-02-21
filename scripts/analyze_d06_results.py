@@ -12,7 +12,7 @@ Reads all D06 output JSONs and CSVs, computes:
   - Tier-A recall (unchanged, for reference)
 
 Usage:
-    cd /lambda/nfs/darkhaloscope-training-dc/stronglens_calibration
+    cd /lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap
     PYTHONPATH=. python scripts/analyze_d06_results.py \
         --d06-dir results/D06_corrected_priors \
         --out-dir results/D06_corrected_priors/analysis

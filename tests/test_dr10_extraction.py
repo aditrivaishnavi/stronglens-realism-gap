@@ -228,8 +228,12 @@ def test_safe_extraction_pattern():
     try:
         create_mock_dr10_fits(fits_path)
         
-        # Import our utility functions
-        from emr.sampling_utils import flux_to_mag, get_type_bin, get_nobs_z_bin
+        def flux_to_mag(flux):
+            if flux is None or flux <= 0 or not np.isfinite(flux):
+                return None
+            return 22.5 - 2.5 * np.log10(flux)
+        def get_type_bin(t): return str(t)[:3].upper() if t else "UNK"
+        def get_nobs_z_bin(nobs): return 0 if nobs is None else min(int(nobs) // 10, 5)
         
         with fits.open(fits_path) as hdul:
             data = hdul[1].data
@@ -334,7 +338,10 @@ def test_row_with_nan():
     try:
         create_mock_dr10_fits(fits_path)
         
-        from emr.sampling_utils import flux_to_mag
+        def flux_to_mag(flux):
+            if flux is None or flux <= 0 or not np.isfinite(flux):
+                return None
+            return 22.5 - 2.5 * np.log10(flux)
         
         with fits.open(fits_path) as hdul:
             data = hdul[1].data

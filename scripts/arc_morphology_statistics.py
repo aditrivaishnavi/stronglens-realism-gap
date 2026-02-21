@@ -4,8 +4,8 @@ Arc Morphology Statistics: Pixel-level diagnostics comparing real vs injected ar
 
 SCIENTIFIC MOTIVATION
 ============================================
-Code review identified that Sersic injections differ from real arcs in
-specific, measurable pixel-level properties. This script computes:
+Sersic injections differ from real arcs in specific, measurable
+pixel-level properties. This script computes:
 
 1. **High-frequency power**: Radial average of 2D power spectrum in the arc
    annulus region. Real arcs (clumpy star-forming galaxies) have higher high-k
@@ -24,7 +24,7 @@ specific, measurable pixel-level properties. This script computes:
    structure; smooth injections have only sky noise.
 
 Usage:
-    cd stronglens_calibration
+    cd stronglens-realism-gap
     export PYTHONPATH=.
 
     python scripts/arc_morphology_statistics.py \\

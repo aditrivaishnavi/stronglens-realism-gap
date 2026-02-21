@@ -14,7 +14,7 @@ a large change means normalization materially controls detectability.
 This is a sensitivity test, NOT a correctness test.
 
 Usage:
-    cd stronglens_calibration
+    cd stronglens-realism-gap
     export PYTHONPATH=.
 
     python scripts/mismatched_annulus_scoring.py \\

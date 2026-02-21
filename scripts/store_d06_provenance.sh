@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 # store_d06_provenance.sh — Record SHA256 checksums for D06 code provenance.
 #
-# Code review flagged that the D06 results have
-# git_hash="unknown" because lambda3 is not a git repo. This script
+# The D06 results have git_hash="unknown" because lambda3 is not a
+# git repo. This script
 # records file hashes as a cryptographic audit trail.
 #
 # Usage:
-#   cd /lambda/nfs/darkhaloscope-training-dc/stronglens_calibration
+#   cd /lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap
 #   bash scripts/store_d06_provenance.sh
 
 set -euo pipefail
 
-BASE="/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration"
+BASE="/lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap"
 D06_DIR="$BASE/results/D06_corrected_priors"
 OUT="$D06_DIR/provenance.json"
 

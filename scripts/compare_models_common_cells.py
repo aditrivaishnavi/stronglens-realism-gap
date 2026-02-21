@@ -2,7 +2,7 @@
 """
 Compare Model 1 vs Model 2 on common (intersection) grid cells.
 
-Code review finding: Model 2 has 209 populated cells vs Model 1's 220.
+Model 2 has 209 populated cells vs Model 1's 220.
 The 11 missing cells in Model 2 could bias the comparison if those cells
 have higher-than-average completeness. This script restricts both models
 to the intersection of populated cells for a fair comparison.

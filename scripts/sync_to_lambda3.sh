@@ -5,7 +5,7 @@ set -euo pipefail
 
 # Configuration — edit these for your setup
 LAMBDA3_HOST="${LAMBDA3_HOST:-lambda3}"
-REMOTE_DIR="/lambda/nfs/darkhaloscope-training-dc/stronglens_calibration"
+REMOTE_DIR="/lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap"
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"

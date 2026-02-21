@@ -24,7 +24,7 @@
 
 dataset:
   parquet_path: ""
-  manifest_path: /lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/manifests/training_parity_70_30_v1.parquet
+  manifest_path: /lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap/manifests/training_parity_70_30_v1.parquet
   mode: file_manifest
   preprocessing: raw_robust
   label_col: label
@@ -52,10 +52,10 @@ train:
   num_workers: 8
   device: cuda
   early_stopping_patience: 0   # Run all 60 epochs
-  out_dir: /lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/checkpoints/paperIV_efficientnet_v2_s_v4_finetune
+  out_dir: /lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap/checkpoints/paperIV_efficientnet_v2_s_v4_finetune
   mixed_precision: true
   unweighted_loss: true
   pretrained: false     # NOT loading ImageNet weights — we load our own via init_weights
   freeze_backbone_epochs: 0    # No freezing — model is already adapted
   warmup_epochs: 3             # Brief 3-epoch warmup from lr/100 to lr
-  init_weights: /lambda/nfs/darkhaloscope-training-dc/stronglens_calibration/checkpoints/paperIV_efficientnet_v2_s_v2/best.pt
+  init_weights: /lambda/nfs/darkhaloscope-training-dc/stronglens-realism-gap/checkpoints/paperIV_efficientnet_v2_s_v2/best.pt
