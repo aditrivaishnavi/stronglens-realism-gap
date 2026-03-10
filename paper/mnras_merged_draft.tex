@@ -11,13 +11,12 @@
 
 \title[Injection realism gap for CNN lens finding]{A morphological barrier: quantifying the injection realism gap for CNN strong lens finders in DESI Legacy Survey DR10}
 
-\author[Author et al.]{
-A.~Author,$^{1}$\thanks{E-mail: author@institute.edu}
-B.~Author,$^{2}$
-C.~Author$^{1}$
+\author[Balaji \& Johnson]{
+Aditrivaishnavi~Balaji,$^{1}$\thanks{E-mail: aditrivaishnavi@gmail.com}
+and Parker~T.~Johnson$^{2}$
 \\
-$^{1}$Institute, Address\\
-$^{2}$Institute, Address
+$^{1}$BASIS Independent Silicon Valley, 1290 Parkmoor Ave, San Jose, California\\
+$^{2}$Steward Observatory, The University of Arizona, 933 North Cherry Avenue, Tucson, Arizona
 }
 
 \date{Accepted XXX. Received YYY; in original form ZZZ}
@@ -449,7 +448,7 @@ This pattern is consistent with the dual-mechanism interpretation: at small $\th
 
 Widening the preprocessing clip range from 10 to 20 preserves bright arc features that would otherwise be clipped, increasing detection at bright magnitudes (e.g.\ $+16.0$~pp at mag~$18$--$19$: $29.0 \to 45.0$~per cent).  One might expect that combining wider clipping with Poisson noise would yield an additive benefit.  Instead, the interaction is non-additive.  At source magnitude~$21$--$22$, Poisson noise alone gains $+10.5$~pp (baseline $33.0 \to 43.5$~per cent), while clip$\,=\,$20 alone gains $+4.5$~pp ($33.0 \to 37.5$~per cent).  If these effects were independent, their combination should yield approximately $48.0$~per cent.  The observed value is $32.5$~per cent --- essentially no change from baseline --- indicating destructive interference between the two modifications.
 
-The mechanism is that clip$\,=\,$20 changes the normalisation statistics that the model was trained with (clip$\,=\,$10), shifting the feature representation.  When Poisson noise is added on top of clip$\,=\,$20, the model sees both out-of-distribution normalisation \emph{and} noisy arcs, and the two effects compound negatively.  This underscores that the detection deficit is not attributable to any single missing ingredient: the CNN's sensitivity to preprocessing parameters (clip range) confounds the beneficial texture effect of Poisson noise.
+The mechanism is that clip$\,=\,$20 changes the normalisation statistics that the model was trained with (clip$\,=\,$10), shifting the feature representation.  When Poisson noise is added on top of clip$\,=\,$20, the model sees both out-of-distribution normalisation \emph{and} noisy arcs, and the two effects compound negatively.  This confirms that the detection deficit is not attributable to any single missing ingredient: the CNN's sensitivity to preprocessing parameters (clip range) confounds the beneficial texture effect of Poisson noise.
 
 
 \subsubsection{Interpretation: the barrier is morphological}
@@ -535,7 +534,7 @@ More broadly, because injections are rendered into real survey cutouts but do no
 
 \subsection{Future directions}
 
-The natural next step is to replace parametric S\'{e}rsic sources with real galaxy stamps from deep imaging.  \citet{Canameras2024} demonstrated this approach for HSC using HUDF stamps.  Adapting their procedure to DESI DR10 requires careful treatment of the HST-to-DESI bandpass transformation, the $8.7\times$ pixel scale difference (HUDF at $0.03\;\mathrm{arcsec\;pixel^{-1}}$ versus DESI at $0.262\;\mathrm{arcsec\;pixel^{-1}}$), and PSF matching.  We propose using the linear probe AUC as a quantitative gate: when real-stamp injections achieve a probe AUC materially closer to 0.5, their completeness estimates can be considered more reliable.  The real-stamp pipeline is the subject of forthcoming work.
+The natural next step is to replace parametric S\'{e}rsic sources with real galaxy stamps from deep imaging.  \citet{Canameras2024} demonstrated this approach for HSC using HUDF stamps.  Adapting their procedure to DESI DR10 requires careful treatment of the HST-to-DESI bandpass transformation, the $8.7\times$ pixel scale difference (HUDF at $0.03\;\mathrm{arcsec\;pixel^{-1}}$ versus DESI at $0.262\;\mathrm{arcsec\;pixel^{-1}}$), and PSF matching.  We propose using the linear probe AUC as a quantitative gate: when real-stamp injections achieve a probe AUC materially closer to 0.5, their completeness estimates can be considered more reliable.  In particular, decomposing the observed AUC $= 0.997$ into host-population and arc-morphology components --- by injecting both parametric and real-stamp sources into the same matched host galaxies --- is a critical test of the morphological interpretation and is the subject of forthcoming work.
 
 Additional improvements to the injection pipeline include implementing band-dependent PSF convolution, modelling correlated noise from the coadd process, and extending the source prior to include multi-component lensed morphologies (e.g.\ multiple merging images, Einstein rings).
 
@@ -545,7 +544,7 @@ Additional improvements to the injection pipeline include implementing band-depe
 % ====================================================================
 \section{Conclusions}
 
-We have presented a comprehensive analysis of the selection function for a CNN strong gravitational lens finder applied to DESI Legacy Imaging Survey DR10.  Our main results are as follows.
+We have presented a systematic analysis of the selection function for a CNN strong gravitational lens finder applied to DESI Legacy Imaging Survey DR10.  Our main results are as follows.
 
 \begin{enumerate}
 \item[(i)] The EfficientNetV2-S classifier achieves $89.3$~per cent recall (95~per cent CI: $[82.6, 94.0]$~per cent) on 112 spectroscopically confirmed Tier-A lenses, with zero Tier-A HEALPix pixel overlap between training and validation sets.
@@ -561,10 +560,40 @@ We have presented a comprehensive analysis of the selection function for a CNN s
 
 
 \section*{Acknowledgements}
-[Acknowledgements to be added.]
+The DESI Legacy Imaging Surveys consist of three individual and
+complementary projects: the Dark Energy Camera Legacy Survey (DECaLS),
+the Beijing-Arizona Sky Survey (BASS), and the Mayall $z$-band Legacy
+Survey (MzLS).  DECaLS, BASS and MzLS together include data obtained,
+respectively, at the Blanco telescope, Cerro Tololo Inter-American
+Observatory, NSF's NOIRLab; the Bok telescope, Steward Observatory,
+University of Arizona; and the Mayall telescope, Kitt Peak National
+Observatory, NOIRLab.  NOIRLab is operated by the Association of
+Universities for Research in Astronomy (AURA) under a cooperative
+agreement with the National Science Foundation.  Pipeline processing and
+analyses of the data were supported by NOIRLab and the Lawrence Berkeley
+National Laboratory (LBNL).  Legacy Surveys also use data products from
+the Near-Earth Object Wide-field Infrared Survey Explorer (NEOWISE), a
+project of the Jet Propulsion Laboratory/California Institute of
+Technology, funded by the National Aeronautics and Space Administration.
+Legacy Surveys was supported by: the Director, Office of Science, Office
+of High Energy Physics of the U.S.\ Department of Energy; the National
+Energy Research Scientific Computing Center, a DOE Office of Science
+User Facility; the U.S.\ National Science Foundation, Division of
+Astronomical Sciences; the National Astronomical Observatories of China,
+the Chinese Academy of Sciences and the Chinese National Natural Science
+Foundation.  LBNL is managed by the Regents of the University of
+California under contract to the U.S.\ Department of Energy.  The
+complete acknowledgements can be found at
+\url{https://www.legacysurvey.org/acknowledgment/}.
+
+AI language models (Claude, Anthropic; ChatGPT, OpenAI) were used as
+coding assistants during the development of analysis scripts and for
+manuscript copy-editing.  All AI-assisted code was reviewed, tested, and
+verified by the authors, who are solely responsible for the scientific
+content of this paper.
 
 \section*{Data availability}
-The injection pipeline code, selection function grid results (per-cell completeness tables), bright-arc test results, CNN model weights, and the linear probe analysis scripts will be archived on Zenodo (DOI to be assigned on acceptance) and released via a public GitHub repository.  The training manifest, Tier-A and Tier-B lens catalogues, and per-injection metadata will be included in the archive.  The DESI Legacy Imaging Survey DR10 data are publicly available at \url{https://www.legacysurvey.org/dr10/}.
+The injection pipeline code, selection function grid results (per-cell completeness tables), bright-arc test results, CNN model weights, and the linear probe analysis scripts will be archived on Zenodo (DOI to be assigned on acceptance) and are available at \url{https://github.com/aditrivaishnavi/stronglens-realism-gap} (to be made public on acceptance).  The training manifest, Tier-A and Tier-B lens catalogues, and per-injection metadata will be included in the archive.  The DESI Legacy Imaging Survey DR10 data are publicly available at \url{https://www.legacysurvey.org/dr10/}.
 
 
 % ====================================================================

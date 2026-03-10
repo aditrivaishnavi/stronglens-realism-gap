@@ -102,7 +102,7 @@ If you use this code or the results in your work, please cite:
 ```bibtex
 @article{balaji2026morphological,
   title={A morphological barrier: quantifying the injection realism gap for CNN strong lens finders in DESI Legacy Survey DR10},
-  author={Balaji, Aditrivaishnavi},
+  author={Balaji, Aditrivaishnavi and Johnson, Parker T.},
   journal={MNRAS},
   year={2026}
 }
