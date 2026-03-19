@@ -350,13 +350,14 @@ def make_fig4():
 
     # Tier-A recall reference line
     ax.axhline(89.3, color="red", linestyle="--", linewidth=1, alpha=0.7)
-    ax.text(25.7, 90, "Tier-A recall\n(89.3%)", fontsize=8, color="red", va="bottom", ha="right")
+    ax.text(25.7, 57, "Tier-A recall\n(89.3%)\n↑ off scale", fontsize=8, color="red", va="top", ha="right")
 
     ax.set_xlabel("Source apparent magnitude", fontsize=12)
     ax.set_ylabel("Detection rate (per cent, $p > 0.3$)", fontsize=12)
     ax.set_title("Bright-Arc Detection Rate vs Source Magnitude", fontsize=12)
     ax.set_xlim(17.8, 26.2)
-    ax.set_ylim(-2, 50)
+    ax.set_ylim(-2, 60)
+    ax.set_yticks([0, 10, 20, 30, 40, 50, 60])
     ax.legend(fontsize=8, loc="upper right", ncol=2)
     ax.grid(True, alpha=0.3)
 
