@@ -105,9 +105,9 @@ validation_results = {}
 # ── Figure 1: Completeness vs theta_E and lensed magnitude ──────────
 def make_fig1():
     print("Generating Figure 1: Completeness vs theta_E and lensed mag...")
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4.5))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.93, 3.8))
 
-    # Left: C vs theta_E (no Poisson)
+    # Left: C vs theta_E (no Poisson) — log y-axis
     theta_es, comp, ci_lo, ci_hi, raw = load_grid_by_theta(GRID_NP)
     comp_pct = [c * 100 for c in comp]
     ci_lo_pct = [c * 100 for c in ci_lo]
@@ -116,15 +116,17 @@ def make_fig1():
     yerr_hi = [hi - c for c, hi in zip(comp_pct, ci_hi_pct)]
 
     ax1.errorbar(theta_es, comp_pct, yerr=[yerr_lo, yerr_hi],
-                 fmt="o-", color="C0", capsize=3, markersize=5, linewidth=1.5,
+                 fmt="o-", color="C0", capsize=3, markersize=4, linewidth=1.5,
                  label="No Poisson")
-    ax1.set_xlabel(r"$\theta_{\rm E}$ (arcsec)", fontsize=12)
-    ax1.set_ylabel("Completeness (per cent)", fontsize=12)
-    ax1.set_title(r"Completeness vs $\theta_{\rm E}$ ($p > 0.3$)", fontsize=11)
+    ax1.set_yscale("log")
+    ax1.set_xlabel(r"$\theta_{\rm E}$ (arcsec)", fontsize=9)
+    ax1.set_ylabel("Completeness (%)", fontsize=9)
+    ax1.set_title(r"Completeness vs $\theta_{\rm E}$ ($p > 0.3$)", fontsize=9)
     ax1.set_xlim(0.3, 3.2)
-    ax1.set_ylim(0, 10)
-    ax1.grid(True, alpha=0.3)
+    ax1.set_ylim(0.1, 15)
+    ax1.grid(True, alpha=0.3, which="both")
     ax1.legend(fontsize=9)
+    ax1.tick_params(labelsize=8)
 
     # Right: C vs lensed mag (no Poisson and Poisson)
     mag_np = load_grid_by_mag(GRID_NP)
@@ -151,12 +153,13 @@ def make_fig1():
     ax2.bar([x + width/2 for x in x_pos], comp_p, width, label="Poisson (g=150)", color="C1", alpha=0.8)
     ax2.set_xticks(list(x_pos))
     ax2.set_xticklabels(mag_display)
-    ax2.set_xlabel("Lensed apparent magnitude", fontsize=12)
-    ax2.set_ylabel("Completeness (per cent)", fontsize=12)
-    ax2.set_title(r"Completeness vs lensed mag ($p > 0.3$)", fontsize=11)
+    ax2.set_xlabel("Lensed apparent magnitude", fontsize=9)
+    ax2.set_ylabel("Completeness (%)", fontsize=9)
+    ax2.set_title(r"Completeness vs lensed mag ($p > 0.3$)", fontsize=9)
     ax2.set_ylim(0, 65)
     ax2.legend(fontsize=9)
     ax2.grid(True, alpha=0.3, axis="y")
+    ax2.tick_params(labelsize=8)
 
     plt.tight_layout()
     outpath = OUT / "fig1_completeness.pdf"
@@ -221,7 +224,7 @@ def make_fig2():
     c_high = coords[idx:idx+n_high]; idx += n_high
     c_neg = coords[idx:idx+n_neg]
 
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.93, 3.8))
 
     # Left: category-colored
     ax1.scatter(c_neg[:, 0], c_neg[:, 1], s=8, alpha=0.3, c="grey", label=f"Negatives (n={n_neg})", rasterized=True)
@@ -229,22 +232,24 @@ def make_fig2():
     ax1.scatter(c_low[:, 0], c_low[:, 1], s=12, alpha=0.5, c="C0", label=f"Inj low-bf (n={n_low})", rasterized=True)
     ax1.scatter(c_real[:, 0], c_real[:, 1], s=30, alpha=0.9, c="goldenrod", edgecolors="k", linewidths=0.5,
                 label=f"Real Tier-A (n={n_real})", zorder=10)
-    ax1.set_xlabel("UMAP-1", fontsize=11)
-    ax1.set_ylabel("UMAP-2", fontsize=11)
-    ax1.set_title("Category", fontsize=12)
-    ax1.legend(fontsize=8, loc="best", markerscale=1.5)
+    ax1.set_xlabel("UMAP-1", fontsize=9)
+    ax1.set_ylabel("UMAP-2", fontsize=9)
+    ax1.set_title("Category", fontsize=9)
+    ax1.legend(fontsize=9, loc="best", markerscale=1.5)
+    ax1.tick_params(labelsize=8)
 
     # Right: score-colored
     sc = ax2.scatter(coords[:, 0], coords[:, 1], s=10, c=all_scores, cmap="viridis",
                      vmin=0, vmax=1, alpha=0.6, rasterized=True)
-    # Overlay real lenses with edge
     ax2.scatter(c_real[:, 0], c_real[:, 1], s=30, c=scores_real, cmap="viridis",
                 vmin=0, vmax=1, edgecolors="k", linewidths=0.5, zorder=10)
-    ax2.set_xlabel("UMAP-1", fontsize=11)
-    ax2.set_ylabel("UMAP-2", fontsize=11)
-    ax2.set_title("CNN Score", fontsize=12)
+    ax2.set_xlabel("UMAP-1", fontsize=9)
+    ax2.set_ylabel("UMAP-2", fontsize=9)
+    ax2.set_title("CNN Score", fontsize=9)
+    ax2.tick_params(labelsize=8)
     cbar = plt.colorbar(sc, ax=ax2, shrink=0.8)
-    cbar.set_label("Score $p$", fontsize=10)
+    cbar.set_label("Score $p$", fontsize=9)
+    cbar.ax.tick_params(labelsize=8)
 
     plt.tight_layout()
     outpath = OUT / "fig2_umap.pdf"
@@ -269,30 +274,31 @@ def make_fig3():
     scores_low = data["scores_inj_low_bf"]
     scores_neg = data["scores_negatives"]
 
-    fig, ax = plt.subplots(figsize=(7, 4.5))
+    fig, ax = plt.subplots(figsize=(3.31, 3.2))
 
     bins = np.linspace(0, 1, 51)
 
-    ax.hist(scores_neg, bins=bins, alpha=0.5, color="grey", label=f"Negatives (n={len(scores_neg)}, med={np.median(scores_neg):.1e})",
+    ax.hist(scores_neg, bins=bins, alpha=0.5, color="grey", label=f"Neg (n={len(scores_neg)})",
             density=False, log=True)
-    ax.hist(scores_low, bins=bins, alpha=0.6, color="C0", label=f"Inj low-bf (n={len(scores_low)}, med={np.median(scores_low):.3f})",
+    ax.hist(scores_low, bins=bins, alpha=0.6, color="C0", label=f"Inj (n={len(scores_low)})",
             density=False, log=True)
     ax.hist(scores_real, bins=bins, alpha=0.8, color="goldenrod",
-            label=f"Real Tier-A (n={len(scores_real)}, med={np.median(scores_real):.3f})",
+            label=f"Tier-A (n={len(scores_real)})",
             density=False, log=True)
 
     # Threshold lines
-    thresholds = {"$p=0.3$": 0.3, "$p=0.806$\n(FPR$=10^{-3}$)": 0.806, "$p=0.995$\n(FPR$\\approx 3{\\times}10^{-4}$)": 0.995}
+    thresholds = {"$p=0.3$": 0.3, "$p=0.806$": 0.806, "$p=0.995$": 0.995}
     for label, val in thresholds.items():
-        ax.axvline(val, color="red", linestyle="--", alpha=0.7, linewidth=1)
-        ax.text(val + 0.01, ax.get_ylim()[1] * 0.5, label, fontsize=7, color="red", rotation=90, va="center")
+        ax.axvline(val, color="red", linestyle="--", alpha=0.7, linewidth=0.8)
+        ax.text(val + 0.01, ax.get_ylim()[1] * 0.5, label, fontsize=8, color="red", rotation=90, va="center")
 
-    ax.set_xlabel("CNN Score $p$", fontsize=12)
-    ax.set_ylabel("Count (log scale)", fontsize=12)
-    ax.set_title("Score Distributions", fontsize=12)
-    ax.legend(fontsize=8, loc="upper center")
+    ax.set_xlabel("CNN Score $p$", fontsize=9)
+    ax.set_ylabel("Count (log scale)", fontsize=9)
+    ax.set_title("Score Distributions", fontsize=9)
+    ax.legend(fontsize=8, loc="upper right")
     ax.set_xlim(-0.02, 1.02)
     ax.grid(True, alpha=0.3, axis="y")
+    ax.tick_params(labelsize=8)
 
     plt.tight_layout()
     outpath = OUT / "fig3_scores.pdf"
@@ -313,16 +319,16 @@ def make_fig3():
 # ── Figure 4: Bright-arc detection rates ─────────────────────────────
 def make_fig4():
     print("Generating Figure 4: Bright-arc detection rates (signature figure)...")
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(3.31, 3.5))
 
     styles = {
-        "Baseline": dict(color="C0", linestyle="-", linewidth=2, marker="s", markersize=5),
-        "Poisson (g=150)": dict(color="C1", linestyle="--", linewidth=2, marker="^", markersize=5),
-        "clip=20": dict(color="C2", linestyle=":", linewidth=2, marker="D", markersize=5),
-        "Poisson+clip20": dict(color="C3", linestyle="-.", linewidth=2, marker="v", markersize=5),
-        "Unrestricted": dict(color="C4", linestyle="-", linewidth=1, marker="x", markersize=5),
-        r"Gain=$10^{12}$": dict(color="C0", linestyle="none", marker="o", markersize=9,
-                                markerfacecolor="none", markeredgewidth=2),
+        "Baseline": dict(color="C0", linestyle="-", linewidth=1.5, marker="s", markersize=4),
+        "Poisson (g=150)": dict(color="C1", linestyle="--", linewidth=1.5, marker="^", markersize=4),
+        "clip=20": dict(color="C2", linestyle=":", linewidth=1.5, marker="D", markersize=4),
+        "Poisson+clip20": dict(color="C3", linestyle="-.", linewidth=1.5, marker="v", markersize=4),
+        "Unrestricted": dict(color="C4", linestyle="-", linewidth=1, marker="x", markersize=4),
+        r"Gain=$10^{12}$": dict(color="C0", linestyle="none", marker="o", markersize=6,
+                                markerfacecolor="none", markeredgewidth=1.5),
     }
 
     all_rates = {}
@@ -350,18 +356,18 @@ def make_fig4():
 
     # Tier-A recall reference line
     ax.axhline(89.3, color="red", linestyle="--", linewidth=1, alpha=0.7)
-    ax.text(25.7, 57, "Tier-A recall\n(89.3%)\n↑ off scale", fontsize=8, color="red", va="top", ha="right")
+    ax.text(25.7, 91, "Tier-A recall (89.3%)", fontsize=7, color="red", va="bottom", ha="right")
 
-    ax.set_xlabel("Source apparent magnitude", fontsize=12)
-    ax.set_ylabel("Detection rate (per cent, $p > 0.3$)", fontsize=12)
-    ax.set_title("Bright-Arc Detection Rate vs Source Magnitude", fontsize=12)
+    ax.set_xlabel("Source apparent magnitude", fontsize=9)
+    ax.set_ylabel("Detection rate (%, $p > 0.3$)", fontsize=9)
+    ax.set_title("Bright-Arc Detection Rate", fontsize=9)
     ax.set_xlim(17.8, 26.2)
-    ax.set_ylim(-2, 60)
-    ax.set_yticks([0, 10, 20, 30, 40, 50, 60])
-    ax.legend(fontsize=8, loc="upper right", ncol=2)
+    ax.set_ylim(-2, 100)
+    ax.set_yticks([0, 20, 40, 60, 80, 100])
+    ax.legend(fontsize=7, loc="upper center", bbox_to_anchor=(0.5, -0.18),
+              ncol=3, frameon=True, columnspacing=0.8, handletextpad=0.4)
     ax.grid(True, alpha=0.3)
-
-    plt.tight_layout()
+    ax.tick_params(labelsize=8)
     outpath = OUT / "fig4_brightarc.pdf"
     fig.savefig(outpath, dpi=300, bbox_inches="tight")
     plt.close(fig)

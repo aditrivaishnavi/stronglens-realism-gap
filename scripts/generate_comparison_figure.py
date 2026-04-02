@@ -111,13 +111,13 @@ def main():
         sc = meta["score"]
         rmag = meta["r_mag"]
         ax.set_title(f"p={format_score(sc)},  r={rmag:.1f}",
-                     fontsize=8, pad=3)
+                     fontsize=9, pad=3)
         ax.set_xticks([])
         ax.set_yticks([])
         for spine in ax.spines.values():
             spine.set_visible(False)
 
-    # Panel (a) title — use fig.text to avoid overwriting subplot at [0,1]
+    # Panel (a) title
     fig.text(0.5, 0.93, "(a)  Real Tier-A strong lenses",
              fontsize=11, fontweight="bold", ha="center", va="bottom")
 
@@ -137,14 +137,14 @@ def main():
         rmag = meta["r_mag"]
         te = meta.get("theta_e", "?")
         ax.set_title(f"p={format_score(sc)},  r={rmag:.1f}",
-                     fontsize=8, pad=3)
+                     fontsize=9, pad=3)
         ax.set_xticks([])
         ax.set_yticks([])
         for spine in ax.spines.values():
             spine.set_visible(False)
-        ax.set_xlabel(f"$\\theta_E={te}''$", fontsize=7, labelpad=2)
+        ax.set_xlabel(f"$\\theta_E={te}''$", fontsize=9, labelpad=2)
 
-    # Panel (b) title — use fig.text to avoid overwriting subplot at [3,1]
+    # Panel (b) title
     fig.text(0.5, 0.48, "(b)  Parametric injections (D06 grid, no Poisson)",
              fontsize=11, fontweight="bold", ha="center", va="bottom")
 
