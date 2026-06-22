@@ -1,15 +1,15 @@
-% mnras.cls
+% rasti.cls
 %
-% MNRAS journal document class file
-% v3.2 for LaTeX 2e
+% RASTI journal document class file
+% v3.0 for LaTeX 2e
 %
-% Copyright (C) Royal Astronomical Society 2015, Blackwell Science 2001,
+% Copyright (C) Royal Astronomical Society 2022, Blackwell Science 2001,
 % Cambridge University Press 1994
 %
 % Authors:
 % David Rhead, Springer Verlag, M. Reed, Sue Brooks, Alison Woollatt,
 % Mark Reed, Nadine Thompson, John Thompson, David Evans, Keith T. Smith,
-% Norman Gray
+% Norman Gray, Peter Jones
 %
 % For a full change log see the end of this file.
 % See mnras_guide for a user guide
@@ -25,20 +25,20 @@
 % This work has the LPPL maintenance status `author-maintained'.
 % 
 % The Current Maintainer of this work is: Royal Astronomical Society,
-% MNRAS Editorial Office, who can be contacted on mn@ras.org.uk
+% MNRAS Editorial Office, who can be contacted on publications@ras.ac.uk
 %
 % This work consists of all the files listed in readme.txt
 
 
 % Preamble to this style file
 
-\def\@version{3.2}
-\def\@releasedate{2023/07/20}
+\def\@version{3.0}
+\def\@releasedate{2021/11/12}
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{mnras}[\@releasedate\ v\@version\ LaTeX2e MNRAS document class]
+\ProvidesClass{rasti}[\@releasedate\ v\@version\ LaTeX2e RASTI document class]
 
-\typeout{MNRAS document style v\@version, released \@releasedate}
+\typeout{RASTI document style v\@version, released \@releasedate}
 
 %  Journals use two-sided printing.
 %
@@ -106,10 +106,10 @@
 
 % Throw warning if the user tries to use US Letter paper
 \newif\if@letterpaper
-\def\ds@letterpaper{\PackageWarning{mnras}{MNRAS uses A4 paper, option 'letterpaper' is ignored}}
+\def\ds@letterpaper{\PackageWarning{RASTI}{RASTI uses A4 paper, option 'letterpaper' is ignored}}
 
 % Error message for unknown options
-\DeclareOption*{\PackageWarning{mnras}{Unknown option `\CurrentOption'}}
+\DeclareOption*{\PackageWarning{RASTI}{Unknown option `\CurrentOption'}}
 
 \ProcessOptions\relax
 
@@ -488,7 +488,7 @@ $\reset@font\displaystyle##$\hfil\cr>\cr\approx\cr}}}
 \newcommand\ion[2]{\text{#1\,\textsc{\lowercase{#2}}}}	% ionization states
 
 % Standard journal abbreviations
-% Mostly as used by ADS, with a few additions for journals where MNRAS does not
+% Mostly as used by ADS, with a few additions for journals where RASTI does not
 % follow normal IAU style.
 
 \newcommand\aap{A\&A}                % Astronomy and Astrophysics
@@ -532,7 +532,7 @@ $\reset@font\displaystyle##$\hfil\cr>\cr\approx\cr}}}
 \newcommand\memras{Mem.~RAS}         % Memoirs of the RAS
 \newcommand\memsai{Mem. Soc. Astron. Italiana} % Memoire della Societa Astronomica Italiana
 \newcommand\mnassa{MNASSA}           % Monthly Notes of the Astronomical Society of Southern Africa
-\newcommand\mnras{MNRAS}             % Monthly Notices of the Royal Astronomical Society
+\newcommand\mnras {MNRAS}             % Monthly Notices of the Royal Astronomical Society
 \newcommand\na{New~Astron.}          % New Astronomy
 \newcommand\nar{New~Astron.~Rev.}    % New Astronomy Review
 \newcommand\nat{Nature}              % Nature
@@ -560,7 +560,7 @@ $\reset@font\displaystyle##$\hfil\cr>\cr\approx\cr}}}
 \newcommand\zap{Z.~Astrophys.}       % Zeitschrift fuer Astrophysik
 
 %%%Command to produce a box around selected text
-%%%NB This is for use in the file mnras_guide only -- it is NOT
+%%%NB This is for use in the file rasti_guide only -- it is NOT
 %%%    to be used in the journal
 \newcommand{\boxit}[1]{%
  \noindent\fbox{%
@@ -1202,11 +1202,11 @@ $\reset@font\displaystyle##$\hfil\cr>\cr\approx\cr}}}
 \def\plate#1{\gdef\pl@te{#1}}
 \ifx\CUP@mtlplain@loaded\undefined
   \def\@printed{Preprint \tod@y\
-    \qquad\qquad\qquad Compiled using MNRAS \LaTeX\ style file v\@version} % manual spacing isn't ideal
+    \qquad\qquad\qquad Compiled using rasti \LaTeX\ style file v\@version} % manual spacing isn't ideal
 \else
   \def\@printed{}
 \fi
-\gdef\@journal{{MNRAS} {\bf \@volume}, \@pagerange\
+\gdef\@journal{{RASTI} {\bf \@volume}, \@pagerange\
 % (\number\year) \@microfiche\@printed}
   (\@pubyear) \@microfiche \hfill \@printed}
 %
@@ -1222,17 +1222,17 @@ $\reset@font\displaystyle##$\hfil\cr>\cr\approx\cr}}}
 \def\ps@headings{\let\@mkboth\markboth
  \def\@oddhead{\Large\hfill{\it\@shorttitle}\hspace{1.5em}%
    \rm\@ddell\thepage}
- \def\@oddfoot{\hfill\small MNRAS {\bf \@volume}, \@pagerange\ (\@pubyear)}
+ \def\@oddfoot{\hfill\small RASTI {\bf \@volume}, \@pagerange\ (\@pubyear)}
  \def\@evenhead{\Large\@ddell\thepage\hspace{1.5em}\it\@shortauthor\hfill}
- \def\@evenfoot{\small MNRAS {\bf \@volume}, \@pagerange\ (\@pubyear)\hfil}
+ \def\@evenfoot{\small RASTI {\bf \@volume}, \@pagerange\ (\@pubyear)\hfil}
  \def\sectionmark##1{\markboth{##1}{}}
  \def\subsectionmark##1{\markright{##1}}}
 
 \def\ps@myheadings{\let\@mkboth\@gobbletwo
  \def\@oddhead{\Large\hfill\it\rightmark\hspace{1.5em}\rm\@ddell\thepage}
- \def\@oddfoot{\small MNRAS {\bf \@volume}, \@pagerange\ (\@pubyear)\hfil}
+ \def\@oddfoot{\small RASTI {\bf \@volume}, \@pagerange\ (\@pubyear)\hfil}
  \def\@evenhead{\Large\@ddell\thepage\hspace{1.5em}\it\leftmark\hfill}
- \def\@evenfoot{\hfil\small MNRAS {\bf \@volume}, \@pagerange\ (\@pubyear)}
+ \def\@evenfoot{\hfil\small RASTI {\bf \@volume}, \@pagerange\ (\@pubyear)}
  \def\sectionmark##1{}
  \def\subsectionmark##1{}}
 
@@ -1246,9 +1246,9 @@ $\reset@font\displaystyle##$\hfil\cr>\cr\approx\cr}}}
 
 \def\ps@plate{\let\@mkboth\@gobbletwo
   \def\@oddhead{\footnotesize\pl@te\hfill}
-  \def\@oddfoot{\small MNRAS {\bf \@volume}, \@pagerange\ (\@pubyear)\hfil}
+  \def\@oddfoot{\small RASTI {\bf \@volume}, \@pagerange\ (\@pubyear)\hfil}
   \def\@evenhead{\footnotesize\pl@te\hfill}
-  \def\@evenfoot{\hfil\small MNRAS {\bf \@volume}, \@pagerange\ (\@pubyear)}
+  \def\@evenfoot{\hfil\small RASTI {\bf \@volume}, \@pagerange\ (\@pubyear)}
 }
 
 %  ****************************************
@@ -1355,19 +1355,19 @@ $\reset@font\displaystyle##$\hfil\cr>\cr\approx\cr}}}
 
 
 %  ****************************************
-%  *    COMMANDS FOR USE WITH MNRAS.BST    *
+%  *    COMMANDS FOR USE WITH RASTI.BST    *
 %  ****************************************
 %
 % The following three macros provide auxiliary support for the BibTeX
-% wranglings in mnras.bst.  They provide support for functionality
+% wranglings in rasti.bst.  They provide support for functionality
 % which it is impossible, or at least unmaintainably arcane, to
 % provide within BibTeX Style Language.
 %
 % These definitions can be loaded as a package or, probably better,
-% should be incorporated into a mnras.cls file.
+% should be incorporated into a RASTI.cls file.
 %
 % These depend on the presence of a \href{URL}{text} macro, as
-% provided by the hyperref package.  The mnras.bst style depends
+% provided by the hyperref package.  The rasti.bst style depends
 % additionally on the \url{URL} macro, which hyperref also provides.
 %
 % If the hyperref package is not included, then suitable defaults are
@@ -1466,7 +1466,7 @@ $\reset@font\displaystyle##$\hfil\cr>\cr\approx\cr}}}
 
 % \mniiiauthor
 %
-% The following implements the three-author-hack described in mnras.bst.
+% The following implements the three-author-hack described in rasti.bst.
 %
 % This consumes a command for each such author.  It's surely possible
 % to avoid this (with some constructions involving {\\#1}; see
@@ -1735,6 +1735,11 @@ has been typeset from a \TeX/\LaTeX\ file prepared by the author.}
 %  ****************************************
 
 
+%    RASTI class file v1.0 adapted from MNRAS class file 11-Nov-2021
+%    RASTI class file v1.1 updated rasti.bst to math output style for Geophysical Journal International 
+%    Changes to journal title only, otherwise identical to MNRAS.cls 
+%    Change log for MNRAS.cls to 11-Nov-2021 below
+%
 %    Original file produced by Cambridge University Press 1994
 %    for LaTeX version 2.09, 1988, by Leslie Lamport
 %    based on the original LaTeX ARTICLE DOCUMENT STYLE
@@ -1816,4 +1821,4 @@ has been typeset from a \TeX/\LaTeX\ file prepared by the author.}
 %         Package renamed from 'mn2e' to 'mnras' after
 %           discussion with the TeX Users Group
 %         Numerous small tweaks and improvements following testing
-% end of mnras.cls
+% end of RASTI.cls

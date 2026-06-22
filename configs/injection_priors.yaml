@@ -10,7 +10,7 @@
 # these values. If either the code or this file is changed without updating
 # the other, the test fails.
 #
-# PAPER: When writing the MNRAS paper, cite these values — they are what
+# PAPER: When writing the RASTI paper, cite these values — they are what
 # the code actually uses. Do NOT invent different numbers.
 #
 # CREATED: 2026-02-13 (identified mismatch between code defaults

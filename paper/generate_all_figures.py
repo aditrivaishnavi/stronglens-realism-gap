@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate all 4 publication figures for the MNRAS paper.
+Generate all 4 publication figures for the RASTI paper.
 Includes auto-validation checks for each figure.
 
 Usage:
@@ -321,13 +321,15 @@ def make_fig4():
     print("Generating Figure 4: Bright-arc detection rates (signature figure)...")
     fig, ax = plt.subplots(figsize=(3.31, 3.5))
 
+    # Okabe-Ito colour-blind-safe palette; line styles and markers also differ
+    # so the series remain distinguishable without relying on colour alone.
     styles = {
-        "Baseline": dict(color="C0", linestyle="-", linewidth=1.5, marker="s", markersize=4),
-        "Poisson (g=150)": dict(color="C1", linestyle="--", linewidth=1.5, marker="^", markersize=4),
-        "clip=20": dict(color="C2", linestyle=":", linewidth=1.5, marker="D", markersize=4),
-        "Poisson+clip20": dict(color="C3", linestyle="-.", linewidth=1.5, marker="v", markersize=4),
-        "Unrestricted": dict(color="C4", linestyle="-", linewidth=1, marker="x", markersize=4),
-        r"Gain=$10^{12}$": dict(color="C0", linestyle="none", marker="o", markersize=6,
+        "Baseline": dict(color="#000000", linestyle="-", linewidth=1.5, marker="s", markersize=4),
+        "Poisson (g=150)": dict(color="#E69F00", linestyle="--", linewidth=1.5, marker="^", markersize=4),
+        "clip=20": dict(color="#56B4E9", linestyle=":", linewidth=1.5, marker="D", markersize=4),
+        "Poisson+clip20": dict(color="#009E73", linestyle="-.", linewidth=1.5, marker="v", markersize=4),
+        "Unrestricted": dict(color="#CC79A7", linestyle="-", linewidth=1, marker="x", markersize=4),
+        r"Gain=$10^{12}$": dict(color="#0072B2", linestyle="none", marker="o", markersize=6,
                                 markerfacecolor="none", markeredgewidth=1.5),
     }
 
@@ -354,9 +356,9 @@ def make_fig4():
             ax.errorbar(MAG_MIDS, rates, yerr=[ci_lo, ci_hi],
                         label=label, capsize=2, zorder=3, **style)
 
-    # Tier-A recall reference line
-    ax.axhline(89.3, color="red", linestyle="--", linewidth=1, alpha=0.7)
-    ax.text(25.7, 91, "Tier-A recall (89.3%)", fontsize=7, color="red", va="bottom", ha="right")
+    # Tier-A recall reference line (neutral grey; avoids red for colour-blind readers)
+    ax.axhline(89.3, color="0.35", linestyle="--", linewidth=1, alpha=0.9)
+    ax.text(25.7, 91, "Tier-A recall (89.3%)", fontsize=7, color="0.35", va="bottom", ha="right")
 
     ax.set_xlabel("Source apparent magnitude", fontsize=9)
     ax.set_ylabel("Detection rate (%, $p > 0.3$)", fontsize=9)
@@ -393,7 +395,7 @@ def make_fig4():
 # ── Main ─────────────────────────────────────────────────────────────
 def main():
     print("=" * 60)
-    print("MNRAS Paper Figure Generation")
+    print("RASTI Paper Figure Generation")
     print("=" * 60)
 
     paths = []

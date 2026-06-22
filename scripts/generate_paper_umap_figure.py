@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate publication-quality UMAP figure for the MNRAS paper.
+"""Generate publication-quality UMAP figure for the RASTI paper.
 
 Produces a two-panel figure:
   Panel A: UMAP colored by category (Real Tier-A, low-bf injection, high-bf injection, negative)

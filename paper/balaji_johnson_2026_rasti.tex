@@ -1,4 +1,4 @@
-\documentclass[fleqn,usenatbib]{mnras}
+\documentclass[fleqn,usenatbib]{rasti}
 
 \usepackage[T1]{fontenc}
 \usepackage{newtxtext,newtxmath}
@@ -15,14 +15,14 @@
 Aditrivaishnavi~Balaji,$^{1}$\thanks{E-mail: aditrivaishnavi@gmail.com}
 and Parker~T.~Johnson$^{2}$
 \\
-$^{1}$BASIS Independent Silicon Valley, 1290 Parkmoor Ave, San Jose, California\\
-$^{2}$Steward Observatory, The University of Arizona, 933 North Cherry Avenue, Tucson, Arizona
+$^{1}$BASIS Independent Silicon Valley, 1290 Parkmoor Ave, San Jose, CA 95126, USA\\
+$^{2}$Steward Observatory, The University of Arizona, 933 North Cherry Avenue, Tucson, AZ 85721, USA
 }
 
 \date{Accepted XXX. Received YYY; in original form ZZZ}
 \pubyear{2026}
 
-\renewcommand{\today}{25 May 2026}
+\renewcommand{\today}{21 June 2026}
 
 \begin{document}
 \label{firstpage}
@@ -33,17 +33,11 @@ $^{2}$Steward Observatory, The University of Arizona, 933 North Cherry Avenue, T
 % ABSTRACT
 % ====================================================================
 \begin{abstract}
-Calibrating the selection function of CNN strong lens finders relies on injection-recovery, yet to our knowledge the fidelity of parametric source models in CNN feature space has not been directly tested.  We train an EfficientNetV2-S classifier on $\sim\!450\,000$ cutouts from the DESI Legacy Imaging Survey DR10 and measure the gap between its internal representations of spectroscopically confirmed lenses and parametric S\'{e}rsic injections.
-
-The model achieves $89.3$~per cent recall on 112 confirmed lenses, but standard injection-recovery yields only $\sim\!5$~per cent marginal completeness over the full parameter space and $29$--$39$~per cent for bright, favourably lensed injections, a factor of $2$--$3$ below real-lens recall.  A linear probe on the CNN's penultimate features separates real lenses from brightness-matched injections with AUC $= 0.997 \pm 0.003$, consistent with a morphological mismatch between parametric and real arc morphology (though host-population differences may also contribute).
-
-We test whether this gap arises from missing noise texture by adding Poisson shot noise to injected arcs.  The effect is regime-dependent: Poisson noise \emph{reduces} marginal completeness but \emph{increases} detection of moderately bright arcs by up to $+10.5$ percentage points, consistent with added texture aiding marginally detectable arcs while degraded spatial coherence harms prominent ones.
-
-These results demonstrate that arc-level shot noise alone does not close the sim-to-real gap, consistent with morphological realism being the limiting factor for parametric injection-recovery.  We provide completeness maps as lower bounds under the parametric model and propose linear-probe AUC as a practical realism gate for injection pipelines.
+Calibrating the selection function of CNN strong lens finders relies on injection-recovery, yet to our knowledge the fidelity of parametric source models in CNN feature space has not been directly tested.  We train an EfficientNetV2-S classifier on $\sim\!450\,000$ cutouts from the DESI Legacy Imaging Survey DR10 and measure the gap between its internal representations of spectroscopically confirmed lenses and parametric S\'{e}rsic injections.  The model achieves $89.3$~per cent recall on 112 confirmed lenses, but standard injection-recovery yields only $\sim\!5$~per cent marginal completeness over the full parameter space and $29$--$39$~per cent for bright, favourably lensed injections, a factor of $2$--$3$ below real-lens recall.  A linear probe on the CNN's penultimate features separates real lenses from brightness-matched injections with AUC $= 0.997 \pm 0.003$, consistent with a morphological mismatch between parametric and real arc morphology (though host-population differences may also contribute).  We test whether this gap arises from missing noise texture by adding Poisson shot noise to injected arcs.  The effect is regime-dependent: Poisson noise \emph{reduces} marginal completeness but \emph{increases} detection of moderately bright arcs by up to $+10.5$ percentage points, consistent with added texture aiding marginally detectable arcs while degraded spatial coherence harms prominent ones.  These results demonstrate that arc-level shot noise alone does not close the sim-to-real gap, consistent with morphological realism being the limiting factor for parametric injection-recovery.  We provide completeness maps as lower bounds under the parametric model and propose linear-probe AUC as a practical realism gate for injection pipelines.
 \end{abstract}
 
 \begin{keywords}
-gravitational lensing: strong -- methods: data analysis -- methods: statistical -- surveys -- techniques: image processing
+gravitational lensing: strong -- surveys -- techniques: image processing -- Data Methods -- Machine Learning
 \end{keywords}
 
 
@@ -174,7 +168,7 @@ injection = injection
             + noise_electrons / gain_e_per_nmgy
 \end{verbatim}
 
-The gain of $150\;\mathrm{e^{-}\;nmgy^{-1}}$ is an order-of-magnitude estimate for a typical DR10 $r$-band coadd of $\sim\!30$ exposures at $90\;\mathrm{s}$ each.  We do not claim this is exact; instead, we use a gain sweep experiment (Section~\ref{sec:gainsweep}) to demonstrate that the result is physical and not an artifact of gain miscalibration.
+The gain of $150\;\mathrm{e^{-}\;nmgy^{-1}}$ is an order-of-magnitude estimate for a typical DR10 $r$-band coadd of $\sim\!30$ exposures at $90\;\mathrm{s}$ each.  We do not claim this is exact; instead, we use a gain sweep experiment (Section~\ref{sec:gainsweep}) to demonstrate that the result is physical and not an artefact of gain miscalibration.
 
 \subsection{Host galaxies and injection procedure}
 
@@ -208,13 +202,13 @@ $p > 0.995$ (FPR $\approx 3 \times 10^{-4}$) & 48.2\% & 54/112 & [39.1\%, 57.4\%
 \end{tabular}
 \end{table}
 
-The model achieves $89.3$~per cent recall at $p > 0.3$, declining to $48.2$~per cent at the stringent FPR $\approx 3 \times 10^{-4}$ threshold.  The median score for Tier-A lenses is 0.995, placing the vast majority of confirmed lenses in the high-confidence tail of the score distribution.  Twelve Tier-A lenses are missed at $p > 0.3$ ($10.7$~per cent of the sample; 95~per cent Wilson CI $[5.6\%, 18.1\%]$).  Appendix~\ref{app:missed} catalogues these missed lenses with their deflector magnitudes, CNN scores, and spectroscopic redshifts.  All 12 have $r \leq 20$, ruling out host faintness as the primary failure mode; the failures are more likely attributable to compact image configurations or edge-on deflector morphologies.
+The model achieves $89.3$~per cent recall at $p > 0.3$, declining to $48.2$~per cent at the stringent FPR $\approx 3 \times 10^{-4}$ threshold.  The median score for Tier-A lenses is 0.995, placing the vast majority of confirmed lenses in the high-confidence tail of the score distribution.  Twelve Tier-A lenses are missed at $p > 0.3$ ($10.7$~per cent of the sample; 95~per cent Wilson CI $[5.6, 18.1]$~per cent).  Appendix~\ref{app:missed} catalogues these missed lenses with their deflector magnitudes, CNN scores, and spectroscopic redshifts.  All 12 have $r \leq 20$, ruling out host faintness as the primary failure mode; the failures are more likely attributable to compact image configurations or edge-on deflector morphologies.
 
 \subsection{Injection completeness is unexpectedly low}
 
 We measure injection-recovery completeness on a three-dimensional grid spanning Einstein radius ($\theta_{\rm E} \in [0.50, 3.00]\;\mathrm{arcsec}$, 11 steps), PSF FWHM ($\mathrm{FWHM} \in [0.9, 1.8]\;\mathrm{arcsec}$, 7 steps), and $5\sigma$ depth ($\mathrm{depth} \in [22.5, 24.5]\;\mathrm{mag}$, 5 steps), for a total of 385 cells.  Of these, 220 cells contain matched host galaxies and 165 are empty (no hosts with the required observing conditions).  Each non-empty cell receives 500 injections with source magnitude drawn from $\mathcal{U}(23, 26)$ and all other source and lens parameters drawn from the priors of Section~3.
 
-At a detection threshold of $p > 0.3$, the marginal completeness is $5.18$~per cent ($5697 / 110\,000$; 95~per cent Wilson CI $[5.05\%, 5.31\%]$).  We emphasise that all completeness figures reported in this paper are conditional on the stated parametric injection prior; a different source model (e.g.\ real galaxy stamps, multi-component morphologies) could yield materially different completeness.  The marginal completeness is an unweighted average over injections and is not area-weighted by the DR10 survey footprint; computing an area-weighted completeness would require a separate estimate of the survey's joint exposure-time, PSF, and depth occupancy distribution.  This low figure is driven by the broad parameter space: the majority of injections have lensed magnitude $> 22$, where detection is intrinsically difficult.  At brighter magnitudes comparable to confirmed lenses ($m_{\rm lensed} = 20\text{--}22$), completeness rises to $12.4$~per cent, still substantially below the $89.3$~per cent Tier-A recall.  The direct comparison is not straightforward because Tier-A lenses are a highly selected sample (bright, dramatically lensed, spectroscopically confirmed), but the gap persists even when comparing brightness-matched subsets, as we demonstrate in Section~4.3 using the linear probe.  Table~\ref{tab:thresholds} presents the completeness at all thresholds for both the baseline and Poisson conditions.
+At a detection threshold of $p > 0.3$, the marginal completeness is $5.18$~per cent ($5697 / 110\,000$; 95~per cent Wilson CI $[5.05, 5.31]$~per cent).  We emphasise that all completeness figures reported in this paper are conditional on the stated parametric injection prior; a different source model (e.g.\ real galaxy stamps, multi-component morphologies) could yield materially different completeness.  The marginal completeness is an unweighted average over injections and is not area-weighted by the DR10 survey footprint; computing an area-weighted completeness would require a separate estimate of the survey's joint exposure-time, PSF, and depth occupancy distribution.  This low figure is driven by the broad parameter space: the majority of injections have lensed magnitude $> 22$, where detection is intrinsically difficult.  At brighter magnitudes comparable to confirmed lenses ($m_{\rm lensed} = 20\text{--}22$), completeness rises to $12.4$~per cent, still substantially below the $89.3$~per cent Tier-A recall.  The direct comparison is not straightforward because Tier-A lenses are a highly selected sample (bright, dramatically lensed, spectroscopically confirmed), but the gap persists even when comparing brightness-matched subsets, as we demonstrate in Section~4.3 using the linear probe.  Table~\ref{tab:thresholds} presents the completeness at all thresholds for both the baseline and Poisson conditions.
 
 \begin{table}
 \caption{Injection-recovery completeness over the full grid ($110\,000$ injections across 220 non-empty cells) at multiple detection thresholds.  The Poisson column adds shot noise at gain $= 150\;\mathrm{e^{-}\;nmgy^{-1}}$.}
@@ -233,7 +227,7 @@ FPR $= 10^{-4}$ & 0.47\% & 0.21\% & $-$0.26~pp \\
 \end{tabular}
 \end{table}
 
-Completeness depends strongly on both $\theta_{\rm E}$ and lensed apparent magnitude.  Table~\ref{tab:thetaE} presents the completeness by Einstein radius for the no-Poisson baseline.  Peak completeness occurs at $\theta_{\rm E} \approx 2.5\;\mathrm{arcsec}$ ($8.33$~per cent), declining at both ends: small arcs are unresolved, while large arcs are spread over too many pixels to exceed the detection threshold against host-galaxy backgrounds.  The peak is shifted to larger $\theta_{\rm E}$ compared to earlier experiments with broader source priors, because the corrected priors ($R_{\rm e} \geq 0.15\;\mathrm{arcsec}$, $n \leq 2$) produce more extended, disk-like sources that require larger Einstein radii to form well-resolved arcs.  Completeness rises steeply with lensed apparent magnitude: $12.4$~per cent for mag~$20$--$22$ ($5141/41\,535$ injections), $0.73$~per cent for mag~$22$--$24$ (which dominates the grid volume), and $0.45$~per cent for mag~$24$--$27$.
+Completeness depends strongly on both $\theta_{\rm E}$ and lensed apparent magnitude, as summarised in Fig.~\ref{fig:completeness}.  Table~\ref{tab:thetaE} presents the completeness by Einstein radius for the no-Poisson baseline.  Peak completeness occurs at $\theta_{\rm E} \approx 2.5\;\mathrm{arcsec}$ ($8.33$~per cent), declining at both ends: small arcs are unresolved, while large arcs are spread over too many pixels to exceed the detection threshold against host-galaxy backgrounds.  The peak is shifted to larger $\theta_{\rm E}$ compared to earlier experiments with broader source priors, because the corrected priors ($R_{\rm e} \geq 0.15\;\mathrm{arcsec}$, $n \leq 2$) produce more extended, disk-like sources that require larger Einstein radii to form well-resolved arcs.  Completeness rises steeply with lensed apparent magnitude: $12.4$~per cent for mag~$20$--$22$ ($5141/41\,535$ injections), $0.73$~per cent for mag~$22$--$24$ (which dominates the grid volume), and $0.45$~per cent for mag~$24$--$27$.
 
 \begin{table}
 \caption{Injection-recovery completeness by Einstein radius (no Poisson, $p > 0.3$).  Each $\theta_{\rm E}$ bin contains 10\,000 injections across all PSF and depth cells.}
@@ -263,23 +257,25 @@ $\theta_{\rm E}$ (arcsec) & $C(p>0.3)$ & $n_{\rm det}$ \\
 \includegraphics[width=\textwidth]{fig1_completeness.pdf}
 \caption{Injection-recovery completeness at $p > 0.3$.  \textbf{Left:} Completeness versus Einstein radius (no Poisson baseline), showing peak completeness at $\theta_{\rm E} \approx 2.5\;\mathrm{arcsec}$ with decline at both small (unresolved) and large (spread) radii.  Error bars show 95~per cent Wilson confidence intervals.  \textbf{Right:} Completeness versus lensed apparent magnitude in four bins ($18$--$20$, $20$--$22$, $22$--$24$, $24$--$27$), with both no-Poisson (blue) and Poisson (orange) conditions.  Data from the corrected-prior re-evaluation (D06) described in Data Availability.}
 \label{fig:completeness}
+\textit{Alt text:} Two-panel line plot. The left panel shows injection-recovery completeness on a logarithmic vertical axis rising from near zero at small Einstein radius to a peak of about eight per cent near 2.5~arcsec, then declining at larger radii. The right panel shows completeness versus lensed apparent magnitude in four bins, highest at bright magnitudes and falling toward faint magnitudes, with the no-Poisson and Poisson curves lying close together.
 \end{figure*}
 
 \subsection{The CNN distinguishes real lenses from injections}
 
 The 84-percentage-point gap between real-lens recall and injection completeness could in principle arise from the injection parameter space including many undetectable configurations (faint sources, small Einstein radii), rather than from a genuine morphological mismatch.  To test whether the CNN internally distinguishes real from injected lenses \emph{at matched brightness}, we extract the penultimate (1280-dimensional) feature embeddings for 112 real Tier-A lenses, 500 bright ($m_r = 19$) low-$\beta_{\rm frac}$ ($[0.1, 0.3]$) injections configured to produce prominent arcs, and 500 validation negatives.  We emphasise that only brightness is strictly controlled in this comparison; other properties ($\theta_{\rm E}$, PSF, depth, host galaxy type) are not matched to the Tier-A sample.
 
-A logistic regression linear probe trained on the real versus injection embeddings achieves AUC $= 0.997 \pm 0.003$ (five-fold cross-validation).  We note the class imbalance in the probe ($112$ vs $500$ samples); the low fold-to-fold standard deviation ($0.003$) indicates the AUC is stable despite this imbalance.  This near-perfect separation means the CNN has learned features that strongly distinguish injections from real lenses, even when brightness is matched and injections are restricted to high-magnification configurations.
+A logistic regression linear probe trained on the real versus injection embeddings achieves AUC $= 0.997 \pm 0.003$ (five-fold cross-validation; Table~\ref{tab:probe}).  We note the class imbalance in the probe ($112$ vs $500$ samples); the low fold-to-fold standard deviation ($0.003$) indicates the AUC is stable despite this imbalance.  This near-perfect separation means the CNN has learned features that strongly distinguish injections from real lenses, even when brightness is matched and injections are restricted to high-magnification configurations.  Figure~\ref{fig:umap} shows a UMAP projection of these embeddings, in which the real Tier-A lenses occupy a region largely distinct from the injections and negatives.
 
-To confirm that the linear probe AUC is not an artefact of overfitting or class imbalance, we performed two additional statistical tests.  First, a permutation test (1000 iterations) in which labels are randomly shuffled and a logistic regression is fitted on a single 80/20 stratified split per iteration.  The observed single-split AUC ($0.998$; marginally higher than the five-fold mean of $0.997$ due to sampling variability across the particular random partition) was never exceeded by any of the 1000 permuted AUCs (maximum permuted AUC $= 0.690$, mean $= 0.499$), yielding $p \leq 0.001$ (Monte Carlo $p = (0+1)/(1000+1) \approx 0.001$).  Repeating the permutation test under the full five-fold CV pipeline would be computationally heavier but would not change the conclusion, given that the maximum permuted AUC ($0.690$) lies far below either the single-split or five-fold estimate.  Second, a bootstrap confidence interval (5000 iterations) resampling the held-out cross-validation predictions gives a 95~per cent CI of $[0.996, 1.000]$.  Together, these tests establish that the near-perfect separability is statistically robust and not attributable to chance.  The median CNN score for real Tier-A lenses is 0.995, while injections at the same brightness score a median of 0.191, a factor of five lower.  As a diagnostic of the host-galaxy contribution, we performed a control experiment: a linear probe separating Tier-A (spectroscopically confirmed, $n = 112$) from Tier-B (visual candidates, $n = 500$) lenses, both on their real hosts, using GroupKFold cross-validation by galaxy identifier to prevent leakage of related samples across folds.  This probe achieves AUC $= 0.778 \pm 0.062$, indicating moderate separability: the CNN encodes features that distinguish confirmed from candidate lenses on their real hosts.  However, this does not directly decompose the Tier-A vs injection AUC ($0.997$) into host and morphology components, because Tier-A and Tier-B hosts (massive ellipticals selected by lensing cross-section) differ systematically from injection hosts (random negatives drawn from the full Tractor catalogue).  The true morphology-only contribution to the AUC lies between the host-controlled Tier-A vs Tier-B probe ($0.778 \pm 0.062$, where both populations share lens-type hosts) and the Tier-A vs injection probe ($0.997 \pm 0.003$, which includes both morphology and host-population differences).  The large gap between these two bounds indicates that injection-specific features contribute substantial additional separation beyond any host confound, but a fully host-matched injection experiment is needed for definitive decomposition (see Section~5.4).
+To confirm that the linear probe AUC is not an artefact of overfitting or class imbalance, we performed two additional statistical tests.  First, a permutation test (1000 iterations) in which labels are randomly shuffled and a logistic regression is fitted on a single 80/20 stratified split per iteration.  The observed single-split AUC ($0.998$; marginally higher than the five-fold mean of $0.997$ due to sampling variability across the particular random partition) was never exceeded by any of the 1000 permuted AUCs (maximum permuted AUC $= 0.690$, mean $= 0.499$), yielding $p \leq 0.001$ (Monte Carlo $p = (0+1)/(1000+1) \approx 0.001$).  Repeating the permutation test under the full five-fold CV pipeline would be computationally heavier but would not change the conclusion, given that the maximum permuted AUC ($0.690$) lies far below either the single-split or five-fold estimate.  Second, a bootstrap confidence interval (5000 iterations) resampling the held-out cross-validation predictions gives a 95~per cent CI of $[0.996, 1.000]$.  Together, these tests establish that the near-perfect separability is statistically robust and not attributable to chance.  The median CNN score for real Tier-A lenses is 0.995, while injections at the same brightness score a median of 0.191, a factor of five lower (Fig.~\ref{fig:scores}).  As a diagnostic of the host-galaxy contribution, we performed a control experiment: a linear probe separating Tier-A (spectroscopically confirmed, $n = 112$) from Tier-B (visual candidates, $n = 500$) lenses, both on their real hosts, using GroupKFold cross-validation by galaxy identifier to prevent leakage of related samples across folds.  This probe achieves AUC $= 0.778 \pm 0.062$, indicating moderate separability: the CNN encodes features that distinguish confirmed from candidate lenses on their real hosts.  However, this does not directly decompose the Tier-A vs injection AUC ($0.997$) into host and morphology components, because Tier-A and Tier-B hosts (massive ellipticals selected by lensing cross-section) differ systematically from injection hosts (random negatives drawn from the full Tractor catalogue).  The true morphology-only contribution to the AUC lies between the host-controlled Tier-A vs Tier-B probe ($0.778 \pm 0.062$, where both populations share lens-type hosts) and the Tier-A vs injection probe ($0.997 \pm 0.003$, which includes both morphology and host-population differences).  The large gap between these two bounds indicates that injection-specific features contribute substantial additional separation beyond any host confound, but a fully host-matched injection experiment is needed for definitive decomposition (see Section~5.4).
 
-As a complementary check, we computed Fr\'{e}chet distances between real and injection embedding distributions at intermediate feature blocks.  The distances show a layer-progressive divergence: at the earliest block (\texttt{features\_0}, 24-dimensional), the distance is 0.14, indicating similar low-level pixel statistics.  It rises to 1.45 at block~1 (24-d), 10.9 at block~2 (48-d), and 47.2 at block~3 (64-d), a $330\times$ increase from layer~0 to layer~3.  The first four blocks all have $n = 112 > \mathrm{dim}$, so the sample covariance is non-singular and the Fr\'{e}chet distances are statistically reliable; even the more conservative growth from block~0 to block~2 ($0.14 \to 10.9$, a $78\times$ increase) supports the same qualitative conclusion.  This is consistent with the separation emerging in learned mid-level features rather than in low-level pixel statistics, which would manifest as large Fr\'{e}chet distance at the earliest layers.  Deeper layers (blocks 4--7, with dimensions 128--1280) yield numerically unstable estimates because the sample size ($n = 112$) is smaller than the feature dimensionality, rendering the covariance singular.  At the penultimate layer (1280-dimensional), the Fr\'{e}chet distance is 215.0 for low-$\beta_{\rm frac}$ injections and 219.1 for high-$\beta_{\rm frac}$ injections; the small difference (215 vs 219) suggests the barrier is not primarily geometric, since even the most arc-like injections remain clearly distinguishable from real lenses in embedding space.  We rely on the linear probe AUC as the primary quantitative measure of separability and treat the per-layer Fr\'{e}chet distances as directional.
+As a complementary check, we computed Fr\'{e}chet distances between real and injection embedding distributions at intermediate feature blocks.  The distances show a layer-progressive divergence: at the earliest block (\texttt{features\_0}, 24-dimensional), the distance is 0.14, indicating similar low-level pixel statistics.  It rises to 1.45 at block~1 (24-d), 10.9 at block~2 (48-d), and 47.2 at block~3 (64-d), a $330\times$ increase from layer~0 to layer~3.  The first four blocks all have $n = 112 > \mathrm{dim}$, so the sample covariance is non-singular and the Fr\'{e}chet distances are statistically reliable; even the more conservative growth from block~0 to block~2 ($0.14 \to 10.9$, a $78\times$ increase) supports the same qualitative conclusion.  This is consistent with the separation emerging in learned mid-level features rather than in low-level pixel statistics, which would manifest as large Fr\'{e}chet distance at the earliest layers.  Deeper layers (blocks 4--7, with dimensions 128--1280) yield numerically unstable estimates because the sample size ($n = 112$) is smaller than the feature dimensionality, rendering the covariance singular.  At the penultimate layer (1280-dimensional), the Fr\'{e}chet distance is 215.0 for low-$\beta_{\rm frac}$ injections and 219.1 for high-$\beta_{\rm frac}$ injections; the small difference (215 vs 219) suggests the barrier is not primarily geometric, since even the most arc-like injections remain clearly distinguishable from real lenses in embedding space.  We rely on the linear probe AUC as the primary quantitative measure of separability and treat the per-layer Fr\'{e}chet distances as directional.  Figure~\ref{fig:comparison} shows representative examples of real Tier-A lenses and parametric injections, illustrating these morphological differences qualitatively.
 
 \begin{figure*}
 \centering
 \includegraphics[width=\textwidth]{fig2_umap.pdf}
 \caption{Two-panel UMAP projection of CNN penultimate-layer (1280-dimensional) embeddings.  \textbf{Left:} Points coloured by category: real Tier-A (gold), low-$\beta_{\rm frac}$ injections (blue), high-$\beta_{\rm frac}$ injections (cyan), negatives (grey).  \textbf{Right:} Same projection coloured by CNN score ($p$, continuous colourbar from 0 to 1).  UMAP computed with \texttt{n\_neighbors=30}, \texttt{min\_dist=0.3}, \texttt{metric=cosine}, \texttt{random\_state=42}.  Colourbar: \texttt{viridis} (right panel).}
 \label{fig:umap}
+\textit{Alt text:} Two-panel UMAP scatter plot of CNN penultimate-layer embeddings. The left panel is coloured by category and shows real Tier-A lenses occupying a region largely separated from low- and high-$\beta_{\rm frac}$ injections and from negatives. The right panel shows the same points coloured by CNN score on a scale from zero to one, with the real-lens region scoring high and the injection and negative regions scoring low.
 \end{figure*}
 
 \begin{figure}
@@ -287,6 +283,7 @@ As a complementary check, we computed Fr\'{e}chet distances between real and inj
 \includegraphics[width=\columnwidth]{fig3_scores.pdf}
 \caption{CNN score distributions.  Histograms (50 bins, log-scaled $y$-axis) for: real Tier-A lenses (gold, $n = 112$, median $= 0.995$), low-$\beta_{\rm frac}$ bright injections (blue, $n = 500$, median $= 0.191$), and validation negatives (grey, $n = 500$, median $= 1.5 \times 10^{-5}$).  Vertical lines at $p = 0.3$, 0.806, and 0.995 mark the detection thresholds.}
 \label{fig:scores}
+\textit{Alt text:} Histogram with a logarithmic vertical axis showing CNN score distributions. Validation negatives are concentrated near zero, brightness-matched injections are spread across low to moderate scores, and real Tier-A lenses are concentrated near one. Vertical lines mark the detection thresholds at scores of 0.3, 0.806, and 0.995.
 \end{figure}
 
 \begin{table*}
@@ -320,6 +317,7 @@ Median score: negatives & $1.5 \times 10^{-5}$ \\
 \includegraphics[width=\textwidth]{fig5_comparison.pdf}
 \caption{Manually selected illustrative examples of real strong lenses and parametric injections, drawn from separate datasets with no pairing or brightness matching.  \textbf{(a)}~Eight Tier-A validation lenses spanning the full magnitude range ($r = 16.3$--$21.1$), sorted by $r$-band magnitude.  Four are high-confidence detections ($p > 0.9$), two are moderate ($p \approx 0.47$--$0.49$), and two are missed by the CNN ($p < 0.3$), illustrating that the model is not infallible on real lenses.  \textbf{(b)}~Eight S\'{e}rsic injections from the D06 grid (no Poisson), spanning three Einstein-radius regimes: $\theta_{\rm E} = 0.75\;\mathrm{arcsec}$ (compact, 3 examples), $1.50$ (medium, 3), and $2.50$ (extended, 2).  Seven of eight are rejected ($p < 0.05$); one extended injection at $\theta_{\rm E} = 2.50$ is detected ($p = 0.69$), consistent with the peak completeness at large $\theta_{\rm E}$ (Table~\ref{tab:thetaE}).  Even this detected injection scores substantially below the Tier-A median ($0.995$).  Each thumbnail shows the CNN detection probability~$p$ and total $r$-band magnitude; the selected IDs and metadata are available in the data archive described in Data Availability.  Cutouts are $101 \times 101$~pixels in $grz$.}
 \label{fig:comparison}
+\textit{Alt text:} Two rows of $grz$ colour cutout thumbnails. The top row shows eight real Tier-A strong lenses with visible arcs or rings, most with high CNN scores and two missed at low scores. The bottom row shows eight parametric S\'{e}rsic injections that appear smoother and less lens-like, seven with very low CNN scores and one extended example detected at moderate score.
 \end{figure*}
 
 \subsection{Testing the noise texture hypothesis}
@@ -347,33 +345,11 @@ This analysis predicts that adding Poisson noise at the DR10 gain should \emph{d
 
 We test this prediction using a paired experimental design.  For each of 200 host galaxies (selected with fixed seed), we inject lensed sources at eight magnitude bins ($18$--$19$ through $25$--$26$) under six conditions: (1) baseline (no Poisson, clip~$= 10$), (2) Poisson at gain~$= 150$, (3) no Poisson with clip~$= 20$, (4) Poisson with clip~$= 20$, (5) unrestricted $\beta_{\rm frac}$ $[0.1, 1.0]$, and (6) gain~$= 10^{12}$ control.  All controlled conditions (1, 2, 3, 4, 6) use $\beta_{\rm frac} \in [0.10, 0.40]$ and share seed~$= 42$, ensuring each injection uses the same host galaxy and lens/source geometry, with only the noise or preprocessing treatment varying.
 
-Table~\ref{tab:brightarc} presents the full detection-rate matrix.  The magnitude bins correspond to the unlensed source magnitude; after gravitational magnification ($\mu \sim 3$--$10$ for the $\beta_{\rm frac}$ range used), the observed arc magnitude is typically $1$--$2.5$~mag brighter.  The baseline detection rate peaks at source mag~$20$--$21$ ($38.5$~per cent), declining at the brightest magnitudes ($29.0$~per cent at source mag~$18$--$19$).  This decline is explained by the clip$\,=\,$10 preprocessing: arc pixels brighter than 10 normalised units are truncated to the clip ceiling, collapsing their curved morphology into a flat plateau indistinguishable from saturated artefacts.  The clip$\,=\,$20 results confirm this mechanism, substantially increasing bright-arc detection (mag~$18$--$19$: $29.0 \to 45.0$~per cent).  The unrestricted $\beta_{\rm frac}$ condition ($[0.1, 1.0]$) shows dramatically lower detection rates at all magnitudes (e.g.\ $20.5$~per cent at source mag~$18$--$19$ vs $29.0$~per cent baseline), confirming that source-plane geometry is at least as important as brightness in determining detectability.
+Table~\ref{tab:brightarc} and Fig.~\ref{fig:brightarc} present the full detection-rate matrix.  The magnitude bins correspond to the unlensed source magnitude; after gravitational magnification ($\mu \sim 3$--$10$ for the $\beta_{\rm frac}$ range used), the observed arc magnitude is typically $1$--$2.5$~mag brighter.  The baseline detection rate peaks at source mag~$20$--$21$ ($38.5$~per cent), declining at the brightest magnitudes ($29.0$~per cent at source mag~$18$--$19$).  This decline is explained by the clip$\,=\,$10 preprocessing: arc pixels brighter than 10 normalised units are truncated to the clip ceiling, collapsing their curved morphology into a flat plateau indistinguishable from saturated artefacts.  The clip$\,=\,$20 results confirm this mechanism, substantially increasing bright-arc detection (mag~$18$--$19$: $29.0 \to 45.0$~per cent).  The unrestricted $\beta_{\rm frac}$ condition ($[0.1, 1.0]$) shows dramatically lower detection rates at all magnitudes (e.g.\ $20.5$~per cent at source mag~$18$--$19$ vs $29.0$~per cent baseline), confirming that source-plane geometry is at least as important as brightness in determining detectability.
 
 Contrary to the photoelectron-budget prediction of universal degradation, Poisson noise has a \emph{regime-dependent} effect.  At intermediate source magnitudes ($m_{\rm source} = 20$--$23$), Poisson noise \emph{increases} detection: $+3.0$~pp at source mag~$20$--$21$ ($38.5 \to 41.5$~per cent), $+10.5$~pp at source mag~$21$--$22$ ($33.0 \to 43.5$~per cent), and $+9.0$~pp at source mag~$22$--$23$ ($23.5 \to 32.5$~per cent).  At the brightest and faintest magnitudes, Poisson has no significant effect (mag~$18$--$19$: both $29.0$~per cent; mag~$25$--$26$: both $0.5$~per cent).  A paired per-injection analysis confirms that the increase at source mag~$21$--$22$ is a systematic score uplift (mean $\Delta p = +0.089$, with 27 injections crossing the $p = 0.3$ threshold upward and only 6 downward), not merely threshold scatter.  The median score nearly doubles at this bin (from $0.085$ to $0.161$), consistent with Poisson noise adding realistic pixel-level texture to the smooth S\'{e}rsic arc, making it less distinguishable from real sky signal.
 
 Table~\ref{tab:paired_delta} reports the full paired per-injection analysis for all eight magnitude bins, including sign-test $p$-values.  The Poisson increase is statistically significant at source mag~$21$--$22$ ($p = 3.2 \times 10^{-4}$, binomial sign test on 27 vs 6 threshold crossings) and source mag~$22$--$23$ ($p = 2.8 \times 10^{-4}$, 21 vs 3 crossings).  Both $p$-values survive Bonferroni correction for eight bins (threshold $0.05/8 = 0.00625$).  The effect at mag~$20$--$21$ ($+3.0$~pp, $p = 0.45$) is not individually significant at the 200-injection sample size; the aggregate trend across three contiguous bins supports the interpretation as a real effect.  A McNemar exact test on the same discordant pairs yields $p = 3.2 \times 10^{-4}$ at source mag~$21$--$22$ (27 vs 6 discordant pairs) and $p = 2.8 \times 10^{-4}$ at source mag~$22$--$23$ (21 vs 3), as expected, since the per-bin McNemar exact test is algebraically equivalent to the two-sided binomial sign test on discordant pairs.  Pooling the three intermediate bins ($m_{\rm source} = 20$--$23$; 73 gained, 28 lost) gives McNemar $\chi^{2} = 19.2$ ($p = 1.2 \times 10^{-5}$, continuity-corrected), confirming that the Poisson uplift in the intermediate-brightness regime is not attributable to threshold scatter.
-
-\begin{table}
-\centering
-\caption{Paired per-injection Poisson analysis.  Each injection pair shares identical host, geometry, and RNG seed; only Poisson noise differs.  $N = 200$ per bin.  ``Gained'' and ``Lost'' count injections crossing the $p = 0.3$ threshold upward or downward, respectively.  Sign-test $p$-value from a two-sided binomial test on gained vs lost.  Boldface: $p < 0.01$.}
-\label{tab:paired_delta}
-\small
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{rrrrrrl}
-\hline
-Source mag & Mean $\Delta p$ & Gained & Lost & Net & $\Delta$ det.\,(\%) & Sign-test $p$ \\
-\hline
-18--19 & $+0.004$ & 7 & 7 & 0 & $0.0$ & $1.00$ \\
-19--20 & $+0.008$ & 11 & 11 & 0 & $0.0$ & $1.00$ \\
-20--21 & $+0.038$ & 25 & 19 & $+6$ & $+3.0$ & $0.45$ \\
-\textbf{21--22} & $\mathbf{+0.089}$ & \textbf{27} & \textbf{6} & $\mathbf{+21}$ & $\mathbf{+10.5}$ & $\mathbf{3.2 \times 10^{-4}}$ \\
-\textbf{22--23} & $\mathbf{+0.050}$ & \textbf{21} & \textbf{3} & $\mathbf{+18}$ & $\mathbf{+9.0}$ & $\mathbf{2.8 \times 10^{-4}}$ \\
-23--24 & $+0.011$ & 8 & 5 & $+3$ & $+1.5$ & $0.58$ \\
-24--25 & $-0.002$ & 0 & 1 & $-1$ & $-0.5$ & $1.00$ \\
-25--26 & $-0.002$ & 1 & 1 & 0 & $0.0$ & $1.00$ \\
-\hline
-\end{tabular}
-\end{table}
 
 \begin{table*}
 \caption{Bright-arc detection rates at $p>0.3$.  All: $\theta_{\rm E}=1.5\;\mathrm{arcsec}$, $N=200$ per mag bin, seed$\,=42$, $\beta_{\rm frac}\in[0.10,0.40]$ unless noted.  The gain~$= 10^{12}$ column matches the baseline at every bin (within 0.5~pp $= 1/N$), confirming the Poisson implementation is correct.  Boldface: Poisson detection exceeds baseline.}
@@ -398,18 +374,41 @@ Source mag bin & Baseline & Poisson ($g\!=\!150$) & clip$\,=\,$20 & Poiss+clip\,
 $^{a}$Unrestricted uses $\beta_{\rm frac} \in [0.1, 1.0]$; all other columns use $[0.10, 0.40]$.
 \end{table*}
 
+\begin{table}
+\centering
+\caption{Paired per-injection Poisson analysis.  Each injection pair shares identical host, geometry, and RNG seed; only Poisson noise differs.  $N = 200$ per bin.  ``Gained'' and ``Lost'' count injections crossing the $p = 0.3$ threshold upward or downward, respectively.  Sign-test $p$-value from a two-sided binomial test on gained vs lost.  Boldface: $p < 0.01$.}
+\label{tab:paired_delta}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{rrrrrrl}
+\hline
+Source mag & Mean $\Delta p$ & Gained & Lost & Net & $\Delta$ det.\,(\%) & Sign-test $p$ \\
+\hline
+18--19 & $+0.004$ & 7 & 7 & 0 & $0.0$ & $1.00$ \\
+19--20 & $+0.008$ & 11 & 11 & 0 & $0.0$ & $1.00$ \\
+20--21 & $+0.038$ & 25 & 19 & $+6$ & $+3.0$ & $0.45$ \\
+\textbf{21--22} & $\mathbf{+0.089}$ & \textbf{27} & \textbf{6} & $\mathbf{+21}$ & $\mathbf{+10.5}$ & $\mathbf{3.2 \times 10^{-4}}$ \\
+\textbf{22--23} & $\mathbf{+0.050}$ & \textbf{21} & \textbf{3} & $\mathbf{+18}$ & $\mathbf{+9.0}$ & $\mathbf{2.8 \times 10^{-4}}$ \\
+23--24 & $+0.011$ & 8 & 5 & $+3$ & $+1.5$ & $0.58$ \\
+24--25 & $-0.002$ & 0 & 1 & $-1$ & $-0.5$ & $1.00$ \\
+25--26 & $-0.002$ & 1 & 1 & 0 & $0.0$ & $1.00$ \\
+\hline
+\end{tabular}
+\end{table}
+
 \begin{figure}
 \centering
 \includegraphics[width=\columnwidth]{fig4_brightarc.pdf}
 \caption{Detection rate ($p > 0.3$) versus source apparent magnitude for all experimental conditions.  Magnitude bins correspond to the unlensed source magnitude; after gravitational magnification the observed arc is typically $1$--$2.5$~mag brighter.  \textbf{Lines:} baseline (blue solid), Poisson gain$\,=\,$150 (orange dashed), clip$\,=\,$20 (green dotted), Poisson + clip\,20 (red dash-dot), unrestricted $\beta_{\rm frac}$ (purple thin solid), gain$\,=\,10^{12}$ control (blue circles, overlaid on baseline).  The gain$\,=\,10^{12}$ line overlays the baseline within $0.5$~pp ($= 1/N$), confirming the Poisson implementation is correct.  Error bars: 95~per cent Wilson CIs ($n = 200$).  A horizontal dashed line at $89.3$~per cent marks the Tier-A real-lens recall.  Data from the verified re-evaluation described in Data Availability.}
 \label{fig:brightarc}
+\textit{Alt text:} Line plot of detection rate versus source apparent magnitude for six experimental conditions. All curves peak at intermediate magnitudes and decline toward faint magnitudes. A horizontal dashed line marks the 89.3 per cent Tier-A real-lens recall, which lies well above every injection curve.
 \end{figure}
 
 
 \subsubsection{Gain sweep validation}
 \label{sec:gainsweep}
 
-To confirm that the Poisson effect is physical and not a code artifact, we repeated the bright-arc experiment at gain~$= 10^{12}\;\mathrm{e^{-}\;nmgy^{-1}}$, where Poisson noise is negligible ($\sigma \sim 3 \times 10^{-6}\;\mathrm{nmgy\;pixel^{-1}}$).  Detection rates match the no-Poisson baseline at every magnitude bin to within $0.5$~pp ($= 1/N$), confirming three things: (i) the Poisson code path is correct (it adds zero effective noise when the gain is very high), (ii) at gain~$= 150$, the Poisson noise is physically large enough to change detection rates, and (iii) the regime-dependent effects seen in Table~\ref{tab:brightarc} are not artifacts of gain miscalibration.
+To confirm that the Poisson effect is physical and not a code artefact, we repeated the bright-arc experiment at gain~$= 10^{12}\;\mathrm{e^{-}\;nmgy^{-1}}$, where Poisson noise is negligible ($\sigma \sim 3 \times 10^{-6}\;\mathrm{nmgy\;pixel^{-1}}$).  Detection rates match the no-Poisson baseline at every magnitude bin to within $0.5$~pp ($= 1/N$), confirming three things: (i) the Poisson code path is correct (it adds zero effective noise when the gain is very high), (ii) at gain~$= 150$, the Poisson noise is physically large enough to change detection rates, and (iii) the regime-dependent effects seen in Table~\ref{tab:brightarc} are not artefacts of gain miscalibration.
 
 
 \subsubsection{Grid-level confirmation and $\theta_{\rm E}$ dependence}
@@ -491,7 +490,7 @@ This work & DESI DR10 & EfficientNetV2-S & S\'{e}rsic & 89.3\% / 5.18\% & Probe 
 \end{tabular}
 \end{table*}
 
-\citet{Herle2024} characterised how CNN selection functions depend on lens and source properties (Einstein radius, S\'{e}rsic index, source size), working entirely in simulation.  Our work provides the complementary measurement: not just that selection is biased, but that parametric injections are morphologically distinguishable from real lenses in CNN feature space.  Together, the two results establish that parametric injection-based selection functions are both biased and unreliable unless realism-validated.
+Table~\ref{tab:published} places our results alongside representative published CNN lens-finder studies.  \citet{Herle2024} characterised how CNN selection functions depend on lens and source properties (Einstein radius, S\'{e}rsic index, source size), working entirely in simulation.  Our work provides the complementary measurement: not just that selection is biased, but that parametric injections are morphologically distinguishable from real lenses in CNN feature space.  Together, the two results establish that parametric injection-based selection functions are both biased and unreliable unless realism-validated.
 
 \citet{Canameras2024} (HOLISMOKES~XI) sidestep the parametric limitation by using real galaxy stamps from the HUDF as source-plane objects for injection into HSC imaging.  Their approach avoids the morphological barrier we identify, supporting our conclusion that the barrier is a property of the parametric source model rather than the injection-recovery framework itself.
 
@@ -604,10 +603,16 @@ for figures; \textsc{UMAP-learn} for the embedding visualisation; and
 \textsc{lenstronomy} for independent cross-validation of the SIE
 deflection in the test suite.
 
-The authors declare no conflicts of interest.
-
 \section*{Data availability}
-The injection pipeline code, selection function grid results (per-cell completeness tables), bright-arc test results, CNN model weights, and the linear probe analysis scripts will be archived on Zenodo (DOI to be assigned on acceptance) and are available at \url{https://github.com/aditrivaishnavi/stronglens-realism-gap} (to be made public on acceptance).  The training manifest, Tier-A and Tier-B lens catalogues, and per-injection metadata will be included in the archive.  The DESI Legacy Imaging Survey DR10 data are publicly available at \url{https://www.legacysurvey.org/dr10/}.
+The injection pipeline code, selection function grid results (per-cell completeness tables), bright-arc test results, CNN model weights, and the linear probe analysis scripts are publicly available at \url{https://github.com/aditrivaishnavi/stronglens-realism-gap} and will be archived on Zenodo with a DOI assigned at publication.  The training manifest, Tier-A and Tier-B lens catalogues, and per-injection metadata are included in the repository.  The DESI Legacy Imaging Survey DR10 data are publicly available at \url{https://www.legacysurvey.org/dr10/}.
+
+
+\section*{Conflict of interest}
+The authors declare no conflict of interest.
+
+
+\section*{Funding}
+The authors declare no funding.
 
 
 % ====================================================================
@@ -668,7 +673,7 @@ Of the 112 spectroscopically confirmed Tier-A lenses in our evaluation set, 12 a
 
 Cross-matching with the DESI Strong Lensing catalogue yields lens redshifts spanning $z_{\rm lens} = 0.17$--$0.82$, with no systematic concentration at any particular redshift.  The two lowest-redshift systems ($z = 0.170$, $0.186$) likely have compact image configurations where the Einstein radius is small relative to the deflector light profile, making the lensed features difficult to distinguish from the host galaxy; however, we do not have measured Einstein radii for these systems.  The highest-redshift system ($z = 0.824$, $r = 19.89$) is the faintest of the 12, consistent with reduced surface brightness of lensed arcs at higher redshift.
 
-These 12 lenses represent the $10.7$~per cent ($12/112$; 95~per cent Wilson CI: $[5.6\%, 18.1\%]$) failure rate of the CNN on confirmed lenses.  Visual inspection suggests the failures share common morphological characteristics: edge-on deflector galaxies, compact double-image configurations, or lensed features that are faint relative to the deflector light.  A detailed morphological classification is beyond the scope of this paper.
+These 12 lenses represent the $10.7$~per cent ($12/112$; 95~per cent Wilson CI: $[5.6, 18.1]$~per cent) failure rate of the CNN on confirmed lenses.  Visual inspection suggests the failures share common morphological characteristics: edge-on deflector galaxies, compact double-image configurations, or lensed features that are faint relative to the deflector light.  A detailed morphological classification is beyond the scope of this paper.
 
 \begin{table}
 \centering

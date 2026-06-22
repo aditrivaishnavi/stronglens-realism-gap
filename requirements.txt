@@ -1,5 +1,5 @@
 # stronglens-realism-gap: Pinned dependencies for reproducibility
-# MNRAS paper: "Calibrating CNN-Based Strong Gravitational Lens Finders in DESI DR10"
+# RASTI paper: "A morphological barrier: quantifying the injection realism gap for CNN strong lens finders in DESI Legacy Survey DR10"
 #
 # Tested on: Lambda Cloud (NVIDIA GH200), Ubuntu 22.04, Python 3.11
 # Date: 2026-02-11

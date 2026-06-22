@@ -1,6 +1,6 @@
 # Reproducibility Guide
 
-How to reproduce the results in the MNRAS paper "The morphological barrier: quantifying the injection–realism gap for CNN strong lens finders in DESI Legacy Survey DR10" using data stored in `s3://darkhaloscope/`.
+How to reproduce the results in the RASTI paper "A morphological barrier: quantifying the injection realism gap for CNN strong lens finders in DESI Legacy Survey DR10" using data stored in `s3://darkhaloscope/`.
 
 Last updated: 2026-02-18
 
@@ -223,17 +223,17 @@ These read from the D06 results directory and output PDF figures.
 
 ## 6. Paper source
 
-The LaTeX source files (`mnras_merged_draft_v1.tex` through `v14.tex`) are in the **git repository only**, not in S3:
+The LaTeX source for the RASTI submission is in the **git repository only**, not in S3:
 
 ```
-paper/mnras_merged_draft.tex   # latest version
+paper/balaji_johnson_2026_rasti.tex   # latest version (uses the rasti class)
 ```
 
 Build with:
 
 ```bash
 cd paper
-latexmk -pdf mnras_merged_draft_v14.tex
+latexmk -pdf balaji_johnson_2026_rasti.tex
 ```
 
 ---

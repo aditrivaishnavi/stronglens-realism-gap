@@ -1,6 +1,6 @@
 # Sim-to-Real Validation Suite
 
-Comprehensive validation of the injection-recovery pipeline for the MNRAS selection function paper.
+Comprehensive validation of the injection-recovery pipeline for the RASTI selection function paper.
 
 ## Directory Structure
 
