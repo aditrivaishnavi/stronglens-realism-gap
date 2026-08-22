@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "purpose": "Compare the executed native-grid Gaussian blur with Gaussian convolution on the four-times grid before native-pixel integration.",
+  "seed": 20260830,
+  "stamp_pixels": 101,
+  "pixel_scale_arcsec": 0.262,
+  "oversample": 4,
+  "n_corner_cases": 64,
+  "n_random_cases": 156,
+  "ranges": {
+    "theta_e_arcsec": [0.5, 3.0],
+    "source_re_arcsec": [0.15, 0.5],
+    "source_n_sersic": [0.5, 2.0],
+    "source_q": [0.3, 1.0],
+    "source_beta_fraction": [0.1, 0.4],
+    "lens_q": [0.5, 1.0],
+    "lens_center_sigma_arcsec": 0.05,
+    "shear_component_sigma": 0.05,
+    "psf_fwhm_arcsec": [0.9, 1.8]
+  },
+  "normalization": {
+    "unlensed_flux_nmgy": 1.0,
+    "source_integral": "analytic Sersic source-plane integral",
+    "noise": false,
+    "clumps": false
+  },
+  "metrics": [
+    "relative_l1",
+    "relative_l2",
+    "relative_peak",
+    "pixel_correlation",
+    "relative_total_flux"
+  ],
+  "scope": "Detector-free implementation sensitivity using synthetic configurations only."
+}

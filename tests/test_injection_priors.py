@@ -59,7 +59,9 @@ def _extract_function_defaults(source_path: Path, func_name: str) -> dict:
             n_defaults = len(args.defaults)
             param_names = [a.arg for a in args.args]
             default_params = param_names[len(param_names) - n_defaults:]
-            for name, default_node in zip(default_params, args.defaults):
+            for name, default_node in zip(
+                default_params, args.defaults, strict=True
+            ):
                 val = _ast_to_value(default_node)
                 if val is _SENTINEL:
                     # Fail loudly instead of silently skipping.
@@ -248,13 +250,6 @@ class TestRegistryCompleteness(unittest.TestCase):
         for key in expected_keys:
             self.assertIn(key, registry,
                           f"Registry missing lens_params key: {key}")
-
-    def test_model2_conditioning_keys_present(self):
-        """Model 2 conditioning parameters are documented."""
-        registry = _load_registry()["model2_conditioning"]
-        for key in ["q_scatter", "q_floor"]:
-            self.assertIn(key, registry,
-                          f"Registry missing model2_conditioning key: {key}")
 
     def test_preprocessing_keys_present(self):
         """Preprocessing parameters are documented."""

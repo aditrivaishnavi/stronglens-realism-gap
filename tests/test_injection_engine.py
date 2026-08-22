@@ -48,20 +48,20 @@ import torch
 try:
     from dhs.injection_engine import (
         AB_ZP,
+        InjectionResult,
         LensParams,
         SourceParams,
-        InjectionResult,
+        _sersic_shape,
+        _sersic_source_integral,
+        _shear_deflection,
+        _sie_deflection,
+        _sis_deflection,
+        _torch_meshgrid_arcsec,
+        arc_annulus_snr,
+        estimate_sigma_pix_from_psfdepth,
         inject_sis_shear,
         sample_lens_params,
         sample_source_params,
-        _sersic_source_integral,
-        _sersic_shape,
-        _sis_deflection,
-        _sie_deflection,
-        _shear_deflection,
-        _torch_meshgrid_arcsec,
-        estimate_sigma_pix_from_psfdepth,
-        arc_annulus_snr,
     )
 except ImportError as e:
     print(f"Import error: {e}")
@@ -439,10 +439,10 @@ class TestLenstronomyCrossValidation(unittest.TestCase):
     def test_lensed_flux_matches_lenstronomy(self):
         """Our lensed pixel flux matches lenstronomy at 4x oversampling to <1%."""
         self._skip_if_no_lenstronomy()
-        from lenstronomy.LightModel.light_model import LightModel
-        from lenstronomy.ImSim.image_model import ImageModel
         from lenstronomy.Data.imaging_data import ImageData
         from lenstronomy.Data.psf import PSF as LenstronomyPSF
+        from lenstronomy.ImSim.image_model import ImageModel
+        from lenstronomy.LightModel.light_model import LightModel
 
         H = W = STAMP_H
         re, n_s, q_s, phi_s = 0.15, 1.0, 1.0, 0.0
@@ -632,9 +632,13 @@ class TestLensParamsSampling(unittest.TestCase):
             beta = math.sqrt(sp.beta_x_arcsec**2 + sp.beta_y_arcsec**2)
             offsets.append(beta / theta_e)
         offsets = np.array(offsets)
-        # Area-weighted: mean(beta_frac) should be > midpoint of [0.1, 1.0] = 0.55
-        self.assertGreater(np.mean(offsets), 0.55,
-                           f"Mean offset {np.mean(offsets):.3f} too low for area-weighted sampling")
+        # Area-weighted over the final [0.1, 0.4] range has mean about 0.28.
+        self.assertAlmostEqual(
+            np.mean(offsets),
+            0.28,
+            delta=0.015,
+            msg=f"Mean offset {np.mean(offsets):.3f} inconsistent with area weighting",
+        )
 
     def test_meta_keys_include_sie_params(self):
         """Injection result meta should include q_lens and phi_lens_rad."""

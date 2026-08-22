@@ -1,11 +1,11 @@
 """Injection engine for strong-lens selection-function calibration.
 
-This module is intentionally self-contained (NumPy + PyTorch only) to avoid the
-unit pitfalls we hit previously with external lensing packages.
+This module is intentionally self-contained (NumPy + PyTorch only) and uses
+arcsecond coordinates throughout.
 
 Key choices:
-  - Lens model: SIS + external shear (gamma1, gamma2). Ray-shooting (lens
-    equation) is implemented directly in arcsec units.
+  - Lens model: SIE + external shear (gamma1, gamma2), with the SIS recovered
+    when the axis ratio is one.
   - Source model: compact Sérsic profile with optional clumps, normalized to a
     specified *total unlensed* flux in nanomaggies.
   - Flux units: nanomaggies (AB zeropoint 22.5). Surface brightness is handled
@@ -20,11 +20,9 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass
-from typing import Dict, Optional, Tuple
 
 import numpy as np
 import torch
-
 
 AB_ZP = 22.5
 AB_ZEROPOINT_MAG = AB_ZP  # alias used by other modules
@@ -72,12 +70,12 @@ class SourceParams:
 class InjectionResult:
     injected: torch.Tensor  # (B, 3, H, W) nmgy
     injection_only: torch.Tensor  # (B, 3, H, W) nmgy
-    meta: Dict[str, torch.Tensor]
+    meta: dict[str, torch.Tensor]
 
 
 def _torch_meshgrid_arcsec(
     h: int, w: int, pixel_scale: float, device: torch.device, dtype: torch.dtype
-) -> Tuple[torch.Tensor, torch.Tensor]:
+) -> tuple[torch.Tensor, torch.Tensor]:
     """Return x,y coordinate grids in arcsec centered at (0,0)."""
     cy = (h - 1) / 2.0
     cx = (w - 1) / 2.0
@@ -94,7 +92,7 @@ def _sis_deflection(
     x0: torch.Tensor,
     y0: torch.Tensor,
     eps: float = 1e-6,
-) -> Tuple[torch.Tensor, torch.Tensor]:
+) -> tuple[torch.Tensor, torch.Tensor]:
     """SIS deflection alpha = theta_E * (theta - theta0) / |theta - theta0|.
 
     DEPRECATED: Use _sie_deflection with q_lens=1.0 instead.
@@ -117,7 +115,7 @@ def _sie_deflection(
     x0: torch.Tensor,
     y0: torch.Tensor,
     eps: float = 1e-6,
-) -> Tuple[torch.Tensor, torch.Tensor]:
+) -> tuple[torch.Tensor, torch.Tensor]:
     """SIE deflection angles (Kormann et al. 1994; Keeton 2001).
 
     For an ellipsoidal isothermal mass distribution with axis ratio q_lens
@@ -180,7 +178,7 @@ def _shear_deflection(
     y: torch.Tensor,
     g1: torch.Tensor,
     g2: torch.Tensor,
-) -> Tuple[torch.Tensor, torch.Tensor]:
+) -> tuple[torch.Tensor, torch.Tensor]:
     """External shear deflection: alpha = Gamma * theta.
 
     With Gamma = [[g1, g2], [g2, -g1]]
@@ -190,7 +188,7 @@ def _shear_deflection(
     return ax, ay
 
 
-def _rotate(x: torch.Tensor, y: torch.Tensor, phi: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
+def _rotate(x: torch.Tensor, y: torch.Tensor, phi: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
     c = torch.cos(phi)
     s = torch.sin(phi)
     xr = c * x + s * y
@@ -387,7 +385,7 @@ def inject_sis_shear(
     psf_fwhm_r_arcsec: float,
     psf_fwhm_scale_g: float = 1.05,
     psf_fwhm_scale_z: float = 0.94,
-    core_suppress_radius_pix: Optional[int] = None,
+    core_suppress_radius_pix: int | None = None,
     seed: int = 1337,
     subpixel_oversample: int = 4,
     add_poisson_noise: bool = False,
@@ -436,8 +434,6 @@ def inject_sis_shear(
         noise is the Poisson shot noise (add_poisson_noise); this Gaussian
         layer is an additional texture-matching step.  The paper should
         describe this as "background-texture matching noise".
-        BUG FIX (2026-02-16): previously absent, causing injections to appear
-        sharper than real arcs in ground-based imaging.
     """
     assert host_nmgy_hwc.ndim == 3 and host_nmgy_hwc.shape[-1] == 3
     device = host_nmgy_hwc.device
@@ -566,23 +562,12 @@ def inject_sis_shear(
     # Without this, bright injections are anomalously smooth — a statistical
     # signature detectable by a high-AUC CNN.
     #
-    # RNG FIX (D06):  Poisson and background-
-    # texture noise now use the per-injection `rng` generator (seeded from
-    # `seed` above).  Previously these used the GLOBAL torch RNG, which:
-    #   (a) made results non-reproducible across re-runs, and
-    #   (b) broke the "paired comparison" claim because two conditions sharing
-    #       the same seed would draw different noise realisations.
+    # Poisson and background-texture noise use the private per-injection RNG.
     if add_poisson_noise and gain_e_per_nmgy > 0:
         # Convert arc flux to photo-electrons, draw exact Poisson, convert back.
         # torch.poisson handles all lambda correctly:
         #   lambda=0 -> returns 0 (no noise on zero-flux pixels)
         #   lambda>0 -> exact Poisson draw
-        # BUGFIX (D03 post-review): Previous implementation used a Gaussian
-        # approximation with clamp(min=1.0), which injected noise of std
-        # ~1 electron into ALL zero-flux pixels (~95% of the stamp). This
-        # noise (~0.007 nmgy) corrupted the annulus normalization, inflating
-        # the MAD by ~2.5x and compressing the normalized arc signal by the
-        # same factor. The effect was catastrophic for faint-arc detection.
         arc_electrons = (injection.clamp(min=0.0) * gain_e_per_nmgy)
         noisy_electrons = torch.poisson(arc_electrons, generator=rng)
         noise_electrons = noisy_electrons - arc_electrons
@@ -638,82 +623,27 @@ def inject_sis_shear(
 def sample_source_params(
     rng: np.random.Generator,
     theta_e_arcsec: float,
-    r_mag_range: Tuple[float, float] = (23.0, 26.0),
-    beta_frac_range: Tuple[float, float] = (0.10, 0.40),
-    re_arcsec_range: Tuple[float, float] = (0.15, 0.50),
-    n_range: Tuple[float, float] = (0.5, 2.0),
-    q_range: Tuple[float, float] = (0.3, 1.0),
-    g_minus_r_mu_sigma: Tuple[float, float] = (1.15, 0.30),
-    r_minus_z_mu_sigma: Tuple[float, float] = (0.85, 0.20),
+    r_mag_range: tuple[float, float] = (23.0, 26.0),
+    beta_frac_range: tuple[float, float] = (0.10, 0.40),
+    re_arcsec_range: tuple[float, float] = (0.15, 0.50),
+    n_range: tuple[float, float] = (0.5, 2.0),
+    q_range: tuple[float, float] = (0.3, 1.0),
+    g_minus_r_mu_sigma: tuple[float, float] = (1.15, 0.30),
+    r_minus_z_mu_sigma: tuple[float, float] = (0.85, 0.20),
     clumps_prob: float = 0.0,
-    # Clumps params were previously hardcoded in the function body.
-    # Now they are explicit parameters so the AST-based prior validator can
-    # check them against configs/injection_priors.yaml.
-    clumps_n_range: Tuple[int, int] = (1, 4),
-    clumps_frac_range: Tuple[float, float] = (0.15, 0.45),
+    # Explicit clump parameters are retained for disabled sensitivity runs.
+    clumps_n_range: tuple[int, int] = (1, 4),
+    clumps_frac_range: tuple[float, float] = (0.15, 0.45),
     # Sensitivity analysis overrides
     re_scale: float = 1.0,
     gmr_shift: float = 0.0,
     rmz_shift: float = 0.0,
 ) -> SourceParams:
-    """Sample physically plausible source parameters.
+    """Sample source parameters from the declared final priors.
 
-    We sample beta as a fraction of theta_E. For SIS, beta < theta_E produces
-    multiple images and a realistic magnification distribution.
-
-    Prior ranges (updated 2026-02-13):
-
-    g_minus_r_mu_sigma: (1.15, 0.30) -- changed from (0.2, 0.25).
-        BUG FIX (2026-02-16): Previous defaults were rest-frame blue galaxy
-        colours and did not account for cosmological K-correction. Sources
-        lensed at z~1-3 have OBSERVER-FRAME g-r ~ 0.8-1.5 in Legacy Survey
-        bands due to redshift.  Measured from arc-region annulus (8-18 px)
-        of 388 real Tier-A lenses: mean=1.23, std=0.39, median=1.28.
-        Initial conservative estimate N(1.0, 0.35); refined to N(1.15, 0.30)
-        after visual inspection showed slight residual colour offset.
-
-    r_minus_z_mu_sigma: (0.85, 0.20) -- changed from (0.1, 0.25).
-        BUG FIX (2026-02-16): Same K-correction issue as g-r.
-        Measured from arc-region annulus of Tier-A lenses: mean=0.95,
-        std=0.27, median=0.89.  Initial conservative estimate N(0.75, 0.25);
-        refined to N(0.85, 0.20) after visual inspection.
-
-    beta_frac_range: (0.10, 0.40) -- narrowed from (0.1, 1.0).
-        BUG FIX (2026-02-16): Area-weighted sampling with upper bound
-        at 1.0 (or even 0.55 in experiments) heavily biases toward high
-        beta_frac values where the source is far from the caustic. This
-        produces widely separated double/quad images instead of extended
-        tangential arcs. Real lenses with visible arcs have sources near
-        the caustic (low beta_frac). Narrowing to (0.10, 0.40) favours
-        near-caustic configurations producing arc-like morphologies.
-
-    re_arcsec_range: (0.15, 0.50) -- raised minimum from 0.05.
-        BUG FIX (2026-02-16): Sources with Re < 0.15" are unresolvable at
-        Legacy Survey ~1" seeing and produce point-like lensed images that
-        look like binary stars, not gravitational arcs. Manual visual
-        inspection confirmed that Re_min=0.05 creates obviously fake
-        double-image artefacts. Minimum 0.15" ensures lensed images
-        overlap and merge into smooth arcs at ground-based resolution.
-        Literature:
-        - Collett (2015): typical 0.1-0.5" at z~1-3
-        - Observed: z~1 late-type 0.3-0.8", z~2 0.2-0.5"
-
-    n_range: (0.5, 2.0) -- narrowed from (0.5, 4.0).
-        BUG FIX (2026-02-16): Concentrated profiles (n > 2, e.g. de
-        Vaucouleurs n=4) produce compact source light distributions that
-        get lensed into point-like doubles, not smooth arcs. Manual visual
-        inspection showed pie-chart-like segmented artefacts. High-z lensed
-        sources are predominantly disk galaxies (n ~ 1).
-        - Collett (2015): n = 1 (exponential disk) for high-z sources
-        - Herle et al. (2024): while their CNN selects n >= 2.55, that
-          selection bias should not be built into the injection prior.
-
-    clumps_prob: 0.0 -- disabled from 0.6.
-        BUG FIX (2026-02-16): Clumps (1-4 Gaussian blobs at 60% prob,
-        up to 45% flux) create additional bright spots at separate lensed
-        image positions, producing obviously fake multi-blob artefacts
-        visible in manual inspection. Disabled until base arc morphology
-        is validated. Can be re-enabled with reduced parameters if needed.
+    Source offsets are area-weighted in beta/theta_E over 0.10--0.40.
+    Sizes, Sersic indices, axis ratios, and observer-frame colours follow
+    ``configs/injection_priors.yaml``. Clumps are disabled in the final grid.
     """
     # source offset in polar coordinates in source plane
     # Area-weighted sampling: for uniform source density on the sky,
@@ -770,9 +700,9 @@ def sample_lens_params(
     theta_e_arcsec: float,
     shear_sigma: float = 0.05,
     center_sigma_arcsec: float = 0.05,
-    q_lens_range: Tuple[float, float] = (0.5, 1.0),
+    q_lens_range: tuple[float, float] = (0.5, 1.0),
     # Sensitivity analysis override
-    q_lens_range_override: Optional[Tuple[float, float]] = None,
+    q_lens_range_override: tuple[float, float] | None = None,
 ) -> LensParams:
     """Sample lens nuisance parameters (shear, centroid jitter, ellipticity).
 
@@ -877,7 +807,7 @@ def estimate_sigma_pix_from_cutout(
 def arc_annulus_snr(
     injection_only_chw: torch.Tensor,
     sigma_pix_r: float,
-    annulus_r_pix: Tuple[int, int] = (4, 16),
+    annulus_r_pix: tuple[int, int] = (4, 16),
     core_r_pix: int = 3,
 ) -> float:
     """Compute a simple annulus SNR proxy on the r band for diagnostics."""
