@@ -8,10 +8,11 @@ of "script forgot an argument" bugs.
 
 Created: 2026-02-13
 """
+
 from __future__ import annotations
 
-from dataclasses import dataclass, asdict
-from typing import Optional, Dict, Any
+from dataclasses import asdict, dataclass
+from typing import Any
 
 
 @dataclass(frozen=True)
@@ -33,12 +34,13 @@ class PreprocessSpec:
     annulus_r_out : float or None
         Outer radius for normalization annulus. None = use default (32 px).
     """
+
     mode: str
     crop: bool
     crop_size: int
     clip_range: float = 10.0
-    annulus_r_in: Optional[float] = None
-    annulus_r_out: Optional[float] = None
+    annulus_r_in: float | None = None
+    annulus_r_out: float | None = None
 
     def __post_init__(self):
         # Validate annulus radii: must be set together
@@ -54,22 +56,22 @@ class PreprocessSpec:
                     f"annulus_r_out ({self.annulus_r_out})"
                 )
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Serialize to dict (safe for torch.save / JSON)."""
         return asdict(self)
 
     @staticmethod
-    def from_dict(d: Dict[str, Any]) -> "PreprocessSpec":
+    def from_dict(d: dict[str, Any]) -> PreprocessSpec:
         """Deserialize from dict (loaded from checkpoint)."""
         return PreprocessSpec(**d)
 
-    def to_preprocess_kwargs(self) -> Dict[str, Any]:
+    def to_preprocess_kwargs(self) -> dict[str, Any]:
         """Convert to kwargs dict suitable for preprocess_stack().
 
         Only includes non-None annulus radii so that preprocess_stack
         uses its own defaults when annulus is not explicitly set.
         """
-        kwargs: Dict[str, Any] = {
+        kwargs: dict[str, Any] = {
             "mode": self.mode,
             "crop": self.crop,
             "clip_range": self.clip_range,

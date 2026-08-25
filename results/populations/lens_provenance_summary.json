@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "lenscat_tier_a_rows": 389,
+  "scientific_status": {
+    "candidate": 320,
+    "confirmed_lens": 63,
+    "confirmed_nonlens": 4,
+    "uncertain": 2
+  },
+  "confirmed_lens_evidence": {
+    "systems": 63,
+    "secure_dual_role_assigned_spectroscopy": 50,
+    "imaging_or_model_without_secure_dual_spectra": 6,
+    "other_secure_lens_evidence": 7
+  },
+  "source": "data/catalogues/lens_provenance.csv"
+}

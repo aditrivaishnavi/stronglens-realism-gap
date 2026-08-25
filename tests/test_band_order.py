@@ -26,7 +26,7 @@ import pytest
 
 def test_injection_engine_band_order():
     """Verify injection engine assumes g=0, r=1, z=2."""
-    from dhs.injection_engine import sample_source_params, SourceParams
+    from dhs.injection_engine import sample_source_params
 
     rng = np.random.default_rng(42)
     source = sample_source_params(rng, theta_e_arcsec=1.5)
@@ -73,10 +73,11 @@ def test_injection_engine_band_order():
 def test_injection_output_channel_order():
     """Verify inject_sis_shear output has g=0, r=1, z=2."""
     import torch
+
     from dhs.injection_engine import (
+        inject_sis_shear,
         sample_lens_params,
         sample_source_params,
-        inject_sis_shear,
     )
 
     rng = np.random.default_rng(123)
@@ -138,7 +139,6 @@ def test_preprocess_stack_preserves_band_order():
     # After per-band normalization, relative ordering within each band changes,
     # but across bands at the same pixel, the normalized values should
     # still reflect the original ordering if normalization is band-independent.
-    center = proc[:, 50, 50]
     # Each band is normalized independently, so absolute values differ.
     # What we verify: the three bands are still in channels 0, 1, 2
     # and the normalization didn't scramble them.

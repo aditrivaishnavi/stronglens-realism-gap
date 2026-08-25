@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "columns": {
+    "galaxy_id": "str",
+    "cutout_relpath": "str",
+    "ra": "float64",
+    "dec": "float64",
+    "healpix_128": "int64",
+    "physical_group_id": "str",
+    "spatial_component_id": "int64",
+    "label": "int64",
+    "sample_weight": "float64",
+    "pool": "str",
+    "tier": "str",
+    "cohort": "str",
+    "lensing_status": "str",
+    "confirmation_category": "str",
+    "is_noisy_positive": "bool",
+    "training_label_origin": "str",
+    "split": "str",
+    "endpoint_role": "str"
+  },
+  "cutout_relpath": "Path relative to the separately obtained stronglens_calibration data root; no local filesystem paths are stored.",
+  "endpoint_role": "model_development, test_negative, terminal_confirmed, or development_contacted_confirmed"
+}

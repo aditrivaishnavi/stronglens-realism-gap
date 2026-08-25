@@ -13,6 +13,7 @@ Run with: python tests/test_dr10_extraction.py
 import os
 import sys
 import tempfile
+
 import numpy as np
 
 # Add parent dir for imports
@@ -21,10 +22,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 def create_mock_dr10_fits(output_path: str):
     """Create a mock DR10 sweep FITS file with realistic data."""
-    from astropy.io import fits
     from astropy.table import Table
-    
-    n_rows = 10
     
     # Create data with DR10-style lowercase columns
     # Note: astropy Table will preserve column name case
@@ -233,7 +231,14 @@ def test_safe_extraction_pattern():
                 return None
             return 22.5 - 2.5 * np.log10(flux)
         def get_type_bin(t): return str(t)[:3].upper() if t else "UNK"
-        def get_nobs_z_bin(nobs): return 0 if nobs is None else min(int(nobs) // 10, 5)
+        def get_nobs_z_bin(nobs):
+            if nobs is None:
+                return "unknown"
+            if int(nobs) <= 2:
+                return "0-2"
+            if int(nobs) <= 5:
+                return "3-5"
+            return "6+"
         
         with fits.open(fits_path) as hdul:
             data = hdul[1].data
@@ -345,7 +350,6 @@ def test_row_with_nan():
         
         with fits.open(fits_path) as hdul:
             data = hdul[1].data
-            col_names_lower = set(c.lower() for c in data.dtype.names)
             
             print("\n=== NaN Row Extraction Test ===")
             

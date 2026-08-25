@@ -1,0 +1,32 @@
+{
+  "cells": 9,
+  "detector_scores_used": false,
+  "evidence_hashes": {
+    "manuscript_data_section": "003066b2e352a9c68adc6877553807367d2e19b7ead3565dca27b9659fd752a2",
+    "role_completion": "739e779e3f193175213faf1113062995684f9a2044e383d51cee5fd0f07bafe0",
+    "role_summary": "eae3ef0b5ed25a64c5734efa49b8f717cc1c02b44bed0e64564fe759996bb854",
+    "test_manifest": "3a7a2a616bca2b31d0c0ec00bf86d15e87356d298087e14fa7ca6021481b6e2b",
+    "tractor_completion": "f147b6810098f9d41a8d5ed71cc03741ca00195e5601fca5eb80939bd5f5bd15",
+    "tractor_dispositions": "559b55646c328a87d4d471f717be54096029b0fccc50be5c898f3e029341bdc6",
+    "tractor_summary": "f61ac0c22d3efe20b5130aac37832061bd482248c387a00d1a68d0a4faf9af41",
+    "train_manifest": "a0caa3824568f96010275e59d89d013a23ac7e6e6ae280de2c636a401fa38e5b",
+    "validation_manifest": "809729e63c9bd6fca96f51b4f8d244aeda604beca4135edcc428f431a9941ee9"
+  },
+  "full_tractor_eligibility": "passed",
+  "hosts_per_cell": 500,
+  "physical_group_checks": "passed",
+  "physical_group_method": "known_test_group_else_conservative_spatial_group",
+  "pre_score_review": "approved",
+  "pre_score_review_id": "6c2c7138-59c5-40e1-a841-925548903445",
+  "pre_score_review_result": "PASS",
+  "reference_population": "none",
+  "role_overlap_checks": "passed",
+  "role_overlap_scope": "complete_score_blind_role_proposal",
+  "role_proposal_sha256": "64c72540e91dd7d59d07088909e9cb6472f844cff006304dfd0e286dc193b1ff",
+  "rows": 4500,
+  "schema_version": 1,
+  "selection_manifest_sha256": "60429cc8f00de5ffcb05b44a93a61ae30d7109ee99842b56ac192d73bd94b023",
+  "status": "final_experiment_host_selection_approved",
+  "tractor_manifest_sha256": "ed1c042aeb525361cf27372132f52111a813a646dd0d5a664e24e79691d0c852",
+  "tractor_summary_sha256": "f61ac0c22d3efe20b5130aac37832061bd482248c387a00d1a68d0a4faf9af41"
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "measured_sample": {
+    "lenscat_tier_a_systems": 388,
+    "photometry": "observer-frame 8-18 pixel annulus",
+    "g_minus_r": {
+      "mean": 1.23,
+      "standard_deviation": 0.39
+    },
+    "r_minus_z": {
+      "mean": 0.95,
+      "standard_deviation": 0.27
+    }
+  },
+  "adopted_source_priors": {
+    "g_minus_r": {
+      "mean": 1.15,
+      "standard_deviation": 0.3
+    },
+    "r_minus_z": {
+      "mean": 0.85,
+      "standard_deviation": 0.2
+    }
+  },
+  "interpretation": "The adopted distributions are declared observer-frame priors, not fitted population models."
+}

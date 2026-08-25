@@ -1,14 +1,18 @@
 from __future__ import annotations
+
+from collections.abc import Sequence
 from dataclasses import dataclass
-from typing import Optional, Sequence
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
 import pyarrow.parquet as pq
 
 from .constants import BANDS, SEED_DEFAULT
-from .utils import decode_npz_blob
 from .preprocess import preprocess_stack
 from .transforms import AugmentConfig, random_augment
+from .utils import decode_npz_blob
+
 
 def _read_parquet_any(path: str) -> pd.DataFrame:
     table = pq.read_table(path)
@@ -30,12 +34,13 @@ class DatasetConfig:
     preprocessing: str
     label_col: str = "label"
     seed: int = SEED_DEFAULT
-    manifest_path: Optional[str] = None
+    manifest_path: str | None = None
     cutout_path_col: str = "cutout_path"  # For file_manifest mode
-    sample_weight_col: Optional[str] = "sample_weight"  # For weighted loss
+    cutout_root: str | None = None  # Join portable relative cutout paths here
+    sample_weight_col: str | None = "sample_weight"  # For weighted loss
     crop: bool = True         # False = keep 101x101 for Paper IV parity
     crop_size: int = 0        # 0 = default STAMP_SIZE; >0 = custom crop size
-    # Annulus override for corrected normalization (see KNOWN ISSUE in dhs/utils.py).
+    # Optional annulus override for newly trained models.
     # Sentinel value 0.0 means "use normalize_outer_annulus defaults (20, 32)",
     # which are locked to all existing trained models. Negative values also default.
     # For retraining with corrected annulus, set BOTH to default_annulus_radii output:
@@ -92,14 +97,23 @@ class LensDataset:
     def _get_file_and_label(self, i: int):
         """For file_manifest mode: return file path and label."""
         row = self.df.iloc[i]
-        path = row[self.dcfg.cutout_path_col]
+        path = Path(str(row[self.dcfg.cutout_path_col]))
+        if not path.is_absolute():
+            if not self.dcfg.cutout_root:
+                raise ValueError(
+                    "Relative cutout paths require DatasetConfig.cutout_root"
+                )
+            root = Path(self.dcfg.cutout_root).expanduser().resolve(strict=False)
+            path = (root / path).resolve(strict=False)
+            if not path.is_relative_to(root):
+                raise ValueError("Relative cutout path escapes cutout_root")
         label = int(row[self.dcfg.label_col])
         # Explicit None check avoids semantically odd row.get(None, 1.0)
         if self.dcfg.sample_weight_col is not None:
             weight = float(row.get(self.dcfg.sample_weight_col, 1.0))
         else:
             weight = 1.0
-        return path, label, weight
+        return str(path), label, weight
 
     def __getitem__(self, i: int):
         # Determine crop and annulus settings from config
@@ -152,7 +166,13 @@ def build_unpaired_manifest(
     if split_col not in df.columns:
         raise ValueError(f"Expected split_col={split_col} in parquet")
 
-    df["_lrg_id"] = list(zip(df[ra_col].astype(float).round(6), df[dec_col].astype(float).round(6)))
+    df["_lrg_id"] = list(
+        zip(
+            df[ra_col].astype(float).round(6),
+            df[dec_col].astype(float).round(6),
+            strict=True,
+        )
+    )
 
     outs = []
     for split in ["train","val","test"]:

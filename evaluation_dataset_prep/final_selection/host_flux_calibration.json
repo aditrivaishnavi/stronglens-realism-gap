@@ -1,0 +1,10 @@
+{
+  "flux_calibration_system": "AB_nanomaggy_zeropoint_22.5",
+  "manuscript_data_section_sha256": "003066b2e352a9c68adc6877553807367d2e19b7ead3565dca27b9659fd752a2",
+  "payload_manifest_sha256": "9e340ab44017c4ba9186f75c5b5c5e001eed613a5a1923bb400de1aded7895a3",
+  "pixel_unit": "nanomaggy_per_native_pixel",
+  "schema_version": 1,
+  "source": "Legacy Survey DR10 FITS cutouts and Tractor catalogue",
+  "status": "host_flux_calibration_frozen",
+  "unit_authority": "Legacy Survey nanomaggy convention documented in the manuscript data section"
+}

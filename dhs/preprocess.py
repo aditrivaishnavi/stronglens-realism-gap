@@ -1,7 +1,9 @@
 from __future__ import annotations
+
 import numpy as np
-from .utils import normalize_outer_annulus, radial_profile_model
+
 from .constants import STAMP_SIZE
+from .utils import normalize_outer_annulus, radial_profile_model
 
 
 def center_crop(img: np.ndarray, target_size: int) -> np.ndarray:

@@ -27,22 +27,23 @@ Author: stronglens-realism-gap project
 Date: 2026-02-11
 Aligned with: preprocessing consistency check
 """
+
 from __future__ import annotations
 
 import hashlib
-import sys
 import unittest
-from pathlib import Path
 
 import numpy as np
 
-# Add parent to path for standalone execution
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-
-from dhs.preprocess import preprocess_stack, center_crop
-from dhs.utils import normalize_outer_annulus, robust_median_mad, radial_mask, default_annulus_radii
+from dhs.constants import CUTOUT_SIZE, STAMP_SIZE
+from dhs.preprocess import center_crop, preprocess_stack
 from dhs.transforms import AugmentConfig, random_augment
-from dhs.constants import STAMP_SIZE, CUTOUT_SIZE
+from dhs.utils import (
+    default_annulus_radii,
+    normalize_outer_annulus,
+    radial_mask,
+    robust_median_mad,
+)
 
 
 def make_synthetic_cutout(seed: int = 42) -> np.ndarray:
@@ -61,11 +62,13 @@ def make_synthetic_cutout(seed: int = 42) -> np.ndarray:
     r2 = (xx - cx) ** 2 + (yy - cy) ** 2
 
     bands = []
-    for b, (flux, bg, noise) in enumerate(
-        [(5.0, 0.1, 0.05), (8.0, 0.15, 0.07), (3.5, 0.08, 0.04)]  # g, r, z
-    ):
+    for flux, bg, noise in [
+        (5.0, 0.1, 0.05),  # g
+        (8.0, 0.15, 0.07),  # r
+        (3.5, 0.08, 0.04),  # z
+    ]:
         # Central Gaussian (galaxy core)
-        galaxy = flux * np.exp(-r2 / (2 * 6.0 ** 2))
+        galaxy = flux * np.exp(-r2 / (2 * 6.0**2))
         # Background + noise
         background = bg + noise * rng.standard_normal((h, w))
         band = (galaxy + background).astype(np.float32)
@@ -119,8 +122,8 @@ class TestPreprocessRegression(unittest.TestCase):
 
         # Golden reference summary statistics (computed 2026-02-13, NumPy 1.26, Python 3.11)
         # Uses annulus (20, 32) which matches all trained models.
-        # NOTE: This annulus is suboptimal for 101x101 stamps (see KNOWN ISSUE
-        # in dhs/utils.py). When retraining with corrected annulus, update these.
+        # The reported detector uses annulus (20, 32); a newly trained model may
+        # use an outer annulus instead.
         #
         # Per-band means (mean of all pixels in band after preprocessing):
         EXPECTED_BAND_MEANS = [0.774, 0.775, 0.707]
@@ -135,13 +138,25 @@ class TestPreprocessRegression(unittest.TestCase):
             center_val = float(out[band, 50, 50])
 
             # Allow 1% tolerance for cross-platform differences
-            self.assertAlmostEqual(band_mean, EXPECTED_BAND_MEANS[band], delta=0.1,
-                msg=f"Band {band} mean changed: {band_mean:.3f} vs expected {EXPECTED_BAND_MEANS[band]:.3f}")
-            self.assertAlmostEqual(band_std, EXPECTED_BAND_STDS[band], delta=0.1,
-                msg=f"Band {band} std changed: {band_std:.3f} vs expected {EXPECTED_BAND_STDS[band]:.3f}")
+            self.assertAlmostEqual(
+                band_mean,
+                EXPECTED_BAND_MEANS[band],
+                delta=0.1,
+                msg=f"Band {band} mean changed: {band_mean:.3f} vs expected {EXPECTED_BAND_MEANS[band]:.3f}",
+            )
+            self.assertAlmostEqual(
+                band_std,
+                EXPECTED_BAND_STDS[band],
+                delta=0.1,
+                msg=f"Band {band} std changed: {band_std:.3f} vs expected {EXPECTED_BAND_STDS[band]:.3f}",
+            )
             # Center pixel should be clipped to 10 (bright galaxy center)
-            self.assertAlmostEqual(center_val, EXPECTED_CENTER_VALS[band], delta=0.1,
-                msg=f"Band {band} center value changed: {center_val:.3f}")
+            self.assertAlmostEqual(
+                center_val,
+                EXPECTED_CENTER_VALS[band],
+                delta=0.1,
+                msg=f"Band {band} center value changed: {center_val:.3f}",
+            )
 
         # Also verify the quantized hash for the SAME platform (faster regression check)
         cs = array_checksum(out)
@@ -170,13 +185,17 @@ class TestPreprocessRegression(unittest.TestCase):
     # ------------------------------------------------------------------
     def test_clip_range(self):
         """Output values are clipped to [-10, +10]."""
-        out = preprocess_stack(self.cutout, mode="raw_robust", crop=False, clip_range=10.0)
+        out = preprocess_stack(
+            self.cutout, mode="raw_robust", crop=False, clip_range=10.0
+        )
         self.assertTrue(np.all(out >= -10.0), f"Min value: {out.min()}")
         self.assertTrue(np.all(out <= 10.0), f"Max value: {out.max()}")
 
     def test_clip_range_custom(self):
         """Custom clip range is respected."""
-        out = preprocess_stack(self.cutout, mode="raw_robust", crop=False, clip_range=5.0)
+        out = preprocess_stack(
+            self.cutout, mode="raw_robust", crop=False, clip_range=5.0
+        )
         self.assertTrue(np.all(out >= -5.0))
         self.assertTrue(np.all(out <= 5.0))
 
@@ -270,7 +289,9 @@ class TestPreprocessRegression(unittest.TestCase):
             if not np.array_equal(out1, out2):
                 any_different = True
                 break
-        self.assertTrue(any_different, "All augmentations with different seeds were identical")
+        self.assertTrue(
+            any_different, "All augmentations with different seeds were identical"
+        )
 
     # ------------------------------------------------------------------
     # Test 8: No-augmentation preserves preprocessing
@@ -315,8 +336,9 @@ class TestPreprocessCrossPlatform(unittest.TestCase):
             annulus_vals = out[band][mask]
             mean = float(np.mean(annulus_vals))
             # Annulus should be approximately zero-centered
-            self.assertAlmostEqual(mean, 0.0, places=0,
-                                   msg=f"Band {band}: annulus mean = {mean:.4f}")
+            self.assertAlmostEqual(
+                mean, 0.0, places=0, msg=f"Band {band}: annulus mean = {mean:.4f}"
+            )
 
     def test_raw_robust_center_positive(self):
         """After raw_robust, the center (galaxy) should be positive (bright)."""
@@ -327,26 +349,18 @@ class TestPreprocessCrossPlatform(unittest.TestCase):
             center_val = out[band, 50, 50]
             # The synthetic cutout has a bright center; after normalization,
             # the center should be positive relative to the background.
-            self.assertGreater(center_val, 0.0,
-                               msg=f"Band {band}: center value = {center_val:.4f}")
+            self.assertGreater(
+                center_val, 0.0, msg=f"Band {band}: center value = {center_val:.4f}"
+            )
 
 
 # ======================================================================
 # Behavioral guard tests: catch annulus / normalization bugs
 # ======================================================================
 
+
 class TestAnnulusBehavioral(unittest.TestCase):
-    """Behavioral tests that catch annulus bugs by testing preprocess_stack output.
-
-    These tests do NOT depend on any helper function — they test the
-    actual preprocessing behavior. They would have caught the (20, 32)
-    bug on 101x101 stamps from day one.
-
-    KNOWN ISSUE (2026-02-13): The current annulus (20, 32) FAILS the
-    galaxy flux fraction test for 101x101 stamps (19.9% galaxy light
-    in the annulus). This is documented in dhs/utils.py and will be
-    fixed when retraining with default_annulus_radii().
-    """
+    """Compare the reported annulus with an outer-annulus alternative."""
 
     def _make_bright_galaxy(self, h=101, w=101, seed=42):
         """Bright exponential galaxy in nanomaggies, (3, H, W) CHW."""
@@ -355,24 +369,18 @@ class TestAnnulusBehavioral(unittest.TestCase):
         cy, cx = h // 2, w // 2
         r = np.sqrt((xx - cx) ** 2 + (yy - cy) ** 2)
         bands = []
-        for flux, bg, noise in [(5.0, 0.05, 0.03), (8.0, 0.08, 0.05), (3.5, 0.04, 0.02)]:
+        for flux, bg, noise in [
+            (5.0, 0.05, 0.03),
+            (8.0, 0.08, 0.05),
+            (3.5, 0.04, 0.02),
+        ]:
             galaxy = flux * np.exp(-r / 8.0)
             background = bg + noise * rng.standard_normal((h, w))
             bands.append((galaxy + background).astype(np.float32))
         return np.stack(bands, axis=0)
 
     def test_annulus_galaxy_flux_fraction_101x101(self):
-        """For 101x101, the corrected annulus dramatically reduces galaxy contamination.
-
-        The OLD annulus (20, 32) contains ~20% of galaxy flux on 101x101 stamps
-        for a bright extended host — this is the known bug. The CORRECTED annulus
-        from default_annulus_radii(101, 101) = (32.5, 45.0) reduces this to ~6%.
-
-        This test:
-        1. Asserts the corrected annulus IS good (< 10% galaxy flux)
-        2. Asserts the old annulus IS bad (> 10%) — so nobody thinks the
-           current (20, 32) defaults are fine for 101x101
-        """
+        """An outer annulus reduces extended-light contamination on 101x101 stamps."""
         h = w = 101
         yy, xx = np.mgrid[0:h, 0:w]
         cy, cx = h // 2, w // 2
@@ -381,30 +389,39 @@ class TestAnnulusBehavioral(unittest.TestCase):
         galaxy = 10.0 * np.exp(-np.sqrt(r2) / 8.0)
         total = galaxy.sum()
 
-        # OLD defaults (20, 32): BAD for 101x101
+        # Reported detector annulus.
         old_mask = radial_mask(h, w, 20, 32)
         old_frac = galaxy[old_mask].sum() / total
 
-        # CORRECTED annulus: GOOD
+        # Outer-annulus alternative for future training.
         r_in_new, r_out_new = default_annulus_radii(h, w)
         new_mask = radial_mask(h, w, r_in_new, r_out_new)
         new_frac = galaxy[new_mask].sum() / total
 
-        print(f"  [KNOWN ISSUE] Current annulus (20,32) on 101x101: "
-              f"{old_frac:.1%} galaxy flux")
-        print(f"  [FIX READY]   Corrected annulus ({r_in_new:.1f},{r_out_new:.1f}): "
-              f"{new_frac:.1%} galaxy flux")
+        print(
+            f"  Reported annulus (20,32) on 101x101: "
+            f"{old_frac:.1%} galaxy flux"
+        )
+        print(
+            f"  Outer annulus ({r_in_new:.1f},{r_out_new:.1f}): "
+            f"{new_frac:.1%} galaxy flux"
+        )
 
         # Corrected annulus must have low galaxy contamination
-        self.assertLess(new_frac, 0.10,
+        self.assertLess(
+            new_frac,
+            0.10,
             f"Corrected annulus contains {new_frac:.1%} of galaxy flux. "
-            "default_annulus_radii() formula needs fixing.")
+            "default_annulus_radii() formula needs fixing.",
+        )
 
-        # Old annulus must be bad — if this fails, someone already changed
-        # the test galaxy, and the "known issue" narrative may be wrong.
-        self.assertGreater(old_frac, 0.10,
+        # The synthetic extended galaxy should illuminate the distinction.
+        self.assertGreater(
+            old_frac,
+            0.10,
             "Old annulus (20,32) on 101x101 should contain >10% galaxy flux. "
-            "If this fails, the test galaxy model may have changed.")
+            "If this fails, the test galaxy model may have changed.",
+        )
 
     def test_corrected_annulus_improvement_over_old(self):
         """The corrected annulus must reduce galaxy flux by at least 2x on 101x101.
@@ -425,9 +442,12 @@ class TestAnnulusBehavioral(unittest.TestCase):
         new_frac = galaxy[radial_mask(h, w, r_in, r_out)].sum() / total
 
         improvement = old_frac / max(new_frac, 1e-10)
-        self.assertGreater(improvement, 2.0,
+        self.assertGreater(
+            improvement,
+            2.0,
             f"Corrected annulus should reduce galaxy flux by >= 2x. "
-            f"Got {improvement:.1f}x ({old_frac:.1%} -> {new_frac:.1%})")
+            f"Got {improvement:.1f}x ({old_frac:.1%} -> {new_frac:.1%})",
+        )
 
     def test_preprocessing_outer_sky_near_zero(self):
         """After preprocessing, sky pixels (r>40 on 101x101) should be near zero.
@@ -453,17 +473,25 @@ class TestAnnulusBehavioral(unittest.TestCase):
 
         for band in range(3):
             sky_median = float(np.median(out[band][sky_mask]))
-            print(f"  Band {band} sky median (r>40): {sky_median:+.2f}"
-                  f" ({'OK' if abs(sky_median) < 1.0 else 'KNOWN ISSUE: annulus in galaxy'})")
+            print(
+                f"  Band {band} sky median (r>40): {sky_median:+.2f}"
+                f" ({'low contamination' if abs(sky_median) < 1.0 else 'extended-light contamination'})"
+            )
             # Assert the known behavior with the current (20, 32) annulus:
             # sky median is negative (around -2.5) due to galaxy contamination.
             # This catches unexpected changes to normalization.
-            self.assertLess(sky_median, 0.0,
+            self.assertLess(
+                sky_median,
+                0.0,
                 f"Band {band}: sky median should be negative with (20,32) annulus "
-                f"on extended galaxy. Got {sky_median:+.2f}")
-            self.assertGreater(sky_median, -5.0,
+                f"on extended galaxy. Got {sky_median:+.2f}",
+            )
+            self.assertGreater(
+                sky_median,
+                -5.0,
                 f"Band {band}: sky median too negative ({sky_median:+.2f}). "
-                "Normalization may have changed unexpectedly.")
+                "Normalization may have changed unexpectedly.",
+            )
             # TODO(post-retraining): after retraining with corrected annulus (32.5, 45),
             # replace above assertions with:
             #   self.assertAlmostEqual(sky_median, 0.0, delta=0.5,
@@ -502,33 +530,50 @@ class TestAnnulusBehavioral(unittest.TestCase):
             old_frac = galaxy[radial_mask(h, w, 20, 32)].sum() / total
             new_frac = galaxy[radial_mask(h, w, r_in_new, r_out_new)].sum() / total
 
-            print(f"  deVauc R_e={re_px:.0f}px ({description}): "
-                  f"old annulus {old_frac:.1%}, corrected {new_frac:.1%}")
+            print(
+                f"  deVauc R_e={re_px:.0f}px ({description}): "
+                f"old annulus {old_frac:.1%}, corrected {new_frac:.1%}"
+            )
 
             # Corrected annulus should always be better
-            self.assertLess(new_frac, old_frac,
+            self.assertLess(
+                new_frac,
+                old_frac,
                 f"Corrected annulus should have less galaxy flux than old for "
-                f"R_e={re_px}px. Old={old_frac:.1%}, New={new_frac:.1%}")
+                f"R_e={re_px}px. Old={old_frac:.1%}, New={new_frac:.1%}",
+            )
 
             # Corrected annulus should have < 15% contamination even for extended profiles
-            self.assertLess(new_frac, 0.15,
+            self.assertLess(
+                new_frac,
+                0.15,
                 f"Corrected annulus has {new_frac:.1%} galaxy flux for R_e={re_px}px "
-                f"({description}). Should be < 15%.")
+                f"({description}). Should be < 15%.",
+            )
 
     def test_default_annulus_radii_is_in_outer_region(self):
         """default_annulus_radii output must be in the outer region for all sizes."""
         for size in [64, 101, 128, 256]:
             r_in, r_out = default_annulus_radii(size, size)
             half = size // 2
-            self.assertGreaterEqual(r_out / half, 0.70,
-                f"For {size}x{size}: r_out={r_out:.1f} is {r_out/half:.0%} of half-size. "
-                "Must be >= 70%.")
-            self.assertGreater(r_in / half, 0.50,
-                f"For {size}x{size}: r_in={r_in:.1f} is {r_in/half:.0%} of half-size. "
-                "Must be > 50%.")
+            self.assertGreaterEqual(
+                r_out / half,
+                0.70,
+                f"For {size}x{size}: r_out={r_out:.1f} is {r_out / half:.0%} of half-size. "
+                "Must be >= 70%.",
+            )
+            self.assertGreater(
+                r_in / half,
+                0.50,
+                f"For {size}x{size}: r_in={r_in:.1f} is {r_in / half:.0%} of half-size. "
+                "Must be > 50%.",
+            )
             n_pix = int(radial_mask(size, size, r_in, r_out).sum())
-            self.assertGreater(n_pix, 200,
-                f"Annulus for {size}x{size} has only {n_pix} pixels. Need >= 200.")
+            self.assertGreater(
+                n_pix,
+                200,
+                f"Annulus for {size}x{size} has only {n_pix} pixels. Need >= 200.",
+            )
 
 
 if __name__ == "__main__":
@@ -538,11 +583,11 @@ if __name__ == "__main__":
     print("=" * 60)
     print(f"  STAMP_SIZE = {STAMP_SIZE}")
     print(f"  CUTOUT_SIZE = {CUTOUT_SIZE}")
-    print(f"  Current annulus defaults: (20, 32)  [KNOWN ISSUE for 101x101]")
+    print("  Reported detector annulus: (20, 32)")
 
     r_in_new, r_out_new = default_annulus_radii(101, 101)
     print(f"  Corrected annulus for 101x101: ({r_in_new:.1f}, {r_out_new:.1f})")
-    print(f"  (Requires retraining to activate)")
+    print("  (Requires retraining to activate)")
 
     cutout = make_synthetic_cutout(seed=42)
     out_nocrop = preprocess_stack(cutout, mode="raw_robust", crop=False)

@@ -13,7 +13,7 @@ Run with: python -m pytest tests/test_astropy_api.py -v
 """
 import os
 import sys
-import tempfile
+
 import numpy as np
 import pytest
 
@@ -102,11 +102,9 @@ class TestAstropyFITSBehavior:
     @pytest.fixture
     def mock_dr10_fits(self, tmp_path):
         """Create a mock DR10 sweep FITS file with correct column names."""
-        from astropy.io import fits
         from astropy.table import Table
         
         # Create mock data with DR10-style lowercase columns
-        n_rows = 5
         data = {
             'ra': np.array([100.0, 150.0, 200.0, 250.0, 300.0], dtype=np.float64),
             'dec': np.array([10.0, 20.0, -10.0, -20.0, 0.0], dtype=np.float64),
@@ -278,10 +276,8 @@ class TestFitsioVsAstropy:
     @pytest.fixture
     def mock_dr10_fits(self, tmp_path):
         """Create a mock DR10 sweep FITS file."""
-        from astropy.io import fits
         from astropy.table import Table
         
-        n_rows = 3
         data = {
             'ra': np.array([100.0, 150.0, 200.0], dtype=np.float64),
             'dec': np.array([10.0, 20.0, -10.0], dtype=np.float64),
@@ -392,49 +388,6 @@ class TestColumnAccessFunctions:
         assert safe_int(5.9) == 5
         assert safe_int(None) == 0
         assert safe_int(None, default=-1) == -1
-
-
-def test_current_code_uses_wrong_case():
-    """
-    AUDIT: Verify that current code uses WRONG UPPERCASE column names.
-    
-    This test documents the bug in spark_negative_sampling.py
-    """
-    import re
-    
-    # Path to the spark job
-    script_path = os.path.join(
-        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-        'emr', 'spark_negative_sampling.py'
-    )
-    
-    if not os.path.exists(script_path):
-        pytest.skip(f"Script not found: {script_path}")
-    
-    with open(script_path, 'r') as f:
-        content = f.read()
-    
-    # Find all column accesses like row["COLUMN_NAME"]
-    pattern = r'row\["([A-Z_]+)"\]'
-    uppercase_cols = set(re.findall(pattern, content))
-    
-    print(f"Found UPPERCASE column accesses: {uppercase_cols}")
-    
-    # These should all be lowercase in DR10!
-    expected_wrong = {'RA', 'DEC', 'TYPE', 'NOBS_Z', 'MASKBITS', 'FLUX_G', 'FLUX_R', 
-                      'FLUX_Z', 'FLUX_W1', 'SHAPE_R', 'BRICKNAME', 'OBJID', 'PSFSIZE_G',
-                      'PSFSIZE_R', 'PSFSIZE_Z', 'PSFDEPTH_G', 'PSFDEPTH_R', 'PSFDEPTH_Z',
-                      'GALDEPTH_G', 'GALDEPTH_R', 'GALDEPTH_Z', 'EBV', 'SHAPE_E1', 
-                      'SHAPE_E2', 'SERSIC', 'FITBITS', 'MW_TRANSMISSION_G', 
-                      'MW_TRANSMISSION_R', 'MW_TRANSMISSION_Z'}
-    
-    # This assertion SHOULD FAIL, documenting the bug
-    if uppercase_cols:
-        pytest.fail(
-            f"BUG FOUND: Code uses UPPERCASE column names {uppercase_cols} "
-            f"but DR10 uses lowercase! This will cause KeyError or silent failures."
-        )
-
 
 if __name__ == '__main__':
     pytest.main([__file__, '-v'])

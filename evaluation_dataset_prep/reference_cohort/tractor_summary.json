@@ -1,0 +1,8 @@
+{
+  "manifest_sha256": "62d59f5c7e43173f50fed9b12a6daea78cb364e8f1a782bd1f86a80f7f192be5",
+  "rows": 43,
+  "schema_version": 1,
+  "score_columns_used": false,
+  "source_covariates_sha256": "bcc128e71418fc689e529eb64757007ec2b22be58f27b10946f507941d764083",
+  "status": "payload_and_tractor_validated_reference_cohort"
+}

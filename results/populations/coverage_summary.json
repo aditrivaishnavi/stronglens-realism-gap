@@ -1,0 +1,370 @@
+{
+  "schema_version": 1,
+  "status": "complete_detector_free_public_metadata_summary",
+  "purpose": "Describe actual pre-match catalogue coverage for the terminal systems and all G_rec injection targets; no detector score enters.",
+  "populations": {
+    "g_rec_injection_targets": {
+      "rows": 28625,
+      "tractor_type_counts": {
+        "SER": 19237,
+        "DEV": 6561,
+        "REX": 2827
+      },
+      "distributions": {
+        "mag_r": {
+          "defined": 28625,
+          "missing": 0,
+          "quartiles": {
+            "q25": 19.461611156712415,
+            "median": 20.151610531598042,
+            "q75": 20.784006198983914
+          }
+        },
+        "mag_z": {
+          "defined": 28625,
+          "missing": 0,
+          "quartiles": {
+            "q25": 18.71455106192058,
+            "median": 19.370088111910185,
+            "q75": 19.750566688907924
+          }
+        },
+        "shape_r": {
+          "defined": 28625,
+          "missing": 0,
+          "quartiles": {
+            "q25": 0.75658935,
+            "median": 1.0724702,
+            "q75": 1.4813354
+          }
+        },
+        "sersic": {
+          "defined": 28625,
+          "missing": 0,
+          "quartiles": {
+            "q25": 1.0,
+            "median": 2.4960966,
+            "q75": 4.0
+          }
+        },
+        "axis_ratio": {
+          "defined": 28625,
+          "missing": 0,
+          "quartiles": {
+            "q25": 0.434533378048863,
+            "median": 0.6132539669429736,
+            "q75": 0.7811681837068676
+          }
+        }
+      }
+    },
+    "terminal_selected_systems": {
+      "rows": 43,
+      "tractor_type_counts": {
+        "SER": 33,
+        "DEV": 9,
+        "EXP": 1
+      },
+      "distributions": {
+        "mag_r": {
+          "defined": 43,
+          "missing": 0,
+          "quartiles": {
+            "q25": 17.493721160089848,
+            "median": 18.16280549089499,
+            "q75": 19.79199067454911
+          }
+        },
+        "mag_z": {
+          "defined": 43,
+          "missing": 0,
+          "quartiles": {
+            "q25": 16.590337825453005,
+            "median": 17.10560678656051,
+            "q75": 18.316589344887532
+          }
+        },
+        "shape_r": {
+          "defined": 43,
+          "missing": 0,
+          "quartiles": {
+            "q25": 3.6333644,
+            "median": 5.4807515,
+            "q75": 7.3709407
+          }
+        },
+        "sersic": {
+          "defined": 43,
+          "missing": 0,
+          "quartiles": {
+            "q25": 3.6777058,
+            "median": 4.3363094,
+            "q75": 5.6825498
+          }
+        },
+        "axis_ratio": {
+          "defined": 43,
+          "missing": 0,
+          "quartiles": {
+            "q25": 0.62181615690835,
+            "median": 0.699174934343387,
+            "q75": 0.8037865838781464
+          }
+        }
+      }
+    }
+  },
+  "pre_match_overlap": {
+    "definition": "G_rec target falls jointly within the terminal-system IQR for catalogue mag_z, shape_r, and sersic.",
+    "marginal": {
+      "mag_z": {
+        "terminal_iqr": [
+          16.590337825453005,
+          18.316589344887532
+        ],
+        "g_rec_targets_inside": 4143,
+        "g_rec_fraction_inside": 0.14473362445414847
+      },
+      "shape_r": {
+        "terminal_iqr": [
+          3.6333644,
+          7.3709407
+        ],
+        "g_rec_targets_inside": 622,
+        "g_rec_fraction_inside": 0.021729257641921396
+      },
+      "sersic": {
+        "terminal_iqr": [
+          3.6777058,
+          5.6825498
+        ],
+        "g_rec_targets_inside": 7989,
+        "g_rec_fraction_inside": 0.27909170305676856
+      }
+    },
+    "joint_g_rec_targets_inside": 33,
+    "joint_g_rec_fraction_inside": 0.0011528384279475984
+  },
+  "p_src_pre_match_pool": {
+    "observed_systems": {
+      "rows": 53,
+      "distributions": {
+        "aperture_r_mag": {
+          "defined": 53,
+          "missing": 0,
+          "quartiles": {
+            "q25": 18.892447775300074,
+            "median": 19.721180761897525,
+            "q75": 20.675053738559164
+          }
+        },
+        "aperture_g_minus_r": {
+          "defined": 53,
+          "missing": 0,
+          "quartiles": {
+            "q25": 1.4979076617176992,
+            "median": 1.7087423216528541,
+            "q75": 1.8700475024289362
+          }
+        },
+        "aperture_r_minus_z": {
+          "defined": 53,
+          "missing": 0,
+          "quartiles": {
+            "q25": 0.8510437610929472,
+            "median": 1.013304340755512,
+            "q75": 1.267086967610703
+          }
+        },
+        "r50_px": {
+          "defined": 53,
+          "missing": 0,
+          "quartiles": {
+            "q25": 6.536685146840333,
+            "median": 7.184925790555003,
+            "q75": 7.935928659968682
+          }
+        },
+        "axis_ratio": {
+          "defined": 53,
+          "missing": 0,
+          "quartiles": {
+            "q25": 0.788257270684991,
+            "median": 0.8680107473305151,
+            "q75": 0.9164388232745424
+          }
+        },
+        "concentration_r80_r20": {
+          "defined": 53,
+          "missing": 0,
+          "quartiles": {
+            "q25": 2.915819778940326,
+            "median": 3.3514248684469417,
+            "q75": 3.6237163505735905
+          }
+        },
+        "psfsize_r_matched": {
+          "defined": 53,
+          "missing": 0,
+          "quartiles": {
+            "q25": 1.1944754,
+            "median": 1.2752199,
+            "q75": 1.4435914
+          }
+        },
+        "depth5_r_mag": {
+          "defined": 53,
+          "missing": 0,
+          "quartiles": {
+            "q25": 24.246892565355783,
+            "median": 24.374220708159697,
+            "q75": 24.575148497778738
+          }
+        },
+        "ebv_matched": {
+          "defined": 53,
+          "missing": 0,
+          "quartiles": {
+            "q25": 0.025458999,
+            "median": 0.04068791,
+            "q75": 0.059237514
+          }
+        }
+      }
+    },
+    "candidate_targets": {
+      "rows": 11995,
+      "distributions": {
+        "aperture_r_mag": {
+          "defined": 11995,
+          "missing": 0,
+          "quartiles": {
+            "q25": 19.79156798785688,
+            "median": 20.427467674510087,
+            "q75": 21.05376540730374
+          }
+        },
+        "aperture_g_minus_r": {
+          "defined": 11995,
+          "missing": 0,
+          "quartiles": {
+            "q25": 1.027801193183516,
+            "median": 1.3864955883608734,
+            "q75": 1.7236056425788624
+          }
+        },
+        "aperture_r_minus_z": {
+          "defined": 11995,
+          "missing": 0,
+          "quartiles": {
+            "q25": 0.6741129319643335,
+            "median": 0.841567249061427,
+            "q75": 1.093906016258927
+          }
+        },
+        "r50_px": {
+          "defined": 11995,
+          "missing": 0,
+          "quartiles": {
+            "q25": 4.248316933064839,
+            "median": 4.955327453802009,
+            "q75": 5.6659121386074744
+          }
+        },
+        "axis_ratio": {
+          "defined": 11995,
+          "missing": 0,
+          "quartiles": {
+            "q25": 0.7510776532631127,
+            "median": 0.8397480406555716,
+            "q75": 0.9037849781533105
+          }
+        },
+        "concentration_r80_r20": {
+          "defined": 11995,
+          "missing": 0,
+          "quartiles": {
+            "q25": 3.2654077290707453,
+            "median": 3.656010135833238,
+            "q75": 4.091368706016993
+          }
+        },
+        "psfsize_r_matched": {
+          "defined": 11995,
+          "missing": 0,
+          "quartiles": {
+            "q25": 1.219651222229004,
+            "median": 1.3030898571014404,
+            "q75": 1.4222851991653442
+          }
+        },
+        "depth5_r_mag": {
+          "defined": 11995,
+          "missing": 0,
+          "quartiles": {
+            "q25": 24.332804348969454,
+            "median": 24.691314287007188,
+            "q75": 25.06157847379411
+          }
+        },
+        "ebv_matched": {
+          "defined": 11995,
+          "missing": 0,
+          "quartiles": {
+            "q25": 0.026293174363672733,
+            "median": 0.03685210272669792,
+            "q75": 0.05604656971991062
+          }
+        }
+      }
+    },
+    "redshift_availability": {
+      "observed_systems_with_retained_photoz": 0,
+      "candidate_targets_with_retained_photoz": 550,
+      "observed_systems_with_secure_literature_lens_redshift": 47,
+      "observed_systems_with_secure_literature_source_redshift": 43,
+      "homogeneous_observed_source_magnitude_rows": 0
+    },
+    "scope": "Exact score-blind pools before the 265 targets were selected; all nine matching variables are finite in both pools."
+  },
+  "redshift_availability": {
+    "g_rec_retained_harvest": {
+      "matched_rows": 2589,
+      "matched_fraction": 0.09044541484716158,
+      "usable_photoz_0p05_to_0p8": 2517,
+      "usable_photoz_fraction_of_all_targets": 0.08793013100436681,
+      "spectroscopic_rows": 148,
+      "scope": "Availability in the retained historical harvest, not underlying DR10 photo-z catalogue completeness."
+    },
+    "terminal_public_literature": {
+      "lens_redshift_value_rows": 39,
+      "secure_lens_redshift_rows": 38,
+      "source_redshift_value_rows": 39,
+      "secure_source_redshift_rows": 35,
+      "scope": "Literature role-assigned redshifts; not the same estimator as the G_rec target photo-z field."
+    }
+  },
+  "source_magnitude_availability": {
+    "g_rec_src_r_mag": {
+      "defined": 115500,
+      "missing": 0,
+      "quartiles": {
+        "q25": 23.745714526769426,
+        "median": 24.49829775682532,
+        "q75": 25.246230603049415
+      }
+    },
+    "g_rec_lensed_r_mag": {
+      "defined": 115500,
+      "missing": 0,
+      "quartiles": {
+        "q25": 21.609127756380687,
+        "median": 22.36599623958484,
+        "q75": 23.118515659556273
+      }
+    },
+    "terminal_homogeneous_source_magnitude_rows": 0,
+    "reason": "The terminal provenance table has no homogeneous source-magnitude field; no cross-population source-magnitude comparison is claimed."
+  },
+  "interpretation": "These are catalogue central-object summaries before matching. They do not establish physical-deflector commensurability: target photometry can include blended arc light, redshift sources differ, and homogeneous observed source magnitudes are unavailable."
+}

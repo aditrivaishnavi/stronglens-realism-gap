@@ -15,7 +15,7 @@ import io
 import json
 import os
 from dataclasses import dataclass
-from typing import Any, Optional, Tuple
+from typing import Any
 
 
 def is_s3_uri(path_or_uri: str) -> bool:
@@ -23,7 +23,7 @@ def is_s3_uri(path_or_uri: str) -> bool:
     return low.startswith("s3://") or low.startswith("s3a://")
 
 
-def _split_s3_uri(uri: str) -> Tuple[str, str]:
+def _split_s3_uri(uri: str) -> tuple[str, str]:
     if not is_s3_uri(uri):
         raise ValueError(f"Not an s3:// or s3a:// uri: {uri}")
     # strip scheme: handle both s3:// and s3a://
@@ -68,8 +68,8 @@ def ensure_parent_dir(path: str) -> None:
 class S3Client:
     """Thin wrapper to lazily construct boto3 client."""
 
-    profile: Optional[str] = None
-    region: Optional[str] = None
+    profile: str | None = None
+    region: str | None = None
 
     def client(self):
         import boto3
@@ -77,12 +77,16 @@ class S3Client:
         if self.profile:
             import boto3.session
 
-            sess = boto3.session.Session(profile_name=self.profile, region_name=self.region)
+            sess = boto3.session.Session(
+                profile_name=self.profile, region_name=self.region
+            )
             return sess.client("s3")
         return boto3.client("s3", region_name=self.region)
 
 
-def write_bytes(dst: str, data: bytes, content_type: Optional[str] = None, s3: Optional[S3Client] = None) -> None:
+def write_bytes(
+    dst: str, data: bytes, content_type: str | None = None, s3: S3Client | None = None
+) -> None:
     if is_s3_uri(dst):
         bucket, key = _split_s3_uri(dst)
         s3c = (s3 or S3Client()).client()
@@ -97,22 +101,22 @@ def write_bytes(dst: str, data: bytes, content_type: Optional[str] = None, s3: O
         f.write(data)
 
 
-def write_text(dst: str, text: str, s3: Optional[S3Client] = None) -> None:
+def write_text(dst: str, text: str, s3: S3Client | None = None) -> None:
     write_bytes(dst, text.encode("utf-8"), content_type="text/plain", s3=s3)
 
 
-def write_json(dst: str, obj: Any, indent: int = 2, s3: Optional[S3Client] = None) -> None:
+def write_json(dst: str, obj: Any, indent: int = 2, s3: S3Client | None = None) -> None:
     data = json.dumps(obj, indent=indent, sort_keys=True).encode("utf-8")
     write_bytes(dst, data, content_type="application/json", s3=s3)
 
 
-def write_png(dst: str, pil_image, s3: Optional[S3Client] = None) -> None:
+def write_png(dst: str, pil_image, s3: S3Client | None = None) -> None:
     buf = io.BytesIO()
     pil_image.save(buf, format="PNG")
     write_bytes(dst, buf.getvalue(), content_type="image/png", s3=s3)
 
 
-def open_for_write(dst: str, s3: Optional[S3Client] = None):
+def open_for_write(dst: str, s3: S3Client | None = None):
     """Return a file-like object for writing. For S3, returns BytesIO.
 
     Caller must pass resulting bytes to write_bytes.

@@ -1,0 +1,30 @@
+version: 1
+description: Final grouped split used for primary-detector development and evaluation
+
+minimum_cross_split_separation_arcsec: 38.0
+
+train:
+  manifest: data/manifests/train.parquet
+  rows: 290312
+  positive_labels: 3633
+
+validation:
+  manifest: data/manifests/validation.parquet
+  rows: 62215
+  positive_labels: 778
+  confirmed_positive_labels: 0
+
+test:
+  manifest: data/manifests/test.parquet
+  rows: 61498
+  confirmed_positive_labels: 63
+  negative_labels: 61435
+  terminal_confirmed_systems: 43
+  development_contacted_confirmed_systems: 20
+
+grouping_keys:
+  - galaxy_id
+  - cutout_relpath
+  - healpix_128
+  - physical_group_id
+  - spatial_component_id

@@ -1,7 +1,11 @@
 from __future__ import annotations
-import numpy as np
+
 from dataclasses import dataclass
+
+import numpy as np
+
 from .utils import radial_rmap
+
 
 @dataclass
 class AugmentConfig:
@@ -12,6 +16,7 @@ class AugmentConfig:
     core_radius: float = 5.0
     az_shuffle_prob: float = 0.0
     az_shuffle_rmax: int = 32
+
 
 def random_augment(img3: np.ndarray, seed: int, cfg: AugmentConfig) -> np.ndarray:
     rng = np.random.default_rng(seed)
@@ -30,8 +35,11 @@ def random_augment(img3: np.ndarray, seed: int, cfg: AugmentConfig) -> np.ndarra
         x = x.copy()
         x[:, m] = 0.0
     if cfg.az_shuffle_prob > 0 and rng.random() < cfg.az_shuffle_prob:
-        x = azimuthal_shuffle(x, seed=int(rng.integers(0, 2**31-1)), rmax=cfg.az_shuffle_rmax)
+        x = azimuthal_shuffle(
+            x, seed=int(rng.integers(0, 2**31 - 1)), rmax=cfg.az_shuffle_rmax
+        )
     return x.astype(np.float32)
+
 
 def azimuthal_shuffle(img3: np.ndarray, seed: int, rmax: int = 32) -> np.ndarray:
     rng = np.random.default_rng(seed)

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "lenscat": {
+    "desi_named_entries": 5104,
+    "dr10_tractor_matches_within_5_arcsec": 4788,
+    "tier_a": 389,
+    "tier_b": 4399,
+    "tier_a_scientific_status": {
+      "confirmed_lens": 63,
+      "candidate": 320,
+      "confirmed_nonlens": 4,
+      "uncertain": 2
+    }
+  },
+  "negative_sample": {
+    "sampled_rows": 453100,
+    "missing_final_cutout": 6207,
+    "usable_cutouts": 446893,
+    "removed_by_clean_universe_filters": 37342,
+    "clean_negatives": 409551,
+    "deployment_representative": 343469,
+    "hard_confuser": 66082
+  },
+  "clean_split": {
+    "train_negatives": 286679,
+    "validation_negatives": 61437,
+    "test_negatives": 61435,
+    "test_confirmed_lenses": 63
+  }
+}

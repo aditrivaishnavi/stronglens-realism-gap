@@ -1,0 +1,8 @@
+{
+  "condition_support_sha256": "0e09ac139a242eb19e4d0a2551d4747f359a98f8d7e7b2d53fcd5331bf7e64aa",
+  "proposed_grec_hosts_sha256": "d5f8f72f7695598523642d858edee84713e48f4bd29504bcdc7bebd1b7a54255",
+  "proposed_roles_sha256": "64c72540e91dd7d59d07088909e9cb6472f844cff006304dfd0e286dc193b1ff",
+  "schema_version": 1,
+  "status": "score_blind_role_proposal_complete_not_final",
+  "summary_sha256": "eae3ef0b5ed25a64c5734efa49b8f717cc1c02b44bed0e64564fe759996bb854"
+}

@@ -1,0 +1,18 @@
+{
+  "latest_detector_train_overlap": 0,
+  "latest_detector_validation_overlap": 0,
+  "manifest_sha256": "91f540678278a9b2709d914417fb6b362d5cf71a39ccdeac5a0d05119a84a112",
+  "rows": 43,
+  "schema_version": 1,
+  "selection_used_detector_scores": false,
+  "shared_cohort_is_independent_replication": false,
+  "status": "payload_validated_reference_cohort_pending_spatial_and_support_checks",
+  "payload_validated_rows": 43,
+  "payload_validation_failures": 0,
+  "payload_validated_manifest_sha256": "8a2b86d369c3ab1627614bd1f7701d63fec385c3f04cb5681a3fa5e7bf6fa740",
+  "unique_galaxy_ids": 43,
+  "used_by": [
+    "G_domain",
+    "G_match"
+  ]
+}

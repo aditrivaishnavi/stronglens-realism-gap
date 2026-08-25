@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "minimum_cross_split_separation_arcsec": 38.0,
+  "splits": {
+    "train": {
+      "rows": 290312,
+      "positive_labels": 3633,
+      "negative_labels": 286679,
+      "endpoint_roles": {
+        "model_development": 290312
+      }
+    },
+    "validation": {
+      "rows": 62215,
+      "positive_labels": 778,
+      "negative_labels": 61437,
+      "endpoint_roles": {
+        "model_development": 62215
+      }
+    },
+    "test": {
+      "rows": 61498,
+      "positive_labels": 63,
+      "negative_labels": 61435,
+      "endpoint_roles": {
+        "test_negative": 61435,
+        "terminal_confirmed": 43,
+        "development_contacted_confirmed": 20
+      }
+    }
+  },
+  "validation": {
+    "pairwise_disjoint": [
+      "galaxy_id",
+      "cutout_relpath",
+      "healpix_128",
+      "physical_group_id",
+      "spatial_component_id"
+    ],
+    "coordinate_separation_checked": true
+  }
+}
