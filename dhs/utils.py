@@ -1,43 +1,37 @@
 from __future__ import annotations
+
 import io
 import logging
+
 import numpy as np
 
 logger = logging.getLogger(__name__)
 
-# -----------------------------------------------------------------------
-# KNOWN ISSUE (2026-02-13):
-# The hardcoded annulus (20, 32) was tuned for 64x64 stamps. For 101x101
-# stamps (crop=False, Paper IV parity), this annulus sits at 40-63% of
-# the image half-width — inside the galaxy, not in the sky. This inflates
-# MAD and suppresses arc contrast.
-#
-# default_annulus_radii() computes a proper outer-ring annulus for any
-# image size. However, ALL EXISTING TRAINED MODELS were trained with
-# (20, 32). Changing the default without retraining would make the model
-# see inputs it was never trained on — making scores WRONG.
-#
-# PLAN: keep (20, 32) as the default until retraining is done with the
-# corrected annulus. Use default_annulus_radii() in new training configs.
-# -----------------------------------------------------------------------
+# The reported detector was trained with annulus (20, 32), so evaluation
+# retains that preprocessing even though extended light can enter the annulus.
+
 
 def decode_npz_blob(blob: bytes) -> dict[str, np.ndarray]:
     with np.load(io.BytesIO(blob)) as z:
         return {k: z[k] for k in z.files}
+
 
 def center_slices(H: int, W: int, box: int):
     cy, cx = H // 2, W // 2
     half = box // 2
     return slice(cy - half, cy + half), slice(cx - half, cx + half)
 
+
 def radial_rmap(H: int, W: int) -> np.ndarray:
     cy, cx = H // 2, W // 2
     y, x = np.ogrid[:H, :W]
     return np.sqrt((x - cx) ** 2 + (y - cy) ** 2)
 
+
 def radial_mask(H: int, W: int, r_in: float, r_out: float) -> np.ndarray:
     r = radial_rmap(H, W)
     return (r >= r_in) & (r < r_out)
+
 
 def robust_median_mad(x: np.ndarray, eps: float = 1e-8):
     # Use nanmedian to handle NaN values
@@ -50,6 +44,7 @@ def robust_median_mad(x: np.ndarray, eps: float = 1e-8):
         mad = eps
     return med, mad
 
+
 def default_annulus_radii(H: int, W: int) -> tuple[float, float]:
     """Compute default annulus radii appropriate for the image size.
 
@@ -58,13 +53,8 @@ def default_annulus_radii(H: int, W: int) -> tuple[float, float]:
       r_in = 0.65 * R   (inner edge at 65% of half-size)
       r_out = 0.90 * R   (outer edge at 90% of half-size)
 
-    This ensures the annulus is in the outer ring regardless of stamp size:
-      - 64x64:   r_in=20.8, r_out=28.8  (similar to old 20-32)
-      - 101x101: r_in=32.5, r_out=45.0  (properly in outer ring)
-
-    Previously hardcoded as (20, 32), which was appropriate for 64x64 stamps
-    but NOT for 101x101 (the annulus sat at 40-63% of the half-size, well
-    within galaxy light for bright extended hosts).
+    This helper is available for newly trained models. It is not used to
+    rescore the reported detector.
     """
     R = min(H, W) // 2
     r_in = 0.65 * R
@@ -76,15 +66,13 @@ def default_annulus_radii(H: int, W: int) -> tuple[float, float]:
 _warned_annulus = False
 
 
-def normalize_outer_annulus(img: np.ndarray, r_in: float = 20, r_out: float = 32) -> np.ndarray:
+def normalize_outer_annulus(
+    img: np.ndarray, r_in: float = 20, r_out: float = 32
+) -> np.ndarray:
     """Normalize a 2D image by the median/MAD of an outer annulus.
 
-    IMPORTANT: The defaults (20, 32) are LOCKED to match all existing
-    trained models. Do NOT change these defaults without retraining.
-    For new training runs on 101x101 stamps, pass the output of
-    default_annulus_radii(H, W) explicitly.
-
-    See KNOWN ISSUE comment at top of file for full context.
+    The defaults (20, 32) match the reported detector. A newly trained model
+    may instead pass ``default_annulus_radii(H, W)`` explicitly.
 
     Raises
     ------
@@ -116,8 +104,12 @@ def normalize_outer_annulus(img: np.ndarray, r_in: float = 20, r_out: float = 32
             logger.warning(
                 "Annulus r_out=%g is only %.0f%% of image half-size %d. "
                 "For %dx%d stamps, consider using default_annulus_radii() "
-                "and retraining. See KNOWN ISSUE in dhs/utils.py.",
-                r_out, 100 * r_out / half, half, H, W,
+                "when training a new model.",
+                r_out,
+                100 * r_out / half,
+                half,
+                H,
+                W,
             )
             _warned_annulus = True
 
@@ -125,6 +117,7 @@ def normalize_outer_annulus(img: np.ndarray, r_in: float = 20, r_out: float = 32
     # Filter NaN values for robust stats
     med, mad = robust_median_mad(masked_vals)
     return (img - med) / mad
+
 
 def azimuthal_median_profile(img: np.ndarray, r_max: int = 32) -> np.ndarray:
     H, W = img.shape
@@ -134,6 +127,7 @@ def azimuthal_median_profile(img: np.ndarray, r_max: int = 32) -> np.ndarray:
         m = (r >= ri) & (r < ri + 1)
         prof[ri] = np.median(img[m]).astype(np.float32) if np.any(m) else 0.0
     return prof
+
 
 def radial_profile_model(img: np.ndarray, r_max: int = 32) -> np.ndarray:
     H, W = img.shape

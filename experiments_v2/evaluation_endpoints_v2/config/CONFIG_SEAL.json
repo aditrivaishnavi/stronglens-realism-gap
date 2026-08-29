@@ -1,0 +1,12 @@
+{
+  "config_sha256": "69242d9e9bf1427c6d533330e9636712840045789c390d61125b833185b91055",
+  "dependency_lock_sha256": "2da2670ef98f53e2661de3b0721559dc2bf49b4c56fa85ec7fb53f59f8f2ed45",
+  "schema_version": 1,
+  "scientific_outcomes_accessed": false,
+  "source_files": {
+    "src/evaluation_endpoints_v2/__init__.py": "683542c902d3400b66542bbcbc520403467cc6866cb906a16161875bf34d0735",
+    "src/evaluation_endpoints_v2/cli.py": "710101d2ad0b321fb97f035207774a889bcfcc61e7041fa16b9d92ba75384c0e",
+    "src/evaluation_endpoints_v2/pipeline.py": "925cd52b90d17e9977ab72eafb4a25a53ad812b20691ec84015277aa2a05a01b"
+  },
+  "status": "evaluation_endpoints_v2_code_and_config_sealed"
+}

@@ -11,9 +11,10 @@ Usage in any scoring script:
     model, pp_kwargs = load_model_and_spec(ckpt_path, device)
     proc = preprocess_stack(img_chw, **pp_kwargs)
 """
+
 from __future__ import annotations
 
-from typing import Any, Dict, Tuple
+from typing import Any
 
 import torch
 import torch.nn as nn
@@ -25,7 +26,7 @@ from .preprocess_spec import PreprocessSpec
 def load_model_and_spec(
     checkpoint_path: str,
     device: torch.device | str,
-) -> Tuple[nn.Module, Dict[str, Any]]:
+) -> tuple[nn.Module, dict[str, Any]]:
     """Load model + preprocessing kwargs from a checkpoint.
 
     Returns

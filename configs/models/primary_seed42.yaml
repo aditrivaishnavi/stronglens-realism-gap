@@ -1,0 +1,44 @@
+dataset:
+  parquet_path: ""
+  manifest_path: data/manifests/development.parquet
+  mode: file_manifest
+  preprocessing: raw_robust
+  label_col: label
+  cutout_path_col: cutout_relpath
+  cutout_root: data/downloads
+  sample_weight_col: sample_weight
+  seed: 42
+  crop: false
+  crop_size: 0
+  annulus_r_in: 0.0
+  annulus_r_out: 0.0
+
+augment:
+  hflip: true
+  vflip: true
+  rot90: true
+
+train:
+  arch: efficientnet_v2_s
+  epochs: 160
+  batch_size: 64
+  effective_batch: 512
+  lr: 0.000388
+  weight_decay: 0.0001
+  lr_schedule: cosine
+  lr_step_epoch: 130
+  lr_gamma: 0.5
+  num_workers: 16
+  device: cuda
+  early_stopping_patience: 0
+  out_dir: outputs/primary_detector/seed_42
+  mixed_precision: true
+  unweighted_loss: true
+  pretrained: true
+  freeze_backbone_epochs: 5
+  warmup_epochs: 5
+  init_weights: ""
+  balanced_sampling: false
+  mixture_id: candidate_plus_tier_b
+  lineage_path: ""
+  selection_metric: pr_auc

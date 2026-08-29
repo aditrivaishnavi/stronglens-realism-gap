@@ -5,19 +5,22 @@ Calibration metrics for binary classifiers (checklist 4.5).
 - MCE: Maximum Calibration Error (max over bins).
 - Reliability curve: per-bin accuracy and mean confidence for plotting.
 """
+
 from __future__ import annotations
+
 from dataclasses import dataclass
-from typing import List, Optional
+
 import numpy as np
 
 
 @dataclass
 class ReliabilityCurve:
     """Per-bin stats for reliability diagram."""
-    bin_edges: np.ndarray       # (n_bins+1,) edges
-    bin_acc: np.ndarray         # (n_bins,) accuracy in each bin
-    bin_conf: np.ndarray        # (n_bins,) mean predicted prob in each bin
-    bin_counts: np.ndarray     # (n_bins,) sample count per bin
+
+    bin_edges: np.ndarray  # (n_bins+1,) edges
+    bin_acc: np.ndarray  # (n_bins,) accuracy in each bin
+    bin_conf: np.ndarray  # (n_bins,) mean predicted prob in each bin
+    bin_counts: np.ndarray  # (n_bins,) sample count per bin
 
 
 def compute_ece(
@@ -44,7 +47,11 @@ def compute_ece(
     n = len(y_true)
     for b in range(n_bins):
         lo, hi = bin_edges[b], bin_edges[b + 1]
-        mask = (y_prob >= lo) & (y_prob < hi) if b < n_bins - 1 else (y_prob >= lo) & (y_prob <= hi)
+        mask = (
+            (y_prob >= lo) & (y_prob < hi)
+            if b < n_bins - 1
+            else (y_prob >= lo) & (y_prob <= hi)
+        )
         n_b = mask.sum()
         if n_b == 0:
             continue
@@ -72,7 +79,11 @@ def compute_mce(
     mce = 0.0
     for b in range(n_bins):
         lo, hi = bin_edges[b], bin_edges[b + 1]
-        mask = (y_prob >= lo) & (y_prob < hi) if b < n_bins - 1 else (y_prob >= lo) & (y_prob <= hi)
+        mask = (
+            (y_prob >= lo) & (y_prob < hi)
+            if b < n_bins - 1
+            else (y_prob >= lo) & (y_prob <= hi)
+        )
         n_b = mask.sum()
         if n_b == 0:
             continue
@@ -102,7 +113,11 @@ def reliability_curve(
     bin_counts = np.zeros(n_bins, dtype=int)
     for b in range(n_bins):
         lo, hi = bin_edges[b], bin_edges[b + 1]
-        mask = (y_prob >= lo) & (y_prob < hi) if b < n_bins - 1 else (y_prob >= lo) & (y_prob <= hi)
+        mask = (
+            (y_prob >= lo) & (y_prob < hi)
+            if b < n_bins - 1
+            else (y_prob >= lo) & (y_prob <= hi)
+        )
         n_b = mask.sum()
         bin_counts[b] = n_b
         if n_b > 0:

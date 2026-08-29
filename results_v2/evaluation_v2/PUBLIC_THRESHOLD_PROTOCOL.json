@@ -1,0 +1,30 @@
+{
+  "achieved_fpr_result": {
+    "path": "results_v2/evaluation_v2/achieved_fpr_scores/ENDPOINT_RESULT.json",
+    "sha256": "19caec43fbe770526bf8acf27d29cc3023bb000c574efaf014c29ff09e52779b"
+  },
+  "allowed_exceedances": 20,
+  "calibration_exceedances": 20,
+  "calibration_logits": {
+    "path": "results_v2/evaluation_v2/calibration_scores/calibration_logits.parquet",
+    "sha256": "05b1177fe5b714d9ba31d8e661cb56b3201e2ec17c4c9be1818d062962b744cf"
+  },
+  "calibration_manifest": {
+    "path": "results_v2/evaluation_v2/calibration_inputs/calibration_manifest.parquet",
+    "sha256": "6dea8e9fce681d58c04e9010966832a15ae2a11e2eb2a80d65ebf07af150be9a"
+  },
+  "calibration_role": "threshold_calibration",
+  "calibration_rows": 20002,
+  "checkpoint_sha256": "5d1082839aac7a0bfb89342f84a9a533b22e1111c15cb4711255ed1b524a2b8d",
+  "comparison": ">=",
+  "logit_threshold_float32": 1.5717214345932007,
+  "logit_threshold_float32_bits": 1070149163,
+  "schema_version": 1,
+  "selected_system_result": {
+    "path": "results_v2/evaluation_v2/terminal_confirmed_scores/ENDPOINT_RESULT.json",
+    "sha256": "470e0acdc19c9905c882ce946465c098184c45199665b88b629383c4f2784ee5"
+  },
+  "source_receipt_sha256": "eb43c67f60319c0f8ab2f53b2fd7abe1f655f1bbace49601b1d44bad56d4cb80",
+  "status": "public_threshold_protocol",
+  "target_catalogue_negative_fpr": 0.001
+}

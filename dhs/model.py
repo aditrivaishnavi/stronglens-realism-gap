@@ -1,8 +1,8 @@
 from __future__ import annotations
+
+import torch
 import torch.nn as nn
 import torchvision.models as models
-import torch
-
 
 # =============================================================================
 # ResNet-18 (standard, ~11.2M params)
@@ -89,9 +89,39 @@ def build_bottlenecked_resnet(in_ch: int = 3, base_ch: int = 16) -> nn.Module:
 # Paper IV parity: matches Paper IV's EfficientNetV2 architecture.
 # =============================================================================
 
+# Pinned explicitly rather than via DEFAULT, which silently retargets if
+# torchvision ever ships a second ImageNet checkpoint for this architecture.
+EFFICIENTNET_V2_S_WEIGHTS = models.EfficientNet_V2_S_Weights.IMAGENET1K_V1
+
+
+def initialization_provenance(arch: str, pretrained: bool) -> dict:
+    """Record the exact pretrained weights and library versions in use.
+
+    Written into every run's ``training_setup.json`` so that a later reader can
+    tell which ImageNet checkpoint the run started from without re-resolving an
+    enum against whatever torchvision happens to be installed then.
+    """
+    import torchvision
+
+    record = {
+        "arch": arch,
+        "pretrained": bool(pretrained),
+        "torch_version": torch.__version__,
+        "torchvision_version": torchvision.__version__,
+        "cuda_version": torch.version.cuda,
+        "cudnn_version": (
+            torch.backends.cudnn.version() if torch.backends.cudnn.is_available() else None
+        ),
+    }
+    if pretrained and arch == "efficientnet_v2_s":
+        record["weights_enum"] = EFFICIENTNET_V2_S_WEIGHTS.name
+        record["weights_url"] = EFFICIENTNET_V2_S_WEIGHTS.url
+    return record
+
+
 def build_efficientnet_v2_s(in_ch: int = 3, pretrained: bool = True) -> nn.Module:
     """Build EfficientNetV2-S with single-logit output for binary classification."""
-    weights = models.EfficientNet_V2_S_Weights.DEFAULT if pretrained else None
+    weights = EFFICIENTNET_V2_S_WEIGHTS if pretrained else None
     m = models.efficientnet_v2_s(weights=weights)
 
     # Adapt first conv for non-3-channel inputs if needed.

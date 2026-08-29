@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "frozen_pre_score",
+  "study_id": "stronglens_replacement_evaluation_endpoints_v2",
+  "repository_root": ".",
+  "grec_config": {
+    "path": "experiments_v2/grec_pnoise/config/production.toml",
+    "sha256": "420e001332f0248c6264d6facb0d4af914344599773f8bb8207b8375e018f8b0"
+  },
+  "threshold_receipt": {
+    "path": "results_v2/evaluation_v2/COMMON_THRESHOLD_RECEIPT.json",
+    "sha256": "eb43c67f60319c0f8ab2f53b2fd7abe1f655f1bbace49601b1d44bad56d4cb80",
+    "float32_bits": 1070149163
+  },
+  "payload_root": "evaluation_dataset_prep/candidate_payloads",
+  "roles": {
+    "achieved_fpr": {
+      "rows": 12512,
+      "source_manifest": {
+        "path": "results_v2/evaluation_v2/achieved_fpr.parquet",
+        "sha256": "2dd559dbde377c53916b2a52925a8e10fc0f16b7e079162a02195e91a616b96f"
+      },
+      "source_receipt": {
+        "path": "results_v2/evaluation_v2/NEGATIVE_ROLE_RECEIPT.json",
+        "sha256": "ebdabda7735c6ccfbf17df5d35b9b79324d1c7b5ec94ed4b555048bd54689acb"
+      },
+      "manifest_status": "achieved_fpr_manifest_frozen_pre_score",
+      "score_status": "achieved_fpr_scores_complete",
+      "result_status": "achieved_fpr_evaluation_complete",
+      "identity_prefix": "achfpr"
+    },
+    "terminal_confirmed": {
+      "rows": 43,
+      "source_manifest": {
+        "path": "evaluation_dataset_prep/reference_cohort/confirmed_43.parquet",
+        "sha256": "91f540678278a9b2709d914417fb6b362d5cf71a39ccdeac5a0d05119a84a112"
+      },
+      "payload_manifest": {
+        "path": "evaluation_dataset_prep/reference_cohort/confirmed_43_payload_validated.parquet",
+        "sha256": "8a2b86d369c3ab1627614bd1f7701d63fec385c3f04cb5681a3fa5e7bf6fa740"
+      },
+      "source_receipt": {
+        "path": "evaluation_dataset_prep/reference_cohort/summary.json",
+        "sha256": "6b94c9c6bdeb43030ffc402f045b239dcd065eb496fef13cf2c8ee8d4c982ddd"
+      },
+      "manifest_status": "terminal_confirmed_manifest_frozen_pre_score",
+      "score_status": "terminal_confirmed_scores_complete",
+      "result_status": "terminal_confirmed_evaluation_complete",
+      "identity_prefix": "terminal"
+    }
+  },
+  "inference": {
+    "confidence_level": 0.95,
+    "spatial_multiplier_draws": 10000,
+    "spatial_multiplier_seed": 20260916
+  }
+}

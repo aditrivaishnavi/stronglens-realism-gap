@@ -1,0 +1,44 @@
+[build-system]
+requires = ["uv_build>=0.8.0,<0.9"]
+build-backend = "uv_build"
+
+[project]
+name = "checkpoint-sensitivity-v2"
+version = "0.1.0"
+description = "Multi-checkpoint rescoring of frozen strong-lens study pixels"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "evaluation-endpoints-v2",
+  "grec-pnoise",
+  "numpy==2.5.3",
+  "pandas==3.0.5",
+  "pyarrow==25.0.1",
+  "scipy==1.18.1",
+  "stronglens-psrc-v2",
+  "torch==2.7.0",
+  "torchvision==0.22.0",
+]
+
+[dependency-groups]
+dev = ["pytest==9.1.1", "ruff==0.16.7"]
+
+[project.scripts]
+checkpoint-sensitivity-v2 = "checkpoint_sensitivity_v2.cli:main"
+
+[tool.uv]
+package = true
+
+[tool.uv.sources]
+evaluation-endpoints-v2 = { path = "../evaluation_endpoints_v2", editable = true }
+grec-pnoise = { path = "../grec_pnoise", editable = true }
+stronglens-psrc-v2 = { path = "../psrc", editable = true }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
