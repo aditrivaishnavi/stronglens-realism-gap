@@ -1,0 +1,152 @@
+[study]
+study_id = "stronglens_fixed_detector_postcoadd_grec_pnoise_v1"
+status = "implementation_candidate_not_execution_authority"
+
+[governance.documents]
+"evaluation_dataset_prep/GROUND_RULES.md" = "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca"
+"evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md" = "be8260d121e7ff01ae5432a56b9cf24eac8831aedeb0dc27d14e29e21ae4fa0e"
+"evaluation_dataset_prep/experiments/P_noise/DATASET_PLAN.md" = "4c3cb2b4fdef0dfc58bb4001fdb9e30cae11d7322babb1c09b738a4f8ecc6349"
+
+[grec]
+expected_hosts = 4500
+expected_cells = 9
+hosts_per_cell = 500
+maximum_hosts_per_spatial_group_per_cell = 5
+radii_arcsec = [0.50, 0.75, 1.00, 1.25, 1.50, 1.75, 2.00, 2.25, 2.50, 2.75, 3.00]
+seed_namespace = "stronglens-grec-shared-nuisance-v1"
+required_host_receipt_status = "final_pre_score_grec_hosts_frozen"
+
+[cells]
+psf_nodes_arcsec = [0.90, 1.05, 1.20, 1.35, 1.50, 1.65, 1.80]
+depth_nodes_mag = [22.5, 23.0, 23.5, 24.0, 24.5]
+psfsize_r_valid_min_arcsec = 0.30
+psfsize_r_valid_max_arcsec = 5.00
+depth_mag_valid_min = 15.0
+depth_mag_valid_max = 30.0
+psfdepth_r_unit = "inverse_square_nanomaggy"
+midpoint_tie_rule = "lower_node"
+
+[host]
+pixel_unit = "nanomaggy_per_native_pixel"
+flux_calibration_system = "AB_nanomaggy_zeropoint_22.5"
+required_calibration_receipt_status = "host_flux_calibration_frozen"
+
+[source]
+r_mag_min = 23.0
+r_mag_max_exclusive = 26.0
+n_min = 0.5
+n_max = 2.0
+re_arcsec_min = 0.15
+re_arcsec_max = 0.50
+axis_ratio_min = 0.3
+axis_ratio_max = 1.0
+beta_fraction_min = 0.10
+beta_fraction_max = 0.40
+g_minus_r_mean = 1.15
+g_minus_r_sigma = 0.30
+r_minus_z_mean = 0.85
+r_minus_z_sigma = 0.20
+
+[lens]
+axis_ratio_min = 0.5
+axis_ratio_max = 1.0
+shear_component_sigma = 0.05
+centre_offset_sigma_arcsec = 0.05
+
+[render]
+authoritative_device = "cpu"
+pixel_scale_arcsec_default = 0.262
+integration_method = "adaptive_tensor_gauss_legendre_per_native_pixel"
+quadrature_orders = [24, 32]
+unlensed_flux_relative_tolerance = 0.01
+lensed_relative_l1_tolerance = 0.005
+lensed_relative_max_tolerance = 0.02
+logit_absolute_tolerance = 0.01
+logit_reference_order = 32
+flux_validation_axis_nodes = 7
+flux_validation_random_samples = 256
+flux_validation_seed = 20260916
+required_validation_receipt_status = "renderer_validation_frozen_design_only"
+psf_fwhm_scale_g = 1.05
+psf_fwhm_scale_z = 0.94
+gaussian_truncate_sigma = 8.0
+operation_order = "adaptive_pixel_integrated_raytrace__zero_padded_native_gaussian"
+psf_convention = "circular_gaussian_fwhm_is_effective_coadd_scalar"
+host_unit = "nanomaggy_per_native_pixel"
+source_surface_brightness_unit = "nanomaggy_per_square_arcsec"
+added_source_noise = "none"
+additional_sky_noise = false
+
+[pnoise]
+gain_electron_per_nanomaggy_g = 150.0
+gain_electron_per_nanomaggy_r = 150.0
+gain_electron_per_nanomaggy_z = 150.0
+gain_status = "modelled_not_calibrated_dr10_coadd_gain"
+photon_stream_namespace = "stronglens-pnoise-photon-v1"
+draw_count = 0
+draw_count_source = "required_frozen_design_only_mcse_receipt"
+candidate_draw_counts = [1, 2, 4, 8, 16, 32, 64]
+mcse_absolute_max = 0.002
+mcse_fraction_of_sampling_se_max = 0.20
+required_draw_receipt_status = "pnoise_design_mcse_draw_count_frozen"
+
+[threshold]
+alpha = 0.001
+minimum_calibration_rows = 20000
+rule = "nextafter_float32_above_s_k_plus_1"
+comparison = ">="
+required_calibration_manifest_status = "threshold_calibration_manifest_frozen"
+required_calibration_score_status = "calibration_scores_complete"
+
+[approval]
+required_threshold_status = "external_pre_score_approval_granted"
+required_scope = "release_common_threshold_for_experiment_scoring"
+canary_status = "external_threshold_canary_approval"
+
+[inference]
+bootstrap_draws = 10000
+bootstrap_seed_namespace = "stronglens-grec-pnoise-host-stratified-bootstrap-v1"
+confidence_level = 0.95
+primary_grec_weighting = "equal_retained_cell_then_equal_host"
+primary_pnoise_weighting = "equal_host_after_draw_and_radius_average"
+
+[scoring]
+enabled_without_frozen_threshold_receipt = false
+repo_root = "."
+checkpoint = "data/downloads/models/primary_seed42_epoch160.pt"
+checkpoint_sha256 = "5d1082839aac7a0bfb89342f84a9a533b22e1111c15cb4711255ed1b524a2b8d"
+checkpoint_epoch = 160
+checkpoint_architecture = "efficientnet_v2_s"
+batch_size = 64
+filler_policy = "last"
+comparison = ">="
+native_logit_dtype = "float32"
+required_threshold_receipt_status = "common_threshold_frozen"
+authoritative_device = "mps"
+deterministic_algorithms = true
+cudnn_deterministic = true
+cudnn_benchmark = false
+float32_matmul_precision = "highest"
+
+[scoring.mps_environment]
+PYTORCH_ENABLE_MPS_FALLBACK = "0"
+PYTORCH_MPS_FAST_MATH = "0"
+PYTORCH_MPS_PREFER_METAL = "0"
+
+[scoring.runtime_versions]
+python = "3.12.13"
+numpy = "2.5.3"
+pandas = "3.0.5"
+pyarrow = "25.0.1"
+torch = "2.7.0"
+torchvision = "0.22.0"
+
+[scoring.source_sha256]
+"dhs/__init__.py" = "75ad4f4c2943325f88064ad2beae890b59674be2bf0404b30afc5584dc4de4bb"
+"dhs/fixed_width_scoring.py" = "e38fa3f837e33fe08a63bd152bc4e0b2396d027140af449376a0c3668cb1eba6"
+"dhs/preprocess.py" = "8457a2d52472d34a22809ca103feaf92706f975fb075409363ef5fee270add2c"
+"dhs/scoring_utils.py" = "4ab9c4a0ca33957d5e378004f2ac05198d4535028c058f585c5cb36d81204c63"
+"dhs/model.py" = "41adddaafe5082eb43aa64eafb387d57725b84300a85102739ef7d78e84c3a25"
+"dhs/preprocess_spec.py" = "bc207bade3147a7e641a0c74094e67227263116bce77d4e37f1145ce998a85ee"
+"dhs/utils.py" = "28dab8fc503ee3e36164616031a2c43c35b02964b00f61c6d60782b5f37104b9"
+"dhs/constants.py" = "15cc0c5abbfa1daea1392638b2f2ff8733b217b31bfce346d63546da4363fce6"

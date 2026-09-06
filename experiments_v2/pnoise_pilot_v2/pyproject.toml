@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pnoise-pilot-v2"
+version = "0.1.0"
+description = "Streaming, fail-closed P_noise design-pilot workflow"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "numpy==2.5.3",
+  "pandas==3.0.5",
+  "pyarrow==25.0.1",
+  "scipy==1.18.1",
+  "torch==2.7.0",
+  "torchvision==0.22.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.0.2"]
+
+[project.scripts]
+pnoise-pilot-v2 = "pnoise_pilot_v2.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+junit_suite_name = "pnoise_pilot_v2_prelaunch_contracts_v2"

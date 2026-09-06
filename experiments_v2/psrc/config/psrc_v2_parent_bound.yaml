@@ -1,0 +1,264 @@
+schema_version: 2
+experiment_id: P_src_v2_parent_bound_restricted_empirical
+status: frozen_pre_scoring
+
+governance:
+  documents:
+    evaluation_dataset_prep/GROUND_RULES.md: d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca
+    evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md: be8260d121e7ff01ae5432a56b9cf24eac8831aedeb0dc27d14e29e21ae4fa0e
+    evaluation_dataset_prep/experiments/P_src/DATASET_PLAN.md: 54338ed160a8b1b07858eab74e1c0b07ae6ab4190d7f526c3e6265b731a6ec82
+
+claim:
+  primary: >-
+    For the frozen score-blind subset of registered G_rec parent scenes and the
+    declared high-S/N F814W empirical-source subset, estimate the
+    photon-averaged change in fixed-detector threshold response when the
+    0.15-arcsec-regularized GalSim-deconvolved empirical construction is
+    replaced by its deterministic single-Sersic twin, holding each parent
+    scene's host, lens, source position, effective-Gaussian PSF identity and
+    intrinsic g/r/z flux fixed. For each empirical source, both arms use the
+    same circular mask equal to 95% of that source's measured native inscribed
+    support radius, capped at 2.35 arcsec, retain at least 90% of
+    pre-projection positive map flux, and
+    include a declared nonnegative projection whose pre-projection
+    negative-to-positive flux is at most 0.20. This is a conditional
+    fixed-cutout source-construction functional, not latent morphology.
+  construction_label: >-
+    measured_native_common_support_truncated_nonnegative_high_sn_regularized_galsim_deconvolved_f814w
+  prohibited:
+    - latent multiband source
+    - noise-free COSMOS morphology
+    - pure morphology effect
+    - chromatic morphology result
+    - source morphology equivalence
+    - survey completeness
+    - exposure-level recovery
+
+inputs:
+  cosmos_dir: data/downloads/cosmos_25_2/COSMOS_25.2_training_sample
+  cosmos_archive: data/downloads/cosmos_25_2/COSMOS_25.2_training_sample.tar.gz
+  cosmos_archive_md5: e05cfe60c037c645d61ac70545cc2a99
+  host_pixel_root: evaluation_dataset_prep/candidate_payloads
+
+parent_grec:
+  required_final_host_status: final_pre_score_grec_hosts_frozen
+  required_scene_status: grec_scene_table_frozen_pre_score
+  required_parent_bank_status: grec_parent_bank_frozen_pre_score
+  required_grec_config_file_sha256: 420e001332f0248c6264d6facb0d4af914344599773f8bb8207b8375e018f8b0
+  required_grec_config_contract_sha256: a9421c68633a269c055f93aacd1dc720b4472fe704e170179fd60576084c9e05
+  final_selection_manifest:
+    path: evaluation_dataset_prep/final_selection/final_grec_selection.parquet
+    sha256: 60429cc8f00de5ffcb05b44a93a61ae30d7109ee99842b56ac192d73bd94b023
+  required_radii_arcsec: [0.50, 0.75, 1.00, 1.25, 1.50, 1.75, 2.00, 2.25, 2.50, 2.75, 3.00]
+  subset:
+    selection_namespace: P_src_v2_parent_subset_20260916
+    host_cells: 9
+    source_magnitude_quantiles_within_cell: 4
+    hosts_per_cell_radius_magnitude_quantile: 4
+    expected_parent_scenes: 1584
+    expected_distinct_hosts: 1584
+    one_parent_scene_per_host: true
+    preserve_parent_parameters_exactly: true
+
+selection:
+  seed_namespace: P_src_v2_score_blind_selection_20260916
+  source_roles:
+    experiment:
+      per_stratum: 9
+      rank_offset: 0
+    pilot:
+      per_stratum: 9
+      rank_offset: 9
+  forbidden_column_tokens: [score, logit, probability, cnn, detected, recovery, outcome, threshold]
+  source:
+    sample: "25.2"
+    sn_ellip_gauss_min: 100.0
+    min_mask_distance_pixels: 15.0
+    magnitude_auto: [17.0, 24.5]
+    circularized_hlr_arcsec: [0.12, 0.60]
+    sersic_n: [0.50, 2.00]
+    axis_ratio: [0.20, 1.00]
+    viable_single_sersic_required: true
+    forbidden_fit_status: [0, 5]
+    minimum_native_inscribed_support_hlr: 6.0
+    strata:
+      half_light_radius_quantiles: 4
+      single_sersic_fit_mad_quantiles: 4
+    selected_sources: 144
+
+source_construction:
+  source_pixel_scale_arcsec: 0.03
+  stamp_size_pixels: 161
+  reconstruction_psf_fwhm_arcsec: 0.15
+  reconstruction_psf_must_exceed_original_fwhm: true
+  native_inscribed_radius_fraction_for_eligibility: 0.95
+  maximum_common_working_support_radius_arcsec: 2.35
+  minimum_positive_flux_retained_in_common_support: 0.90
+  maximum_structured_negative_to_positive_flux: 0.20
+  maximum_sersic_negative_to_positive_flux: 0.001
+  centroid_target: geometric_grid_center
+  centroid_separation_tolerance_arcsec: 0.0003
+  nonnegative_projection: >-
+    clip_negative_values_after_common_0.15arcsec_lowpass_before_unit_integral_normalization
+  support_treatment: >-
+    both_arms_zeroed_outside_each_sources_95percent_measured_native_inscribed_radius_capped_at_2.35arcsec
+  normalization: unit_discrete_source_plane_integral_after_declared_projection
+  structured_profile: >-
+    GalSim RealGalaxy deconvolution of the observed COSMOS F814W stamp,
+    reconvolved to a common 0.15 arcsec reconstruction PSF. It retains
+    measurement uncertainty and is not latent truth.
+  twin_profile: >-
+    Catalogue single-Sersic n, circularized half-light radius, axis ratio and
+    position angle, convolved to the identical reconstruction PSF.
+
+crossing:
+  assignment_namespace: P_src_v2_parent_source_assignment_20260916
+  expected_pairs: 1584
+  expected_source_uses: 11
+  expected_source_strata: 16
+  rows_per_cell_radius: 16
+  one_source_stratum_per_cell_radius_slot: true
+  preserve_source_strata: true
+
+pilot_parent:
+  scene_manifest:
+    path: results_v2/pnoise/design_pilot/design_scene_manifest.parquet
+    sha256: 240849e6aa6ece0488b00c82856ebe7856ed6b15f307ca00282c9193d9090b14
+  scene_receipt:
+    path: results_v2/pnoise/design_pilot/DESIGN_SCENE_RECEIPT.json
+    sha256: cada410c670a2a7f4050d1e4e55e747a56fc7125ace44ce6d25e43d2e8c34181
+    status: pnoise_design_scenes_frozen_pre_score
+  design_freeze_receipt:
+    path: results_v2/pnoise/design_pilot/PNOISE_DESIGN_FREEZE_RECEIPT.json
+    sha256: 0d9a75c9842f4688c72e6207d697b5816af2f672403a9d4ff45368841c98017f
+    status: pnoise_design_pilot_review_freeze_complete
+  selection_namespace: P_src_v2_draw_pilot_parent_selection_20260916
+  hosts_per_cell: 16
+  expected_pairs: 1584
+  expected_distinct_hosts: 144
+  expected_source_uses: 11
+
+rendering:
+  primary_renderer_id: psrc_pixelized_zero_padded_effective_psf_v2
+  target_shape_pixels: [101, 101]
+  integration_oversample: 8
+  convergence_oversamples: [4, 8, 16]
+  convergence_relative_l1_max: 0.01
+  boundary: explicit_zero_padding
+  interpolation: bilinear_zero_outside
+  psf:
+    mode: parent_effective_gaussian_scalar
+    convention: effective_post_pixel
+    use_parent_per_band_fwhm_exactly: true
+    truncate_sigma: 8.0
+  primary_flux_policy: fixed_parent_intrinsic_per_band
+  secondary_flux_policy: source_only_matched_noiseless_lensed_r
+  prohibit_primary_post_lensing_rescale: true
+
+photon_noise:
+  separated_from_renderer: true
+  coupling: common_component_poisson_split
+  minimum_draws: 8
+  maximum_draws: 64
+  candidate_draw_counts: [8, 16, 32, 64]
+  required_pilot_design_receipt_status: psrc_design_only_draw_pilot_design_frozen
+  required_pilot_score_receipt_status: psrc_design_only_draw_pilot_scores_complete
+  required_role_ledger_receipt_status: psrc_draw_pilot_role_ledger_frozen
+  required_draw_count_receipt_status: psrc_photon_draw_count_frozen_design_only
+  pilot_anti_join_identity_columns:
+    [pair_id, parent_grec_scene_id, host_galaxy_id, host_spatial_group_id,
+     source_id, host_pixel_sha256, host_physical_group_id,
+     host_spatial_coordinate_id, host_parent_id, source_image_sha256,
+     source_map_sha256, derivative_ancestry_sha256]
+  pilot_distribution_columns:
+    [host_cell_id, theta_e_arcsec, source_stratum]
+  paired_mcse_target_absolute_risk: 0.01
+  gain_e_per_nmgy: 150.0
+  gain_status: approximate_effective_coadd_gain
+  existing_host_background_fixed: true
+  add_sky_noise: false
+
+threshold:
+  space: native_float32_logit
+  comparator: ">="
+  alpha: 0.001
+  construction: nextafter_float32_above_s_k_plus_1
+  minimum_calibration_rows: 20000
+  required_calibration_manifest_status: threshold_calibration_manifest_frozen
+  required_calibration_score_status: calibration_scores_complete
+  required_threshold_receipt_status: common_threshold_frozen
+  historical_probability_threshold_permitted_as_primary: false
+
+scoring:
+  repo_root: .
+  checkpoint: data/downloads/models/primary_seed42_epoch160.pt
+  checkpoint_sha256: 5d1082839aac7a0bfb89342f84a9a533b22e1111c15cb4711255ed1b524a2b8d
+  checkpoint_epoch: 160
+  checkpoint_architecture: efficientnet_v2_s
+  batch_size: 64
+  filler_policy: last
+  native_logit_dtype: float32
+  comparator: ">="
+  authoritative_device: mps
+  required_scorer_receipt_status: fixed_scorer_frozen_pre_score
+  source_sha256:
+    dhs/__init__.py: 75ad4f4c2943325f88064ad2beae890b59674be2bf0404b30afc5584dc4de4bb
+    dhs/fixed_width_scoring.py: e38fa3f837e33fe08a63bd152bc4e0b2396d027140af449376a0c3668cb1eba6
+    dhs/preprocess.py: 8457a2d52472d34a22809ca103feaf92706f975fb075409363ef5fee270add2c
+    dhs/scoring_utils.py: 4ab9c4a0ca33957d5e378004f2ac05198d4535028c058f585c5cb36d81204c63
+    dhs/model.py: 41adddaafe5082eb43aa64eafb387d57725b84300a85102739ef7d78e84c3a25
+    dhs/preprocess_spec.py: bc207bade3147a7e641a0c74094e67227263116bce77d4e37f1145ce998a85ee
+    dhs/utils.py: 28dab8fc503ee3e36164616031a2c43c35b02964b00f61c6d60782b5f37104b9
+    dhs/constants.py: 15cc0c5abbfa1daea1392638b2f2ff8733b217b31bfce346d63546da4363fce6
+  runtime_versions:
+    python: 3.12.13
+    numpy: 2.5.3
+    pandas: 3.0.5
+    pyarrow: 25.0.1
+    torch: 2.7.0
+    torchvision: 0.22.0
+    scipy: 1.18.1
+    astropy: 8.0.1
+    galsim: 2.8.5
+    PyYAML: 6.0.3
+
+execution:
+  required_lock_status: psrc_execution_frozen_pre_score
+  required_source_receipt_status: restricted_empirical_source_construction_frozen_pre_score
+  required_design_receipt_status: psrc_parent_child_design_frozen_pre_score
+  required_expectation_receipt_status: psrc_expectation_bank_frozen_pre_score
+  required_photon_receipt_status: psrc_photon_bank_frozen_pre_score
+  required_score_receipt_status: psrc_frozen_scores_complete
+  required_analysis_receipt_status: psrc_final_analysis_independently_replayable
+  skip_host_hash_allowed_in_production: false
+
+inference:
+  primary_estimand: photon_averaged_risk_difference_sersic_minus_structured
+  threshold_conditioning: fixed_common_threshold_primary
+  repeated_threshold_sensitivity: optional_separately_labelled_repeated_calibration_procedure
+  host_weighting: equal_parent_host_cell_then_equal_selected_parent_scene
+  source_weighting: equal_fixed_source_strata_equal_selected_sources
+  bootstrap: >-
+    global_host_spatial_group_multiplier_times_source_id_multiplier_within_fixed_source_strata_equal_host_cells
+  bootstrap_draws: 10000
+  bootstrap_seed_namespace: P_src_v2_global_spatial_source_bootstrap_20260916
+  confidence_level: 0.95
+  interval_deviation_inflation: 1.00
+  method_limitation: >-
+    Percentile multiway multiplier intervals are design-based approximations;
+    exact-design binary coverage is reported as a canary and does not prove
+    universal coverage under all response-generating processes.
+  equivalence_test: false
+
+canaries:
+  detector_outcomes_permitted: false
+  synthetic_source_recovery: true
+  source_determinism: true
+  centroid_flux_projection_support: true
+  central_delta_psf_no_wrap: true
+  renderer_convergence: true
+  photon_marginals_and_coupling: true
+  actual_design_only_raw_logit_scoring: true
+  worker_count_key_invariance: true
+  bootstrap_coverage_replications: 200
+  bootstrap_draws_per_coverage_replication: 400

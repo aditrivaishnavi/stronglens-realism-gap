@@ -1,0 +1,256 @@
+[study]
+study_id = "stronglens_pnoise_design_pilot_v2"
+status = "adopted_execution_authority_pre_pilot"
+authority_basis = "Declared source-photon draw-count design protocol"
+scope = "design_role_only_no_final_outcomes"
+predecessor_artifacts_created_under_successor = false
+
+[paths]
+repository_root = "."
+historical_root = "data/downloads"
+predecessor_package_src = "experiments_v2/grec_pnoise/src"
+output_root = "results_v2/pnoise/design_pilot"
+candidate_payload_root = "evaluation_dataset_prep/candidate_payloads"
+
+[design]
+global_role = "design"
+source_population = "historical_v1_val_full_validation_negatives"
+selection_namespace = "stronglens-pnoise-design-host-selection-v2"
+hosts_per_cell = 32
+expected_cells = 9
+expected_hosts = 288
+radii_arcsec = [0.50, 0.75, 1.00, 1.25, 1.50, 1.75, 2.00, 2.25, 2.50, 2.75, 3.00]
+expected_scenes = 3168
+supported_cells = [
+  "1.05|24.5",
+  "1.20|24.0",
+  "1.20|24.5",
+  "1.35|24.0",
+  "1.35|24.5",
+  "1.50|24.0",
+  "1.50|24.5",
+  "1.65|24.0",
+  "1.65|24.5",
+]
+one_host_per_physical_group = true
+one_host_per_historical_spatial_component = true
+selection_uses_detector_outputs = false
+
+[overlap]
+required_id_overlap = 0
+required_pixel_overlap = 0
+required_physical_group_overlap = 0
+required_canonical_spatial_component_overlap = 0
+required_healpix_128_overlap = 0
+required_within_38_arcsec_pairs = 0
+minimum_angular_separation_arcsec = 38.0
+comparison_roles = ["G_rec_final", "threshold_calibration", "achieved_fpr"]
+
+[historical_source]
+s3_bucket = "darkhaloscope"
+s3_prefix = "stronglens_calibration/"
+aws_profile_default = "avb"
+raw_host_array = "cutout"
+historical_expectation_array = "injected"
+historical_source_array = "injection_only"
+historical_member_template = "./{inj_id}.npz"
+required_split = "val"
+required_label = 0
+required_shape_hwc = [101, 101, 3]
+pixel_scale_arcsec = 0.262
+host_pixel_unit = "nanomaggy_per_native_pixel"
+host_flux_calibration_system = "AB_nanomaggy_zeropoint_22.5"
+ancestry_gate = "exact_float32(raw_host_chw + historical_injection_only) == historical_injected"
+
+[pilot]
+maximum_draw_count = 64
+candidate_draw_counts = [2, 4, 8, 16, 32, 64]
+diagnostic_nonselectable_draw_counts = [1]
+batch_size = 64
+filler_policy = "last"
+authoritative_device = "mps"
+pixel_persistence = "none_stream_batches_only"
+score_artifact = "pilot_scores.npz"
+score_receipt = "PILOT_SCORE_RECEIPT.json"
+photon_draw_key_encoding = "20_raw_digest_bytes_for_photon_<40_hex>"
+
+[pnoise]
+gain_electron_per_nanomaggy_g = 150.0
+gain_electron_per_nanomaggy_r = 150.0
+gain_electron_per_nanomaggy_z = 150.0
+photon_stream_namespace = "stronglens-pnoise-photon-v1"
+added_sky_noise = false
+existing_host_sky_detector_coadd_noise_redrawn = false
+law = "Poisson(source_expectation_nmgy * gain) / gain"
+
+[inference]
+metric = "equal_cell_equal_host_after_radius_and_draw_average_paired_detection_risk_difference"
+mcse_absolute_max = 0.002
+mcse_fraction_of_sampling_se_max = 0.20
+sampling_se = "nine_cell_stratified_standard_error_of_64_draw_host_effects"
+mcse = "independent_scene_draw_variance_propagated_through_equal_host_radius_weights"
+one_draw_mcse_status = "unavailable_by_inference_contract"
+
+[handoff]
+production_expected_metric = "host_equal_paired_detection_risk_difference"
+production_expected_status = "pnoise_design_mcse_draw_count_frozen"
+validator = "grec_pnoise.pnoise.validate_draw_count_receipt"
+
+[scoring]
+checkpoint = "data/downloads/models/primary_seed42_epoch160.pt"
+checkpoint_sha256 = "5d1082839aac7a0bfb89342f84a9a533b22e1111c15cb4711255ed1b524a2b8d"
+checkpoint_epoch = 160
+checkpoint_architecture = "efficientnet_v2_s"
+threshold_float32_bits = 1070149163
+comparison = ">="
+native_logit_dtype = "float32"
+authoritative_backend_profile_sha256 = "88964e2a54b09317d7c4e5a7a0909a4be7ec9cbd7499988d19adaaca2fb77b87"
+authoritative_scorer_closure_sha256 = "de81bc834c0d8517e096b40bdc8ed828d18449ed3a571ef6291fa18c17c34f97"
+
+[execution]
+tests_required_before_freeze = true
+design_freeze_required_before_pilot = true
+overwrite_frozen_artifacts = false
+feature_extraction_forbidden = true
+final_pnoise_rendering_forbidden = true
+final_grec_outcome_access_forbidden = true
+network_allowed_during_pilot = false
+
+[validation]
+test_suite_id = "pnoise_pilot_v2_prelaunch_contracts_v2"
+expected_test_cardinality = 51
+require_zero_skips = true
+comparison_pixel_hash_workers = 8
+expected_nodeids_path = "experiments_v2/pnoise_pilot_v2/tests/EXPECTED_NODEIDS.json"
+expected_nodeids_file_sha256 = "f4031c8ed56467ee25ff1b746f2501dcc68911bc5af9e2eec4943f3d8392497e"
+expected_ordered_nodeids_sha256 = "5fe056b677a0c69b771d9852cc1b99514395e493181070ae8d17204db6134084"
+
+[authorities.predecessor_config]
+path = "experiments_v2/grec_pnoise/config/production.toml"
+sha256 = "420e001332f0248c6264d6facb0d4af914344599773f8bb8207b8375e018f8b0"
+status = "implementation_candidate_not_execution_authority"
+
+[authorities.grec_host_manifest]
+path = "results_v2/grec/hosts/final_grec_hosts.parquet"
+sha256 = "9a27d90ac45d4ccde0f535fc46d7e1267b71a78f550e6b151b70bef49470a70e"
+
+[authorities.grec_host_receipt]
+path = "results_v2/grec/hosts/FINAL_GREC_HOSTS_RECEIPT.json"
+sha256 = "dbc7f1d05a9616208721ba77348f4172580fd4dac9169286e4d38f16750c1230"
+status = "final_pre_score_grec_hosts_frozen"
+
+[authorities.final_grec_selection]
+path = "evaluation_dataset_prep/final_selection/final_grec_selection.parquet"
+sha256 = "60429cc8f00de5ffcb05b44a93a61ae30d7109ee99842b56ac192d73bd94b023"
+
+[authorities.final_grec_selection_receipt]
+path = "evaluation_dataset_prep/final_selection/FINAL_SELECTION_RECEIPT.json"
+sha256 = "0cb21dca59914646f99dd601f3705954ad6e5e82510432cdd21449f1bf5af608"
+status = "final_experiment_host_selection_approved"
+
+[authorities.test_manifest]
+path = "data/manifests/test.parquet"
+sha256 = "3a7a2a616bca2b31d0c0ec00bf86d15e87356d298087e14fa7ca6021481b6e2b"
+
+[authorities.host_flux_calibration]
+path = "evaluation_dataset_prep/final_selection/host_flux_calibration.json"
+sha256 = "4a45a414d1d9487be6d0b2a748e0206cdf0a9fd300d9760b5b68a1dda9df5fe4"
+status = "host_flux_calibration_frozen"
+
+[authorities.grec_scene_manifest]
+path = "results_v2/grec/scenes/grec_scene_table.parquet"
+sha256 = "43638e10abd74e0196fd0e2312841048d09fb8944970db82bd1d5535f341237f"
+
+[authorities.grec_scene_receipt]
+path = "results_v2/grec/scenes/GREC_SCENE_TABLE_RECEIPT.json"
+sha256 = "1194c664c1f1b54a8ebfdc1e22bcdd0d0daf1bad294bdf134ef6f44b3e989969"
+status = "grec_scene_table_frozen_pre_score"
+
+[authorities.grec_parent_manifest]
+path = "results_v2/grec/parents/grec_parent_manifest.parquet"
+sha256 = "95c72ad9c1465d5ff54fd033e8e07f09fc8f0be6cf6aad4e538c0059e91aabf4"
+
+[authorities.grec_parent_receipt]
+path = "results_v2/grec/parents/GREC_RENDER_RECEIPT.json"
+sha256 = "06f213070bd39134660f9ce64ee0f295080c21d0524c324d0392e656e1e1b52a"
+status = "grec_parent_bank_frozen_pre_score"
+
+[authorities.grec_resume_audit]
+path = "results_v2/grec/parents/GREC_RENDER_RESUME_AUDIT.json"
+sha256 = "c1a9febfa542a7e70fcf5f57df947c1fc900169f585ef2df3787ea38b48b5a4d"
+status = "grec_render_resume_complete"
+
+[authorities.renderer_validation_receipt]
+path = "results_v2/grec/RENDERER_VALIDATION_RECEIPT.json"
+sha256 = "613fbc502fd570482f15cfe220b216566d64c7c21d4e85a38efad0796fa0ed03"
+status = "renderer_validation_frozen_design_only"
+
+[authorities.quadrature_amendment]
+path = "results_v2/grec/SCORE_BLIND_QUADRATURE_AMENDMENT.json"
+sha256 = "4e4359027327bae510dd56439f38ecb1214f88daab9a334fbab17159bf134fbf"
+status = "score_blind_quadrature_extension_authorized"
+
+[authorities.threshold_receipt]
+path = "results_v2/evaluation_v2/COMMON_THRESHOLD_RECEIPT.json"
+sha256 = "eb43c67f60319c0f8ab2f53b2fd7abe1f655f1bbace49601b1d44bad56d4cb80"
+status = "common_threshold_frozen"
+
+[authorities.governance_amendment]
+path = "results_v2/evaluation_v2/GOVERNANCE_PROVENANCE_AMENDMENT.json"
+sha256 = "74e511f3ad5f98a7a07b09450bf154b846544065ffeb024b33ae16bf58ba0654"
+status = "governance_provenance_amended_no_scientific_change"
+
+[authorities.negative_role_receipt]
+path = "results_v2/evaluation_v2/NEGATIVE_ROLE_RECEIPT.json"
+sha256 = "ebdabda7735c6ccfbf17df5d35b9b79324d1c7b5ec94ed4b555048bd54689acb"
+status = "latest_test_negative_roles_frozen_pre_score"
+
+[authorities.threshold_calibration_role]
+path = "results_v2/evaluation_v2/threshold_calibration.parquet"
+sha256 = "435119ef16722aac70eeaa8fa4e4c601011b3c120a5fa79c96a562fb1d42c46e"
+
+[authorities.achieved_fpr_role]
+path = "results_v2/evaluation_v2/achieved_fpr.parquet"
+sha256 = "2dd559dbde377c53916b2a52925a8e10fc0f16b7e079162a02195e91a616b96f"
+
+[authorities.historical_staging_receipt]
+path = "data/downloads/current_pnoise_v1/staging_manifest.json"
+sha256 = "576174e9a6b605201af3ccff5e86d5b334b226b8031be4f0f2f1586aaf9692f4"
+status = "staged_and_verified"
+
+[authorities.historical_cutout_tar]
+path = "data/downloads/current_pnoise_v1/cutouts.tar"
+sha256 = "87746eac64ae45de9a2ff50bc0b35840452691dfadca3903fd96da6fff6aca62"
+
+[authorities.historical_metadata]
+path = "data/downloads/current_pnoise_v1/cutout_metadata.parquet"
+sha256 = "2bd96c1f347fc87910462d09835cb4b90d61ac7810cfb88c2564343c7f6ae3d1"
+
+[authorities.historical_scoring_manifest]
+path = "data/downloads/historical_sampled_negatives/development_train_val_localdisk.parquet"
+sha256 = "3f1e432a8f11aa4cf8e1cdb083dd0d1b8e5c73e8b657b79bc9bb93eb3ac2fd24"
+
+[authorities.historical_pnoise_config]
+path = "data/downloads/current_pnoise_v1/config.json"
+sha256 = "d016ad4b4d28bc2d595deee34eefc4fea1b3ca28398c4b3779a66e1934191d9d"
+
+[inherited_code]
+"experiments_v2/grec_pnoise/src/grec_pnoise/backend.py" = "d31379750c36ea99fbb60c7e3afcb1727c0abae2448a550e4406fbe925b5d0e6"
+"experiments_v2/grec_pnoise/src/grec_pnoise/cells.py" = "7c62f972a47678e9bf1ac7ceee0471c4adac728133d262550f9aa41bc9a1013b"
+"experiments_v2/grec_pnoise/src/grec_pnoise/cli.py" = "2c8385ff9386982211fbedd5258673adeb77814104eead49595d19c4c4e717a0"
+"experiments_v2/grec_pnoise/src/grec_pnoise/contracts.py" = "84e74fd8f1c26bac0f5e9bab6b78f12d209e8814bccbadeebdb30f7e1c50b561"
+"experiments_v2/grec_pnoise/src/grec_pnoise/inference.py" = "629e476050eacd38a845fcab8c3d85705f7e47ed55f024d12f899287bffed1b2"
+"experiments_v2/grec_pnoise/src/grec_pnoise/pnoise.py" = "c56c0b0e80f6a583ab0bf4f03cbaaf69d8fe6983e0056059597926d9e927adf9"
+"experiments_v2/grec_pnoise/src/grec_pnoise/rendering.py" = "d919ca71a52354909b9b322a21b5dff003ea7368ab9b26045fa5756905bd6dec"
+"experiments_v2/grec_pnoise/src/grec_pnoise/scene_table.py" = "054759668a13cea6cc343d2c7d71d246bb5cc9d794438eba1e3571459d61334c"
+"experiments_v2/grec_pnoise/src/grec_pnoise/scoring.py" = "b35561f0017579179e664d6b8928fd80bcceb993745cca9d1f0aa875fd8a08fc"
+"experiments_v2/grec_pnoise/src/grec_pnoise/threshold.py" = "ec911bdc49b551cdb69de6915ff3f2de6d8f14b26dc1aa9e905e2e5234b1c291"
+"experiments_v2/grec_pnoise/scripts/render_grec_resumable.py" = "c2e4f1b685f6d0ce6cfe2c553c662e7255650770b04308be5b3105563c5609d2"
+"dhs/__init__.py" = "75ad4f4c2943325f88064ad2beae890b59674be2bf0404b30afc5584dc4de4bb"
+"dhs/constants.py" = "15cc0c5abbfa1daea1392638b2f2ff8733b217b31bfce346d63546da4363fce6"
+"dhs/fixed_width_scoring.py" = "e38fa3f837e33fe08a63bd152bc4e0b2396d027140af449376a0c3668cb1eba6"
+"dhs/model.py" = "41adddaafe5082eb43aa64eafb387d57725b84300a85102739ef7d78e84c3a25"
+"dhs/preprocess.py" = "8457a2d52472d34a22809ca103feaf92706f975fb075409363ef5fee270add2c"
+"dhs/preprocess_spec.py" = "bc207bade3147a7e641a0c74094e67227263116bce77d4e37f1145ce998a85ee"
+"dhs/scoring_utils.py" = "4ab9c4a0ca33957d5e378004f2ac05198d4535028c058f585c5cb36d81204c63"
+"dhs/utils.py" = "28dab8fc503ee3e36164616031a2c43c35b02964b00f61c6d60782b5f37104b9"

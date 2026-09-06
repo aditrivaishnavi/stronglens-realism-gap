@@ -1,0 +1,7 @@
+schema_version: 0
+status: superseded_do_not_execute
+replacement: config/psrc_v2_parent_bound.yaml
+reason: >-
+  This draft independently generated lens, position and flux parameters from
+  proposed hosts. It was invalidated before final outcomes because P_src must
+  consume exact registered G_rec parent scenes.

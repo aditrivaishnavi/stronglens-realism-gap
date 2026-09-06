@@ -1,0 +1,21 @@
+{
+  "config_bytes_sha256": "33fb3f0d1c4d418bce63da819e1e3d68b3e9e5d1e818df67377d6698d2c8948e",
+  "config_filename": "production.toml",
+  "normalized_full_config_sha256": "0d520aff9a61e4a9fb734d125211314a920339cf10e8ac90f2f0400984f21d86",
+  "normalized_scientific_config_sha256": "dfb3c762aa1b6a1af07d4213d4f4df93b7b2cba669ff2946467334e20d4e8f23",
+  "schema_version": 1,
+  "scientific_sections": [
+    "study",
+    "design",
+    "overlap",
+    "historical_source",
+    "pilot",
+    "pnoise",
+    "inference",
+    "handoff",
+    "scoring",
+    "execution",
+    "validation"
+  ],
+  "status": "pnoise_pilot_v2_configuration_sealed"
+}
