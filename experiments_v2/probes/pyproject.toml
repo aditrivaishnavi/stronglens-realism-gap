@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stronglens-probes"
+version = "0.1.0"
+description = "Fail-closed preparation and analysis contracts for G_domain and G_match"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "numpy>=1.26.4",
+  "pandas>=2.1.4",
+  "pyarrow>=15.0.0",
+  "pyyaml>=6.0",
+  "scikit-learn>=1.9.0,<1.10",
+  "scipy>=1.12.0",
+  "joblib>=1.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.16"]
+features = ["torch==2.7.0", "torchvision==0.22.0"]
+
+[project.scripts]
+stronglens-probes = "stronglens_probes.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

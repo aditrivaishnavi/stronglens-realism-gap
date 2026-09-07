@@ -1,0 +1,219 @@
+schema_version: 2
+study_id: stronglens_fixed_detector_postcoadd_probes
+status: score_blind_G_domain_preparation_complete
+authorities:
+  ground_rules: evaluation_dataset_prep/GROUND_RULES.md
+  frozen_detector_checkpoint_sha256: 5d1082839aac7a0bfb89342f84a9a533b22e1111c15cb4711255ed1b524a2b8d
+  reference_manifest_sha256: 91f540678278a9b2709d914417fb6b362d5cf71a39ccdeac5a0d05119a84a112
+  reference_payload_manifest_sha256: 8a2b86d369c3ab1627614bd1f7701d63fec385c3f04cb5681a3fa5e7bf6fa740
+  experiment_host_universe_sha256: 64c72540e91dd7d59d07088909e9cb6472f844cff006304dfd0e286dc193b1ff
+  experiment_host_universe_status: score_blind_proposal_with_approved_final_G_rec_subset
+  reference_payload_adapter_manifest_sha256: d6141286acf578f30b4df5d1d5b9c6c6ce2facbde197e70c6d148e30120f07a7
+  experiment_host_adapter_manifest_sha256: cd5fb2c997ebc1aaf9a624e60a8f2677f6166d7f898109370c90215273a8b43a
+  experiment_host_parent_id_column: host_parent_id
+  experiment_host_payload_hash_column: payload_sha256
+  experiment_host_physical_group_column: host_physical_group_id
+  experiment_host_spatial_group_column: host_spatial_group_id
+  reference_psf_id_column: psf_id
+  reference_render_parameter_id_column: render_parameter_id
+  reference_tractor_manifest_sha256: 62d59f5c7e43173f50fed9b12a6daea78cb364e8f1a782bd1f86a80f7f192be5
+  experiment_host_tractor_source_manifest_sha256: ed1c042aeb525361cf27372132f52111a813a646dd0d5a664e24e79691d0c852
+  experiment_host_tractor_manifest_sha256: 12eec0b6d8b40f796a01dfdc5edc9e124caabfeeda63259697e55f070aca5850
+  final_grec_selection_manifest_sha256: 60429cc8f00de5ffcb05b44a93a61ae30d7109ee99842b56ac192d73bd94b023
+  grec_host_source_manifest_sha256: 9a27d90ac45d4ccde0f535fc46d7e1267b71a78f550e6b151b70bef49470a70e
+  grec_scene_source_manifest_sha256: 43638e10abd74e0196fd0e2312841048d09fb8944970db82bd1d5535f341237f
+  grec_parent_source_manifest_sha256: 95c72ad9c1465d5ff54fd033e8e07f09fc8f0be6cf6aad4e538c0059e91aabf4
+  grec_host_manifest_sha256: cd5fb2c997ebc1aaf9a624e60a8f2677f6166d7f898109370c90215273a8b43a
+  grec_scene_manifest_sha256: 1ff53b2ac51372fd97168b86acdd8aa328f010b6afd6c4503d6996efd0fc7c2c
+  schema_adapter_receipt_sha256: 3d0e9930cfeeb1f606c0f8ca2928113f7e70d4ee0cf56fc839f2d27ad85f7ff6
+shared_references:
+  expected_count: 43
+  id_column: galaxy_id
+  endpoint_role: terminal_confirmed
+  lensing_status: confirmed_lens
+  fixed_detector_split: test
+  used_by:
+  - G_domain
+  - G_match
+  independent_replications: false
+representations:
+  primary:
+    id: stein_ssl_resnet50
+    kind: frozen_survey_ssl
+    checkpoint_sha256: d42798a4f5c165452a7a0ead8522abe096d49f2cb2ebc7792ca837ed5d90de3c
+    feature_dimension: 2048
+    preprocessing_contract_sha256: 4da0342b3ba85ffcf55150d0438fe8a681747e9f805546cac1adb63bd9fe1b11
+    extraction_contract_sha256: ff2430d72bcaead9fbf37e8e8074543c9b860fa2c6e507c021c6e5ea4d52d159
+    extractor_code_path: stronglens_probes/feature_extraction.py
+    extractor_code_sha256: ec05ed560c9cbbf2d88ab24563a29f4dc6c6d366f1168ddb06d22302fc96c065
+    preprocessing_code_path: stronglens_probes/feature_extraction.py
+    preprocessing_code_sha256: ec05ed560c9cbbf2d88ab24563a29f4dc6c6d366f1168ddb06d22302fc96c065
+    pretraining_image_overlap_status: unproven
+    result_label: primary_stein_pretraining_image_overlap_unproven
+  required_diagnostics:
+  - id: imagenet_effnet_v2_s
+    kind: frozen_generic_imagenet
+    checkpoint_sha256: dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74
+    feature_dimension: 1280
+    preprocessing_contract_sha256: eecd4b71315b1acf6ed88eff5f80fd6ae94fdf88dc5efea16b0fa07664f4e578
+    extraction_contract_sha256: ff2430d72bcaead9fbf37e8e8074543c9b860fa2c6e507c021c6e5ea4d52d159
+    extractor_code_path: stronglens_probes/feature_extraction.py
+    extractor_code_sha256: ec05ed560c9cbbf2d88ab24563a29f4dc6c6d366f1168ddb06d22302fc96c065
+    preprocessing_code_path: stronglens_probes/feature_extraction.py
+    preprocessing_code_sha256: ec05ed560c9cbbf2d88ab24563a29f4dc6c6d366f1168ddb06d22302fc96c065
+    result_label: diagnostic_generic_imagenet
+  - id: pixel_statistics
+    kind: fixed_pixel_summary
+    checkpoint_sha256: null
+    feature_dimension: 18
+    preprocessing_contract_sha256: 5e155473c404ce7395ad116b89b73e1c78dce39c2fac33d6474d494d905a3bee
+    extraction_contract_sha256: fe13caca19908280fed5464042724ba56dcdeb3ad02b8a12918d481bb2926801
+    extractor_code_path: stronglens_probes/feature_extraction.py
+    extractor_code_sha256: ec05ed560c9cbbf2d88ab24563a29f4dc6c6d366f1168ddb06d22302fc96c065
+    preprocessing_code_path: stronglens_probes/feature_extraction.py
+    preprocessing_code_sha256: ec05ed560c9cbbf2d88ab24563a29f4dc6c6d366f1168ddb06d22302fc96c065
+    result_label: required_pixel_diagnostic
+probe:
+  folds: 5
+  fold_seed: 42
+  estimator_seed: 42
+  standardisation: fold_local_standard_scaler
+  classifier: l2_logistic_regression
+  C: 1.0
+  solver: lbfgs
+  max_iter: 5000
+  weighting: class_balanced_dependency_component_equal
+  dependency_columns:
+  - physical_group_id
+  - geographic_spatial_key
+  - spatial_group_id
+  - reference_id
+  - host_galaxy_id
+  - host_parent_id
+  - source_parameter_id
+  - lens_parameter_id
+  - psf_id
+  - rendering_id
+  - render_parameter_id
+  - random_draw_id
+  - base_pixel_sha256
+  - pixel_sha256
+G_domain:
+  parent: G_rec
+  independently_rendered: false
+  predicate:
+    observed_zmag_max_inclusive: 19.5
+    sersic_min_inclusive: 4.0
+    axis_ratio_q_min_inclusive: 0.6
+  row_id_column: grec_row_id
+  pixel_hash_column: final_image_sha256
+  primary_metric: dependency_equal_oof_roc_auc
+  row_weighted_auc_status: diagnostic
+  cnn_recovery_cross_reference:
+  - full_G_rec
+  - exact_G_domain_subset
+  G_rec_contract:
+    hosts: 4500
+    scenes: 49500
+    condition_cells: 9
+    hosts_per_cell: 500
+    theta_e_arcsec:
+    - 0.5
+    - 0.75
+    - 1.0
+    - 1.25
+    - 1.5
+    - 1.75
+    - 2.0
+    - 2.25
+    - 2.5
+    - 2.75
+    - 3.0
+    shared_nuisance_columns:
+    - source_parameter_id
+    - lens_parameter_id
+    - psf_id
+    - rendering_id
+    - render_parameter_id
+    - random_draw_id
+    - intrinsic_flux_g_nmgy
+    - intrinsic_flux_r_nmgy
+    - intrinsic_flux_z_nmgy
+    - source_flux_parameter_sha256
+G_match:
+  candidate_population: exact_G_rec_hosts
+  scene_selection:
+    theta_e_arcsec: 1.5
+    rule: exact_radius_then_lexicographic_grec_row_id
+  host_universe_role_column: proposed_role
+  host_universe_role_value: experiment_host
+  score_blind: true
+  covariates:
+  - observed_zmag
+  - sersic_n
+  - axis_ratio_q
+  - psf_fwhm_r_arcsec
+  - depth5_r_mag
+  scaling:
+    fit_population: exact_G_rec_hosts_only
+    centre: median
+    scale: interquartile_range
+  matching:
+    distance: robust_diagonal_euclidean
+    component_caliper_standardised: 2.0
+    total_distance_caliper: 3.0
+    targets_per_reference: 1
+    replacement: false
+    assignment: maximum_cardinality_then_minimum_distance
+    tie_rule: sha256_sorted_identifiers
+    unmatched_references: retain_with_disposition
+    minimum_matched_references_for_five_fold_analysis: 10
+    contract_version: score_blind_robust_iqr_optimal_v1
+  rendering:
+    rows_per_target: 2
+    arms:
+    - bare
+    - injected
+    source_flux_policy: fixed_intrinsic
+    host_total_flux_floor: forbidden
+  reference_axis:
+    fit_rows:
+    - observed_reference
+    - bare
+    injected_rows_fit_axis: false
+    orientation: toward_observed_reference
+    fold_scale: training_bare_mean_and_sd
+  primary_metric: equal_target_mean_within_target_axis_movement
+  diagnostics:
+  - pooled_observed_vs_bare_auc
+  - pooled_observed_vs_injected_auc
+  - pooled_injected_vs_bare_auc
+  - paired_injected_above_bare_concordance
+inference:
+  bootstrap_draws: 10000
+  seed: 20260915
+  multiplier_scheme: stratified_dependency_bootstrap
+  strata: joint_reference_fold_tuple_and_domain_simulation_fold
+  interval_status: disabled_until_actual_estimator_coverage_at_least_0.90
+  refit_fold_local_probe: true
+  matching_condition: conditional_on_frozen_score_blind_match
+  shared_reference_resamples_between_probes: true
+  resample_dependency_components: true
+  independent_replication_claim: forbidden
+execution:
+  source_tree_sha256: 2fcf76ac999154d94c39b8f6dd3374298d3ab737d2b66f9d263d10793cab6094
+  dependency_lock_sha256: 464fa793dcfdd29018843b69f9d988386b2f3e5decd4c0da309124e7af7e696e
+  maximum_parallel_jobs: 2
+  shard_draws: 100
+  resume_requires_receipt_match: true
+  design_benchmark_draws: 50
+  support_canary_draws: 10000
+  allow_reduced_grec_design_fixture: false
+  extraction_authorization_receipt_sha256: d25127db75107db284127962985741959cb0b96f7049bf117356c5578d6326e8
+  analysis_authorization_receipt_sha256: 09578f6cd8cf43884f8c4f19ac531ac9b36b3c1637bb6653b90bf460407b16e1
+  final_feature_suite_authority_sha256:
+    G_domain: 3b87207c6d2b3ba54ee48727140ebf77098face220d2249c89df78a45d73a155
+    G_match: null
+  feature_extraction_authorized: true
+  final_scoring_authorized: false
+  final_analysis_authorized: true

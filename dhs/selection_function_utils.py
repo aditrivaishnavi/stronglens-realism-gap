@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from typing import Tuple
-
 import numpy as np
 from scipy.stats import beta as beta_dist
 
@@ -28,7 +26,9 @@ def m5_from_psfdepth(psfdepth_nmgy_invvar: np.ndarray) -> np.ndarray:
     return out
 
 
-def bayes_binomial_interval(k: int, n: int, level: float = 0.68, prior: str = "jeffreys") -> Tuple[float, float]:
+def bayes_binomial_interval(
+    k: int, n: int, level: float = 0.68, prior: str = "jeffreys"
+) -> tuple[float, float]:
     """Bayesian binomial credible interval using scipy Beta distribution.
 
     prior:

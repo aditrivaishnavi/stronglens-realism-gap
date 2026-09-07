@@ -1,0 +1,75 @@
+schema_version: 1
+diagnostic_id: gdomain_pixel_attribution_v1
+analysis_role: final_secondary_descriptive_sensitivity
+outcome_independent_execution: true
+scientific_scope:
+  - finite_cohort
+  - model_attribution
+  - no_physical_cause
+  - no_population_transport
+  - no_significance_or_equivalence_test
+
+inputs:
+  protocol:
+    path: experiments_v2/probes/configs/probes.yaml
+    sha256: 20d268c7594e14b52e609a4634b81348a829f76e0c4df061343dcc7fcc485e3f
+  environment_lock:
+    path: experiments_v2/probes/uv.lock
+    sha256: 464fa793dcfdd29018843b69f9d988386b2f3e5decd4c0da309124e7af7e696e
+  manifest:
+    path: results_v2/probes/gdomain_v2/gdomain_analysis_manifest.parquet
+    sha256: 94b2571a7e08e9319d11541ff6e0e60c4b75df70e01a3e91eac573792fff733f
+  folds:
+    path: results_v2/probes/gdomain_v2/gdomain_dependency_folds.parquet
+    sha256: ac30618c07e0bce67a64445190f12b1607301b05243933aa89664fe796833b57
+  final_result:
+    path: results_v2/probes/gdomain_v2/GDOMAIN_FINAL_RESULT_RECEIPT.json
+    sha256: 11b45cb7824d66079a8b5aaec6c57d797fa53442627ae721f900169ebeb06387
+  feature_matrix:
+    path: results_v2/probes/gdomain_v2/pixel_statistics_features.npy
+    sha256: cf88f5eb1bcad4fc81131aa4e5ca008b25bc636b0bf1f759ec4cf8d94d1c8529
+  authoritative_oof:
+    path: results_v2/probes/gdomain_v2/gdomain_oof_pixel_statistics.parquet
+    sha256: d9c93edb7d7f297c88025694be5f9e1bfe87de5083717f5141c99ea50739b17c
+
+probe:
+  folds: 5
+  estimator_seed: 42
+  C: 1.0
+  solver: lbfgs
+  max_iter: 5000
+  weighting: class_balanced_dependency_component_equal
+  scaler: fold_local_standard_scaler
+
+pixel_attribution:
+  feature_order:
+    - g_mean
+    - g_std
+    - g_median
+    - g_p99
+    - g_min
+    - g_max
+    - r_mean
+    - r_std
+    - r_median
+    - r_p99
+    - r_min
+    - r_max
+    - z_mean
+    - z_std
+    - z_median
+    - z_p99
+    - z_min
+    - z_max
+  analyses:
+    - full_model_reproduction
+    - univariate_crossfit
+    - leave_one_feature_out
+    - single_band
+    - leave_one_band_out
+    - fold_standardized_coefficients
+  forbidden:
+    - global_scaling
+    - outcome_dependent_folds
+    - row_bootstrap
+    - permutation_p_values
