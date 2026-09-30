@@ -1,0 +1,53 @@
+{
+  "audit_id": "grec-renderer-reconciliation-v1",
+  "effective_psf_operator_passed": true,
+  "escalation_rule": "Do not rerender the full bank unless a failed gate is systematic across an affected production partition or changes detector decisions.",
+  "exact_replay_passed": true,
+  "full_bank_rerender_required": false,
+  "full_realized_bank_maximum_lens_axis_ratio": 0.9998786964917151,
+  "independent_reference_convergence_passed": true,
+  "maximum_production_centroid_pixels": 0.022928168667763763,
+  "maximum_production_relative_l1": 0.007694614286917837,
+  "minimum_production_correlation": 0.9999520895058431,
+  "near_circular_boundary_is_within_configured_support": true,
+  "near_circular_boundary_sie": {
+    "cases": 7,
+    "circular_maximum_absolute_error_arcsec": 0.002988794185562092,
+    "maximum_relative_error": 0.002490661826460073,
+    "maximum_vector_error_arcsec": 0.002988794185562092,
+    "p99_relative_error": 1.2282122178489406e-06,
+    "passed": false,
+    "points": 6727
+  },
+  "near_circular_softened_branch_rows_in_full_realized_bank": 0,
+  "optical_reference_metrics_sha256": "4a0b94c0c92ecbf1fbc34787f530f98981f30546a73500f9c90f66a82d15764b",
+  "p95_production_relative_l1": 0.0058018391110340834,
+  "production_convergence_passed": true,
+  "production_support_sie": {
+    "cases": 142,
+    "circular_maximum_absolute_error_arcsec": 0.0,
+    "maximum_relative_error": 5.20835857793985e-09,
+    "maximum_vector_error_arcsec": 9.055520256026243e-09,
+    "p99_relative_error": 2.752190544793111e-10,
+    "passed": true,
+    "points": 136457
+  },
+  "reference_arcs_sha256": "fabc26f1a1854df6d28cc5a3aea24cc1efdca023a28a7563c829f848c7b605c4",
+  "replay_metrics_sha256": "2ffae8cb74666bd6b8d4cac40e08d845c89294ccf7bedd1690019c01164ca2ab",
+  "runtime": {
+    "grec-pnoise": "0.4.0",
+    "lenstronomy": "1.14.1",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "pyarrow": "25.0.1",
+    "python": "3.12.13",
+    "scipy": "1.18.1",
+    "torch": "2.7.0"
+  },
+  "sample_manifest_sha256": "15278c868f1f8837d7fc235aa737e29b84ae87630fa241ed59f4d3843a01aa47",
+  "sample_rows": 142,
+  "schema_version": 1,
+  "spec_sha256": "88656779cdedb80675534ebce37f6c9d710e1b2cdaff0336f7aa55156720767f",
+  "status": "PASS_WITH_NEAR_CIRCULAR_UNREALIZED_SUPPORT_QUALIFICATION",
+  "validator_sha256": "df129b73daeaabebdc8ac149ca6ec9a5f154e6b9243590ebe104c9b8fba8382d"
+}

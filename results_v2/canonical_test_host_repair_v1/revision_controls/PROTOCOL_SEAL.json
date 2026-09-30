@@ -1,0 +1,10 @@
+{
+  "checkpoint_sha256": "5d1082839aac7a0bfb89342f84a9a533b22e1111c15cb4711255ed1b524a2b8d",
+  "new_control_outcomes_opened": false,
+  "protocol_path": "experiments_v2/revision_controls_canonical_repair_v1/config/protocol.json",
+  "protocol_sha256": "2f50ae51e4f1707e65fda3d4afef8f325cd21f8c31630e7953cba95174b8bdcc",
+  "runner_path": "experiments_v2/revision_controls_canonical_repair_v1/run_controls.py",
+  "runner_sha256": "8086edde48880f2c6729b3e18b391eabfac66e4407943d37d14fe433f8ee92ed",
+  "schema_version": 1,
+  "status": "revision_controls_protocol_sealed_pre_outcome"
+}

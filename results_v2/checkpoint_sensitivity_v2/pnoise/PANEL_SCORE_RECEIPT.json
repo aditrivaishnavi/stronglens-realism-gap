@@ -1,0 +1,372 @@
+{
+  "authority": {},
+  "batch_record": {
+    "batch_size": 64,
+    "chunk_rows": 1024,
+    "elapsed_seconds": 2442.072116209194,
+    "model_forward_passes_per_image": 12,
+    "models": 12,
+    "preprocessing_applied_once_per_image": true,
+    "raw_images_read_once_for_complete_panel": true,
+    "rows": 396000,
+    "terminal_batch_real_rows": 32
+  },
+  "batch_size": 64,
+  "checkpoint_validation": {
+    "models": [
+      {
+        "architecture": "efficientnet_v2_s",
+        "bytes": 243327901,
+        "checkpoint_path": "data/downloads/models/checkpoint_panel/gen6_amendment3_r3/checkpoints/mixtures_v3/tier_ab_historical/seed_42/best.pt",
+        "checkpoint_sha256": "74fb60d584e32070c184977644edab75f83e13c809ea61c57ad185f38f3b9689",
+        "epoch": 19,
+        "model_id": "tier_ab_seed42",
+        "scientific_metadata": {
+          "architecture": "efficientnet_v2_s",
+          "balanced_sampling": false,
+          "epoch": 19,
+          "mixture_id": "tier_ab_historical",
+          "schedule": "cosine",
+          "seed": 42
+        }
+      },
+      {
+        "architecture": "efficientnet_v2_s",
+        "bytes": 243327901,
+        "checkpoint_path": "data/downloads/models/checkpoint_panel/gen6_amendment3_r3/checkpoints/mixtures_v3/tier_ab_historical/seed_123/best.pt",
+        "checkpoint_sha256": "ae335e9bf8ad593701e64c2e1afd94f711aacfe27ed45876f54c8e697ec64dca",
+        "epoch": 17,
+        "model_id": "tier_ab_seed123",
+        "scientific_metadata": {
+          "architecture": "efficientnet_v2_s",
+          "balanced_sampling": false,
+          "epoch": 17,
+          "mixture_id": "tier_ab_historical",
+          "schedule": "cosine",
+          "seed": 123
+        }
+      },
+      {
+        "architecture": "efficientnet_v2_s",
+        "bytes": 243327901,
+        "checkpoint_path": "data/downloads/models/checkpoint_panel/gen6_amendment3_r3/checkpoints/mixtures_v3/tier_ab_historical/seed_2026/best.pt",
+        "checkpoint_sha256": "971e121e0ba74b78f15a4a727d37431c9104cb98d83112fd619144e7a64ec419",
+        "epoch": 93,
+        "model_id": "tier_ab_seed2026",
+        "scientific_metadata": {
+          "architecture": "efficientnet_v2_s",
+          "balanced_sampling": false,
+          "epoch": 93,
+          "mixture_id": "tier_ab_historical",
+          "schedule": "cosine",
+          "seed": 2026
+        }
+      },
+      {
+        "architecture": "efficientnet_v2_s",
+        "bytes": 243327901,
+        "checkpoint_path": "data/downloads/models/checkpoint_panel/gen6_amendment3_r3/checkpoints/mixtures_v3/tier_a_candidates/seed_42/best.pt",
+        "checkpoint_sha256": "54a836385ff7aa509bef853c2d5f41de8024810dbddfe454c85e85253b8b11d7",
+        "epoch": 103,
+        "model_id": "tier_a_seed42",
+        "scientific_metadata": {
+          "architecture": "efficientnet_v2_s",
+          "balanced_sampling": false,
+          "epoch": 103,
+          "mixture_id": "tier_a_candidates",
+          "schedule": "cosine",
+          "seed": 42
+        }
+      },
+      {
+        "architecture": "efficientnet_v2_s",
+        "bytes": 243327901,
+        "checkpoint_path": "data/downloads/models/checkpoint_panel/gen6_amendment3_r3/checkpoints/mixtures_v3/tier_a_candidates/seed_123/best.pt",
+        "checkpoint_sha256": "df5e6980aa58f2eef79d272e0b015cc64362ab404162d5a0785a044f3b1848a4",
+        "epoch": 93,
+        "model_id": "tier_a_seed123",
+        "scientific_metadata": {
+          "architecture": "efficientnet_v2_s",
+          "balanced_sampling": false,
+          "epoch": 93,
+          "mixture_id": "tier_a_candidates",
+          "schedule": "cosine",
+          "seed": 123
+        }
+      },
+      {
+        "architecture": "efficientnet_v2_s",
+        "bytes": 243327901,
+        "checkpoint_path": "data/downloads/models/checkpoint_panel/gen6_amendment3_r3/checkpoints/mixtures_v3/tier_a_candidates/seed_2026/best.pt",
+        "checkpoint_sha256": "f587a9c67d66d1217f970bf4e6233ab7e0e5969d4de90a6f6b343cf2c5a38e07",
+        "epoch": 43,
+        "model_id": "tier_a_seed2026",
+        "scientific_metadata": {
+          "architecture": "efficientnet_v2_s",
+          "balanced_sampling": false,
+          "epoch": 43,
+          "mixture_id": "tier_a_candidates",
+          "schedule": "cosine",
+          "seed": 2026
+        }
+      },
+      {
+        "architecture": "efficientnet_v2_s",
+        "bytes": 243328029,
+        "checkpoint_path": "data/downloads/models/checkpoint_panel/gen7_diagnostics_v2/checkpoints/diagnostics_v1/imbalance_ablation/tier_ab_historical/seed_42/best.pt",
+        "checkpoint_sha256": "52985b092f722144ca2bb9e2fb2cb796d438424da278cfc7ab95b022595dc215",
+        "epoch": 62,
+        "model_id": "balanced_tier_ab_seed42",
+        "scientific_metadata": {
+          "architecture": "efficientnet_v2_s",
+          "balanced_sampling": true,
+          "epoch": 62,
+          "mixture_id": "tier_ab_historical",
+          "schedule": "cosine",
+          "seed": 42
+        }
+      },
+      {
+        "architecture": "efficientnet_v2_s",
+        "bytes": 243328029,
+        "checkpoint_path": "data/downloads/models/checkpoint_panel/gen7_diagnostics_v2/checkpoints/diagnostics_v1/imbalance_ablation/tier_a_candidates/seed_42/best.pt",
+        "checkpoint_sha256": "b952be830774ede0ee8049aa39addf2d531954d5fb9d4764ef92ed6eee48f6ed",
+        "epoch": 37,
+        "model_id": "balanced_tier_a_seed42",
+        "scientific_metadata": {
+          "architecture": "efficientnet_v2_s",
+          "balanced_sampling": true,
+          "epoch": 37,
+          "mixture_id": "tier_a_candidates",
+          "schedule": "cosine",
+          "seed": 42
+        }
+      },
+      {
+        "architecture": "efficientnet_v2_s",
+        "bytes": 243327901,
+        "checkpoint_path": "data/downloads/models/checkpoint_panel/gen7_diagnostics_v2/checkpoints/diagnostics_v1/recipe_parity_phase_1/tier_ab_historical/seed_42/best.pt",
+        "checkpoint_sha256": "ede5e9c25fff18558dbd3df59b38a7621ac57db02eb7ff794301575d10521fe5",
+        "epoch": 18,
+        "model_id": "step_tier_ab_seed42",
+        "scientific_metadata": {
+          "architecture": "efficientnet_v2_s",
+          "balanced_sampling": false,
+          "epoch": 18,
+          "mixture_id": "tier_ab_historical",
+          "schedule": "step",
+          "seed": 42
+        }
+      },
+      {
+        "architecture": "efficientnet_v2_s",
+        "bytes": 243327901,
+        "checkpoint_path": "data/downloads/models/checkpoint_panel/gen7_diagnostics_v2/checkpoints/diagnostics_v1/recipe_parity_phase_1/tier_a_candidates/seed_42/best.pt",
+        "checkpoint_sha256": "87e6b3357404ac9cecec45f262f206481e105382c1de67594150d06f4d2f5538",
+        "epoch": 87,
+        "model_id": "step_tier_a_seed42",
+        "scientific_metadata": {
+          "architecture": "efficientnet_v2_s",
+          "balanced_sampling": false,
+          "epoch": 87,
+          "mixture_id": "tier_a_candidates",
+          "schedule": "step",
+          "seed": 42
+        }
+      },
+      {
+        "architecture": "efficientnet_v2_s",
+        "bytes": 243327901,
+        "checkpoint_path": "data/downloads/models/checkpoint_panel/gen7_diagnostics_v2/checkpoints/diagnostics_v1/seed_variance/tier_a_candidates/seed_7/best.pt",
+        "checkpoint_sha256": "78d22ec6bfe7ae6ca8a43ccce05422d798ed1064fbaf9dbb089ae449e80f5c7d",
+        "epoch": 86,
+        "model_id": "tier_a_seed7",
+        "scientific_metadata": {
+          "architecture": "efficientnet_v2_s",
+          "balanced_sampling": false,
+          "epoch": 86,
+          "mixture_id": "tier_a_candidates",
+          "schedule": "cosine",
+          "seed": 7
+        }
+      },
+      {
+        "architecture": "efficientnet_v2_s",
+        "bytes": 243327901,
+        "checkpoint_path": "data/downloads/models/checkpoint_panel/gen7_diagnostics_v2/checkpoints/diagnostics_v1/seed_variance/tier_a_candidates/seed_2027/best.pt",
+        "checkpoint_sha256": "66e1e59e21d22031c78caa6e6c50a08fcf881457fe995743fd6ceecd0aa2e2df",
+        "epoch": 99,
+        "model_id": "tier_a_seed2027",
+        "scientific_metadata": {
+          "architecture": "efficientnet_v2_s",
+          "balanced_sampling": false,
+          "epoch": 99,
+          "mixture_id": "tier_a_candidates",
+          "schedule": "cosine",
+          "seed": 2027
+        }
+      }
+    ],
+    "panel_config_sha256": "fb21ae14b6c3e5a63c4628641358b1bd78b1ccbf748faf537acf14512585c915",
+    "status": "checkpoint_panel_validated"
+  },
+  "checkpoints": {
+    "balanced_tier_a_seed42": "b952be830774ede0ee8049aa39addf2d531954d5fb9d4764ef92ed6eee48f6ed",
+    "balanced_tier_ab_seed42": "52985b092f722144ca2bb9e2fb2cb796d438424da278cfc7ab95b022595dc215",
+    "step_tier_a_seed42": "87e6b3357404ac9cecec45f262f206481e105382c1de67594150d06f4d2f5538",
+    "step_tier_ab_seed42": "ede5e9c25fff18558dbd3df59b38a7621ac57db02eb7ff794301575d10521fe5",
+    "tier_a_seed123": "df5e6980aa58f2eef79d272e0b015cc64362ab404162d5a0785a044f3b1848a4",
+    "tier_a_seed2026": "f587a9c67d66d1217f970bf4e6233ab7e0e5969d4de90a6f6b343cf2c5a38e07",
+    "tier_a_seed2027": "66e1e59e21d22031c78caa6e6c50a08fcf881457fe995743fd6ceecd0aa2e2df",
+    "tier_a_seed42": "54a836385ff7aa509bef853c2d5f41de8024810dbddfe454c85e85253b8b11d7",
+    "tier_a_seed7": "78d22ec6bfe7ae6ca8a43ccce05422d798ed1064fbaf9dbb089ae449e80f5c7d",
+    "tier_ab_seed123": "ae335e9bf8ad593701e64c2e1afd94f711aacfe27ed45876f54c8e697ec64dca",
+    "tier_ab_seed2026": "971e121e0ba74b78f15a4a727d37431c9104cb98d83112fd619144e7a64ec419",
+    "tier_ab_seed42": "74fb60d584e32070c184977644edab75f83e13c809ea61c57ad185f38f3b9689"
+  },
+  "device": "mps",
+  "observed_backend_profile": {
+    "cuda_version": null,
+    "cudnn_version": null,
+    "determinism": {
+      "cublas_workspace_config": ":4096:8",
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "deterministic_algorithms": true,
+      "deterministic_debug_mode": 2,
+      "float32_matmul_precision": "highest",
+      "mps_environment": {
+        "METAL_DEVICE_WRAPPER_TYPE": null,
+        "MTL_CAPTURE_ENABLED": null,
+        "PYTORCH_DEBUG_MPS_ALLOCATOR": null,
+        "PYTORCH_ENABLE_MPS_FALLBACK": "0",
+        "PYTORCH_MPS_FAST_MATH": "0",
+        "PYTORCH_MPS_HIGH_WATERMARK_RATIO": null,
+        "PYTORCH_MPS_LOW_WATERMARK_RATIO": null,
+        "PYTORCH_MPS_PREFER_METAL": "0"
+      },
+      "num_interop_threads": 18,
+      "num_threads": 6
+    },
+    "device_index": null,
+    "device_type": "mps",
+    "hardware": {
+      "apple": {
+        "chip_type": "Apple M5 Max",
+        "machine_model": "Mac17,6",
+        "machine_name": "MacBook Pro",
+        "model_number": "MGEE4LL/A",
+        "number_processors": "proc 18:6:0:12",
+        "physical_memory": "48 GB",
+        "sysctl_cpu_brand_string": "Apple M5 Max",
+        "sysctl_hw_model": "Mac17,6"
+      },
+      "mps_available": true,
+      "mps_built": true,
+      "name": "Apple Metal Performance Shaders"
+    },
+    "profile_sha256": "88964e2a54b09317d7c4e5a7a0909a4be7ec9cbd7499988d19adaaca2fb77b87",
+    "requested_device": "mps",
+    "runtime": {
+      "device_names": [],
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "platform": "macOS-26.4.1-arm64-arm-64bit",
+      "python": "3.12.13",
+      "torch": "2.7.0",
+      "torchvision": "0.22.0"
+    },
+    "schema_version": 1,
+    "torch_build_config_sha256": "4e66401c1c3ca819b3db659946c065007fe1d48c8f3b9e06b714712683ae948a"
+  },
+  "panel_config_sha256": "fb21ae14b6c3e5a63c4628641358b1bd78b1ccbf748faf537acf14512585c915",
+  "population": "pnoise",
+  "preprocessing": {
+    "clip_range": 10.0,
+    "crop": false,
+    "mode": "raw_robust"
+  },
+  "primary_authoritative_backend_profile": {
+    "cuda_version": null,
+    "cudnn_version": null,
+    "determinism": {
+      "cublas_workspace_config": ":4096:8",
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "deterministic_algorithms": true,
+      "deterministic_debug_mode": 2,
+      "float32_matmul_precision": "highest",
+      "mps_environment": {
+        "METAL_DEVICE_WRAPPER_TYPE": null,
+        "MTL_CAPTURE_ENABLED": null,
+        "PYTORCH_DEBUG_MPS_ALLOCATOR": null,
+        "PYTORCH_ENABLE_MPS_FALLBACK": "0",
+        "PYTORCH_MPS_FAST_MATH": "0",
+        "PYTORCH_MPS_HIGH_WATERMARK_RATIO": null,
+        "PYTORCH_MPS_LOW_WATERMARK_RATIO": null,
+        "PYTORCH_MPS_PREFER_METAL": "0"
+      },
+      "num_interop_threads": 18,
+      "num_threads": 6
+    },
+    "device_index": null,
+    "device_type": "mps",
+    "hardware": {
+      "apple": {
+        "chip_type": "Apple M5 Max",
+        "machine_model": "Mac17,6",
+        "machine_name": "MacBook Pro",
+        "model_number": "MGEE4LL/A",
+        "number_processors": "proc 18:6:0:12",
+        "physical_memory": "48 GB",
+        "sysctl_cpu_brand_string": "Apple M5 Max",
+        "sysctl_hw_model": "Mac17,6"
+      },
+      "mps_available": true,
+      "mps_built": true,
+      "name": "Apple Metal Performance Shaders"
+    },
+    "profile_sha256": "88964e2a54b09317d7c4e5a7a0909a4be7ec9cbd7499988d19adaaca2fb77b87",
+    "requested_device": "mps",
+    "runtime": {
+      "device_names": [],
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "platform": "macOS-26.4.1-arm64-arm-64bit",
+      "python": "3.12.13",
+      "torch": "2.7.0",
+      "torchvision": "0.22.0"
+    },
+    "schema_version": 1,
+    "torch_build_config_sha256": "4e66401c1c3ca819b3db659946c065007fe1d48c8f3b9e06b714712683ae948a"
+  },
+  "primary_bit_reproduction_passed": null,
+  "primary_expected_scores_sha256": null,
+  "primary_model_id": "tier_ab_seed42",
+  "primary_reproduction_required": false,
+  "rerendered": false,
+  "retrained": false,
+  "rows": 396000,
+  "runtime": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "python": "3.12.13",
+    "torch": "2.7.0"
+  },
+  "schema_version": 1,
+  "scores_sha256": "15530ff305bcd5d48b860d904b98a35ce73b8db1f328943836a33414317460a2",
+  "source_bindings": {
+    "common_threshold_receipt": "eb43c67f60319c0f8ab2f53b2fd7abe1f655f1bbace49601b1d44bad56d4cb80",
+    "grec_config": "420e001332f0248c6264d6facb0d4af914344599773f8bb8207b8375e018f8b0",
+    "grec_manifest": "95c72ad9c1465d5ff54fd033e8e07f09fc8f0be6cf6aad4e538c0059e91aabf4",
+    "grec_primary_scores": "2cd6d5c9a867b0e19a47fe374786079c6b21bb502c1fa6fb26b1c3e5a74efe13",
+    "pnoise_manifest": "18047362457cc8544b1dcf598d7b25edfd4cb075ad9f6fa951c9f65d5cec2a63",
+    "pnoise_primary_result": "8919452ae2df5c4a0cfc7c085e98aeb986ea948785760c54c29dba5fd2eed7ef",
+    "pnoise_primary_score_receipt": "0d9b517c945598b524da01df045e0bdd3ab8486d6a8c9198c6ea53d1e5870d1a",
+    "pnoise_primary_scores": "fa6071b7ae52dea9febf60b660a56b8a23c8e46853ae1748226edbd791e14704",
+    "pnoise_receipt": "92054eff612bd415f2a88e4a455782eba005a0c7e22fd53435871b2ee8454be5"
+  },
+  "source_manifest_sha256": "18047362457cc8544b1dcf598d7b25edfd4cb075ad9f6fa951c9f65d5cec2a63",
+  "status": "checkpoint_panel_population_scored"
+}

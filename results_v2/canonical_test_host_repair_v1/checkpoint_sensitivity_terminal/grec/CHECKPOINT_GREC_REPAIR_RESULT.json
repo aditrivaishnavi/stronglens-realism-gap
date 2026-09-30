@@ -1,0 +1,68 @@
+{
+  "batch_record": {
+    "batch_size": 64,
+    "chunk_rows": 2048,
+    "elapsed_seconds": 54.6851582499221,
+    "model_forward_passes_per_image": 12,
+    "models": 12,
+    "preprocessing_applied_once_per_image": true,
+    "raw_images_read_once_for_complete_panel": true,
+    "rows": 12496,
+    "terminal_batch_real_rows": 16
+  },
+  "models": {
+    "balanced_tier_a_seed42": {
+      "detections": 937,
+      "recovery": 0.018929292929292928
+    },
+    "balanced_tier_ab_seed42": {
+      "detections": 1218,
+      "recovery": 0.024606060606060607
+    },
+    "step_tier_a_seed42": {
+      "detections": 590,
+      "recovery": 0.01191919191919192
+    },
+    "step_tier_ab_seed42": {
+      "detections": 1238,
+      "recovery": 0.02501010101010101
+    },
+    "tier_a_seed123": {
+      "detections": 863,
+      "recovery": 0.017434343434343434
+    },
+    "tier_a_seed2026": {
+      "detections": 747,
+      "recovery": 0.01509090909090909
+    },
+    "tier_a_seed2027": {
+      "detections": 608,
+      "recovery": 0.012282828282828282
+    },
+    "tier_a_seed42": {
+      "detections": 910,
+      "recovery": 0.018383838383838384
+    },
+    "tier_a_seed7": {
+      "detections": 750,
+      "recovery": 0.015151515151515152
+    },
+    "tier_ab_seed123": {
+      "detections": 1451,
+      "recovery": 0.029313131313131312
+    },
+    "tier_ab_seed2026": {
+      "detections": 1664,
+      "recovery": 0.03361616161616161
+    },
+    "tier_ab_seed42": {
+      "detections": 1710,
+      "recovery": 0.034545454545454546
+    }
+  },
+  "new_rows": 12496,
+  "retained_rows": 37004,
+  "schema_version": 1,
+  "scores_sha256": "e879dd5733bf7c75e2000de23fc7db72a78296e51ab2c21245ec5a33ec907b98",
+  "status": "canonical_repair_checkpoint_grec_complete"
+}

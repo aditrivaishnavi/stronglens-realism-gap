@@ -1,0 +1,45 @@
+{
+  "final_results_sha256": "2ed220da874d3fda85312aba10f835625b4e3644d48101d33a8c14217b460888",
+  "panel_config_sha256": "fb21ae14b6c3e5a63c4628641358b1bd78b1ccbf748faf537acf14512585c915",
+  "populations": {
+    "achieved_fpr": {
+      "native_score_bits_verified": true,
+      "receipt_sha256": "90dd0383b3ee27f88da37615ba9b63a37c5aae00cf346237678168e95a2aebfb",
+      "rows": 12512,
+      "scores_sha256": "12cc929e4128a14429c2115ee009d17fdb1321b6ca3e28a6f534fa12666a5041"
+    },
+    "calibration": {
+      "native_score_bits_verified": true,
+      "receipt_sha256": "c2f100daa5cfd00567ef92c337b5e53852b0c7126fb9fd93913148a4983800f9",
+      "rows": 20002,
+      "scores_sha256": "9f61486e8f3d3f0c5f2868e01dbdc7e50c993ec7595fe1139c768527c23d621b"
+    },
+    "grec": {
+      "native_score_bits_verified": true,
+      "receipt_sha256": "f1b4cb58226ae729ef18d188c2b95a0c44276779ba707e491ca82daab956379c",
+      "rows": 49500,
+      "scores_sha256": "e2a8adcf6816d277e301c3cffac0ae2a88c5d7caf17bd32bd5f99ef7ffd7ca01"
+    },
+    "pnoise": {
+      "native_score_bits_verified": true,
+      "receipt_sha256": "adcfce79611d4620183da1bec77432b63f3c76a63391978853943c275c588860",
+      "rows": 396000,
+      "scores_sha256": "15530ff305bcd5d48b860d904b98a35ce73b8db1f328943836a33414317460a2"
+    },
+    "psrc": {
+      "native_score_bits_verified": true,
+      "receipt_sha256": "2192e05844a02311dd23ce4a24b65b527b53f7ec02c7c8a62a8b6a7c1f87e8bc",
+      "rows": 25344,
+      "scores_sha256": "8a841073cef419718665e1f01c5cd62b317793bf72e81da5a4ad7b2467dd04c5"
+    },
+    "terminal_confirmed": {
+      "native_score_bits_verified": true,
+      "receipt_sha256": "0645267ab5b20b3f618d9f1b6cd608f6895a7c245f2ccdc2d788df528e149ba7",
+      "rows": 43,
+      "scores_sha256": "c2200729b8ecd3c09be745ac388abfe8aab77bbab2e6b32003b1182274f0d135"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Structural rehash and native-bit validation only; independent scientific recomputation is separate.",
+  "status": "checkpoint_sensitivity_structurally_rehashed"
+}

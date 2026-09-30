@@ -1,0 +1,14 @@
+{
+  "correction_scope": "serialize the unchanged 128-bit PCG64DXSM seed as hexadecimal text",
+  "new_brightness_scores_opened": false,
+  "protocol_path": "experiments_v2/revision_controls_canonical_repair_v1/config/protocol.json",
+  "protocol_sha256": "2f50ae51e4f1707e65fda3d4afef8f325cd21f8c31630e7953cba95174b8bdcc",
+  "schema_version": 1,
+  "status": "brightness_v2_serialization_correction_sealed_pre_score",
+  "v1_design_sha256": "c09bf29230064e4a6a306bb6a6aac015c70e7e0fcf889314e58c3fb72c53b7ef",
+  "v1_protocol_seal_sha256": "515d885d92c4c4789c77ccf86b797bb77be8c7db052869e8ac2c4e06ef6565be",
+  "v1_runner_path": "experiments_v2/revision_controls_canonical_repair_v1/run_controls.py",
+  "v1_runner_sha256": "8086edde48880f2c6729b3e18b391eabfac66e4407943d37d14fe433f8ee92ed",
+  "v2_runner_path": "experiments_v2/revision_controls_canonical_repair_v1/run_brightness_v2.py",
+  "v2_runner_sha256": "b4dcb941cde670e6ba305c19f432e890474cd1e1e850a52e0d9d651c4bfbc64b"
+}

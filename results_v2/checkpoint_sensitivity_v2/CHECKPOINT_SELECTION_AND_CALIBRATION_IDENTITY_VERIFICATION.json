@@ -1,0 +1,153 @@
+{
+  "calibration": {
+    "achieved_manifest_sha256": "8abb64f3cb09feed2b7a66de899a0f88f7a7e50509ac06be94e5e0528c7668a2",
+    "calibration_ids_unique": true,
+    "calibration_manifest_sha256": "6dea8e9fce681d58c04e9010966832a15ae2a11e2eb2a80d65ebf07af150be9a",
+    "calibration_receipt_sha256": "52f016e23194353d2a70937f457d76dfa423d62d73e76239b2fa1671f4c11ee5",
+    "calibration_rows": 20002,
+    "galaxy_id_overlap": 0,
+    "pixel_hash_overlap": 0,
+    "spatial_group_overlap": 0
+  },
+  "checkpoint_ledger_sha256": "8753c3afb09b862d74d0fbc7020beeca8baef3467830ee2a249f93630a1f3303",
+  "models": [
+    {
+      "checkpoint_sha256": "74fb60d584e32070c184977644edab75f83e13c809ea61c57ad185f38f3b9689",
+      "metric_rows": 160,
+      "metrics_sha256": "d57c614bea3150ca3cc8aac2c390e75f284295b82b9a1f5ddd84727673bb2511",
+      "model_id": "tier_ab_seed42",
+      "run_info_sha256": "6a5e8d13249e9758d25727956bbaf31247680de7c6ab5390deb8ea46fd7898eb",
+      "selected_epoch": 19,
+      "selected_validation_average_precision": 0.8103751633523857,
+      "strict_improvement_tie_rule": "earliest maximum retained",
+      "training_setup_sha256": "43f80c945622c97ec1f360fbdc9ab960d94f8c5dac0e9f5fe68982b1fb6e079f"
+    },
+    {
+      "checkpoint_sha256": "ae335e9bf8ad593701e64c2e1afd94f711aacfe27ed45876f54c8e697ec64dca",
+      "metric_rows": 160,
+      "metrics_sha256": "286f4a3f810bcf0efee74eae352366d1efd8ab032da2bcc567b7905a67de5b7c",
+      "model_id": "tier_ab_seed123",
+      "run_info_sha256": "ae0597b4d19e864a5474987b3b871841686653a76f84488113fb47f8833c6038",
+      "selected_epoch": 17,
+      "selected_validation_average_precision": 0.8181294873017203,
+      "strict_improvement_tie_rule": "earliest maximum retained",
+      "training_setup_sha256": "8eb2b8b7b57116849dff6865f58ba34f38a559a7b03a8be9f5a9052254c1e107"
+    },
+    {
+      "checkpoint_sha256": "971e121e0ba74b78f15a4a727d37431c9104cb98d83112fd619144e7a64ec419",
+      "metric_rows": 160,
+      "metrics_sha256": "d86704543ef35d6d9fc33bc0d988965e0633fda7ae14e770e2efedbc63973306",
+      "model_id": "tier_ab_seed2026",
+      "run_info_sha256": "505d0ef76855c511351ecfea6751aacedf847ed396a5233aea4ef0f904996110",
+      "selected_epoch": 93,
+      "selected_validation_average_precision": 0.8053138266854519,
+      "strict_improvement_tie_rule": "earliest maximum retained",
+      "training_setup_sha256": "de4a09a73a262821a367c506c6d9dd00ba0651f511190f47a86d1aec6db05023"
+    },
+    {
+      "checkpoint_sha256": "54a836385ff7aa509bef853c2d5f41de8024810dbddfe454c85e85253b8b11d7",
+      "metric_rows": 160,
+      "metrics_sha256": "3a4c4c4fb28777a9744af236061daf3de3328b0e50effd9f31a8faf4595c1df2",
+      "model_id": "tier_a_seed42",
+      "run_info_sha256": "9b0956dcfd7d276ccc8ce7a87c389cd9d5c1671053155f65dff1522b00eb767e",
+      "selected_epoch": 103,
+      "selected_validation_average_precision": 0.7764463423970343,
+      "strict_improvement_tie_rule": "earliest maximum retained",
+      "training_setup_sha256": "17164e90c354bc1dbae4cd8bd7b7b9b4f51ac8f13d23cf77257177d4e686a26c"
+    },
+    {
+      "checkpoint_sha256": "df5e6980aa58f2eef79d272e0b015cc64362ab404162d5a0785a044f3b1848a4",
+      "metric_rows": 160,
+      "metrics_sha256": "00fb224576076babc4c4ccef3c3d307f91dced4a6bbfd49a0b0afcf736204830",
+      "model_id": "tier_a_seed123",
+      "run_info_sha256": "37235dc30a56354e1e9ec8f48c095b045e2093f1693cd9c27d88e6ede8149e77",
+      "selected_epoch": 93,
+      "selected_validation_average_precision": 0.7704190376338943,
+      "strict_improvement_tie_rule": "earliest maximum retained",
+      "training_setup_sha256": "638854304f892ec5f25a539a2d910e7bdcd837e4014142403e26d6ea0ccc110c"
+    },
+    {
+      "checkpoint_sha256": "f587a9c67d66d1217f970bf4e6233ab7e0e5969d4de90a6f6b343cf2c5a38e07",
+      "metric_rows": 160,
+      "metrics_sha256": "b86c9a09417904e711e8e1ed1dfa7abf7469cf92cf6bcc2d9350bd9c69f7df48",
+      "model_id": "tier_a_seed2026",
+      "run_info_sha256": "886b332fe88107158da9c215cef3555074627f9b2f5d4d0d90a76401c575f5c5",
+      "selected_epoch": 43,
+      "selected_validation_average_precision": 0.767860784949685,
+      "strict_improvement_tie_rule": "earliest maximum retained",
+      "training_setup_sha256": "49a4afb58b7f8c5aade97dcce37a733ec5c23e38c2da026751da767a00eb4239"
+    },
+    {
+      "checkpoint_sha256": "52985b092f722144ca2bb9e2fb2cb796d438424da278cfc7ab95b022595dc215",
+      "metric_rows": 160,
+      "metrics_sha256": "06eea43a2120a7a721a67e27375e2c50044160862552cc6abe1b890ff3b29da6",
+      "model_id": "balanced_tier_ab_seed42",
+      "run_info_sha256": "0deb8d5c02c9f5be38e7b37a965e34f191937582eb60d0ba23bb4816149b0684",
+      "selected_epoch": 62,
+      "selected_validation_average_precision": 0.7922262640046972,
+      "strict_improvement_tie_rule": "earliest maximum retained",
+      "training_setup_sha256": "40a6c408c120424bacab70af88402985bebcc566f26105f0c38430717d3017eb"
+    },
+    {
+      "checkpoint_sha256": "b952be830774ede0ee8049aa39addf2d531954d5fb9d4764ef92ed6eee48f6ed",
+      "metric_rows": 160,
+      "metrics_sha256": "6a2fbefa70539e8dd370b1f793090ea84b9f1c9dbc424914af45e18532e927fd",
+      "model_id": "balanced_tier_a_seed42",
+      "run_info_sha256": "dc558905ba6a5cb7ac301fa7ce74ea3ac84239d7aedf0174019fa2ef3f86f6b4",
+      "selected_epoch": 37,
+      "selected_validation_average_precision": 0.770416761703395,
+      "strict_improvement_tie_rule": "earliest maximum retained",
+      "training_setup_sha256": "38090b92b0c8c19b00a5d02f4d94b377714bca5bafc457517a0145b5461f5f5a"
+    },
+    {
+      "checkpoint_sha256": "ede5e9c25fff18558dbd3df59b38a7621ac57db02eb7ff794301575d10521fe5",
+      "metric_rows": 160,
+      "metrics_sha256": "a85d3cca8d362d40bfd4061af7120252446ead5905b40762844f16df9ec179eb",
+      "model_id": "step_tier_ab_seed42",
+      "run_info_sha256": "16bd4649f58276b3d75cefb7bd06eb1eeda389173423799746ff85a354f4f937",
+      "selected_epoch": 18,
+      "selected_validation_average_precision": 0.8108670288542008,
+      "strict_improvement_tie_rule": "earliest maximum retained",
+      "training_setup_sha256": "43f80c945622c97ec1f360fbdc9ab960d94f8c5dac0e9f5fe68982b1fb6e079f"
+    },
+    {
+      "checkpoint_sha256": "87e6b3357404ac9cecec45f262f206481e105382c1de67594150d06f4d2f5538",
+      "metric_rows": 160,
+      "metrics_sha256": "a7ac4c6c11a7ae75738701bfdbb9f24c66ff0a8d8deb695e641eeb728b54ea03",
+      "model_id": "step_tier_a_seed42",
+      "run_info_sha256": "d873ec535ab52d3410e90c8a4c5300b441ac2947e3987d92bb03370b3a711279",
+      "selected_epoch": 87,
+      "selected_validation_average_precision": 0.765260868379783,
+      "strict_improvement_tie_rule": "earliest maximum retained",
+      "training_setup_sha256": "17164e90c354bc1dbae4cd8bd7b7b9b4f51ac8f13d23cf77257177d4e686a26c"
+    },
+    {
+      "checkpoint_sha256": "78d22ec6bfe7ae6ca8a43ccce05422d798ed1064fbaf9dbb089ae449e80f5c7d",
+      "metric_rows": 160,
+      "metrics_sha256": "03fb31dff1b5883ecae7d180d88916ee92f774e04257b0ab86e3a4b3bcdecd2e",
+      "model_id": "tier_a_seed7",
+      "run_info_sha256": "dd819834c980ad0ba42418fb1a7f89085cead95d4a9e3e1454d6667584e60d2a",
+      "selected_epoch": 86,
+      "selected_validation_average_precision": 0.7516487755166332,
+      "strict_improvement_tie_rule": "earliest maximum retained",
+      "training_setup_sha256": "65f7421a64e3082f4d52f7b0932d824d0e71cc0e44892f6a1f47e7d4fea2f8bb"
+    },
+    {
+      "checkpoint_sha256": "66e1e59e21d22031c78caa6e6c50a08fcf881457fe995743fd6ceecd0aa2e2df",
+      "metric_rows": 160,
+      "metrics_sha256": "23b3bcbba7fd895b3b21cefb2cbe5ef64959d999c0719260476800dacdea7eb5",
+      "model_id": "tier_a_seed2027",
+      "run_info_sha256": "d83b47b56da8360a901b748b26d87f7aa276ebb70f86846424ab9b464a40b2e6",
+      "selected_epoch": 99,
+      "selected_validation_average_precision": 0.769477646513984,
+      "strict_improvement_tie_rule": "earliest maximum retained",
+      "training_setup_sha256": "babc5c7482a8905afcef84b3c2b7e1e9b9065b5796348c74c57ac3cab22306a2"
+    }
+  ],
+  "panel_sha256": "fb21ae14b6c3e5a63c4628641358b1bd78b1ccbf748faf537acf14512585c915",
+  "run_ledger_sha256": "e0c9f86699b83516b4bb0a620a06aa2d848bd70b4aeba9560c020deff52e5c89",
+  "schema_version": 1,
+  "selection_metric": "development-validation average precision",
+  "status": "checkpoint_selection_and_calibration_identity_pass",
+  "tie_rule": "strict improvement; earliest tied maximum retained"
+}

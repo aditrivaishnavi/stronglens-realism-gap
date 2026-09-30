@@ -1,0 +1,308 @@
+{
+  "batch_contract": {
+    "batchnorm_all_using_running_statistics": true,
+    "batchnorm_layers": 110,
+    "dropout_all_inactive": true,
+    "dropout_layers": 1,
+    "model_training_mode": false,
+    "why_padding_is_safe": "in eval mode normalisation uses stored running statistics and dropout is the identity, so no row's output depends on the other rows sharing its batch; filler outputs are discarded and cannot affect real ones"
+  },
+  "brightness_protocol_v2_seal_sha256": "ca5814dcf026146d7031a44d9bcf84bbc64ecb71e8f37abaddb0ba2515a8090e",
+  "cell_summary_sha256": "63e3b95065c36dbaa41b91e771d16ecb10e3b03ba9a1bb962938c83e476bd73d",
+  "clip_ranges": [
+    10.0,
+    20.0
+  ],
+  "derived_manifest_sha256": "f1f669b6aa29a45a13c8f6b0447a2ba10d41dca01f3e1ab132d4e5d57c5a1b68",
+  "design_sha256": "c09bf29230064e4a6a306bb6a6aac015c70e7e0fcf889314e58c3fb72c53b7ef",
+  "expectation_images": 344,
+  "figure_sha256": "addbbf614c366ebb339cd1ce9a0c4ccbc7f9f12caf49c228f31f28d43a31a374",
+  "finite_photon_mcse": [
+    {
+      "clip_range": 10.0,
+      "draw_sd": 0.02762174277128886,
+      "draws": 8,
+      "finite_photon_mcse": 0.009765760810884426,
+      "target_source_r_mag": 18.5
+    },
+    {
+      "clip_range": 20.0,
+      "draw_sd": 0.01076534999735525,
+      "draws": 8,
+      "finite_photon_mcse": 0.0038061259924882388,
+      "target_source_r_mag": 18.5
+    },
+    {
+      "clip_range": 10.0,
+      "draw_sd": 0.03029000420068184,
+      "draws": 8,
+      "finite_photon_mcse": 0.01070913368623557,
+      "target_source_r_mag": 19.5
+    },
+    {
+      "clip_range": 20.0,
+      "draw_sd": 0.01644434374852436,
+      "draws": 8,
+      "finite_photon_mcse": 0.005813953488372093,
+      "target_source_r_mag": 19.5
+    },
+    {
+      "clip_range": 10.0,
+      "draw_sd": 0.019407510706890233,
+      "draws": 8,
+      "finite_photon_mcse": 0.006861591213396304,
+      "target_source_r_mag": 20.5
+    },
+    {
+      "clip_range": 20.0,
+      "draw_sd": 0.00822217187426218,
+      "draws": 8,
+      "finite_photon_mcse": 0.0029069767441860465,
+      "target_source_r_mag": 20.5
+    },
+    {
+      "clip_range": 10.0,
+      "draw_sd": 0.02486151087557436,
+      "draws": 8,
+      "finite_photon_mcse": 0.008789871465330865,
+      "target_source_r_mag": 21.5
+    },
+    {
+      "clip_range": 20.0,
+      "draw_sd": 0.00822217187426218,
+      "draws": 8,
+      "finite_photon_mcse": 0.0029069767441860465,
+      "target_source_r_mag": 21.5
+    },
+    {
+      "clip_range": 10.0,
+      "draw_sd": 0.010765349997355251,
+      "draws": 8,
+      "finite_photon_mcse": 0.0038061259924882396,
+      "target_source_r_mag": 22.5
+    },
+    {
+      "clip_range": 20.0,
+      "draw_sd": 0.0,
+      "draws": 8,
+      "finite_photon_mcse": 0.0,
+      "target_source_r_mag": 22.5
+    },
+    {
+      "clip_range": 10.0,
+      "draw_sd": 0.01076534999735525,
+      "draws": 8,
+      "finite_photon_mcse": 0.0038061259924882388,
+      "target_source_r_mag": 23.5
+    },
+    {
+      "clip_range": 20.0,
+      "draw_sd": 0.0,
+      "draws": 8,
+      "finite_photon_mcse": 0.0,
+      "target_source_r_mag": 23.5
+    },
+    {
+      "clip_range": 10.0,
+      "draw_sd": 0.0,
+      "draws": 8,
+      "finite_photon_mcse": 0.0,
+      "target_source_r_mag": 24.5
+    },
+    {
+      "clip_range": 20.0,
+      "draw_sd": 0.0,
+      "draws": 8,
+      "finite_photon_mcse": 0.0,
+      "target_source_r_mag": 24.5
+    },
+    {
+      "clip_range": 10.0,
+      "draw_sd": 0.0,
+      "draws": 8,
+      "finite_photon_mcse": 0.0,
+      "target_source_r_mag": 25.5
+    },
+    {
+      "clip_range": 20.0,
+      "draw_sd": 0.0,
+      "draws": 8,
+      "finite_photon_mcse": 0.0,
+      "target_source_r_mag": 25.5
+    }
+  ],
+  "gain_electron_per_nmgy": 150.0,
+  "inference_records": {
+    "clip_10": {
+      "batch_shape_fixed": true,
+      "batches": 49,
+      "filler_policy": "last",
+      "final_batch_padding": "last row repeated, outputs discarded",
+      "full_batches": 48,
+      "governing_filler": true,
+      "inference_batch_size": 64,
+      "padded_rows_discarded": 40,
+      "rows_scored": 3096,
+      "terminal_batch_real_rows": 24
+    },
+    "clip_20": {
+      "batch_shape_fixed": true,
+      "batches": 49,
+      "filler_policy": "last",
+      "final_batch_padding": "last row repeated, outputs discarded",
+      "full_batches": 48,
+      "governing_filler": true,
+      "inference_batch_size": 64,
+      "padded_rows_discarded": 40,
+      "rows_scored": 3096,
+      "terminal_batch_real_rows": 24
+    }
+  },
+  "interpretation": "fixed-target brightness/photon/clipping response; not calibrated visibility, equal-FPR clipping, or completeness",
+  "magnitudes": [
+    18.5,
+    19.5,
+    20.5,
+    21.5,
+    22.5,
+    23.5,
+    24.5,
+    25.5
+  ],
+  "photon_draws_per_target_magnitude": 8,
+  "photon_images": 2752,
+  "photon_minus_expectation_contrasts": [
+    {
+      "clip_range": 10.0,
+      "photon_minus_expectation_detection_rate": -0.014534883720930232,
+      "photon_minus_expectation_logit": -2.197164297103882,
+      "target_source_r_mag": 18.5,
+      "targets": 43
+    },
+    {
+      "clip_range": 20.0,
+      "photon_minus_expectation_detection_rate": -0.01744186046511628,
+      "photon_minus_expectation_logit": -1.4707528352737427,
+      "target_source_r_mag": 18.5,
+      "targets": 43
+    },
+    {
+      "clip_range": 10.0,
+      "photon_minus_expectation_detection_rate": -0.03197674418604651,
+      "photon_minus_expectation_logit": -1.4696351289749146,
+      "target_source_r_mag": 19.5,
+      "targets": 43
+    },
+    {
+      "clip_range": 20.0,
+      "photon_minus_expectation_detection_rate": -0.029069767441860465,
+      "photon_minus_expectation_logit": -1.907536506652832,
+      "target_source_r_mag": 19.5,
+      "targets": 43
+    },
+    {
+      "clip_range": 10.0,
+      "photon_minus_expectation_detection_rate": -0.0029069767441860465,
+      "photon_minus_expectation_logit": -0.29892396926879883,
+      "target_source_r_mag": 20.5,
+      "targets": 43
+    },
+    {
+      "clip_range": 20.0,
+      "photon_minus_expectation_detection_rate": -0.020348837209302327,
+      "photon_minus_expectation_logit": -2.6479759216308594,
+      "target_source_r_mag": 20.5,
+      "targets": 43
+    },
+    {
+      "clip_range": 10.0,
+      "photon_minus_expectation_detection_rate": 0.023255813953488372,
+      "photon_minus_expectation_logit": 0.10253488272428513,
+      "target_source_r_mag": 21.5,
+      "targets": 43
+    },
+    {
+      "clip_range": 20.0,
+      "photon_minus_expectation_detection_rate": -0.020348837209302327,
+      "photon_minus_expectation_logit": -1.8995230197906494,
+      "target_source_r_mag": 21.5,
+      "targets": 43
+    },
+    {
+      "clip_range": 10.0,
+      "photon_minus_expectation_detection_rate": -0.01744186046511628,
+      "photon_minus_expectation_logit": -0.43954095244407654,
+      "target_source_r_mag": 22.5,
+      "targets": 43
+    },
+    {
+      "clip_range": 20.0,
+      "photon_minus_expectation_detection_rate": 0.0,
+      "photon_minus_expectation_logit": -0.23330126702785492,
+      "target_source_r_mag": 22.5,
+      "targets": 43
+    },
+    {
+      "clip_range": 10.0,
+      "photon_minus_expectation_detection_rate": -0.005813953488372093,
+      "photon_minus_expectation_logit": -0.107206791639328,
+      "target_source_r_mag": 23.5,
+      "targets": 43
+    },
+    {
+      "clip_range": 20.0,
+      "photon_minus_expectation_detection_rate": 0.0,
+      "photon_minus_expectation_logit": 0.2098974883556366,
+      "target_source_r_mag": 23.5,
+      "targets": 43
+    },
+    {
+      "clip_range": 10.0,
+      "photon_minus_expectation_detection_rate": 0.0,
+      "photon_minus_expectation_logit": 0.09953414648771286,
+      "target_source_r_mag": 24.5,
+      "targets": 43
+    },
+    {
+      "clip_range": 20.0,
+      "photon_minus_expectation_detection_rate": 0.0,
+      "photon_minus_expectation_logit": 0.043385814875364304,
+      "target_source_r_mag": 24.5,
+      "targets": 43
+    },
+    {
+      "clip_range": 10.0,
+      "photon_minus_expectation_detection_rate": 0.0,
+      "photon_minus_expectation_logit": 0.029655922204256058,
+      "target_source_r_mag": 25.5,
+      "targets": 43
+    },
+    {
+      "clip_range": 20.0,
+      "photon_minus_expectation_detection_rate": 0.0,
+      "photon_minus_expectation_logit": 0.020238421857357025,
+      "target_source_r_mag": 25.5,
+      "targets": 43
+    }
+  ],
+  "runtime": {
+    "device": "mps",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "pyarrow": "25.0.1",
+    "torch": "2.7.0"
+  },
+  "schema_version": 2,
+  "score_rows": 6192,
+  "scores_sha256": "30e8d3b05ba252deafd7d081694a2077641693a1106aff174cab6077f9b2fe7d",
+  "serialization_correction": "full 128-bit draw seed stored as 32-character hexadecimal text",
+  "status": "bounded_brightness_photon_clipping_stress_complete",
+  "target_summary_sha256": "899ddc0b9f9b53e7946dc0c38e4cabd06deab59160563cbd2229d879f177b654",
+  "targets": 43,
+  "threshold": 1.5717214345932007,
+  "threshold_float32_bits": 1070149163,
+  "threshold_recalibrated": false,
+  "unique_derived_images": 3096,
+  "v1_protocol_seal_sha256": "515d885d92c4c4789c77ccf86b797bb77be8c7db052869e8ac2c4e06ef6565be",
+  "v2_seal_status": "brightness_v2_serialization_correction_sealed_pre_score"
+}

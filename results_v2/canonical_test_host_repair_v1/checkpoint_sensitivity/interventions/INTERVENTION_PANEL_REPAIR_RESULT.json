@@ -1,0 +1,78 @@
+{
+  "models": {
+    "balanced_tier_a_seed42": {
+      "pnoise_effect": -0.005111111111111111,
+      "psrc_effect": 0.002446338383838383,
+      "psrc_sersic_detections": 115,
+      "psrc_structured_detections": 84
+    },
+    "balanced_tier_ab_seed42": {
+      "pnoise_effect": -0.009982323232323233,
+      "psrc_effect": 0.003945707070707068,
+      "psrc_sersic_detections": 222,
+      "psrc_structured_detections": 172
+    },
+    "step_tier_a_seed42": {
+      "pnoise_effect": -0.008047979797979799,
+      "psrc_effect": 0.001736111111111111,
+      "psrc_sersic_detections": 65,
+      "psrc_structured_detections": 43
+    },
+    "step_tier_ab_seed42": {
+      "pnoise_effect": -0.007161616161616161,
+      "psrc_effect": 0.003156565656565656,
+      "psrc_sersic_detections": 173,
+      "psrc_structured_detections": 133
+    },
+    "tier_a_seed123": {
+      "pnoise_effect": -0.007340909090909091,
+      "psrc_effect": 0.000946969696969697,
+      "psrc_sersic_detections": 43,
+      "psrc_structured_detections": 31
+    },
+    "tier_a_seed2026": {
+      "pnoise_effect": -0.007813131313131312,
+      "psrc_effect": 0.0007102272727272727,
+      "psrc_sersic_detections": 25,
+      "psrc_structured_detections": 16
+    },
+    "tier_a_seed2027": {
+      "pnoise_effect": -0.007856060606060606,
+      "psrc_effect": 0.000946969696969697,
+      "psrc_sersic_detections": 66,
+      "psrc_structured_detections": 54
+    },
+    "tier_a_seed42": {
+      "pnoise_effect": -0.00967171717171717,
+      "psrc_effect": 0.001183712121212121,
+      "psrc_sersic_detections": 83,
+      "psrc_structured_detections": 68
+    },
+    "tier_a_seed7": {
+      "pnoise_effect": -0.008535353535353535,
+      "psrc_effect": 0.000946969696969697,
+      "psrc_sersic_detections": 51,
+      "psrc_structured_detections": 39
+    },
+    "tier_ab_seed123": {
+      "pnoise_effect": -0.008378787878787878,
+      "psrc_effect": 0.002683080808080808,
+      "psrc_sersic_detections": 172,
+      "psrc_structured_detections": 138
+    },
+    "tier_ab_seed2026": {
+      "pnoise_effect": -0.011643939393939394,
+      "psrc_effect": 0.004261363636363634,
+      "psrc_sersic_detections": 239,
+      "psrc_structured_detections": 185
+    },
+    "tier_ab_seed42": {
+      "pnoise_effect": -0.00967929292929293,
+      "psrc_effect": 0.003945707070707068,
+      "psrc_sersic_detections": 205,
+      "psrc_structured_detections": 155
+    }
+  },
+  "schema_version": 1,
+  "status": "canonical_repair_intervention_checkpoint_panel_complete"
+}

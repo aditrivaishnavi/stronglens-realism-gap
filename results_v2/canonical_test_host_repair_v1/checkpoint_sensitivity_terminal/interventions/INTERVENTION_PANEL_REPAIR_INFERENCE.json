@@ -1,0 +1,1890 @@
+{
+  "models": {
+    "balanced_tier_a_seed42": {
+      "pnoise": {
+        "bootstrap_design": {
+          "cell_host_counts_preserved_in_point_estimator": true,
+          "cell_weights_preserved": true,
+          "draws_recentered_to_equal_host_point_estimator": true,
+          "estimator_weighting": "equal_host_within_cell_equal_cell_overall",
+          "maximum_absolute_recentering_error": 3.122502256758253e-16,
+          "multiplier_distribution": "iid_exponential_mean_one",
+          "one_global_multiplier_per_group_per_replicate": true,
+          "primary_sampling_unit": "host_spatial_group",
+          "radius_rows_kept_together_within_host": true,
+          "same_multiplier_applied_across_cells_and_radii": true,
+          "spatial_groups_crossing_cells": 1225
+        },
+        "bootstrap_draws": 10000,
+        "confidence_interval_sampling": [
+          -0.012764710407911085,
+          -0.009419751403982556
+        ],
+        "distinct_hosts": 4500,
+        "distinct_scenes": 49500,
+        "draw_count": 8,
+        "estimand": "equal_host_expected_physical_minus_expectation_detection_risk",
+        "estimate": -0.011007575757575758,
+        "finite_photon_draw_mcse": 8.866169476426603e-05,
+        "finite_photon_draw_mcse_if_unavailable": null,
+        "finite_photon_draw_mcse_status": "estimated_from_within_scene_draw_variance",
+        "finite_photon_draw_precision_gate_passed": true,
+        "gained_crossing_probability": 0.0012525252525252524,
+        "lost_crossing_probability": 0.01226010101010101,
+        "radius": [
+          {
+            "estimate": 0.00019444444444444443,
+            "simultaneous_interval": [
+              -0.004992361982202788,
+              0.005381250871091676
+            ],
+            "theta_e_arcsec": 0.5
+          },
+          {
+            "estimate": 0.0004166666666666667,
+            "simultaneous_interval": [
+              -0.004770139759980565,
+              0.005603473093313899
+            ],
+            "theta_e_arcsec": 0.75
+          },
+          {
+            "estimate": 0.0001388888888888889,
+            "simultaneous_interval": [
+              -0.005047917537758343,
+              0.005325695315536121
+            ],
+            "theta_e_arcsec": 1.0
+          },
+          {
+            "estimate": -0.0008888888888888889,
+            "simultaneous_interval": [
+              -0.0060756953155361205,
+              0.004297917537758343
+            ],
+            "theta_e_arcsec": 1.25
+          },
+          {
+            "estimate": -0.004111111111111111,
+            "simultaneous_interval": [
+              -0.009297917537758344,
+              0.0010756953155361204
+            ],
+            "theta_e_arcsec": 1.5
+          },
+          {
+            "estimate": -0.00786111111111111,
+            "simultaneous_interval": [
+              -0.013047917537758342,
+              -0.0026743046844638785
+            ],
+            "theta_e_arcsec": 1.75
+          },
+          {
+            "estimate": -0.015416666666666667,
+            "simultaneous_interval": [
+              -0.0206034730933139,
+              -0.010229860240019435
+            ],
+            "theta_e_arcsec": 2.0
+          },
+          {
+            "estimate": -0.02086111111111111,
+            "simultaneous_interval": [
+              -0.02604791753775834,
+              -0.01567430468446388
+            ],
+            "theta_e_arcsec": 2.25
+          },
+          {
+            "estimate": -0.02236111111111111,
+            "simultaneous_interval": [
+              -0.027547917537758343,
+              -0.017174304684463876
+            ],
+            "theta_e_arcsec": 2.5
+          },
+          {
+            "estimate": -0.023694444444444445,
+            "simultaneous_interval": [
+              -0.028881250871091675,
+              -0.018507638017797215
+            ],
+            "theta_e_arcsec": 2.75
+          },
+          {
+            "estimate": -0.02663888888888889,
+            "simultaneous_interval": [
+              -0.03182569531553612,
+              -0.02145208246224166
+            ],
+            "theta_e_arcsec": 3.0
+          }
+        ]
+      },
+      "psrc": {
+        "bootstrap_design": {
+          "draws_recentered_to_point_estimate": true,
+          "finite_draws": 10000,
+          "host_cell_weighting": "equal_fixed_cells",
+          "host_sampling_unit": "host_spatial_group_id",
+          "interval_deviation_inflation": 1.0,
+          "one_global_multiplier_per_source": true,
+          "one_global_multiplier_per_spatial_group": true,
+          "same_spatial_multiplier_across_all_host_cells": true,
+          "source_multiplier_normalized_within_source_stratum": true,
+          "source_sampling_unit": "source_id",
+          "source_strata_fixed": true,
+          "spatial_groups_crossing_host_cells": 250
+        },
+        "draw_count": 8,
+        "equivalence_claim_permitted": false,
+        "method_limit": "Percentile multiway multiplier intervals are design-based approximations; exact-design binary coverage is reported as a canary and does not prove universal coverage under all response-generating processes.",
+        "photon_mcse": 0.00030270836900472473,
+        "photon_mcse_passed": true,
+        "photon_mcse_target": 0.01,
+        "primary_estimand": "photon_averaged_risk_difference_sersic_minus_structured",
+        "primary_inference_complete": true,
+        "risk_difference_sersic_minus_structured": 0.001972853535353535,
+        "sersic_detections": 93,
+        "status": "complete",
+        "structured_detections": 68,
+        "threshold_conditional_95_interval": [
+          0.00047717545026653015,
+          0.004723748487039626
+        ],
+        "threshold_conditioning": "Point and interval condition on this checkpoint's threshold calibrated from the common final calibration population.",
+        "threshold_float32_bits": 3246103336
+      }
+    },
+    "balanced_tier_ab_seed42": {
+      "pnoise": {
+        "bootstrap_design": {
+          "cell_host_counts_preserved_in_point_estimator": true,
+          "cell_weights_preserved": true,
+          "draws_recentered_to_equal_host_point_estimator": true,
+          "estimator_weighting": "equal_host_within_cell_equal_cell_overall",
+          "maximum_absolute_recentering_error": 1.2663481374630692e-16,
+          "multiplier_distribution": "iid_exponential_mean_one",
+          "one_global_multiplier_per_group_per_replicate": true,
+          "primary_sampling_unit": "host_spatial_group",
+          "radius_rows_kept_together_within_host": true,
+          "same_multiplier_applied_across_cells_and_radii": true,
+          "spatial_groups_crossing_cells": 1225
+        },
+        "bootstrap_draws": 10000,
+        "confidence_interval_sampling": [
+          -0.008429843836116557,
+          -0.005573265503651579
+        ],
+        "distinct_hosts": 4500,
+        "distinct_scenes": 49500,
+        "draw_count": 8,
+        "estimand": "equal_host_expected_physical_minus_expectation_detection_risk",
+        "estimate": -0.006962121212121212,
+        "finite_photon_draw_mcse": 0.00012959175311662643,
+        "finite_photon_draw_mcse_if_unavailable": null,
+        "finite_photon_draw_mcse_status": "estimated_from_within_scene_draw_variance",
+        "finite_photon_draw_precision_gate_passed": true,
+        "gained_crossing_probability": 0.00444949494949495,
+        "lost_crossing_probability": 0.01141161616161616,
+        "radius": [
+          {
+            "estimate": 0.00025,
+            "simultaneous_interval": [
+              -0.004623579618714001,
+              0.0051235796187140015
+            ],
+            "theta_e_arcsec": 0.5
+          },
+          {
+            "estimate": 0.0014444444444444444,
+            "simultaneous_interval": [
+              -0.003429135174269557,
+              0.006318024063158446
+            ],
+            "theta_e_arcsec": 0.75
+          },
+          {
+            "estimate": 0.004527777777777778,
+            "simultaneous_interval": [
+              -0.0003458018409362232,
+              0.00940135739649178
+            ],
+            "theta_e_arcsec": 1.0
+          },
+          {
+            "estimate": 0.004666666666666667,
+            "simultaneous_interval": [
+              -0.00020691295204733427,
+              0.00954024628538067
+            ],
+            "theta_e_arcsec": 1.25
+          },
+          {
+            "estimate": -0.00019444444444444443,
+            "simultaneous_interval": [
+              -0.0050680240631584455,
+              0.004679135174269557
+            ],
+            "theta_e_arcsec": 1.5
+          },
+          {
+            "estimate": -0.008,
+            "simultaneous_interval": [
+              -0.012873579618714001,
+              -0.003126420381285999
+            ],
+            "theta_e_arcsec": 1.75
+          },
+          {
+            "estimate": -0.013166666666666667,
+            "simultaneous_interval": [
+              -0.018040246285380666,
+              -0.008293087047952665
+            ],
+            "theta_e_arcsec": 2.0
+          },
+          {
+            "estimate": -0.01563888888888889,
+            "simultaneous_interval": [
+              -0.02051246850760289,
+              -0.010765309270174888
+            ],
+            "theta_e_arcsec": 2.25
+          },
+          {
+            "estimate": -0.01725,
+            "simultaneous_interval": [
+              -0.022123579618714,
+              -0.012376420381286
+            ],
+            "theta_e_arcsec": 2.5
+          },
+          {
+            "estimate": -0.01661111111111111,
+            "simultaneous_interval": [
+              -0.02148469072982511,
+              -0.01173753149239711
+            ],
+            "theta_e_arcsec": 2.75
+          },
+          {
+            "estimate": -0.01661111111111111,
+            "simultaneous_interval": [
+              -0.02148469072982511,
+              -0.01173753149239711
+            ],
+            "theta_e_arcsec": 3.0
+          }
+        ]
+      },
+      "psrc": {
+        "bootstrap_design": {
+          "draws_recentered_to_point_estimate": true,
+          "finite_draws": 10000,
+          "host_cell_weighting": "equal_fixed_cells",
+          "host_sampling_unit": "host_spatial_group_id",
+          "interval_deviation_inflation": 1.0,
+          "one_global_multiplier_per_source": true,
+          "one_global_multiplier_per_spatial_group": true,
+          "same_spatial_multiplier_across_all_host_cells": true,
+          "source_multiplier_normalized_within_source_stratum": true,
+          "source_sampling_unit": "source_id",
+          "source_strata_fixed": true,
+          "spatial_groups_crossing_host_cells": 250
+        },
+        "draw_count": 8,
+        "equivalence_claim_permitted": false,
+        "method_limit": "Percentile multiway multiplier intervals are design-based approximations; exact-design binary coverage is reported as a canary and does not prove universal coverage under all response-generating processes.",
+        "photon_mcse": 0.0006017318788366935,
+        "photon_mcse_passed": true,
+        "photon_mcse_target": 0.01,
+        "primary_estimand": "photon_averaged_risk_difference_sersic_minus_structured",
+        "primary_inference_complete": true,
+        "risk_difference_sersic_minus_structured": 0.003708964646464646,
+        "sersic_detections": 209,
+        "status": "complete",
+        "structured_detections": 162,
+        "threshold_conditional_95_interval": [
+          0.001674555641835648,
+          0.006280806915850065
+        ],
+        "threshold_conditioning": "Point and interval condition on this checkpoint's threshold calibrated from the common final calibration population.",
+        "threshold_float32_bits": 1085815391
+      }
+    },
+    "step_tier_a_seed42": {
+      "pnoise": {
+        "bootstrap_design": {
+          "cell_host_counts_preserved_in_point_estimator": true,
+          "cell_weights_preserved": true,
+          "draws_recentered_to_equal_host_point_estimator": true,
+          "estimator_weighting": "equal_host_within_cell_equal_cell_overall",
+          "maximum_absolute_recentering_error": 1.8735013540549517e-16,
+          "multiplier_distribution": "iid_exponential_mean_one",
+          "one_global_multiplier_per_group_per_replicate": true,
+          "primary_sampling_unit": "host_spatial_group",
+          "radius_rows_kept_together_within_host": true,
+          "same_multiplier_applied_across_cells_and_radii": true,
+          "spatial_groups_crossing_cells": 1225
+        },
+        "bootstrap_draws": 10000,
+        "confidence_interval_sampling": [
+          -0.008915373442639176,
+          -0.006279346203176272
+        ],
+        "distinct_hosts": 4500,
+        "distinct_scenes": 49500,
+        "draw_count": 8,
+        "estimand": "equal_host_expected_physical_minus_expectation_detection_risk",
+        "estimate": -0.007545454545454545,
+        "finite_photon_draw_mcse": 6.21643112378342e-05,
+        "finite_photon_draw_mcse_if_unavailable": null,
+        "finite_photon_draw_mcse_status": "estimated_from_within_scene_draw_variance",
+        "finite_photon_draw_precision_gate_passed": true,
+        "gained_crossing_probability": 0.00042676767676767677,
+        "lost_crossing_probability": 0.007972222222222223,
+        "radius": [
+          {
+            "estimate": 0.0,
+            "simultaneous_interval": [
+              -0.004346684630202706,
+              0.004346684630202706
+            ],
+            "theta_e_arcsec": 0.5
+          },
+          {
+            "estimate": 5.555555555555556e-05,
+            "simultaneous_interval": [
+              -0.004291129074647151,
+              0.004402240185758261
+            ],
+            "theta_e_arcsec": 0.75
+          },
+          {
+            "estimate": 8.333333333333333e-05,
+            "simultaneous_interval": [
+              -0.004263351296869372,
+              0.00443001796353604
+            ],
+            "theta_e_arcsec": 1.0
+          },
+          {
+            "estimate": 0.00016666666666666666,
+            "simultaneous_interval": [
+              -0.004180017963536039,
+              0.0045133512968693725
+            ],
+            "theta_e_arcsec": 1.25
+          },
+          {
+            "estimate": -0.0012777777777777779,
+            "simultaneous_interval": [
+              -0.005624462407980484,
+              0.003068906852424928
+            ],
+            "theta_e_arcsec": 1.5
+          },
+          {
+            "estimate": -0.004694444444444445,
+            "simultaneous_interval": [
+              -0.009041129074647151,
+              -0.0003477598142417387
+            ],
+            "theta_e_arcsec": 1.75
+          },
+          {
+            "estimate": -0.0115,
+            "simultaneous_interval": [
+              -0.015846684630202706,
+              -0.007153315369797294
+            ],
+            "theta_e_arcsec": 2.0
+          },
+          {
+            "estimate": -0.014611111111111111,
+            "simultaneous_interval": [
+              -0.018957795741313815,
+              -0.010264426480908405
+            ],
+            "theta_e_arcsec": 2.25
+          },
+          {
+            "estimate": -0.015583333333333333,
+            "simultaneous_interval": [
+              -0.019930017963536037,
+              -0.011236648703130627
+            ],
+            "theta_e_arcsec": 2.5
+          },
+          {
+            "estimate": -0.017083333333333332,
+            "simultaneous_interval": [
+              -0.02143001796353604,
+              -0.012736648703130626
+            ],
+            "theta_e_arcsec": 2.75
+          },
+          {
+            "estimate": -0.018555555555555554,
+            "simultaneous_interval": [
+              -0.02290224018575826,
+              -0.014208870925352848
+            ],
+            "theta_e_arcsec": 3.0
+          }
+        ]
+      },
+      "psrc": {
+        "bootstrap_design": {
+          "draws_recentered_to_point_estimate": true,
+          "finite_draws": 10000,
+          "host_cell_weighting": "equal_fixed_cells",
+          "host_sampling_unit": "host_spatial_group_id",
+          "interval_deviation_inflation": 1.0,
+          "one_global_multiplier_per_source": true,
+          "one_global_multiplier_per_spatial_group": true,
+          "same_spatial_multiplier_across_all_host_cells": true,
+          "source_multiplier_normalized_within_source_stratum": true,
+          "source_sampling_unit": "source_id",
+          "source_strata_fixed": true,
+          "spatial_groups_crossing_host_cells": 250
+        },
+        "draw_count": 8,
+        "equivalence_claim_permitted": false,
+        "method_limit": "Percentile multiway multiplier intervals are design-based approximations; exact-design binary coverage is reported as a canary and does not prove universal coverage under all response-generating processes.",
+        "photon_mcse": 0.00010332286469507216,
+        "photon_mcse_passed": true,
+        "photon_mcse_target": 0.01,
+        "primary_estimand": "photon_averaged_risk_difference_sersic_minus_structured",
+        "primary_inference_complete": true,
+        "risk_difference_sersic_minus_structured": 0.00047348484848484844,
+        "sersic_detections": 41,
+        "status": "complete",
+        "structured_detections": 35,
+        "threshold_conditional_95_interval": [
+          -0.0006760350012744258,
+          0.0016480170964606976
+        ],
+        "threshold_conditioning": "Point and interval condition on this checkpoint's threshold calibrated from the common final calibration population.",
+        "threshold_float32_bits": 3242896586
+      }
+    },
+    "step_tier_ab_seed42": {
+      "pnoise": {
+        "bootstrap_design": {
+          "cell_host_counts_preserved_in_point_estimator": true,
+          "cell_weights_preserved": true,
+          "draws_recentered_to_equal_host_point_estimator": true,
+          "estimator_weighting": "equal_host_within_cell_equal_cell_overall",
+          "maximum_absolute_recentering_error": 3.122502256758253e-16,
+          "multiplier_distribution": "iid_exponential_mean_one",
+          "one_global_multiplier_per_group_per_replicate": true,
+          "primary_sampling_unit": "host_spatial_group",
+          "radius_rows_kept_together_within_host": true,
+          "same_multiplier_applied_across_cells_and_radii": true,
+          "spatial_groups_crossing_cells": 1225
+        },
+        "bootstrap_draws": 10000,
+        "confidence_interval_sampling": [
+          -0.010703272684706859,
+          -0.007653914047401158
+        ],
+        "distinct_hosts": 4500,
+        "distinct_scenes": 49500,
+        "draw_count": 8,
+        "estimand": "equal_host_expected_physical_minus_expectation_detection_risk",
+        "estimate": -0.009123737373737374,
+        "finite_photon_draw_mcse": 0.00011909297749740702,
+        "finite_photon_draw_mcse_if_unavailable": null,
+        "finite_photon_draw_mcse_status": "estimated_from_within_scene_draw_variance",
+        "finite_photon_draw_precision_gate_passed": true,
+        "gained_crossing_probability": 0.0033106060606060608,
+        "lost_crossing_probability": 0.012434343434343435,
+        "radius": [
+          {
+            "estimate": 0.0005833333333333334,
+            "simultaneous_interval": [
+              -0.004599066067880947,
+              0.005765732734547614
+            ],
+            "theta_e_arcsec": 0.5
+          },
+          {
+            "estimate": 0.001388888888888889,
+            "simultaneous_interval": [
+              -0.0037935105123253912,
+              0.00657128829010317
+            ],
+            "theta_e_arcsec": 0.75
+          },
+          {
+            "estimate": 0.0027222222222222222,
+            "simultaneous_interval": [
+              -0.002460177178992058,
+              0.007904621623436503
+            ],
+            "theta_e_arcsec": 1.0
+          },
+          {
+            "estimate": 0.0018611111111111111,
+            "simultaneous_interval": [
+              -0.0033212882901031693,
+              0.0070435105123253915
+            ],
+            "theta_e_arcsec": 1.25
+          },
+          {
+            "estimate": -0.0010833333333333333,
+            "simultaneous_interval": [
+              -0.006265732734547613,
+              0.0040990660678809476
+            ],
+            "theta_e_arcsec": 1.5
+          },
+          {
+            "estimate": -0.0065,
+            "simultaneous_interval": [
+              -0.01168239940121428,
+              -0.0013176005987857193
+            ],
+            "theta_e_arcsec": 1.75
+          },
+          {
+            "estimate": -0.014472222222222221,
+            "simultaneous_interval": [
+              -0.0196546216234365,
+              -0.009289822821007942
+            ],
+            "theta_e_arcsec": 2.0
+          },
+          {
+            "estimate": -0.017166666666666667,
+            "simultaneous_interval": [
+              -0.022349066067880948,
+              -0.011984267265452386
+            ],
+            "theta_e_arcsec": 2.25
+          },
+          {
+            "estimate": -0.021138888888888888,
+            "simultaneous_interval": [
+              -0.02632128829010317,
+              -0.015956489487674606
+            ],
+            "theta_e_arcsec": 2.5
+          },
+          {
+            "estimate": -0.023583333333333335,
+            "simultaneous_interval": [
+              -0.028765732734547616,
+              -0.018400933932119053
+            ],
+            "theta_e_arcsec": 2.75
+          },
+          {
+            "estimate": -0.022972222222222224,
+            "simultaneous_interval": [
+              -0.028154621623436505,
+              -0.017789822821007942
+            ],
+            "theta_e_arcsec": 3.0
+          }
+        ]
+      },
+      "psrc": {
+        "bootstrap_design": {
+          "draws_recentered_to_point_estimate": true,
+          "finite_draws": 10000,
+          "host_cell_weighting": "equal_fixed_cells",
+          "host_sampling_unit": "host_spatial_group_id",
+          "interval_deviation_inflation": 1.0,
+          "one_global_multiplier_per_source": true,
+          "one_global_multiplier_per_spatial_group": true,
+          "same_spatial_multiplier_across_all_host_cells": true,
+          "source_multiplier_normalized_within_source_stratum": true,
+          "source_sampling_unit": "source_id",
+          "source_strata_fixed": true,
+          "spatial_groups_crossing_host_cells": 250
+        },
+        "draw_count": 8,
+        "equivalence_claim_permitted": false,
+        "method_limit": "Percentile multiway multiplier intervals are design-based approximations; exact-design binary coverage is reported as a canary and does not prove universal coverage under all response-generating processes.",
+        "photon_mcse": 0.0004207579727300127,
+        "photon_mcse_passed": true,
+        "photon_mcse_target": 0.01,
+        "primary_estimand": "photon_averaged_risk_difference_sersic_minus_structured",
+        "primary_inference_complete": true,
+        "risk_difference_sersic_minus_structured": 0.002446338383838384,
+        "sersic_detections": 222,
+        "status": "complete",
+        "structured_detections": 191,
+        "threshold_conditional_95_interval": [
+          2.8646221263926025e-05,
+          0.005730610000895851
+        ],
+        "threshold_conditioning": "Point and interval condition on this checkpoint's threshold calibrated from the common final calibration population.",
+        "threshold_float32_bits": 1069724597
+      }
+    },
+    "tier_a_seed123": {
+      "pnoise": {
+        "bootstrap_design": {
+          "cell_host_counts_preserved_in_point_estimator": true,
+          "cell_weights_preserved": true,
+          "draws_recentered_to_equal_host_point_estimator": true,
+          "estimator_weighting": "equal_host_within_cell_equal_cell_overall",
+          "maximum_absolute_recentering_error": 1.8735013540549517e-16,
+          "multiplier_distribution": "iid_exponential_mean_one",
+          "one_global_multiplier_per_group_per_replicate": true,
+          "primary_sampling_unit": "host_spatial_group",
+          "radius_rows_kept_together_within_host": true,
+          "same_multiplier_applied_across_cells_and_radii": true,
+          "spatial_groups_crossing_cells": 1225
+        },
+        "bootstrap_draws": 10000,
+        "confidence_interval_sampling": [
+          -0.008596891953404743,
+          -0.006060447488658139
+        ],
+        "distinct_hosts": 4500,
+        "distinct_scenes": 49500,
+        "draw_count": 8,
+        "estimand": "equal_host_expected_physical_minus_expectation_detection_risk",
+        "estimate": -0.007272727272727273,
+        "finite_photon_draw_mcse": 9.214329752220758e-05,
+        "finite_photon_draw_mcse_if_unavailable": null,
+        "finite_photon_draw_mcse_status": "estimated_from_within_scene_draw_variance",
+        "finite_photon_draw_precision_gate_passed": true,
+        "gained_crossing_probability": 0.0016186868686868688,
+        "lost_crossing_probability": 0.008891414141414141,
+        "radius": [
+          {
+            "estimate": 0.0,
+            "simultaneous_interval": [
+              -0.004269115604625504,
+              0.004269115604625504
+            ],
+            "theta_e_arcsec": 0.5
+          },
+          {
+            "estimate": -5.555555555555556e-05,
+            "simultaneous_interval": [
+              -0.004324671160181059,
+              0.0042135600490699485
+            ],
+            "theta_e_arcsec": 0.75
+          },
+          {
+            "estimate": -0.00025,
+            "simultaneous_interval": [
+              -0.004519115604625504,
+              0.0040191156046255035
+            ],
+            "theta_e_arcsec": 1.0
+          },
+          {
+            "estimate": -0.00022222222222222223,
+            "simultaneous_interval": [
+              -0.004491337826847726,
+              0.004046893382403281
+            ],
+            "theta_e_arcsec": 1.25
+          },
+          {
+            "estimate": -0.0025555555555555557,
+            "simultaneous_interval": [
+              -0.006824671160181059,
+              0.001713560049069948
+            ],
+            "theta_e_arcsec": 1.5
+          },
+          {
+            "estimate": -0.004805555555555556,
+            "simultaneous_interval": [
+              -0.009074671160181059,
+              -0.0005364399509300522
+            ],
+            "theta_e_arcsec": 1.75
+          },
+          {
+            "estimate": -0.010361111111111111,
+            "simultaneous_interval": [
+              -0.014630226715736615,
+              -0.006091995506485607
+            ],
+            "theta_e_arcsec": 2.0
+          },
+          {
+            "estimate": -0.012527777777777778,
+            "simultaneous_interval": [
+              -0.016796893382403283,
+              -0.008258662173152274
+            ],
+            "theta_e_arcsec": 2.25
+          },
+          {
+            "estimate": -0.015027777777777777,
+            "simultaneous_interval": [
+              -0.01929689338240328,
+              -0.010758662173152272
+            ],
+            "theta_e_arcsec": 2.5
+          },
+          {
+            "estimate": -0.017694444444444443,
+            "simultaneous_interval": [
+              -0.021963560049069946,
+              -0.01342532883981894
+            ],
+            "theta_e_arcsec": 2.75
+          },
+          {
+            "estimate": -0.0165,
+            "simultaneous_interval": [
+              -0.020769115604625504,
+              -0.012230884395374498
+            ],
+            "theta_e_arcsec": 3.0
+          }
+        ]
+      },
+      "psrc": {
+        "bootstrap_design": {
+          "draws_recentered_to_point_estimate": true,
+          "finite_draws": 10000,
+          "host_cell_weighting": "equal_fixed_cells",
+          "host_sampling_unit": "host_spatial_group_id",
+          "interval_deviation_inflation": 1.0,
+          "one_global_multiplier_per_source": true,
+          "one_global_multiplier_per_spatial_group": true,
+          "same_spatial_multiplier_across_all_host_cells": true,
+          "source_multiplier_normalized_within_source_stratum": true,
+          "source_sampling_unit": "source_id",
+          "source_strata_fixed": true,
+          "spatial_groups_crossing_host_cells": 250
+        },
+        "draw_count": 8,
+        "equivalence_claim_permitted": false,
+        "method_limit": "Percentile multiway multiplier intervals are design-based approximations; exact-design binary coverage is reported as a canary and does not prove universal coverage under all response-generating processes.",
+        "photon_mcse": 0.0007058295383522063,
+        "photon_mcse_passed": true,
+        "photon_mcse_target": 0.01,
+        "primary_estimand": "photon_averaged_risk_difference_sersic_minus_structured",
+        "primary_inference_complete": true,
+        "risk_difference_sersic_minus_structured": 0.002525252525252525,
+        "sersic_detections": 137,
+        "status": "complete",
+        "structured_detections": 105,
+        "threshold_conditional_95_interval": [
+          0.0006604160739892962,
+          0.005423749968676065
+        ],
+        "threshold_conditioning": "Point and interval condition on this checkpoint's threshold calibrated from the common final calibration population.",
+        "threshold_float32_bits": 3243096033
+      }
+    },
+    "tier_a_seed2026": {
+      "pnoise": {
+        "bootstrap_design": {
+          "cell_host_counts_preserved_in_point_estimator": true,
+          "cell_weights_preserved": true,
+          "draws_recentered_to_equal_host_point_estimator": true,
+          "estimator_weighting": "equal_host_within_cell_equal_cell_overall",
+          "maximum_absolute_recentering_error": 1.942890293094024e-16,
+          "multiplier_distribution": "iid_exponential_mean_one",
+          "one_global_multiplier_per_group_per_replicate": true,
+          "primary_sampling_unit": "host_spatial_group",
+          "radius_rows_kept_together_within_host": true,
+          "same_multiplier_applied_across_cells_and_radii": true,
+          "spatial_groups_crossing_cells": 1225
+        },
+        "bootstrap_draws": 10000,
+        "confidence_interval_sampling": [
+          -0.008036154993522941,
+          -0.005561162910029784
+        ],
+        "distinct_hosts": 4500,
+        "distinct_scenes": 49500,
+        "draw_count": 8,
+        "estimand": "equal_host_expected_physical_minus_expectation_detection_risk",
+        "estimate": -0.006747474747474747,
+        "finite_photon_draw_mcse": 8.691314007404336e-05,
+        "finite_photon_draw_mcse_if_unavailable": null,
+        "finite_photon_draw_mcse_status": "estimated_from_within_scene_draw_variance",
+        "finite_photon_draw_precision_gate_passed": true,
+        "gained_crossing_probability": 0.0013232323232323232,
+        "lost_crossing_probability": 0.00807070707070707,
+        "radius": [
+          {
+            "estimate": 2.777777777777778e-05,
+            "simultaneous_interval": [
+              -0.004128597117032781,
+              0.004184152672588337
+            ],
+            "theta_e_arcsec": 0.5
+          },
+          {
+            "estimate": 0.00016666666666666666,
+            "simultaneous_interval": [
+              -0.0039897082281438925,
+              0.0043230415614772255
+            ],
+            "theta_e_arcsec": 0.75
+          },
+          {
+            "estimate": 0.00019444444444444443,
+            "simultaneous_interval": [
+              -0.003961930450366115,
+              0.004350819339255003
+            ],
+            "theta_e_arcsec": 1.0
+          },
+          {
+            "estimate": -0.00022222222222222223,
+            "simultaneous_interval": [
+              -0.004378597117032782,
+              0.003934152672588336
+            ],
+            "theta_e_arcsec": 1.25
+          },
+          {
+            "estimate": -0.0014722222222222222,
+            "simultaneous_interval": [
+              -0.005628597117032781,
+              0.002684152672588337
+            ],
+            "theta_e_arcsec": 1.5
+          },
+          {
+            "estimate": -0.005055555555555555,
+            "simultaneous_interval": [
+              -0.009211930450366114,
+              -0.0008991806607449963
+            ],
+            "theta_e_arcsec": 1.75
+          },
+          {
+            "estimate": -0.007055555555555555,
+            "simultaneous_interval": [
+              -0.011211930450366114,
+              -0.0028991806607449964
+            ],
+            "theta_e_arcsec": 2.0
+          },
+          {
+            "estimate": -0.011666666666666667,
+            "simultaneous_interval": [
+              -0.015823041561477225,
+              -0.007510291771856108
+            ],
+            "theta_e_arcsec": 2.25
+          },
+          {
+            "estimate": -0.01597222222222222,
+            "simultaneous_interval": [
+              -0.02012859711703278,
+              -0.011815847327411661
+            ],
+            "theta_e_arcsec": 2.5
+          },
+          {
+            "estimate": -0.018111111111111113,
+            "simultaneous_interval": [
+              -0.022267486005921672,
+              -0.013954736216300553
+            ],
+            "theta_e_arcsec": 2.75
+          },
+          {
+            "estimate": -0.015055555555555556,
+            "simultaneous_interval": [
+              -0.019211930450366115,
+              -0.010899180660744998
+            ],
+            "theta_e_arcsec": 3.0
+          }
+        ]
+      },
+      "psrc": {
+        "bootstrap_design": {
+          "draws_recentered_to_point_estimate": true,
+          "finite_draws": 10000,
+          "host_cell_weighting": "equal_fixed_cells",
+          "host_sampling_unit": "host_spatial_group_id",
+          "interval_deviation_inflation": 1.0,
+          "one_global_multiplier_per_source": true,
+          "one_global_multiplier_per_spatial_group": true,
+          "same_spatial_multiplier_across_all_host_cells": true,
+          "source_multiplier_normalized_within_source_stratum": true,
+          "source_sampling_unit": "source_id",
+          "source_strata_fixed": true,
+          "spatial_groups_crossing_host_cells": 250
+        },
+        "draw_count": 8,
+        "equivalence_claim_permitted": false,
+        "method_limit": "Percentile multiway multiplier intervals are design-based approximations; exact-design binary coverage is reported as a canary and does not prove universal coverage under all response-generating processes.",
+        "photon_mcse": 0.0003361303101523172,
+        "photon_mcse_passed": true,
+        "photon_mcse_target": 0.01,
+        "primary_estimand": "photon_averaged_risk_difference_sersic_minus_structured",
+        "primary_inference_complete": true,
+        "risk_difference_sersic_minus_structured": 0.0008680555555555555,
+        "sersic_detections": 98,
+        "status": "complete",
+        "structured_detections": 87,
+        "threshold_conditional_95_interval": [
+          -0.0003044790087271964,
+          0.0024171236889531803
+        ],
+        "threshold_conditioning": "Point and interval condition on this checkpoint's threshold calibrated from the common final calibration population.",
+        "threshold_float32_bits": 3243573907
+      }
+    },
+    "tier_a_seed2027": {
+      "pnoise": {
+        "bootstrap_design": {
+          "cell_host_counts_preserved_in_point_estimator": true,
+          "cell_weights_preserved": true,
+          "draws_recentered_to_equal_host_point_estimator": true,
+          "estimator_weighting": "equal_host_within_cell_equal_cell_overall",
+          "maximum_absolute_recentering_error": 1.3877787807814457e-16,
+          "multiplier_distribution": "iid_exponential_mean_one",
+          "one_global_multiplier_per_group_per_replicate": true,
+          "primary_sampling_unit": "host_spatial_group",
+          "radius_rows_kept_together_within_host": true,
+          "same_multiplier_applied_across_cells_and_radii": true,
+          "spatial_groups_crossing_cells": 1225
+        },
+        "bootstrap_draws": 10000,
+        "confidence_interval_sampling": [
+          -0.008557983274402398,
+          -0.005983969097567845
+        ],
+        "distinct_hosts": 4500,
+        "distinct_scenes": 49500,
+        "draw_count": 8,
+        "estimand": "equal_host_expected_physical_minus_expectation_detection_risk",
+        "estimate": -0.007204545454545455,
+        "finite_photon_draw_mcse": 7.241923099061665e-05,
+        "finite_photon_draw_mcse_if_unavailable": null,
+        "finite_photon_draw_mcse_status": "estimated_from_within_scene_draw_variance",
+        "finite_photon_draw_precision_gate_passed": true,
+        "gained_crossing_probability": 0.00075,
+        "lost_crossing_probability": 0.007954545454545454,
+        "radius": [
+          {
+            "estimate": 8.333333333333333e-05,
+            "simultaneous_interval": [
+              -0.004301956658345939,
+              0.004468623325012607
+            ],
+            "theta_e_arcsec": 0.5
+          },
+          {
+            "estimate": 2.777777777777778e-05,
+            "simultaneous_interval": [
+              -0.0043575122139014955,
+              0.004413067769457051
+            ],
+            "theta_e_arcsec": 0.75
+          },
+          {
+            "estimate": 8.333333333333333e-05,
+            "simultaneous_interval": [
+              -0.004301956658345939,
+              0.004468623325012607
+            ],
+            "theta_e_arcsec": 1.0
+          },
+          {
+            "estimate": -0.00044444444444444447,
+            "simultaneous_interval": [
+              -0.0048297344361237175,
+              0.003940845547234829
+            ],
+            "theta_e_arcsec": 1.25
+          },
+          {
+            "estimate": -0.002,
+            "simultaneous_interval": [
+              -0.006385289991679273,
+              0.002385289991679273
+            ],
+            "theta_e_arcsec": 1.5
+          },
+          {
+            "estimate": -0.00525,
+            "simultaneous_interval": [
+              -0.009635289991679273,
+              -0.0008647100083207272
+            ],
+            "theta_e_arcsec": 1.75
+          },
+          {
+            "estimate": -0.00836111111111111,
+            "simultaneous_interval": [
+              -0.012746401102790385,
+              -0.003975821119431838
+            ],
+            "theta_e_arcsec": 2.0
+          },
+          {
+            "estimate": -0.011583333333333333,
+            "simultaneous_interval": [
+              -0.015968623325012605,
+              -0.0071980433416540595
+            ],
+            "theta_e_arcsec": 2.25
+          },
+          {
+            "estimate": -0.015416666666666667,
+            "simultaneous_interval": [
+              -0.01980195665834594,
+              -0.011031376674987395
+            ],
+            "theta_e_arcsec": 2.5
+          },
+          {
+            "estimate": -0.017194444444444443,
+            "simultaneous_interval": [
+              -0.021579734436123717,
+              -0.012809154452765169
+            ],
+            "theta_e_arcsec": 2.75
+          },
+          {
+            "estimate": -0.019194444444444445,
+            "simultaneous_interval": [
+              -0.02357973443612372,
+              -0.01480915445276517
+            ],
+            "theta_e_arcsec": 3.0
+          }
+        ]
+      },
+      "psrc": {
+        "bootstrap_design": {
+          "draws_recentered_to_point_estimate": true,
+          "finite_draws": 10000,
+          "host_cell_weighting": "equal_fixed_cells",
+          "host_sampling_unit": "host_spatial_group_id",
+          "interval_deviation_inflation": 1.0,
+          "one_global_multiplier_per_source": true,
+          "one_global_multiplier_per_spatial_group": true,
+          "same_spatial_multiplier_across_all_host_cells": true,
+          "source_multiplier_normalized_within_source_stratum": true,
+          "source_sampling_unit": "source_id",
+          "source_strata_fixed": true,
+          "spatial_groups_crossing_host_cells": 250
+        },
+        "draw_count": 8,
+        "equivalence_claim_permitted": false,
+        "method_limit": "Percentile multiway multiplier intervals are design-based approximations; exact-design binary coverage is reported as a canary and does not prove universal coverage under all response-generating processes.",
+        "photon_mcse": 0.00041329145878028854,
+        "photon_mcse_passed": true,
+        "photon_mcse_target": 0.01,
+        "primary_estimand": "photon_averaged_risk_difference_sersic_minus_structured",
+        "primary_inference_complete": true,
+        "risk_difference_sersic_minus_structured": 0.0012626262626262627,
+        "sersic_detections": 57,
+        "status": "complete",
+        "structured_detections": 41,
+        "threshold_conditional_95_interval": [
+          -0.00013765275166603547,
+          0.0031961014370652917
+        ],
+        "threshold_conditioning": "Point and interval condition on this checkpoint's threshold calibrated from the common final calibration population.",
+        "threshold_float32_bits": 3241886412
+      }
+    },
+    "tier_a_seed42": {
+      "pnoise": {
+        "bootstrap_design": {
+          "cell_host_counts_preserved_in_point_estimator": true,
+          "cell_weights_preserved": true,
+          "draws_recentered_to_equal_host_point_estimator": true,
+          "estimator_weighting": "equal_host_within_cell_equal_cell_overall",
+          "maximum_absolute_recentering_error": 3.122502256758253e-16,
+          "multiplier_distribution": "iid_exponential_mean_one",
+          "one_global_multiplier_per_group_per_replicate": true,
+          "primary_sampling_unit": "host_spatial_group",
+          "radius_rows_kept_together_within_host": true,
+          "same_multiplier_applied_across_cells_and_radii": true,
+          "spatial_groups_crossing_cells": 1225
+        },
+        "bootstrap_draws": 10000,
+        "confidence_interval_sampling": [
+          -0.0093839398007333,
+          -0.006703990249929568
+        ],
+        "distinct_hosts": 4500,
+        "distinct_scenes": 49500,
+        "draw_count": 8,
+        "estimand": "equal_host_expected_physical_minus_expectation_detection_risk",
+        "estimate": -0.008,
+        "finite_photon_draw_mcse": 9.132899656578347e-05,
+        "finite_photon_draw_mcse_if_unavailable": null,
+        "finite_photon_draw_mcse_status": "estimated_from_within_scene_draw_variance",
+        "finite_photon_draw_precision_gate_passed": true,
+        "gained_crossing_probability": 0.0012373737373737373,
+        "lost_crossing_probability": 0.009237373737373737,
+        "radius": [
+          {
+            "estimate": -8.333333333333333e-05,
+            "simultaneous_interval": [
+              -0.004498325138268786,
+              0.004331658471602119
+            ],
+            "theta_e_arcsec": 0.5
+          },
+          {
+            "estimate": 2.777777777777778e-05,
+            "simultaneous_interval": [
+              -0.004387214027157675,
+              0.00444276958271323
+            ],
+            "theta_e_arcsec": 0.75
+          },
+          {
+            "estimate": 0.00047222222222222224,
+            "simultaneous_interval": [
+              -0.003942769582713231,
+              0.0048872140271576745
+            ],
+            "theta_e_arcsec": 1.0
+          },
+          {
+            "estimate": 0.0005277777777777777,
+            "simultaneous_interval": [
+              -0.003887214027157675,
+              0.004942769582713231
+            ],
+            "theta_e_arcsec": 1.25
+          },
+          {
+            "estimate": -0.0018055555555555555,
+            "simultaneous_interval": [
+              -0.0062205473604910085,
+              0.002609436249379897
+            ],
+            "theta_e_arcsec": 1.5
+          },
+          {
+            "estimate": -0.005638888888888889,
+            "simultaneous_interval": [
+              -0.010053880693824341,
+              -0.001223897083953436
+            ],
+            "theta_e_arcsec": 1.75
+          },
+          {
+            "estimate": -0.011222222222222222,
+            "simultaneous_interval": [
+              -0.015637214027157675,
+              -0.006807230417286769
+            ],
+            "theta_e_arcsec": 2.0
+          },
+          {
+            "estimate": -0.014305555555555556,
+            "simultaneous_interval": [
+              -0.01872054736049101,
+              -0.009890563750620102
+            ],
+            "theta_e_arcsec": 2.25
+          },
+          {
+            "estimate": -0.017805555555555557,
+            "simultaneous_interval": [
+              -0.02222054736049101,
+              -0.013390563750620105
+            ],
+            "theta_e_arcsec": 2.5
+          },
+          {
+            "estimate": -0.01886111111111111,
+            "simultaneous_interval": [
+              -0.02327610291604656,
+              -0.014446119306175658
+            ],
+            "theta_e_arcsec": 2.75
+          },
+          {
+            "estimate": -0.019305555555555555,
+            "simultaneous_interval": [
+              -0.023720547360491007,
+              -0.014890563750620103
+            ],
+            "theta_e_arcsec": 3.0
+          }
+        ]
+      },
+      "psrc": {
+        "bootstrap_design": {
+          "draws_recentered_to_point_estimate": true,
+          "finite_draws": 10000,
+          "host_cell_weighting": "equal_fixed_cells",
+          "host_sampling_unit": "host_spatial_group_id",
+          "interval_deviation_inflation": 1.0,
+          "one_global_multiplier_per_source": true,
+          "one_global_multiplier_per_spatial_group": true,
+          "same_spatial_multiplier_across_all_host_cells": true,
+          "source_multiplier_normalized_within_source_stratum": true,
+          "source_sampling_unit": "source_id",
+          "source_strata_fixed": true,
+          "spatial_groups_crossing_host_cells": 250
+        },
+        "draw_count": 8,
+        "equivalence_claim_permitted": false,
+        "method_limit": "Percentile multiway multiplier intervals are design-based approximations; exact-design binary coverage is reported as a canary and does not prove universal coverage under all response-generating processes.",
+        "photon_mcse": 0.00033613031015231726,
+        "photon_mcse_passed": true,
+        "photon_mcse_target": 0.01,
+        "primary_estimand": "photon_averaged_risk_difference_sersic_minus_structured",
+        "primary_inference_complete": true,
+        "risk_difference_sersic_minus_structured": 0.0022885101010101014,
+        "sersic_detections": 145,
+        "status": "complete",
+        "structured_detections": 116,
+        "threshold_conditional_95_interval": [
+          0.0007432913928451446,
+          0.004835904890917465
+        ],
+        "threshold_conditioning": "Point and interval condition on this checkpoint's threshold calibrated from the common final calibration population.",
+        "threshold_float32_bits": 3244242011
+      }
+    },
+    "tier_a_seed7": {
+      "pnoise": {
+        "bootstrap_design": {
+          "cell_host_counts_preserved_in_point_estimator": true,
+          "cell_weights_preserved": true,
+          "draws_recentered_to_equal_host_point_estimator": true,
+          "estimator_weighting": "equal_host_within_cell_equal_cell_overall",
+          "maximum_absolute_recentering_error": 3.469446951953614e-16,
+          "multiplier_distribution": "iid_exponential_mean_one",
+          "one_global_multiplier_per_group_per_replicate": true,
+          "primary_sampling_unit": "host_spatial_group",
+          "radius_rows_kept_together_within_host": true,
+          "same_multiplier_applied_across_cells_and_radii": true,
+          "spatial_groups_crossing_cells": 1225
+        },
+        "bootstrap_draws": 10000,
+        "confidence_interval_sampling": [
+          -0.010139950460848667,
+          -0.007396587582141798
+        ],
+        "distinct_hosts": 4500,
+        "distinct_scenes": 49500,
+        "draw_count": 8,
+        "estimand": "equal_host_expected_physical_minus_expectation_detection_risk",
+        "estimate": -0.008704545454545454,
+        "finite_photon_draw_mcse": 7.718118864838961e-05,
+        "finite_photon_draw_mcse_if_unavailable": null,
+        "finite_photon_draw_mcse_status": "estimated_from_within_scene_draw_variance",
+        "finite_photon_draw_precision_gate_passed": true,
+        "gained_crossing_probability": 0.0007222222222222222,
+        "lost_crossing_probability": 0.009426767676767677,
+        "radius": [
+          {
+            "estimate": 0.0,
+            "simultaneous_interval": [
+              -0.004709311207531455,
+              0.004709311207531455
+            ],
+            "theta_e_arcsec": 0.5
+          },
+          {
+            "estimate": 2.777777777777778e-05,
+            "simultaneous_interval": [
+              -0.004681533429753677,
+              0.004737088985309232
+            ],
+            "theta_e_arcsec": 0.75
+          },
+          {
+            "estimate": 0.00011111111111111112,
+            "simultaneous_interval": [
+              -0.004598200096420343,
+              0.004820422318642566
+            ],
+            "theta_e_arcsec": 1.0
+          },
+          {
+            "estimate": -0.00044444444444444447,
+            "simultaneous_interval": [
+              -0.005153755651975899,
+              0.00426486676308701
+            ],
+            "theta_e_arcsec": 1.25
+          },
+          {
+            "estimate": -0.0025555555555555557,
+            "simultaneous_interval": [
+              -0.00726486676308701,
+              0.002153755651975899
+            ],
+            "theta_e_arcsec": 1.5
+          },
+          {
+            "estimate": -0.0053055555555555555,
+            "simultaneous_interval": [
+              -0.010014866763087011,
+              -0.000596244348024101
+            ],
+            "theta_e_arcsec": 1.75
+          },
+          {
+            "estimate": -0.010861111111111111,
+            "simultaneous_interval": [
+              -0.015570422318642566,
+              -0.006151799903579657
+            ],
+            "theta_e_arcsec": 2.0
+          },
+          {
+            "estimate": -0.0165,
+            "simultaneous_interval": [
+              -0.021209311207531455,
+              -0.011790688792468546
+            ],
+            "theta_e_arcsec": 2.25
+          },
+          {
+            "estimate": -0.019555555555555555,
+            "simultaneous_interval": [
+              -0.02426486676308701,
+              -0.0148462443480241
+            ],
+            "theta_e_arcsec": 2.5
+          },
+          {
+            "estimate": -0.02036111111111111,
+            "simultaneous_interval": [
+              -0.025070422318642566,
+              -0.015651799903579657
+            ],
+            "theta_e_arcsec": 2.75
+          },
+          {
+            "estimate": -0.020305555555555556,
+            "simultaneous_interval": [
+              -0.02501486676308701,
+              -0.015596244348024101
+            ],
+            "theta_e_arcsec": 3.0
+          }
+        ]
+      },
+      "psrc": {
+        "bootstrap_design": {
+          "draws_recentered_to_point_estimate": true,
+          "finite_draws": 10000,
+          "host_cell_weighting": "equal_fixed_cells",
+          "host_sampling_unit": "host_spatial_group_id",
+          "interval_deviation_inflation": 1.0,
+          "one_global_multiplier_per_source": true,
+          "one_global_multiplier_per_spatial_group": true,
+          "same_spatial_multiplier_across_all_host_cells": true,
+          "source_multiplier_normalized_within_source_stratum": true,
+          "source_sampling_unit": "source_id",
+          "source_strata_fixed": true,
+          "spatial_groups_crossing_host_cells": 250
+        },
+        "draw_count": 8,
+        "equivalence_claim_permitted": false,
+        "method_limit": "Percentile multiway multiplier intervals are design-based approximations; exact-design binary coverage is reported as a canary and does not prove universal coverage under all response-generating processes.",
+        "photon_mcse": 0.0002782053273641113,
+        "photon_mcse_passed": true,
+        "photon_mcse_target": 0.01,
+        "primary_estimand": "photon_averaged_risk_difference_sersic_minus_structured",
+        "primary_inference_complete": true,
+        "risk_difference_sersic_minus_structured": 0.0005523989898989899,
+        "sersic_detections": 50,
+        "status": "complete",
+        "structured_detections": 43,
+        "threshold_conditional_95_interval": [
+          -0.0008881286320626288,
+          0.002317128016956838
+        ],
+        "threshold_conditioning": "Point and interval condition on this checkpoint's threshold calibrated from the common final calibration population.",
+        "threshold_float32_bits": 3245264717
+      }
+    },
+    "tier_ab_seed123": {
+      "pnoise": {
+        "bootstrap_design": {
+          "cell_host_counts_preserved_in_point_estimator": true,
+          "cell_weights_preserved": true,
+          "draws_recentered_to_equal_host_point_estimator": true,
+          "estimator_weighting": "equal_host_within_cell_equal_cell_overall",
+          "maximum_absolute_recentering_error": 4.2327252813834093e-16,
+          "multiplier_distribution": "iid_exponential_mean_one",
+          "one_global_multiplier_per_group_per_replicate": true,
+          "primary_sampling_unit": "host_spatial_group",
+          "radius_rows_kept_together_within_host": true,
+          "same_multiplier_applied_across_cells_and_radii": true,
+          "spatial_groups_crossing_cells": 1225
+        },
+        "bootstrap_draws": 10000,
+        "confidence_interval_sampling": [
+          -0.011149224036801717,
+          -0.00786066252232662
+        ],
+        "distinct_hosts": 4500,
+        "distinct_scenes": 49500,
+        "draw_count": 8,
+        "estimand": "equal_host_expected_physical_minus_expectation_detection_risk",
+        "estimate": -0.009444444444444445,
+        "finite_photon_draw_mcse": 0.00013417488803296298,
+        "finite_photon_draw_mcse_if_unavailable": null,
+        "finite_photon_draw_mcse_status": "estimated_from_within_scene_draw_variance",
+        "finite_photon_draw_precision_gate_passed": true,
+        "gained_crossing_probability": 0.004542929292929293,
+        "lost_crossing_probability": 0.013987373737373738,
+        "radius": [
+          {
+            "estimate": 0.00030555555555555555,
+            "simultaneous_interval": [
+              -0.005170360520720319,
+              0.00578147163183143
+            ],
+            "theta_e_arcsec": 0.5
+          },
+          {
+            "estimate": 0.0019722222222222224,
+            "simultaneous_interval": [
+              -0.003503693854053652,
+              0.007448138298498097
+            ],
+            "theta_e_arcsec": 0.75
+          },
+          {
+            "estimate": 0.005916666666666666,
+            "simultaneous_interval": [
+              0.000440750590390792,
+              0.011392582742942541
+            ],
+            "theta_e_arcsec": 1.0
+          },
+          {
+            "estimate": 0.004916666666666666,
+            "simultaneous_interval": [
+              -0.000559249409609208,
+              0.010392582742942542
+            ],
+            "theta_e_arcsec": 1.25
+          },
+          {
+            "estimate": 0.0024444444444444444,
+            "simultaneous_interval": [
+              -0.00303147163183143,
+              0.007920360520720319
+            ],
+            "theta_e_arcsec": 1.5
+          },
+          {
+            "estimate": -0.007472222222222222,
+            "simultaneous_interval": [
+              -0.012948138298498096,
+              -0.0019963061459463477
+            ],
+            "theta_e_arcsec": 1.75
+          },
+          {
+            "estimate": -0.014,
+            "simultaneous_interval": [
+              -0.019475916076275874,
+              -0.008524083923724127
+            ],
+            "theta_e_arcsec": 2.0
+          },
+          {
+            "estimate": -0.02033333333333333,
+            "simultaneous_interval": [
+              -0.025809249409609207,
+              -0.014857417257057456
+            ],
+            "theta_e_arcsec": 2.25
+          },
+          {
+            "estimate": -0.025694444444444443,
+            "simultaneous_interval": [
+              -0.03117036052072032,
+              -0.020218528368168568
+            ],
+            "theta_e_arcsec": 2.5
+          },
+          {
+            "estimate": -0.02738888888888889,
+            "simultaneous_interval": [
+              -0.032864804965164765,
+              -0.021912972812613014
+            ],
+            "theta_e_arcsec": 2.75
+          },
+          {
+            "estimate": -0.024555555555555556,
+            "simultaneous_interval": [
+              -0.03003147163183143,
+              -0.01907963947927968
+            ],
+            "theta_e_arcsec": 3.0
+          }
+        ]
+      },
+      "psrc": {
+        "bootstrap_design": {
+          "draws_recentered_to_point_estimate": true,
+          "finite_draws": 10000,
+          "host_cell_weighting": "equal_fixed_cells",
+          "host_sampling_unit": "host_spatial_group_id",
+          "interval_deviation_inflation": 1.0,
+          "one_global_multiplier_per_source": true,
+          "one_global_multiplier_per_spatial_group": true,
+          "same_spatial_multiplier_across_all_host_cells": true,
+          "source_multiplier_normalized_within_source_stratum": true,
+          "source_sampling_unit": "source_id",
+          "source_strata_fixed": true,
+          "spatial_groups_crossing_host_cells": 250
+        },
+        "draw_count": 8,
+        "equivalence_claim_permitted": false,
+        "method_limit": "Percentile multiway multiplier intervals are design-based approximations; exact-design binary coverage is reported as a canary and does not prove universal coverage under all response-generating processes.",
+        "photon_mcse": 0.0009066544581025928,
+        "photon_mcse_passed": true,
+        "photon_mcse_target": 0.01,
+        "primary_estimand": "photon_averaged_risk_difference_sersic_minus_structured",
+        "primary_inference_complete": true,
+        "risk_difference_sersic_minus_structured": 0.004261363636363636,
+        "sersic_detections": 267,
+        "status": "complete",
+        "structured_detections": 213,
+        "threshold_conditional_95_interval": [
+          0.001951972928817997,
+          0.007667518131641724
+        ],
+        "threshold_conditioning": "Point and interval condition on this checkpoint's threshold calibrated from the common final calibration population.",
+        "threshold_float32_bits": 1077650966
+      }
+    },
+    "tier_ab_seed2026": {
+      "pnoise": {
+        "bootstrap_design": {
+          "cell_host_counts_preserved_in_point_estimator": true,
+          "cell_weights_preserved": true,
+          "draws_recentered_to_equal_host_point_estimator": true,
+          "estimator_weighting": "equal_host_within_cell_equal_cell_overall",
+          "maximum_absolute_recentering_error": 2.3245294578089215e-16,
+          "multiplier_distribution": "iid_exponential_mean_one",
+          "one_global_multiplier_per_group_per_replicate": true,
+          "primary_sampling_unit": "host_spatial_group",
+          "radius_rows_kept_together_within_host": true,
+          "same_multiplier_applied_across_cells_and_radii": true,
+          "spatial_groups_crossing_cells": 1225
+        },
+        "bootstrap_draws": 10000,
+        "confidence_interval_sampling": [
+          -0.009748346082461489,
+          -0.0065795432021879055
+        ],
+        "distinct_hosts": 4500,
+        "distinct_scenes": 49500,
+        "draw_count": 8,
+        "estimand": "equal_host_expected_physical_minus_expectation_detection_risk",
+        "estimate": -0.008143939393939394,
+        "finite_photon_draw_mcse": 0.00014291679996799014,
+        "finite_photon_draw_mcse_if_unavailable": null,
+        "finite_photon_draw_mcse_status": "estimated_from_within_scene_draw_variance",
+        "finite_photon_draw_precision_gate_passed": true,
+        "gained_crossing_probability": 0.005454545454545455,
+        "lost_crossing_probability": 0.01359848484848485,
+        "radius": [
+          {
+            "estimate": 0.00125,
+            "simultaneous_interval": [
+              -0.00408503550638582,
+              0.006585035506385821
+            ],
+            "theta_e_arcsec": 0.5
+          },
+          {
+            "estimate": 0.002111111111111111,
+            "simultaneous_interval": [
+              -0.0032239243952747096,
+              0.007446146617496931
+            ],
+            "theta_e_arcsec": 0.75
+          },
+          {
+            "estimate": 0.005805555555555555,
+            "simultaneous_interval": [
+              0.00047052004916973457,
+              0.011140591061941376
+            ],
+            "theta_e_arcsec": 1.0
+          },
+          {
+            "estimate": 0.005805555555555555,
+            "simultaneous_interval": [
+              0.00047052004916973457,
+              0.011140591061941376
+            ],
+            "theta_e_arcsec": 1.25
+          },
+          {
+            "estimate": 0.0006388888888888889,
+            "simultaneous_interval": [
+              -0.004696146617496932,
+              0.005973924395274709
+            ],
+            "theta_e_arcsec": 1.5
+          },
+          {
+            "estimate": -0.0044444444444444444,
+            "simultaneous_interval": [
+              -0.009779479950830266,
+              0.0008905910619413761
+            ],
+            "theta_e_arcsec": 1.75
+          },
+          {
+            "estimate": -0.012305555555555556,
+            "simultaneous_interval": [
+              -0.017640591061941376,
+              -0.006970520049169735
+            ],
+            "theta_e_arcsec": 2.0
+          },
+          {
+            "estimate": -0.0165,
+            "simultaneous_interval": [
+              -0.02183503550638582,
+              -0.01116496449361418
+            ],
+            "theta_e_arcsec": 2.25
+          },
+          {
+            "estimate": -0.020166666666666666,
+            "simultaneous_interval": [
+              -0.025501702173052487,
+              -0.014831631160280846
+            ],
+            "theta_e_arcsec": 2.5
+          },
+          {
+            "estimate": -0.025555555555555557,
+            "simultaneous_interval": [
+              -0.030890591061941378,
+              -0.020220520049169736
+            ],
+            "theta_e_arcsec": 2.75
+          },
+          {
+            "estimate": -0.026222222222222223,
+            "simultaneous_interval": [
+              -0.03155725772860804,
+              -0.020887186715836403
+            ],
+            "theta_e_arcsec": 3.0
+          }
+        ]
+      },
+      "psrc": {
+        "bootstrap_design": {
+          "draws_recentered_to_point_estimate": true,
+          "finite_draws": 10000,
+          "host_cell_weighting": "equal_fixed_cells",
+          "host_sampling_unit": "host_spatial_group_id",
+          "interval_deviation_inflation": 1.0,
+          "one_global_multiplier_per_source": true,
+          "one_global_multiplier_per_spatial_group": true,
+          "same_spatial_multiplier_across_all_host_cells": true,
+          "source_multiplier_normalized_within_source_stratum": true,
+          "source_sampling_unit": "source_id",
+          "source_strata_fixed": true,
+          "spatial_groups_crossing_host_cells": 250
+        },
+        "draw_count": 8,
+        "equivalence_claim_permitted": false,
+        "method_limit": "Percentile multiway multiplier intervals are design-based approximations; exact-design binary coverage is reported as a canary and does not prove universal coverage under all response-generating processes.",
+        "photon_mcse": 0.000723260052865505,
+        "photon_mcse_passed": true,
+        "photon_mcse_target": 0.01,
+        "primary_estimand": "photon_averaged_risk_difference_sersic_minus_structured",
+        "primary_inference_complete": true,
+        "risk_difference_sersic_minus_structured": 0.005839646464646464,
+        "sersic_detections": 367,
+        "status": "complete",
+        "structured_detections": 293,
+        "threshold_conditional_95_interval": [
+          0.002842136019906239,
+          0.009790530315539607
+        ],
+        "threshold_conditioning": "Point and interval condition on this checkpoint's threshold calibrated from the common final calibration population.",
+        "threshold_float32_bits": 1074881954
+      }
+    },
+    "tier_ab_seed42": {
+      "pnoise": {
+        "bootstrap_design": {
+          "cell_host_counts_preserved_in_point_estimator": true,
+          "cell_weights_preserved": true,
+          "draws_recentered_to_equal_host_point_estimator": true,
+          "estimator_weighting": "equal_host_within_cell_equal_cell_overall",
+          "maximum_absolute_recentering_error": 3.885780586188048e-16,
+          "multiplier_distribution": "iid_exponential_mean_one",
+          "one_global_multiplier_per_group_per_replicate": true,
+          "primary_sampling_unit": "host_spatial_group",
+          "radius_rows_kept_together_within_host": true,
+          "same_multiplier_applied_across_cells_and_radii": true,
+          "spatial_groups_crossing_cells": 1225
+        },
+        "bootstrap_draws": 10000,
+        "confidence_interval_sampling": [
+          -0.013877466334509453,
+          -0.010277677401598644
+        ],
+        "distinct_hosts": 4500,
+        "distinct_scenes": 49500,
+        "draw_count": 8,
+        "estimand": "equal_host_expected_physical_minus_expectation_detection_risk",
+        "estimate": -0.012030303030303032,
+        "finite_photon_draw_mcse": 0.0001388593698133291,
+        "finite_photon_draw_mcse_if_unavailable": null,
+        "finite_photon_draw_mcse_status": "estimated_from_within_scene_draw_variance",
+        "finite_photon_draw_precision_gate_passed": true,
+        "gained_crossing_probability": 0.0042525252525252525,
+        "lost_crossing_probability": 0.016282828282828284,
+        "radius": [
+          {
+            "estimate": 0.0005277777777777777,
+            "simultaneous_interval": [
+              -0.00526336612798227,
+              0.006318921683537826
+            ],
+            "theta_e_arcsec": 0.5
+          },
+          {
+            "estimate": 0.002277777777777778,
+            "simultaneous_interval": [
+              -0.00351336612798227,
+              0.008068921683537827
+            ],
+            "theta_e_arcsec": 0.75
+          },
+          {
+            "estimate": 0.004861111111111111,
+            "simultaneous_interval": [
+              -0.0009300327946489368,
+              0.01065225501687116
+            ],
+            "theta_e_arcsec": 1.0
+          },
+          {
+            "estimate": 0.0014166666666666668,
+            "simultaneous_interval": [
+              -0.004374477239093381,
+              0.007207810572426715
+            ],
+            "theta_e_arcsec": 1.25
+          },
+          {
+            "estimate": -0.002972222222222222,
+            "simultaneous_interval": [
+              -0.00876336612798227,
+              0.002818921683537826
+            ],
+            "theta_e_arcsec": 1.5
+          },
+          {
+            "estimate": -0.010138888888888888,
+            "simultaneous_interval": [
+              -0.015930032794648937,
+              -0.00434774498312884
+            ],
+            "theta_e_arcsec": 1.75
+          },
+          {
+            "estimate": -0.017027777777777777,
+            "simultaneous_interval": [
+              -0.022818921683537826,
+              -0.011236633872017728
+            ],
+            "theta_e_arcsec": 2.0
+          },
+          {
+            "estimate": -0.021388888888888888,
+            "simultaneous_interval": [
+              -0.027180032794648937,
+              -0.015597744983128839
+            ],
+            "theta_e_arcsec": 2.25
+          },
+          {
+            "estimate": -0.028694444444444446,
+            "simultaneous_interval": [
+              -0.034485588350204495,
+              -0.022903300538684397
+            ],
+            "theta_e_arcsec": 2.5
+          },
+          {
+            "estimate": -0.03125,
+            "simultaneous_interval": [
+              -0.03704114390576005,
+              -0.02545885609423995
+            ],
+            "theta_e_arcsec": 2.75
+          },
+          {
+            "estimate": -0.029944444444444444,
+            "simultaneous_interval": [
+              -0.03573558835020449,
+              -0.024153300538684395
+            ],
+            "theta_e_arcsec": 3.0
+          }
+        ]
+      },
+      "psrc": {
+        "bootstrap_design": {
+          "draws_recentered_to_point_estimate": true,
+          "finite_draws": 10000,
+          "host_cell_weighting": "equal_fixed_cells",
+          "host_sampling_unit": "host_spatial_group_id",
+          "interval_deviation_inflation": 1.0,
+          "one_global_multiplier_per_source": true,
+          "one_global_multiplier_per_spatial_group": true,
+          "same_spatial_multiplier_across_all_host_cells": true,
+          "source_multiplier_normalized_within_source_stratum": true,
+          "source_sampling_unit": "source_id",
+          "source_strata_fixed": true,
+          "spatial_groups_crossing_host_cells": 250
+        },
+        "draw_count": 8,
+        "equivalence_claim_permitted": false,
+        "method_limit": "Percentile multiway multiplier intervals are design-based approximations; exact-design binary coverage is reported as a canary and does not prove universal coverage under all response-generating processes.",
+        "photon_mcse": 0.00042075797273001254,
+        "photon_mcse_passed": true,
+        "photon_mcse_target": 0.01,
+        "primary_estimand": "photon_averaged_risk_difference_sersic_minus_structured",
+        "primary_inference_complete": true,
+        "risk_difference_sersic_minus_structured": 0.005602904040404041,
+        "sersic_detections": 291,
+        "status": "complete",
+        "structured_detections": 220,
+        "threshold_conditional_95_interval": [
+          0.0028391160476420843,
+          0.009322314953254446
+        ],
+        "threshold_conditioning": "Point and interval condition on this checkpoint's threshold calibrated from the common final calibration population.",
+        "threshold_float32_bits": 1070149163
+      }
+    }
+  },
+  "schema_version": 1,
+  "status": "complete"
+}
