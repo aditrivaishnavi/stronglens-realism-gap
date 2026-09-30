@@ -1,0 +1,67 @@
+{
+  "catalogue_rows": 81499,
+  "config": {
+    "config_contract_sha256": "8c323f269c7183f869425568d75d0b5f9f6ffd7ccbfd6b74c84337c120a24c29",
+    "config_file_sha256": "c0e47be63d39909b7994df73c274a78e6b6e11832e3640cff54256e9dbdcadc9",
+    "config_relpath": "config/psrc_v2_parent_bound.yaml",
+    "governing_document_sha256": {
+      "evaluation_dataset_prep/GROUND_RULES.md": "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca",
+      "evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md": "be8260d121e7ff01ae5432a56b9cf24eac8831aedeb0dc27d14e29e21ae4fa0e",
+      "evaluation_dataset_prep/experiments/P_src/DATASET_PLAN.md": "54338ed160a8b1b07858eab74e1c0b07ae6ab4190d7f526c3e6265b731a6ec82"
+    }
+  },
+  "detector_outcomes_used": false,
+  "eligible_sources": 770,
+  "maximum_centroid_separation_arcsec": 7.41250110631432e-05,
+  "maximum_integral_absolute_error": 5.058571672655887e-09,
+  "maximum_sersic_negative_to_positive_flux": 7.005854503081115e-05,
+  "maximum_structured_negative_to_positive_flux": 0.19537523516205146,
+  "minimum_sersic_positive_flux_retained": 0.930935849677839,
+  "minimum_structured_positive_flux_retained": 0.9002121420426062,
+  "schema_version": 2,
+  "selected_sources": 144,
+  "source_closure": {
+    "aggregate_sha256": "7bb56a47993719c7065a6660b1ec3eaedbc1aa2388ecb1a3fcf08cf8c9de6f94",
+    "config": {
+      "config_contract_sha256": "8c323f269c7183f869425568d75d0b5f9f6ffd7ccbfd6b74c84337c120a24c29",
+      "config_file_sha256": "c0e47be63d39909b7994df73c274a78e6b6e11832e3640cff54256e9dbdcadc9",
+      "config_relpath": "config/psrc_v2_parent_bound.yaml",
+      "governing_document_sha256": {
+        "evaluation_dataset_prep/GROUND_RULES.md": "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca",
+        "evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md": "be8260d121e7ff01ae5432a56b9cf24eac8831aedeb0dc27d14e29e21ae4fa0e",
+        "evaluation_dataset_prep/experiments/P_src/DATASET_PLAN.md": "54338ed160a8b1b07858eab74e1c0b07ae6ab4190d7f526c3e6265b731a6ec82"
+      }
+    },
+    "files": {
+      "pyproject.toml": "e168e0418b12e4cd4dd252ce1a88de4292b55f57b05e58fb411f56681f779be7",
+      "src/psrc/__init__.py": "94d9a59ecf106a11e5a44e92d0a679a326e3add96b616a14132e12c34cbc7229",
+      "src/psrc/authority.py": "517fb2358417e94e35fbe1db593e8ff93ef0e4059636d605df4c91b8e8d4091f",
+      "src/psrc/canaries.py": "9fdbea4ea5db90f2f4e6f46e4c96f130e30b06dfcb95bafa18fca160007c5752",
+      "src/psrc/cli.py": "042b946da419d7ec440002cd9402052856061cfa3617dd151ba94441b9b2787c",
+      "src/psrc/contracts.py": "ad476bcf46012ab05d708c9d699ee2c73604434e8ad60cf44a0bfa5e04278962",
+      "src/psrc/design.py": "5ef47d8ce8a4e466e832e74d640b60e8d276afe59ffdcf4ead33e05124623b04",
+      "src/psrc/draw_count.py": "ef927f3240927d8e4fe382d04ff06bff24c4cf92b2c331a70af4e92120262e71",
+      "src/psrc/execution.py": "86ba261cc228ee583476afc292bdae0d1bce7b6dab4405a42ca1dffe855725f8",
+      "src/psrc/inference.py": "7c4660206afe755f8469f08ead317b1c9f930f1b414d4d52cc0ddacafb5895c9",
+      "src/psrc/pilot.py": "d7c5f68f382eed8e1cf664dd853a9289a2a40113ce4297bf06722490d9c81b9c",
+      "src/psrc/rendering.py": "b0beccbf38a40b0caeacccc0244895e641fb65ca70fc02f09ce561077babc711",
+      "src/psrc/report.py": "97d06acb9946faa30fb6c4a6c8ec9d2bf9c9b0df5d8475bef69db54073f53d7e",
+      "src/psrc/scoring.py": "7fa2787266b6369301d0cc7947e8fb469926e3d4930e3a28769124e5c882f320",
+      "src/psrc/source.py": "145a5cd6e9acd3c8ed4e19f99cab124a1a6560b308130e8399bfbffc2e5222b9",
+      "src/psrc/threshold.py": "8341ae0859d7e33bc8de95296f99fed5a5a21db7032fd2763662e04e559b253e",
+      "src/psrc/utils.py": "0d280bba6d870910ac85f1b3c1d2fea7c2a519d6201b9bef91b5dd8b08459105",
+      "src/psrc/validation.py": "ec88f2c1c0c10678e29e4fc8704338ffad38fba176dbce4e3b58063aa42c7fd6",
+      "src/psrc/verification.py": "4a68ef7924e73529cf9f0f02148bfcf9adb3a4380547c30fff170b740ab96dee",
+      "uv.lock": "1e681186bc0b175abab0c6be45bdc8a9a79ad6ea76abc7ba4e296ffa6d6a25db"
+    },
+    "schema_version": 1
+  },
+  "source_manifest_sha256": "caffa7dfde4152a397a8512bc8d32b00597c7562c58997826f6f6b1d02168134",
+  "source_map_inventory_sha256": "38352379ccd4b1f13546d2ec409f3659425f9ca938b4235b4a1c1c76eb41b517",
+  "status": "pass",
+  "structured_sersic_correlation": {
+    "maximum": 0.9980923659327,
+    "median": 0.9756952453847293,
+    "minimum": 0.4704502194792414
+  }
+}

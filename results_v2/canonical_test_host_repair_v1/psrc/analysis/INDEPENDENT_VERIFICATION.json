@@ -1,0 +1,18 @@
+{
+  "analysis": "P_src",
+  "draw_count": 8,
+  "native_score_bits_and_decisions_revalidated": true,
+  "pairs": 1584,
+  "photon_artifacts_rehashed": 1584,
+  "photon_mcse": 0.00042075797273001254,
+  "photon_rows": 12672,
+  "point_interval_and_mcse_recomputed": true,
+  "result_sha256": "85910559af82a2b2e7a6cb4aa75de700a397d7032b69a036672336f11849aa47",
+  "risk_difference_sersic_minus_structured": 0.005602904040404041,
+  "schema_version": 1,
+  "status": "psrc_final_analysis_independently_replayable",
+  "threshold_conditional_95_interval": [
+    0.0028391160476420843,
+    0.009322314953254446
+  ]
+}

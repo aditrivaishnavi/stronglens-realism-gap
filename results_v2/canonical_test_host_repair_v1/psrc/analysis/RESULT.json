@@ -1,0 +1,89 @@
+{
+  "bootstrap_design": {
+    "draws_recentered_to_point_estimate": true,
+    "finite_draws": 10000,
+    "host_cell_weighting": "equal_fixed_cells",
+    "host_sampling_unit": "host_spatial_group_id",
+    "interval_deviation_inflation": 1.0,
+    "one_global_multiplier_per_source": true,
+    "one_global_multiplier_per_spatial_group": true,
+    "same_spatial_multiplier_across_all_host_cells": true,
+    "source_multiplier_normalized_within_source_stratum": true,
+    "source_sampling_unit": "source_id",
+    "source_strata_fixed": true,
+    "spatial_groups_crossing_host_cells": 250
+  },
+  "config": {
+    "config_contract_sha256": "991330ac690ebc9279e1d5b02c9988e69891376d422b3d986205c61deaba9a10",
+    "config_file_sha256": "e4b43d13a89f27f8a44e78bdf50dc3b0114a4cf02e9343368322c2190c2c1105",
+    "config_relpath": "../../results_v2/canonical_test_host_repair_v1/psrc/config/psrc_v2_parent_bound.yaml",
+    "governing_document_sha256": {
+      "evaluation_dataset_prep/GROUND_RULES.md": "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca",
+      "evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md": "be8260d121e7ff01ae5432a56b9cf24eac8831aedeb0dc27d14e29e21ae4fa0e",
+      "evaluation_dataset_prep/experiments/P_src/DATASET_PLAN.md": "54338ed160a8b1b07858eab74e1c0b07ae6ab4190d7f526c3e6265b731a6ec82"
+    }
+  },
+  "design_receipt_sha256": "3bc6f2ae843a3d803af436b79c0ee95b405356e1e2d185259db16a951be3d23b",
+  "design_sha256": "2fdc4190ff1d5b1126da7ba3232436af3886c7654e995261266ba775fa8c31fa",
+  "draw_count_receipt_sha256": "f394cdfa1e404ad167bbb6d4b0b10eb562c2c9a8bfab001381e655a224fe6a40",
+  "equivalence_claim_permitted": false,
+  "execution_lock_sha256": "8814764a93d02fee58490c630821ffa0510d998a80bc961636942d6786098023",
+  "frozen_draw_count": 8,
+  "method_limit": "Percentile multiway multiplier intervals are design-based approximations; exact-design binary coverage is reported as a canary and does not prove universal coverage under all response-generating processes.",
+  "pair_photon_averages_sha256": "88dbc5c4dd6b3c043a54b888cbb33d5a711d11559a7cbb1f2a04f2374a8438f4",
+  "photon_manifest_sha256": "6c8ebbdef8c1e7d37cfd7b3286502d52baf01b33c74fc2cda8242a694bdba1f9",
+  "photon_mcse": 0.00042075797273001254,
+  "photon_mcse_passed": true,
+  "photon_mcse_target": 0.01,
+  "photon_receipt_sha256": "0ae5252352db73a2d60c27653d01dde56ca8e21510aef4352574b84dcc8a67f8",
+  "primary_estimand": "photon_averaged_risk_difference_sersic_minus_structured",
+  "primary_inference_complete": true,
+  "repeated_threshold_sensitivity": null,
+  "risk_difference_sersic_minus_structured": 0.005602904040404041,
+  "schema_version": 2,
+  "score_receipt_sha256": "b8cace38eaaf9e190a4aed3a5acaaaa1c57c0fb9e49239fa9886c626e77a7686",
+  "scores_sha256": "424d8fb74f9b5d5cbfd0abdf36abc89d770beb071b3a44c91763e23c3742bb6f",
+  "source_closure": {
+    "aggregate_sha256": "d279ac81d04958d56e84a886fb13464a8709115db2a7f8899569149c15364c1e",
+    "config": {
+      "config_contract_sha256": "991330ac690ebc9279e1d5b02c9988e69891376d422b3d986205c61deaba9a10",
+      "config_file_sha256": "e4b43d13a89f27f8a44e78bdf50dc3b0114a4cf02e9343368322c2190c2c1105",
+      "config_relpath": "../../results_v2/canonical_test_host_repair_v1/psrc/config/psrc_v2_parent_bound.yaml",
+      "governing_document_sha256": {
+        "evaluation_dataset_prep/GROUND_RULES.md": "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca",
+        "evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md": "be8260d121e7ff01ae5432a56b9cf24eac8831aedeb0dc27d14e29e21ae4fa0e",
+        "evaluation_dataset_prep/experiments/P_src/DATASET_PLAN.md": "54338ed160a8b1b07858eab74e1c0b07ae6ab4190d7f526c3e6265b731a6ec82"
+      }
+    },
+    "files": {
+      "pyproject.toml": "e168e0418b12e4cd4dd252ce1a88de4292b55f57b05e58fb411f56681f779be7",
+      "src/psrc/__init__.py": "94d9a59ecf106a11e5a44e92d0a679a326e3add96b616a14132e12c34cbc7229",
+      "src/psrc/authority.py": "517fb2358417e94e35fbe1db593e8ff93ef0e4059636d605df4c91b8e8d4091f",
+      "src/psrc/canaries.py": "9fdbea4ea5db90f2f4e6f46e4c96f130e30b06dfcb95bafa18fca160007c5752",
+      "src/psrc/cli.py": "042b946da419d7ec440002cd9402052856061cfa3617dd151ba94441b9b2787c",
+      "src/psrc/contracts.py": "ad476bcf46012ab05d708c9d699ee2c73604434e8ad60cf44a0bfa5e04278962",
+      "src/psrc/design.py": "5ef47d8ce8a4e466e832e74d640b60e8d276afe59ffdcf4ead33e05124623b04",
+      "src/psrc/draw_count.py": "ef927f3240927d8e4fe382d04ff06bff24c4cf92b2c331a70af4e92120262e71",
+      "src/psrc/execution.py": "86ba261cc228ee583476afc292bdae0d1bce7b6dab4405a42ca1dffe855725f8",
+      "src/psrc/inference.py": "7c4660206afe755f8469f08ead317b1c9f930f1b414d4d52cc0ddacafb5895c9",
+      "src/psrc/pilot.py": "d7c5f68f382eed8e1cf664dd853a9289a2a40113ce4297bf06722490d9c81b9c",
+      "src/psrc/rendering.py": "b0beccbf38a40b0caeacccc0244895e641fb65ca70fc02f09ce561077babc711",
+      "src/psrc/report.py": "97d06acb9946faa30fb6c4a6c8ec9d2bf9c9b0df5d8475bef69db54073f53d7e",
+      "src/psrc/scoring.py": "7fa2787266b6369301d0cc7947e8fb469926e3d4930e3a28769124e5c882f320",
+      "src/psrc/source.py": "145a5cd6e9acd3c8ed4e19f99cab124a1a6560b308130e8399bfbffc2e5222b9",
+      "src/psrc/threshold.py": "8341ae0859d7e33bc8de95296f99fed5a5a21db7032fd2763662e04e559b253e",
+      "src/psrc/utils.py": "0d280bba6d870910ac85f1b3c1d2fea7c2a519d6201b9bef91b5dd8b08459105",
+      "src/psrc/validation.py": "ec88f2c1c0c10678e29e4fc8704338ffad38fba176dbce4e3b58063aa42c7fd6",
+      "src/psrc/verification.py": "4a68ef7924e73529cf9f0f02148bfcf9adb3a4380547c30fff170b740ab96dee",
+      "uv.lock": "1e681186bc0b175abab0c6be45bdc8a9a79ad6ea76abc7ba4e296ffa6d6a25db"
+    },
+    "schema_version": 1
+  },
+  "status": "complete",
+  "threshold_conditional_95_interval": [
+    0.0028391160476420843,
+    0.009322314953254446
+  ],
+  "threshold_conditioning": "Primary point/interval condition on the once-frozen common threshold; they do not include repeated calibration-sample variation.",
+  "threshold_float32_bits": 1070149163
+}

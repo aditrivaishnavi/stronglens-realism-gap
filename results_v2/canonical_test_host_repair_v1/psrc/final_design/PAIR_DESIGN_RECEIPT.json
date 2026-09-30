@@ -1,0 +1,104 @@
+{
+  "config": {
+    "config_contract_sha256": "991330ac690ebc9279e1d5b02c9988e69891376d422b3d986205c61deaba9a10",
+    "config_file_sha256": "e4b43d13a89f27f8a44e78bdf50dc3b0114a4cf02e9343368322c2190c2c1105",
+    "config_relpath": "../../results_v2/canonical_test_host_repair_v1/psrc/config/psrc_v2_parent_bound.yaml",
+    "governing_document_sha256": {
+      "evaluation_dataset_prep/GROUND_RULES.md": "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca",
+      "evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md": "be8260d121e7ff01ae5432a56b9cf24eac8831aedeb0dc27d14e29e21ae4fa0e",
+      "evaluation_dataset_prep/experiments/P_src/DATASET_PLAN.md": "54338ed160a8b1b07858eab74e1c0b07ae6ab4190d7f526c3e6265b731a6ec82"
+    }
+  },
+  "distinct_host_spatial_groups": 1219,
+  "distinct_hosts": 1584,
+  "distinct_parent_scenes": 1584,
+  "distinct_sources": 144,
+  "host_cell_radius_blocks": 99,
+  "pair_design_sha256": "2fdc4190ff1d5b1126da7ba3232436af3886c7654e995261266ba775fa8c31fa",
+  "pairs": 1584,
+  "parent_authority": {
+    "final_host_manifest_sha256": "48849ee336444bc3c2992beb4ba1a084d06c19f81a6c44010e8944ae07a45e02",
+    "final_host_receipt_sha256": "54ae2a726efceff993dcbf4c3b55a6584ec5911f74de4cf9254f919500a1770c",
+    "final_selection_manifest_sha256": "f0f821e1acca7da9a1b6568d040e39a5289ef16d0f67dcc6a33c6d351409150f",
+    "grec_config": {
+      "config_contract_sha256": "a9421c68633a269c055f93aacd1dc720b4472fe704e170179fd60576084c9e05",
+      "config_file_sha256": "420e001332f0248c6264d6facb0d4af914344599773f8bb8207b8375e018f8b0",
+      "config_path": "experiments_v2/grec_pnoise/config/production.toml",
+      "governing_document_sha256": {
+        "evaluation_dataset_prep/GROUND_RULES.md": "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca",
+        "evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md": "be8260d121e7ff01ae5432a56b9cf24eac8831aedeb0dc27d14e29e21ae4fa0e",
+        "evaluation_dataset_prep/experiments/P_noise/DATASET_PLAN.md": "4c3cb2b4fdef0dfc58bb4001fdb9e30cae11d7322babb1c09b738a4f8ecc6349"
+      }
+    },
+    "parent_manifest_sha256": "ee18c149c4a0a95fa568444245cfc8252c56d2c7aba675dec99cabe6511fa16d",
+    "parent_receipt_sha256": "73a429691c508c619dae86a9c343a0ca22de8a15394a96087c531bd2b161e8a2",
+    "scene_receipt_sha256": "ad6c06fb930048a35de91f11cbc83ca52d8e5da9c59ab3d2c0bdd7c7918cfa8c",
+    "scene_table_sha256": "032fc50a743e4ccd675a723d30095f65744930ce77e630bf8b2ad3d089da605a"
+  },
+  "parent_parameters_preserved_exactly": true,
+  "parent_scene_analysis_weight": 1.0,
+  "radii_arcsec": [
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0,
+    2.25,
+    2.5,
+    2.75,
+    3.0
+  ],
+  "rows_per_host_cell_radius_source_stratum": {
+    "maximum": 1,
+    "minimum": 1
+  },
+  "schema_version": 2,
+  "selection_used_detector_outcomes": false,
+  "source_closure": {
+    "aggregate_sha256": "d279ac81d04958d56e84a886fb13464a8709115db2a7f8899569149c15364c1e",
+    "config": {
+      "config_contract_sha256": "991330ac690ebc9279e1d5b02c9988e69891376d422b3d986205c61deaba9a10",
+      "config_file_sha256": "e4b43d13a89f27f8a44e78bdf50dc3b0114a4cf02e9343368322c2190c2c1105",
+      "config_relpath": "../../results_v2/canonical_test_host_repair_v1/psrc/config/psrc_v2_parent_bound.yaml",
+      "governing_document_sha256": {
+        "evaluation_dataset_prep/GROUND_RULES.md": "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca",
+        "evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md": "be8260d121e7ff01ae5432a56b9cf24eac8831aedeb0dc27d14e29e21ae4fa0e",
+        "evaluation_dataset_prep/experiments/P_src/DATASET_PLAN.md": "54338ed160a8b1b07858eab74e1c0b07ae6ab4190d7f526c3e6265b731a6ec82"
+      }
+    },
+    "files": {
+      "pyproject.toml": "e168e0418b12e4cd4dd252ce1a88de4292b55f57b05e58fb411f56681f779be7",
+      "src/psrc/__init__.py": "94d9a59ecf106a11e5a44e92d0a679a326e3add96b616a14132e12c34cbc7229",
+      "src/psrc/authority.py": "517fb2358417e94e35fbe1db593e8ff93ef0e4059636d605df4c91b8e8d4091f",
+      "src/psrc/canaries.py": "9fdbea4ea5db90f2f4e6f46e4c96f130e30b06dfcb95bafa18fca160007c5752",
+      "src/psrc/cli.py": "042b946da419d7ec440002cd9402052856061cfa3617dd151ba94441b9b2787c",
+      "src/psrc/contracts.py": "ad476bcf46012ab05d708c9d699ee2c73604434e8ad60cf44a0bfa5e04278962",
+      "src/psrc/design.py": "5ef47d8ce8a4e466e832e74d640b60e8d276afe59ffdcf4ead33e05124623b04",
+      "src/psrc/draw_count.py": "ef927f3240927d8e4fe382d04ff06bff24c4cf92b2c331a70af4e92120262e71",
+      "src/psrc/execution.py": "86ba261cc228ee583476afc292bdae0d1bce7b6dab4405a42ca1dffe855725f8",
+      "src/psrc/inference.py": "7c4660206afe755f8469f08ead317b1c9f930f1b414d4d52cc0ddacafb5895c9",
+      "src/psrc/pilot.py": "d7c5f68f382eed8e1cf664dd853a9289a2a40113ce4297bf06722490d9c81b9c",
+      "src/psrc/rendering.py": "b0beccbf38a40b0caeacccc0244895e641fb65ca70fc02f09ce561077babc711",
+      "src/psrc/report.py": "97d06acb9946faa30fb6c4a6c8ec9d2bf9c9b0df5d8475bef69db54073f53d7e",
+      "src/psrc/scoring.py": "7fa2787266b6369301d0cc7947e8fb469926e3d4930e3a28769124e5c882f320",
+      "src/psrc/source.py": "145a5cd6e9acd3c8ed4e19f99cab124a1a6560b308130e8399bfbffc2e5222b9",
+      "src/psrc/threshold.py": "8341ae0859d7e33bc8de95296f99fed5a5a21db7032fd2763662e04e559b253e",
+      "src/psrc/utils.py": "0d280bba6d870910ac85f1b3c1d2fea7c2a519d6201b9bef91b5dd8b08459105",
+      "src/psrc/validation.py": "ec88f2c1c0c10678e29e4fc8704338ffad38fba176dbce4e3b58063aa42c7fd6",
+      "src/psrc/verification.py": "4a68ef7924e73529cf9f0f02148bfcf9adb3a4380547c30fff170b740ab96dee",
+      "uv.lock": "1e681186bc0b175abab0c6be45bdc8a9a79ad6ea76abc7ba4e296ffa6d6a25db"
+    },
+    "schema_version": 1
+  },
+  "source_manifest_sha256": "db8c9ed4c671de8a5579620b34a8b920a4b081740f8abaf11284de1e2bbee046",
+  "source_receipt_sha256": "49319c9189cec9571367c89cf509014468d29da98df9da26081c81594f89be44",
+  "source_receipt_status": "restricted_empirical_source_construction_frozen_pre_score",
+  "source_reuse": {
+    "maximum": 11,
+    "minimum": 11
+  },
+  "source_strata_per_host_cell_radius": 16,
+  "status": "psrc_parent_child_design_frozen_pre_score"
+}
