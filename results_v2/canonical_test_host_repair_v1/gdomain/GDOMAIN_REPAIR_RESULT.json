@@ -1,0 +1,160 @@
+{
+  "dependency_components": 561,
+  "manifest_sha256": "b43a89477bb3e7adeb8e42498bc4ec649923876c9aa50f5a7936139005c0092a",
+  "observed_rows": 43,
+  "results": {
+    "fixed_operational_head": {
+      "component_equal_auc": 0.9803064183878134,
+      "row_weighted_auc": 0.9812331160441626
+    },
+    "imagenet_effnet_v2_s": {
+      "component_equal_oof_auc": 0.9785283514934675,
+      "folds": [
+        {
+          "auc": 0.9691324300699296,
+          "fold": 0,
+          "observed": 8,
+          "rows": 1284
+        },
+        {
+          "auc": 0.9530885780885772,
+          "fold": 1,
+          "observed": 9,
+          "rows": 1274
+        },
+        {
+          "auc": 0.9939903846153845,
+          "fold": 2,
+          "observed": 8,
+          "rows": 1273
+        },
+        {
+          "auc": 0.9786810411810408,
+          "fold": 3,
+          "observed": 9,
+          "rows": 1274
+        },
+        {
+          "auc": 0.992035742035742,
+          "fold": 4,
+          "observed": 9,
+          "rows": 1274
+        }
+      ],
+      "row_weighted_oof_auc": 0.9787996241484613
+    },
+    "operational_penultimate": {
+      "component_equal_oof_auc": 0.9913400552935434,
+      "folds": [
+        {
+          "auc": 0.9851944930069928,
+          "fold": 0,
+          "observed": 8,
+          "rows": 1284
+        },
+        {
+          "auc": 0.9962121212121211,
+          "fold": 1,
+          "observed": 9,
+          "rows": 1274
+        },
+        {
+          "auc": 0.9925152972027971,
+          "fold": 2,
+          "observed": 8,
+          "rows": 1273
+        },
+        {
+          "auc": 0.9941239316239316,
+          "fold": 3,
+          "observed": 9,
+          "rows": 1274
+        },
+        {
+          "auc": 0.9993201243201243,
+          "fold": 4,
+          "observed": 9,
+          "rows": 1274
+        }
+      ],
+      "row_weighted_oof_auc": 0.9914589206013624
+    },
+    "pixel_statistics": {
+      "component_equal_oof_auc": 0.9807448365587896,
+      "folds": [
+        {
+          "auc": 0.9376638986013972,
+          "fold": 0,
+          "observed": 8,
+          "rows": 1284
+        },
+        {
+          "auc": 0.9965034965034965,
+          "fold": 1,
+          "observed": 9,
+          "rows": 1274
+        },
+        {
+          "auc": 0.9939903846153846,
+          "fold": 2,
+          "observed": 8,
+          "rows": 1273
+        },
+        {
+          "auc": 0.9746989121989118,
+          "fold": 3,
+          "observed": 9,
+          "rows": 1274
+        },
+        {
+          "auc": 0.9866938616938614,
+          "fold": 4,
+          "observed": 9,
+          "rows": 1274
+        }
+      ],
+      "row_weighted_oof_auc": 0.9810018792576932
+    },
+    "stein_ssl_resnet50": {
+      "component_equal_oof_auc": 0.9581869680706872,
+      "folds": [
+        {
+          "auc": 0.9521416083916074,
+          "fold": 0,
+          "observed": 8,
+          "rows": 1284
+        },
+        {
+          "auc": 0.9749417249417245,
+          "fold": 1,
+          "observed": 9,
+          "rows": 1274
+        },
+        {
+          "auc": 0.9999453671328671,
+          "fold": 2,
+          "observed": 8,
+          "rows": 1273
+        },
+        {
+          "auc": 0.9769327894327892,
+          "fold": 3,
+          "observed": 9,
+          "rows": 1274
+        },
+        {
+          "auc": 0.929292929292928,
+          "fold": 4,
+          "observed": 9,
+          "rows": 1274
+        }
+      ],
+      "row_weighted_oof_auc": 0.9585021728917077
+    }
+  },
+  "rows": 6379,
+  "schema_version": 1,
+  "simulated_hosts": 576,
+  "simulated_rows": 6336,
+  "status": "canonical_host_repair_domain_complete"
+}
