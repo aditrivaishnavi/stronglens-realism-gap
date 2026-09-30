@@ -1,0 +1,57 @@
+{
+  "added_source_photon_noise": false,
+  "additional_sky_noise": false,
+  "config": {
+    "config_contract_sha256": "a9421c68633a269c055f93aacd1dc720b4472fe704e170179fd60576084c9e05",
+    "config_file_sha256": "420e001332f0248c6264d6facb0d4af914344599773f8bb8207b8375e018f8b0",
+    "config_path": "experiments_v2/grec_pnoise/config/production.toml",
+    "governing_document_sha256": {
+      "evaluation_dataset_prep/GROUND_RULES.md": "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca",
+      "evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md": "be8260d121e7ff01ae5432a56b9cf24eac8831aedeb0dc27d14e29e21ae4fa0e",
+      "evaluation_dataset_prep/experiments/P_noise/DATASET_PLAN.md": "4c3cb2b4fdef0dfc58bb4001fdb9e30cae11d7322babb1c09b738a4f8ecc6349"
+    }
+  },
+  "convergence_diagnostics_available_rows": 5720,
+  "convergence_diagnostics_unavailable_recovered_rows": 43780,
+  "convolution_boundary": "explicit_zero_padding",
+  "distinct_hosts": 4500,
+  "extended_quadrature_orders": [],
+  "lens_model": "SIE_plus_external_shear",
+  "maximum_lensed_previous_order_relative_l1": 0.004270159621036491,
+  "maximum_lensed_previous_order_relative_max": 0.009639376629691396,
+  "maximum_unlensed_flux_relative_error": 0.0038143924999580747,
+  "numerical_amendment_sha256": null,
+  "operation_order": "adaptive_pixel_integrated_raytrace__zero_padded_native_gaussian",
+  "parent_manifest_sha256": "ee18c149c4a0a95fa568444245cfc8252c56d2c7aba675dec99cabe6511fa16d",
+  "quadrature_selected_order_counts": {
+    "32": 49500
+  },
+  "raw_host_element_bytes_preserved": true,
+  "recovery_validation": "existing artifacts required valid atomic NPZ structure, exact float32 shape, finite nonnegative arc pixels, frozen host bytes, and exact float32 host-plus-arc equality",
+  "render_implementation_source_sha256": {
+    "cells.py": "7c62f972a47678e9bf1ac7ceee0471c4adac728133d262550f9aa41bc9a1013b",
+    "contracts.py": "84e74fd8f1c26bac0f5e9bab6b78f12d209e8814bccbadeebdb30f7e1c50b561",
+    "rendering.py": "d919ca71a52354909b9b322a21b5dff003ea7368ab9b26045fa5756905bd6dec",
+    "scene_table.py": "054759668a13cea6cc343d2c7d71d246bb5cc9d794438eba1e3571459d61334c",
+    "validation.py": "0d2cd6f88d66542110a2316e05953844c9cb143af5de5fc11ce240969061d9dd"
+  },
+  "render_scientific_config_sha256": "40c932ceedbb1aae6a0a9ffc497bc75061deeb7891ee93c5385667222811a5e8",
+  "renderer_validation_receipt_sha256": "613fbc502fd570482f15cfe220b216566d64c7c21d4e85a38efad0796fa0ed03",
+  "renderer_validation_status": "renderer_validation_frozen_design_only",
+  "resume_script_sha256": "c2e4f1b685f6d0ce6cfe2c553c662e7255650770b04308be5b3105563c5609d2",
+  "rows": 49500,
+  "runtime": {
+    "device_names": [],
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "python": "3.12.13",
+    "torch": "2.7.0",
+    "torchvision": "0.22.0"
+  },
+  "scene_table_receipt_sha256": "ad6c06fb930048a35de91f11cbc83ca52d8e5da9c59ab3d2c0bdd7c7918cfa8c",
+  "scene_table_sha256": "032fc50a743e4ccd675a723d30095f65744930ce77e630bf8b2ad3d089da605a",
+  "schema_version": 1,
+  "source_model": "single_sersic",
+  "status": "grec_parent_bank_frozen_pre_score"
+}

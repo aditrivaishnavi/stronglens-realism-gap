@@ -1,0 +1,21 @@
+{
+  "link_modes": {
+    "copy": 0,
+    "existing": 0,
+    "hardlink": 40368
+  },
+  "new_hosts": 1136,
+  "new_hosts_sha256": "48849ee336444bc3c2992beb4ba1a084d06c19f81a6c44010e8944ae07a45e02",
+  "new_scenes": 12496,
+  "new_scenes_sha256": "032fc50a743e4ccd675a723d30095f65744930ce77e630bf8b2ad3d089da605a",
+  "old_hosts_sha256": "9a27d90ac45d4ccde0f535fc46d7e1267b71a78f550e6b151b70bef49470a70e",
+  "old_parent_manifest_sha256": "95c72ad9c1465d5ff54fd033e8e07f09fc8f0be6cf6aad4e538c0059e91aabf4",
+  "old_scenes_sha256": "43638e10abd74e0196fd0e2312841048d09fb8944970db82bd1d5535f341237f",
+  "output_directory": "results_v2/canonical_test_host_repair_v1/grec/parents",
+  "retained_hosts": 3364,
+  "retained_raw_hosts": 3364,
+  "retained_scene_ids_sha256": "63c905d99ac5108ee5b9b8681db542693a88a459797c3961c527e15f2cd78314",
+  "retained_scenes": 37004,
+  "schema_version": 1,
+  "status": "canonical_test_grec_carry_forward_preseeded"
+}

@@ -1,0 +1,36 @@
+{
+  "config": {
+    "config_contract_sha256": "a9421c68633a269c055f93aacd1dc720b4472fe704e170179fd60576084c9e05",
+    "config_file_sha256": "420e001332f0248c6264d6facb0d4af914344599773f8bb8207b8375e018f8b0",
+    "config_path": "experiments_v2/grec_pnoise/config/production.toml",
+    "governing_document_sha256": {
+      "evaluation_dataset_prep/GROUND_RULES.md": "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca",
+      "evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md": "be8260d121e7ff01ae5432a56b9cf24eac8831aedeb0dc27d14e29e21ae4fa0e",
+      "evaluation_dataset_prep/experiments/P_noise/DATASET_PLAN.md": "4c3cb2b4fdef0dfc58bb4001fdb9e30cae11d7322babb1c09b738a4f8ecc6349"
+    }
+  },
+  "detector_scores_used": false,
+  "distinct_cells": 9,
+  "distinct_hosts": 4500,
+  "host_manifest_sha256": "48849ee336444bc3c2992beb4ba1a084d06c19f81a6c44010e8944ae07a45e02",
+  "host_receipt_sha256": "54ae2a726efceff993dcbf4c3b55a6584ec5911f74de4cf9254f919500a1770c",
+  "host_receipt_status": "final_pre_score_grec_hosts_frozen",
+  "nuisance_draws_shared_across_radii": true,
+  "radii_arcsec": [
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0,
+    2.25,
+    2.5,
+    2.75,
+    3.0
+  ],
+  "rows": 49500,
+  "scene_table_sha256": "032fc50a743e4ccd675a723d30095f65744930ce77e630bf8b2ad3d089da605a",
+  "schema_version": 1,
+  "status": "grec_scene_table_frozen_pre_score"
+}

@@ -1,0 +1,15 @@
+{
+  "checkpoint_every_rows": 256,
+  "checkpoint_part_count": 194,
+  "checkpoint_rows_reused": 21760,
+  "existing_v1_artifacts_recovered": 27740,
+  "extended_quadrature_enabled": false,
+  "numerical_amendment_sha256": null,
+  "parent_manifest_sha256": "ee18c149c4a0a95fa568444245cfc8252c56d2c7aba675dec99cabe6511fa16d",
+  "render_receipt_sha256": "73a429691c508c619dae86a9c343a0ca22de8a15394a96087c531bd2b161e8a2",
+  "resume_script_sha256": "c2e4f1b685f6d0ce6cfe2c553c662e7255650770b04308be5b3105563c5609d2",
+  "rows_newly_rendered": 0,
+  "rows_total": 49500,
+  "schema_version": 1,
+  "status": "grec_render_resume_complete"
+}

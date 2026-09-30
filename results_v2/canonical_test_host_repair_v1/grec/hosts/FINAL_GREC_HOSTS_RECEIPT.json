@@ -1,0 +1,35 @@
+{
+  "condition_cells_derived_from": [
+    "psfsize_r",
+    "psfdepth_r"
+  ],
+  "condition_midpoint_tie_rule": "lower_node",
+  "config": {
+    "config_contract_sha256": "a9421c68633a269c055f93aacd1dc720b4472fe704e170179fd60576084c9e05",
+    "config_file_sha256": "420e001332f0248c6264d6facb0d4af914344599773f8bb8207b8375e018f8b0",
+    "config_path": "experiments_v2/grec_pnoise/config/production.toml",
+    "governing_document_sha256": {
+      "evaluation_dataset_prep/GROUND_RULES.md": "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca",
+      "evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md": "be8260d121e7ff01ae5432a56b9cf24eac8831aedeb0dc27d14e29e21ae4fa0e",
+      "evaluation_dataset_prep/experiments/P_noise/DATASET_PLAN.md": "4c3cb2b4fdef0dfc58bb4001fdb9e30cae11d7322babb1c09b738a4f8ecc6349"
+    }
+  },
+  "detector_scores_used": false,
+  "distinct_cells": 9,
+  "duplicate_pixel_hashes": 0,
+  "duplicate_spatial_coordinates": 0,
+  "full_tractor_eligibility": "passed",
+  "host_flux_calibration_system": "AB_nanomaggy_zeropoint_22.5",
+  "host_manifest_sha256": "48849ee336444bc3c2992beb4ba1a084d06c19f81a6c44010e8944ae07a45e02",
+  "host_payload_sha256_verified": true,
+  "host_pixel_element_sha256_recorded": true,
+  "host_pixel_unit": "nanomaggy_per_native_pixel",
+  "physical_group_checks": "passed",
+  "pre_score_review": "approved",
+  "role_overlap_checks": "passed",
+  "rows": 4500,
+  "schema_version": 1,
+  "selection_manifest_sha256": "f0f821e1acca7da9a1b6568d040e39a5289ef16d0f67dcc6a33c6d351409150f",
+  "selection_receipt_sha256": "f2eca37a8e668c63e80503b64a1a3f660171dcc737bf95ad238cc7fafd42a888",
+  "status": "final_pre_score_grec_hosts_frozen"
+}
