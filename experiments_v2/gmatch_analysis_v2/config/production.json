@@ -1,0 +1,242 @@
+{
+  "G_match": {
+    "matching": {
+      "minimum_matched_references_for_five_fold_analysis": 10
+    },
+    "reference_axis": {
+      "fit_rows": [
+        "observed_reference",
+        "bare"
+      ],
+      "fold_scale": "training_bare_mean_and_sd",
+      "injected_rows_fit_axis": false,
+      "orientation": "toward_observed_reference"
+    }
+  },
+  "analysis": "G_match",
+  "analysis_producer_uuid": "f50161bb-2b86-4bf0-a972-d234968a9a3d",
+  "data_role": "final",
+  "feature_extraction_source_closure_sha256": "beab8a1a0ab1601d26b1fc432dbf0a48b5c818d4f0fc4ab0125f44a72fdeb764",
+  "feature_producer_uuid": "fe722e52-9423-442f-9021-a8591d7f65ea",
+  "feature_verifier_uuid": "6f8baa33-f305-43fe-906d-1d54f261c8a0",
+  "independent_feature_pass_uuid": "1cfbb597-ba57-4886-8114-7c58dd5977d6",
+  "inputs": {
+    "analysis_manifest": {
+      "path": "results_v2/gmatch/preparation/gmatch_analysis_manifest.parquet",
+      "sha256": "0dd3b6c99fe2bad04641f39d9b504e37a195e3f660111f9aa1fbcece3852b49b"
+    },
+    "feature_authorization": {
+      "path": "results_v2/gmatch/features/GMATCH_FINAL_FEATURE_AUTHORIZATION.json",
+      "sha256": "715296f5db8976ab0cf26336e2d89c62f4e92a408806b121943baaa4fa5c60b7"
+    },
+    "feature_config": {
+      "path": "experiments_v2/gmatch_features_v2/config/production.json",
+      "sha256": "ad96e5c5ccbc5ffe684afa2af8270e8afa82536861e9e835d8984199375ddb2e"
+    },
+    "feature_config_seal": {
+      "path": "experiments_v2/gmatch_features_v2/config/CONFIG_SEAL.json",
+      "sha256": "1122fbb538f6f310837201ba3820612771b0cf40aed39477911775359d0ff614"
+    },
+    "feature_environment_receipt": {
+      "path": "results_v2/gmatch/features/FEATURE_ENVIRONMENT_LOCK_RECEIPT.json",
+      "sha256": "e97acf8e82bbb773136c62b4c676873627dfe801636067845f4376499c83534d"
+    },
+    "feature_independent_validation": {
+      "path": "results_v2/gmatch/features/GMATCH_FEATURE_INDEPENDENT_VALIDATION.json",
+      "sha256": "cfa488d007e9906c19c949c172faccd18e7b17c83ff26c74df89b506774fe75f"
+    },
+    "feature_lock": {
+      "path": "experiments_v2/gmatch_features_v2/uv.lock",
+      "sha256": "d30e20deed6568953c35fcd33b7d60ef450d0a21afd6961e1a3d4d60761dad68"
+    },
+    "feature_payload_bindings": {
+      "path": "results_v2/gmatch/features/GMATCH_PAYLOAD_BINDINGS.json",
+      "sha256": "9e8cea8e71dd8ce54aa950df86ba669f780134acfe3bacc559fab1d9cadf3c63"
+    },
+    "feature_stage_receipt": {
+      "path": "results_v2/gmatch/features/GMATCH_FEATURE_STAGE_RECEIPT.json",
+      "sha256": "781ccf19731925791604896a0f1fa5b0a6dfe2b5c9340365dcd95aae51530e59"
+    },
+    "feature_suite_authority": {
+      "path": "results_v2/gmatch/features/GMATCH_FEATURE_SUITE_AUTHORITY.json",
+      "sha256": "bb974e2c285f829a926bae9ef18787067336dfa51596db02a39ae298dbf8b761"
+    },
+    "old_gmatch_result": {
+      "path": "results/populations/gmatch_grouped.json",
+      "sha256": "42332e68c9d6866c6f88ee8e499208aba8efd95c8a2976c3fc7d61cda545f11d"
+    },
+    "preparation_authority": {
+      "path": "results_v2/gmatch/preparation/GMATCH_AUTHORITY_RECEIPT.json",
+      "sha256": "8d41a6537807925fb1c964ee7807818c3b8524037ec3b971984cf6357b944cf0"
+    },
+    "preparation_config": {
+      "path": "experiments_v2/gmatch_v2/config/production.toml",
+      "sha256": "947d5c7383bafd6cf24f56fde7820e29c13a6f8f09f2068b61731bf66178b23e"
+    },
+    "preparation_config_seal": {
+      "path": "experiments_v2/gmatch_v2/config/CONFIG_SEAL.json",
+      "sha256": "e3fd54a0f03e01cebc74473ae2aa6cd4b239682c5acaa23c0b856a4d50d4b43e"
+    },
+    "preparation_independent_validation": {
+      "path": "results_v2/gmatch/preparation/GMATCH_INDEPENDENT_VALIDATION.json",
+      "sha256": "0c45a88624986ea133aef54a916350808def1f45961b1789f10d3b2c5ba27a6f"
+    },
+    "preparation_receipt": {
+      "path": "results_v2/gmatch/preparation/GMATCH_PREPARATION_RECEIPT.json",
+      "sha256": "3feaeae69b69a17ab301c4c69883179af5c278e287673bbf928720cbd07fabf2"
+    }
+  },
+  "manifest_contract": {
+    "authority_digest": "154cc40e61ecc8c6e44902fd01e4f030125b31b914c225844af5f62d0ee08583",
+    "content_sha256": "edf157ad787fc116eddab037596b72ff9fbc84cb2858664e926c403533dfba05",
+    "pair_ids_sha256": "36752a1202260ebbb5fe0a2fa539e4125976bdbf88d36164015fd8a451502b91",
+    "pairs": 43,
+    "pixel_hashes_sha256": "3a17bd382793ca6baeb38f0862f559e8d471d2453a51a0d93dce5ea12e6ba327",
+    "reference_ids_sha256": "e5fbd7cfd9e6fe8dfab0659902ab850702dcd99e5c20606acb6eb5f9d3e49c2b",
+    "row_ids_sha256": "1b559c34d6a29a4d9b1956e2045a888cc717fcc5e846a63da1d7e6d4b187d246",
+    "rows": 129
+  },
+  "metric_verifier_uuid": "2415023c-ad87-4246-8ae8-cd80d4f76297",
+  "outputs": {
+    "analysis_authorization": "GMATCH_FINAL_ANALYSIS_AUTHORIZATION.json",
+    "fold_map": "gmatch_dependency_folds.parquet",
+    "fold_receipt": "GMATCH_FOLD_RECEIPT.json",
+    "metric_recomputation": "GMATCH_METRIC_RECOMPUTATION.json",
+    "prediction_files": {
+      "imagenet_effnet_v2_s": "gmatch_oof_imagenet_effnet_v2_s.parquet",
+      "pixel_statistics": "gmatch_oof_pixel_statistics.parquet",
+      "stein_ssl_resnet50": "gmatch_oof_stein_ssl_resnet50.parquet"
+    },
+    "result_contract": "GMATCH_FINAL_RESULT_CONTRACT.json",
+    "result_receipt": "GMATCH_FINAL_RESULT_RECEIPT.json"
+  },
+  "probe": {
+    "C": 1.0,
+    "classifier": "l2_logistic_regression",
+    "dependency_columns": [
+      "physical_group_id",
+      "geographic_spatial_key",
+      "spatial_group_id",
+      "reference_id",
+      "host_galaxy_id",
+      "host_parent_id",
+      "source_parameter_id",
+      "lens_parameter_id",
+      "psf_id",
+      "rendering_id",
+      "render_parameter_id",
+      "random_draw_id",
+      "base_pixel_sha256",
+      "pixel_sha256"
+    ],
+    "estimator_seed": 42,
+    "fold_seed": 42,
+    "folds": 5,
+    "max_iter": 5000,
+    "solver": "lbfgs",
+    "standardisation": "fold_local_standard_scaler",
+    "weighting": "class_balanced_dependency_component_equal"
+  },
+  "prohibitions": {
+    "access_G_rec_scores": true,
+    "bootstrap": true,
+    "causal_attribution": true,
+    "confidence_interval": true,
+    "edit_manuscript": true,
+    "independent_replication_claim": true,
+    "read_detector_outcomes": true,
+    "read_detector_scores": true,
+    "realism_percentage": true,
+    "significance_test": true
+  },
+  "registered_implementation": {
+    "function": "stronglens_probes.probes.crossfit_gmatch_axis",
+    "sha256": "d0fad0810b0d970414b85fe135117e5c95e5c92d16545715b4ae25c33d284687"
+  },
+  "representations": {
+    "primary": {
+      "checkpoint_path": "checkpoints/frozen_external_encoders/gmatch_v2/stein_ssl_resnet50_d42798a4.ckpt",
+      "checkpoint_sha256": "d42798a4f5c165452a7a0ead8522abe096d49f2cb2ebc7792ca837ed5d90de3c",
+      "dimension": 2048,
+      "features_path": "results_v2/gmatch/features/stein_ssl_resnet50_features.npy",
+      "features_sha256": "f6633b0ecb636363817ec8f2870a53942303e8d685aa47168f9f45cb7b363539",
+      "id": "stein_ssl_resnet50",
+      "receipt_path": "results_v2/gmatch/features/STEIN_SSL_RESNET50_FEATURE_RECEIPT.json",
+      "receipt_sha256": "f6d01f76e2540f38b57761fe02d2dfd77044e13148a104af9beacbaebb1c6e68",
+      "result_label": "primary_stein_pretraining_image_overlap_unproven",
+      "role": "primary"
+    },
+    "required_diagnostics": [
+      {
+        "checkpoint_path": "checkpoints/frozen_external_encoders/gmatch_v2/imagenet_effnet_v2_s_dd5fe13b.pth",
+        "checkpoint_sha256": "dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74",
+        "dimension": 1280,
+        "features_path": "results_v2/gmatch/features/imagenet_effnet_v2_s_features.npy",
+        "features_sha256": "9458d54160758c2e1fda78eafeead6bc94a73c3a8b761f535a010336ecb424ff",
+        "id": "imagenet_effnet_v2_s",
+        "receipt_path": "results_v2/gmatch/features/IMAGENET_EFFNET_V2_S_FEATURE_RECEIPT.json",
+        "receipt_sha256": "ef8926dcc4ce966efc387b5163755929f902b8e937df3eabdf4439045acd2e22",
+        "result_label": "diagnostic_generic_imagenet",
+        "role": "diagnostic"
+      },
+      {
+        "checkpoint_path": null,
+        "checkpoint_sha256": null,
+        "dimension": 18,
+        "features_path": "results_v2/gmatch/features/pixel_statistics_features.npy",
+        "features_sha256": "51a4de784eeeb31c56b529d97949cc25fc64f0a24df596eba96104e993d3db88",
+        "id": "pixel_statistics",
+        "receipt_path": "results_v2/gmatch/features/PIXEL_STATISTICS_FEATURE_RECEIPT.json",
+        "receipt_sha256": "112c250823f4c1d805bd8792ad11d652cab06b53ccf81a628164b29c3d937490",
+        "result_label": "required_pixel_diagnostic",
+        "role": "diagnostic"
+      }
+    ]
+  },
+  "runtime": {
+    "direct_packages": {
+      "gmatch-analysis-v2": "0.1.0",
+      "joblib": "1.6.0",
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "pyarrow": "25.0.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "stronglens-probes": "0.1.0"
+    },
+    "python": "3.12.13"
+  },
+  "schema_version": 1,
+  "scope": "final_analysis_only",
+  "status": "adopted_final_G_match_analysis_only",
+  "upstream_source_closure": {
+    "stronglens_probes": {
+      "path": "experiments_v2/probes/src/stronglens_probes/__init__.py",
+      "sha256": "7ec5fff211fab5c6a808a91fb63572c2916b1c4a450f582e623d55d468fba6ab"
+    },
+    "stronglens_probes.authorities": {
+      "path": "experiments_v2/probes/src/stronglens_probes/authorities.py",
+      "sha256": "a2fbda64f1604c804b926ae4a33221c6918cb207c2f563c9a939f01305710cab"
+    },
+    "stronglens_probes.authorization": {
+      "path": "experiments_v2/probes/src/stronglens_probes/authorization.py",
+      "sha256": "832c8a3ffdb434f8fbb2b9e8ca6abebb9c33b471fcf59c717a766ecd799c6533"
+    },
+    "stronglens_probes.contracts": {
+      "path": "experiments_v2/probes/src/stronglens_probes/contracts.py",
+      "sha256": "ca0ab9e54016ffb9e68d6e4854b5dc1698039cd6e3e2a903423a51a969a34439"
+    },
+    "stronglens_probes.dependencies": {
+      "path": "experiments_v2/probes/src/stronglens_probes/dependencies.py",
+      "sha256": "6536453303c9480bb3cb6e34ac333070ac10a815336ce46f86d11ee574f11a47"
+    },
+    "stronglens_probes.features": {
+      "path": "experiments_v2/probes/src/stronglens_probes/features.py",
+      "sha256": "1cc7ea7b8413a55003a79b0714bed543ea22b4cf9b29981220cfb9fd5df1ab6f"
+    },
+    "stronglens_probes.probes": {
+      "path": "experiments_v2/probes/src/stronglens_probes/probes.py",
+      "sha256": "d0fad0810b0d970414b85fe135117e5c95e5c92d16545715b4ae25c33d284687"
+    }
+  }
+}

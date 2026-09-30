@@ -1,0 +1,66 @@
+{
+  "G_rec_score_access_authorized": false,
+  "analysis": "G_match",
+  "analysis_producer_uuid": "f50161bb-2b86-4bf0-a972-d234968a9a3d",
+  "bootstrap_authorized": false,
+  "config_path": "experiments_v2/gmatch_analysis_v2/config/production.json",
+  "config_sha256": "5f6a65e496524de1f503b70178f183191ff6412aec20f21cdaeaac6519b7fcbf",
+  "dependency_lock_path": "experiments_v2/gmatch_analysis_v2/uv.lock",
+  "dependency_lock_sha256": "d9c633c4b45c59e94156385e09a5e9414e284ab3eaa29a2a376b13937cf283ed",
+  "feature_access_authorized": true,
+  "feature_producer_uuid": "fe722e52-9423-442f-9021-a8591d7f65ea",
+  "feature_verifier_uuid": "6f8baa33-f305-43fe-906d-1d54f261c8a0",
+  "independent_feature_pass_uuid": "1cfbb597-ba57-4886-8114-7c58dd5977d6",
+  "locked_python": "==3.12.13",
+  "manuscript_edit_authorized": false,
+  "metric_verifier_uuid": "2415023c-ad87-4246-8ae8-cd80d4f76297",
+  "package_source_files": {
+    ".gitignore": "a7f2be04b23862d059ee58d65dc27871eaea7a64989ba917189e03c80b8822ca",
+    "README.md": "69309fe38edf96638921f194a47277aa5414bd16063a55e1462b38da9f225d25",
+    "pyproject.toml": "992f9492d37607031320a35dde5204a852880534f15c61690d93b15347341297",
+    "src/gmatch_analysis_v2/__init__.py": "b0dd6921a04197d29dc7036fe5a55c5e56d11d1f5b989acc23d87d179956630b",
+    "src/gmatch_analysis_v2/contracts.py": "9dfc53e3a88e6bc3dbaad82d8b1f1b74234412c60a1115f073fec8f5ef3cdb91",
+    "src/gmatch_analysis_v2/pipeline.py": "b37862488a247640e98ff49a14bd8aceeb90bf7d15d3c71f64c13a477d947061",
+    "src/gmatch_analysis_v2/verify.py": "1ab63c7f7307c00e3754b7089b0e939e196742754e685921e66aad26f94bbc90",
+    "tests/test_pipeline.py": "987afcdc881740c76acf614b0b30f52810742090c83e670099bd714724012d0e"
+  },
+  "package_source_tree_sha256": "4083c3e058701912c50ba09949388a0df2cd3897a87104ccca92955b6b5961f6",
+  "probe_fitting_authorized": true,
+  "registered_implementation": {
+    "function": "stronglens_probes.probes.crossfit_gmatch_axis",
+    "sha256": "d0fad0810b0d970414b85fe135117e5c95e5c92d16545715b4ae25c33d284687"
+  },
+  "schema_version": 1,
+  "scope": "final_analysis_only",
+  "status": "adopted_final_G_match_analysis_config_sealed",
+  "upstream_source_closure": {
+    "stronglens_probes": {
+      "path": "experiments_v2/probes/src/stronglens_probes/__init__.py",
+      "sha256": "7ec5fff211fab5c6a808a91fb63572c2916b1c4a450f582e623d55d468fba6ab"
+    },
+    "stronglens_probes.authorities": {
+      "path": "experiments_v2/probes/src/stronglens_probes/authorities.py",
+      "sha256": "a2fbda64f1604c804b926ae4a33221c6918cb207c2f563c9a939f01305710cab"
+    },
+    "stronglens_probes.authorization": {
+      "path": "experiments_v2/probes/src/stronglens_probes/authorization.py",
+      "sha256": "832c8a3ffdb434f8fbb2b9e8ca6abebb9c33b471fcf59c717a766ecd799c6533"
+    },
+    "stronglens_probes.contracts": {
+      "path": "experiments_v2/probes/src/stronglens_probes/contracts.py",
+      "sha256": "ca0ab9e54016ffb9e68d6e4854b5dc1698039cd6e3e2a903423a51a969a34439"
+    },
+    "stronglens_probes.dependencies": {
+      "path": "experiments_v2/probes/src/stronglens_probes/dependencies.py",
+      "sha256": "6536453303c9480bb3cb6e34ac333070ac10a815336ce46f86d11ee574f11a47"
+    },
+    "stronglens_probes.features": {
+      "path": "experiments_v2/probes/src/stronglens_probes/features.py",
+      "sha256": "1cc7ea7b8413a55003a79b0714bed543ea22b4cf9b29981220cfb9fd5df1ab6f"
+    },
+    "stronglens_probes.probes": {
+      "path": "experiments_v2/probes/src/stronglens_probes/probes.py",
+      "sha256": "d0fad0810b0d970414b85fe135117e5c95e5c92d16545715b4ae25c33d284687"
+    }
+  }
+}

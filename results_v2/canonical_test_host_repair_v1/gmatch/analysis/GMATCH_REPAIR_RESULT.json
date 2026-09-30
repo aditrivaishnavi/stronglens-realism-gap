@@ -1,0 +1,56 @@
+{
+  "dependency_components": 43,
+  "results": {
+    "imagenet_effnet_v2_s": {
+      "injected_vs_bare_auc": 0.5002704164413196,
+      "matched_targets": 43,
+      "maximum_movement": 0.566075325012207,
+      "mean_movement": 0.024791647181954493,
+      "median_movement": 0.004728198051452637,
+      "minimum_movement": -0.5446380376815796,
+      "negative_movements": 20,
+      "observed_vs_bare_auc": 0.973499188750676,
+      "observed_vs_injected_auc": 0.971335857220119,
+      "positive_movements": 23
+    },
+    "operational_penultimate": {
+      "injected_vs_bare_auc": 0.5089237425635478,
+      "matched_targets": 43,
+      "maximum_movement": 0.9984049499034882,
+      "mean_movement": 0.023183100799986617,
+      "median_movement": 0.017487168312072754,
+      "minimum_movement": -0.4528678357601166,
+      "negative_movements": 16,
+      "observed_vs_bare_auc": 0.997836668469443,
+      "observed_vs_injected_auc": 0.997836668469443,
+      "positive_movements": 27
+    },
+    "pixel_statistics": {
+      "injected_vs_bare_auc": 0.4780962682531098,
+      "matched_targets": 43,
+      "maximum_movement": 0.0002117156982421875,
+      "mean_movement": -0.02920658490891287,
+      "median_movement": -0.025861740112304688,
+      "minimum_movement": -0.08830282837152481,
+      "negative_movements": 42,
+      "observed_vs_bare_auc": 0.9280692266089778,
+      "observed_vs_injected_auc": 0.9329367225527312,
+      "positive_movements": 1
+    },
+    "stein_ssl_resnet50": {
+      "injected_vs_bare_auc": 0.4878312601406165,
+      "matched_targets": 43,
+      "maximum_movement": 5.204453468322754,
+      "mean_movement": 0.23502676552811333,
+      "median_movement": -0.0691382884979248,
+      "minimum_movement": -0.9815151691436768,
+      "negative_movements": 31,
+      "observed_vs_bare_auc": 0.9789075175770686,
+      "observed_vs_injected_auc": 0.981611681990265,
+      "positive_movements": 12
+    }
+  },
+  "rows": 129,
+  "schema_version": 1,
+  "status": "canonical_host_repair_gmatch_complete"
+}
