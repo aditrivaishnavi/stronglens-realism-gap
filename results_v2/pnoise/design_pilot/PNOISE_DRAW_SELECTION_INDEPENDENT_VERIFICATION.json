@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "status": "independent_draw_selection_verification_qualified",
+  "recorded_at_utc": "2026-09-16T20:11:00Z",
+  "verifier_id": "1dbbd7f0-ce5e-4ed3-adba-3effa2311a5a",
+  "scientific_selection_passed": true,
+  "production_rendering_safe": true,
+  "selected_draw_count": 8,
+  "estimated_mcse": 0.000559419850601361,
+  "estimated_sampling_se": 0.0035534782445183527,
+  "relative_mcse_fraction": 0.15742880977654222,
+  "empirical_mcse_contract": true,
+  "worst_case_bernoulli_mcse_contract": false,
+  "independent_checks": {
+    "scenes": 3168,
+    "hosts": 288,
+    "cells": 9,
+    "draws_per_scene": 64,
+    "photon_keys_verified": 202752,
+    "photon_key_mismatches": 0,
+    "decision_mismatches": 0,
+    "receipt_numeric_or_boolean_differences": 0,
+    "actual_production_validator_accepted": true
+  },
+  "governance_qualifications": [
+    "The handoff amendment's phrase 'before writing its receipt' means before durably promoting a final receipt; a transient candidate was written and then deleted after validation failed.",
+    "The finalizer did not itself enforce every narrative Boolean in the amendment. Independent byte and arithmetic verification established that data, MCSE rule, candidate panel, and selection logic were unchanged."
+  ],
+  "artifact_bindings": {
+    "pilot_scores_sha256": "f1a55d4200372fbefb464a0553f08c3214b7a14a298d4559dd8e33b0d96a6d8d",
+    "pilot_score_receipt_sha256": "39baf085bb3e568f36fc0d3102eb413d53f28210692ed0cbb80ae37dc6ca0cd6",
+    "draw_count_receipt_sha256": "2905adfc61cdfafa5aafe9b0e22d3d868cb35484348d00eba48b8ed5ca711bc4",
+    "handoff_amendment_sha256": "917a8ecac0155aa5c608ef203cf96a81587ebb25695bfb7beaca943ee1f688cf",
+    "selector_sha256": "9a0e1812965068567aed49aea6d86a6605e38a8b3f9066505b441c1e1ab862bc",
+    "compatibility_sha256": "3b38a52681f94967fad3c6bf93b114444ae804bc86442c07f95ae70a824b68eb",
+    "finalizer_sha256": "4374e814b3247529fb0037a81bd6a270087a3bf82df3cffe8c4e61d528f48048"
+  },
+  "manuscript_constraint": "Describe eight draws as satisfying the registered pilot-estimated variance criterion. Do not claim a worst-case Bernoulli MCSE guarantee or a physically calibrated DR10 gain."
+}

@@ -1,0 +1,32 @@
+{
+  "comparison_pixel_hash_manifest_sha256": "1667b069bc65eaa763ba1bca66d9582e60f76c4c437db345f455e8f4c472aa17",
+  "config": {
+    "config_seal_path": "experiments_v2/pnoise_pilot_v2/config/CONFIG_SEAL.json",
+    "config_seal_sha256": "59eae0a7079be79a0a2e81de45908aaf0f29f79d5e3bc413af446a11af1d31ba",
+    "contract_sha256": "23a31e15f1f302c829a4a01b4ce94836242b78beb5355fcb5a17584bb94ff3ea",
+    "normalized_scientific_config_sha256": "82154e806f65a992cd83a14c2374935f117c641cb4fed83f3782dee1392aedf0",
+    "path": "experiments_v2/pnoise_pilot_v2/config/production.toml",
+    "sha256": "963e5fa1baa332e73083d5efc217afce7139cb1336ecc55cde8e0b8764b4367a"
+  },
+  "negative_role_receipt_sha256": "ebdabda7735c6ccfbf17df5d35b9b79324d1c7b5ec94ed4b555048bd54689acb",
+  "per_row_payload_sha256_verified": true,
+  "per_row_raw_array_sha256_recorded": true,
+  "raw_array_dtype": "float32",
+  "raw_array_key": "cutout",
+  "raw_array_shape": [
+    101,
+    101,
+    3
+  ],
+  "role_rows": {
+    "achieved_fpr": 12512,
+    "threshold_calibration": 20002
+  },
+  "rows": 32514,
+  "schema_version": 1,
+  "source_role_manifest_sha256": {
+    "achieved_fpr": "2dd559dbde377c53916b2a52925a8e10fc0f16b7e079162a02195e91a616b96f",
+    "threshold_calibration": "435119ef16722aac70eeaa8fa4e4c601011b3c120a5fa79c96a562fb1d42c46e"
+  },
+  "status": "pnoise_comparison_role_raw_pixel_hashes_complete"
+}

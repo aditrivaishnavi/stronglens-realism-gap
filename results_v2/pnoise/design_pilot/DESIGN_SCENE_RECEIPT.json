@@ -1,0 +1,86 @@
+{
+  "cells": 9,
+  "comparison_pixel_hash_manifest_sha256": "1667b069bc65eaa763ba1bca66d9582e60f76c4c437db345f455e8f4c472aa17",
+  "comparison_pixel_hash_receipt_sha256": "deff6ff6972c12395660148b854ac0e47c9335016ade41c4266f8f3b1c221601",
+  "config": {
+    "config_seal_path": "experiments_v2/pnoise_pilot_v2/config/CONFIG_SEAL.json",
+    "config_seal_sha256": "59eae0a7079be79a0a2e81de45908aaf0f29f79d5e3bc413af446a11af1d31ba",
+    "contract_sha256": "23a31e15f1f302c829a4a01b4ce94836242b78beb5355fcb5a17584bb94ff3ea",
+    "normalized_scientific_config_sha256": "82154e806f65a992cd83a14c2374935f117c641cb4fed83f3782dee1392aedf0",
+    "path": "experiments_v2/pnoise_pilot_v2/config/production.toml",
+    "sha256": "963e5fa1baa332e73083d5efc217afce7139cb1336ecc55cde8e0b8764b4367a"
+  },
+  "design_host_manifest_sha256": "6bc239e0b6ac3630af4e275b08ea3cec60c7592a9b9068688c193e79cde0b313",
+  "design_host_receipt_sha256": "463f9a525ca8af6d0a91c55085a4616252edc08876df02d486c83ce3193f387a",
+  "design_scene_manifest_sha256": "240849e6aa6ece0488b00c82856ebe7856ed6b15f307ca00282c9193d9090b14",
+  "detector_outputs_used": false,
+  "distinct_hosts": 288,
+  "draw_law": "exact predecessor G_rec scene-table implementation and scientific config",
+  "final_outcomes_used": false,
+  "global_role": "design",
+  "hosts_per_cell": 32,
+  "overlap": {
+    "achieved_fpr_pixel_array_sha256_overlap": 0,
+    "final_canonical_spatial_component_overlap": 0,
+    "final_healpix_128_overlap": 0,
+    "final_id_overlap": 0,
+    "final_physical_group_overlap": 0,
+    "final_pixel_array_sha256_overlap": 0,
+    "final_within_38_arcsec_hosts": 0,
+    "gates": [
+      {
+        "canonical_spatial_component_overlap": 0,
+        "healpix_128_overlap": 0,
+        "id_overlap": 0,
+        "minimum_angular_separation_arcsec": 243.4521897907922,
+        "payload_file_sha256_overlap": 0,
+        "physical_group_overlap": 0,
+        "raw_array_sha256_overlap": 0,
+        "role": "G_rec_final",
+        "within_38_arcsec_hosts": 0
+      },
+      {
+        "canonical_spatial_component_overlap": 0,
+        "healpix_128_overlap": 0,
+        "id_overlap": 0,
+        "minimum_angular_separation_arcsec": 288.69632939816773,
+        "payload_file_sha256_overlap": 0,
+        "physical_group_overlap": 0,
+        "raw_array_sha256_overlap": 0,
+        "role": "threshold_calibration",
+        "within_38_arcsec_hosts": 0
+      },
+      {
+        "canonical_spatial_component_overlap": 0,
+        "healpix_128_overlap": 0,
+        "id_overlap": 0,
+        "minimum_angular_separation_arcsec": 221.401793767194,
+        "payload_file_sha256_overlap": 0,
+        "physical_group_overlap": 0,
+        "raw_array_sha256_overlap": 0,
+        "role": "achieved_fpr",
+        "within_38_arcsec_hosts": 0
+      }
+    ],
+    "status": "zero_current_role_overlap_verified",
+    "threshold_calibration_pixel_array_sha256_overlap": 0
+  },
+  "predecessor_config_sha256": "420e001332f0248c6264d6facb0d4af914344599773f8bb8207b8375e018f8b0",
+  "predecessor_scene_implementation_sha256": "054759668a13cea6cc343d2c7d71d246bb5cc9d794438eba1e3571459d61334c",
+  "radii_arcsec": [
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0,
+    2.25,
+    2.5,
+    2.75,
+    3.0
+  ],
+  "rows": 3168,
+  "schema_version": 1,
+  "status": "pnoise_design_scenes_frozen_pre_score"
+}

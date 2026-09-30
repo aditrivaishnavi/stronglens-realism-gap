@@ -1,0 +1,71 @@
+{
+  "cells": 9,
+  "comparison_pixel_hash_manifest_sha256": "1667b069bc65eaa763ba1bca66d9582e60f76c4c437db345f455e8f4c472aa17",
+  "comparison_pixel_hash_receipt_sha256": "deff6ff6972c12395660148b854ac0e47c9335016ade41c4266f8f3b1c221601",
+  "config": {
+    "config_seal_path": "experiments_v2/pnoise_pilot_v2/config/CONFIG_SEAL.json",
+    "config_seal_sha256": "59eae0a7079be79a0a2e81de45908aaf0f29f79d5e3bc413af446a11af1d31ba",
+    "contract_sha256": "23a31e15f1f302c829a4a01b4ce94836242b78beb5355fcb5a17584bb94ff3ea",
+    "normalized_scientific_config_sha256": "82154e806f65a992cd83a14c2374935f117c641cb4fed83f3782dee1392aedf0",
+    "path": "experiments_v2/pnoise_pilot_v2/config/production.toml",
+    "sha256": "963e5fa1baa332e73083d5efc217afce7139cb1336ecc55cde8e0b8764b4367a"
+  },
+  "distinct_historical_spatial_components": 288,
+  "distinct_physical_groups": 288,
+  "global_role": "design",
+  "historical_cutout_tar_sha256": "87746eac64ae45de9a2ff50bc0b35840452691dfadca3903fd96da6fff6aca62",
+  "historical_host_ancestry_exact": true,
+  "historical_staging_receipt_sha256": "576174e9a6b605201af3ccff5e86d5b334b226b8031be4f0f2f1586aaf9692f4",
+  "historical_validation_negative_rows": 28625,
+  "host_manifest_sha256": "6bc239e0b6ac3630af4e275b08ea3cec60c7592a9b9068688c193e79cde0b313",
+  "hosts_per_cell": 32,
+  "overlap": {
+    "achieved_fpr_pixel_array_sha256_overlap": 0,
+    "final_canonical_spatial_component_overlap": 0,
+    "final_healpix_128_overlap": 0,
+    "final_id_overlap": 0,
+    "final_physical_group_overlap": 0,
+    "final_pixel_array_sha256_overlap": 0,
+    "final_within_38_arcsec_hosts": 0,
+    "gates": [
+      {
+        "canonical_spatial_component_overlap": 0,
+        "healpix_128_overlap": 0,
+        "id_overlap": 0,
+        "minimum_angular_separation_arcsec": 243.4521897907922,
+        "payload_file_sha256_overlap": 0,
+        "physical_group_overlap": 0,
+        "raw_array_sha256_overlap": 0,
+        "role": "G_rec_final",
+        "within_38_arcsec_hosts": 0
+      },
+      {
+        "canonical_spatial_component_overlap": 0,
+        "healpix_128_overlap": 0,
+        "id_overlap": 0,
+        "minimum_angular_separation_arcsec": 288.69632939816773,
+        "payload_file_sha256_overlap": 0,
+        "physical_group_overlap": 0,
+        "raw_array_sha256_overlap": 0,
+        "role": "threshold_calibration",
+        "within_38_arcsec_hosts": 0
+      },
+      {
+        "canonical_spatial_component_overlap": 0,
+        "healpix_128_overlap": 0,
+        "id_overlap": 0,
+        "minimum_angular_separation_arcsec": 221.401793767194,
+        "payload_file_sha256_overlap": 0,
+        "physical_group_overlap": 0,
+        "raw_array_sha256_overlap": 0,
+        "role": "achieved_fpr",
+        "within_38_arcsec_hosts": 0
+      }
+    ],
+    "status": "zero_current_role_overlap_verified",
+    "threshold_calibration_pixel_array_sha256_overlap": 0
+  },
+  "rows": 288,
+  "schema_version": 1,
+  "status": "pnoise_design_hosts_frozen"
+}

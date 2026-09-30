@@ -1,0 +1,64 @@
+{
+  "canary_label": null,
+  "canonical_repair": {
+    "new_child_rows": 99968,
+    "old_child_manifest_sha256": "18047362457cc8544b1dcf598d7b25edfd4cb075ad9f6fa951c9f65d5cec2a63",
+    "retained_child_rows": 296032,
+    "shards": 142
+  },
+  "child_manifest_sha256": "8bc2dd072b7475de082e5e21d08e9f529b538e2032b6b4f050d5e0c86a4f7291",
+  "config": {
+    "config_contract_sha256": "a9421c68633a269c055f93aacd1dc720b4472fe704e170179fd60576084c9e05",
+    "config_file_sha256": "420e001332f0248c6264d6facb0d4af914344599773f8bb8207b8375e018f8b0",
+    "config_path": "experiments_v2/grec_pnoise/config/production.toml",
+    "governing_document_sha256": {
+      "evaluation_dataset_prep/GROUND_RULES.md": "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca",
+      "evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md": "be8260d121e7ff01ae5432a56b9cf24eac8831aedeb0dc27d14e29e21ae4fa0e",
+      "evaluation_dataset_prep/experiments/P_noise/DATASET_PLAN.md": "4c3cb2b4fdef0dfc58bb4001fdb9e30cae11d7322babb1c09b738a4f8ecc6349"
+    }
+  },
+  "count_unit": "electron",
+  "draw_count": 8,
+  "draw_count_receipt_sha256": "2905adfc61cdfafa5aafe9b0e22d3d868cb35484348d00eba48b8ed5ca711bc4",
+  "existing_host_sky_detector_coadd_noise_redrawn": false,
+  "gain_status": "modelled_not_calibrated_dr10_coadd_gain",
+  "host_background_source": "exact_parent_raw_host_element_bytes",
+  "implementation_source_sha256": {
+    "contracts.py": "84e74fd8f1c26bac0f5e9bab6b78f12d209e8814bccbadeebdb30f7e1c50b561",
+    "pnoise.py": "c56c0b0e80f6a583ab0bf4f03cbaaf69d8fe6983e0056059597926d9e927adf9",
+    "rendering.py": "d919ca71a52354909b9b322a21b5dff003ea7368ab9b26045fa5756905bd6dec"
+  },
+  "parent_manifest_sha256": "ee18c149c4a0a95fa568444245cfc8252c56d2c7aba675dec99cabe6511fa16d",
+  "parent_receipt_sha256": "73a429691c508c619dae86a9c343a0ca22de8a15394a96087c531bd2b161e8a2",
+  "parent_scenes": 49500,
+  "photon_stream_namespace": "stronglens-pnoise-photon-v1",
+  "pnoise_config": {
+    "candidate_draw_counts": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "draw_count": 0,
+    "draw_count_source": "required_frozen_design_only_mcse_receipt",
+    "gain_electron_per_nanomaggy_g": 150.0,
+    "gain_electron_per_nanomaggy_r": 150.0,
+    "gain_electron_per_nanomaggy_z": 150.0,
+    "gain_status": "modelled_not_calibrated_dr10_coadd_gain",
+    "mcse_absolute_max": 0.002,
+    "mcse_fraction_of_sampling_se_max": 0.2,
+    "photon_stream_namespace": "stronglens-pnoise-photon-v1",
+    "required_draw_receipt_status": "pnoise_design_mcse_draw_count_frozen"
+  },
+  "pnoise_config_sha256": "ea05e789448c24ed33d39b8c6abb66f75d7f22c651b3d511871dabff0e34214a",
+  "rng": "numpy.Generator(PCG64DXSM), one SHA256-derived stream per scene/draw",
+  "rows": 396000,
+  "schema_version": 1,
+  "source_flux_unit": "nanomaggy_per_native_pixel",
+  "source_photon_law": "Poisson(expectation_nmgy * electron_per_nmgy) / electron_per_nmgy",
+  "status": "pnoise_physical_bank_frozen_pre_score",
+  "threshold_receipt_sha256": "eb43c67f60319c0f8ab2f53b2fd7abe1f655f1bbace49601b1d44bad56d4cb80"
+}
