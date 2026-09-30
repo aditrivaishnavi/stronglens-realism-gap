@@ -1,0 +1,258 @@
+[study]
+study_id = "stronglens_gmatch_v2_final_preparation"
+status = "adopted_execution_authority_pre_feature"
+authority_basis = "Declared score-blind G_match preparation protocol"
+scope = "score_blind_final_preparation_only"
+data_role = "final"
+
+[paths]
+repository_root = "."
+output_root = "results_v2/canonical_test_host_repair_v1/gmatch/preparation"
+reference_payload_root = "evaluation_dataset_prep/candidate_payloads"
+
+[matching]
+candidate_population = "exact_final_grec_hosts"
+covariates = [
+  "observed_zmag",
+  "sersic_n",
+  "axis_ratio_q",
+  "psf_fwhm_r_arcsec",
+  "depth5_r_mag",
+]
+centre = "median"
+scale = "interquartile_range"
+scaling_population = "exact_final_grec_hosts_only"
+scaler_value_policy = "component_wise_all_finite_values_exact_authorized_roster"
+scaler_authority_rows = 4500
+candidate_eligibility = "all_five_covariates_finite"
+missing_covariate_policy = "retain_in_scaler_authority_accounting_mark_ineligible_no_imputation"
+imputation = false
+expected_complete_matching_candidates = 4500
+expected_nonfinite_observed_zmag_hosts = 0
+prior_scaler_comparator = "complete_case_4265_hosts_non_governing"
+distance = "robust_diagonal_euclidean"
+component_caliper_standardised = 2.0
+total_distance_caliper = 3.0
+targets_per_reference = 1
+replacement = false
+assignment = "maximum_cardinality_then_minimum_distance"
+tie_rule = "sha256_sorted_identifiers"
+unmatched_references = "retain_with_disposition"
+minimum_matched_references_for_future_five_fold_analysis = 10
+contract_version = "score_blind_robust_iqr_optimal_v2"
+host_total_flux_floor = "forbidden"
+
+[matching.expected_scaler.observed_zmag]
+finite = 4500
+missing = 0
+median = 19.39710237176541
+iqr = 1.0567950650698492
+
+[matching.expected_scaler.sersic_n]
+finite = 4500
+missing = 0
+median = 2.5997047424316406
+iqr = 3.0
+
+[matching.expected_scaler.axis_ratio_q]
+finite = 4500
+missing = 0
+median = 0.6087695572740404
+iqr = 0.34962079133933555
+
+[matching.expected_scaler.psf_fwhm_r_arcsec]
+finite = 4500
+missing = 0
+median = 1.3872898653320314
+iqr = 0.31376147270202637
+
+[matching.expected_scaler.depth5_r_mag]
+finite = 4500
+missing = 0
+median = 24.295993050549264
+iqr = 0.41633649881539725
+
+[schema_policy]
+mode = "strict_context_specific_allowlists"
+unknown_columns = "reject"
+missing_columns = "reject"
+duplicate_columns = "reject"
+forbidden_aliases = [
+  "feature_vector",
+  "stein_embedding",
+  "final_response",
+  "cnn_output",
+  "detector_prob",
+  "pred",
+  "score",
+  "scores",
+  "cnn_score",
+  "detector_score",
+  "logit",
+  "logits",
+  "prob",
+  "probability",
+  "probabilities",
+  "prediction",
+  "predictions",
+  "oof",
+  "oof_score",
+  "auc",
+  "decision",
+  "detection",
+  "detector_output",
+  "feature",
+  "features",
+  "embedding",
+  "embeddings",
+  "representation",
+  "representations",
+  "response",
+]
+
+[pairing]
+theta_e_arcsec = 1.5
+scene_rule = "exact_radius_then_lexicographic_grec_row_id"
+arms = ["bare", "injected"]
+rows_per_matched_target = 2
+source_flux_policy = "fixed_intrinsic"
+rendering = "zero_copy_exact_parent_bytes"
+bare_array_key = "cutout"
+bare_layout = "HWC"
+injected_array_key = "expectation_chw"
+injected_layout = "CHW"
+pixel_dtype = "float32"
+pixel_shape_hwc = [101, 101, 3]
+pixel_shape_chw = [3, 101, 101]
+
+[execution]
+overwrite_frozen_artifacts = false
+detector_scores_forbidden = true
+detector_outcomes_forbidden = true
+feature_extraction_forbidden = true
+probe_fitting_forbidden = true
+bootstrap_forbidden = true
+network_allowed = false
+stop_before_feature_authorization = true
+
+[authorities.ground_rules]
+path = "evaluation_dataset_prep/GROUND_RULES.md"
+sha256 = "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca"
+
+[authorities.gmatch_dataset_plan]
+path = "evaluation_dataset_prep/experiments/G_match/DATASET_PLAN.md"
+sha256 = "1f7bd04a45e431a29839f7e1c0a3f1e29970f70ed67e90ae7514051614616b40"
+
+[authorities.reference_roster]
+path = "evaluation_dataset_prep/reference_cohort/confirmed_43.parquet"
+sha256 = "91f540678278a9b2709d914417fb6b362d5cf71a39ccdeac5a0d05119a84a112"
+rows = 43
+
+[authorities.reference_summary]
+path = "evaluation_dataset_prep/reference_cohort/summary.json"
+sha256 = "6b94c9c6bdeb43030ffc402f045b239dcd065eb496fef13cf2c8ee8d4c982ddd"
+status = "payload_validated_reference_cohort_pending_spatial_and_support_checks"
+
+[authorities.reference_payload_manifest]
+path = "evaluation_dataset_prep/reference_cohort/confirmed_43_payload_validated.parquet"
+sha256 = "8a2b86d369c3ab1627614bd1f7701d63fec385c3f04cb5681a3fa5e7bf6fa740"
+rows = 43
+
+[authorities.reference_tractor_manifest]
+path = "evaluation_dataset_prep/reference_cohort/confirmed_43_with_tractor.parquet"
+sha256 = "62d59f5c7e43173f50fed9b12a6daea78cb364e8f1a782bd1f86a80f7f192be5"
+rows = 43
+
+[authorities.reference_tractor_summary]
+path = "evaluation_dataset_prep/reference_cohort/tractor_summary.json"
+sha256 = "e66461fee7c4272ae70f1884c9fafd1d92c1e2d5802fd61648505c11eb59a63a"
+status = "payload_and_tractor_validated_reference_cohort"
+
+[authorities.host_role_proposal]
+path = "results_v2/canonical_test_host_repair_v1/gmatch/host_universe.parquet"
+sha256 = "065e5d2a1cbda0ee676353b3725eb2099d051a1d60a4e779ee0160150eb3180f"
+
+[authorities.final_grec_selection]
+path = "results_v2/canonical_test_host_repair_v1/gmatch/final_selection_adapter.parquet"
+sha256 = "fc9a4ab87d9665a12c2e57b2244dd82edff11f6e7d60a957c3e9e641ff7c6108"
+rows = 4500
+
+[authorities.final_grec_selection_receipt]
+path = "results_v2/canonical_test_host_repair_v1/gmatch/FINAL_SELECTION_RECEIPT_ADAPTER.json"
+sha256 = "9eec83e46fcf66f9338f626d656fe7da7c6eb534613a4e9d23dacd2075d11b27"
+status = "final_experiment_host_selection_approved"
+
+[authorities.host_tractor_manifest]
+path = "results_v2/canonical_test_host_repair_v1/gmatch/host_tractor_adapter.parquet"
+sha256 = "e2d42fdf22c5fc0428bc894aab25debabc8300ab294431c7006e81d6427e1427"
+rows = 4500
+
+[authorities.grec_host_manifest]
+path = "results_v2/canonical_test_host_repair_v1/grec/hosts/final_grec_hosts.parquet"
+sha256 = "48849ee336444bc3c2992beb4ba1a084d06c19f81a6c44010e8944ae07a45e02"
+rows = 4500
+
+[authorities.grec_host_receipt]
+path = "results_v2/canonical_test_host_repair_v1/grec/hosts/FINAL_GREC_HOSTS_RECEIPT.json"
+sha256 = "54ae2a726efceff993dcbf4c3b55a6584ec5911f74de4cf9254f919500a1770c"
+status = "final_pre_score_grec_hosts_frozen"
+
+[authorities.grec_scene_manifest]
+path = "results_v2/canonical_test_host_repair_v1/grec/scenes/grec_scene_table.parquet"
+sha256 = "032fc50a743e4ccd675a723d30095f65744930ce77e630bf8b2ad3d089da605a"
+rows = 49500
+
+[authorities.grec_scene_receipt]
+path = "results_v2/canonical_test_host_repair_v1/grec/scenes/GREC_SCENE_TABLE_RECEIPT.json"
+sha256 = "ad6c06fb930048a35de91f11cbc83ca52d8e5da9c59ab3d2c0bdd7c7918cfa8c"
+status = "grec_scene_table_frozen_pre_score"
+
+[authorities.grec_parent_manifest]
+path = "results_v2/canonical_test_host_repair_v1/grec/parents/grec_parent_manifest.parquet"
+sha256 = "ee18c149c4a0a95fa568444245cfc8252c56d2c7aba675dec99cabe6511fa16d"
+rows = 49500
+
+[authorities.grec_render_receipt]
+path = "results_v2/canonical_test_host_repair_v1/grec/parents/GREC_RENDER_RECEIPT.json"
+sha256 = "73a429691c508c619dae86a9c343a0ca22de8a15394a96087c531bd2b161e8a2"
+status = "grec_parent_bank_frozen_pre_score"
+
+[authorities.grec_render_resume_audit]
+path = "results_v2/canonical_test_host_repair_v1/grec/parents/GREC_RENDER_RESUME_AUDIT.json"
+sha256 = "2f2ed8f650ac0a9f99e64208197696b70afc8fbca435738073969d3adf408c4f"
+status = "grec_render_resume_complete"
+
+[authorities.grec_quadrature_amendment]
+path = "results_v2/grec/SCORE_BLIND_QUADRATURE_AMENDMENT.json"
+sha256 = "4e4359027327bae510dd56439f38ecb1214f88daab9a334fbab17159bf134fbf"
+status = "score_blind_quadrature_extension_authorized"
+
+[authorities.train_manifest]
+path = "data/manifests/train.parquet"
+sha256 = "a0caa3824568f96010275e59d89d013a23ac7e6e6ae280de2c636a401fa38e5b"
+rows = 290312
+
+[authorities.validation_manifest]
+path = "data/manifests/validation.parquet"
+sha256 = "809729e63c9bd6fca96f51b4f8d244aeda604beca4135edcc428f431a9941ee9"
+rows = 62215
+
+[authorities.test_manifest]
+path = "data/manifests/test.parquet"
+sha256 = "3a7a2a616bca2b31d0c0ec00bf86d15e87356d298087e14fa7ca6021481b6e2b"
+rows = 61498
+
+[authorities.common_threshold_receipt]
+path = "results_v2/evaluation_v2/COMMON_THRESHOLD_RECEIPT.json"
+sha256 = "eb43c67f60319c0f8ab2f53b2fd7abe1f655f1bbace49601b1d44bad56d4cb80"
+status = "common_threshold_frozen"
+
+[authorities.governance_amendment]
+path = "results_v2/evaluation_v2/GOVERNANCE_PROVENANCE_AMENDMENT.json"
+sha256 = "74e511f3ad5f98a7a07b09450bf154b846544065ffeb024b33ae16bf58ba0654"
+status = "governance_provenance_amended_no_scientific_change"
+
+[authorities.negative_role_receipt]
+path = "results_v2/evaluation_v2/NEGATIVE_ROLE_RECEIPT.json"
+sha256 = "ebdabda7735c6ccfbf17df5d35b9b79324d1c7b5ec94ed4b555048bd54689acb"
+status = "latest_test_negative_roles_frozen_pre_score"

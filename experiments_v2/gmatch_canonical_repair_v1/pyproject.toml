@@ -1,0 +1,38 @@
+[build-system]
+requires = ["uv_build>=0.8.0,<0.9"]
+build-backend = "uv_build"
+
+[project]
+name = "gmatch-v2"
+version = "0.1.0"
+description = "Fail-closed, score-blind preparation for the final G_match experiment"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "numpy==2.5.3",
+  "pandas==3.0.5",
+  "pyarrow==25.0.1",
+  "scipy==1.18.1",
+]
+
+[dependency-groups]
+dev = [
+  "pytest==9.1.1",
+  "ruff==0.16.7",
+]
+
+[project.scripts]
+gmatch-v2 = "gmatch_v2.cli:main"
+
+[tool.uv]
+package = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

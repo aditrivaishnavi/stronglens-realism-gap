@@ -1,0 +1,35 @@
+{
+  "canonical_pixel_rows_differing_from_frozen_test_path": 21437,
+  "cross_role_id_pixel_spatial_physical_overlap": 0,
+  "detector_scores_used": false,
+  "eligible_input_sha256": "91147024bd10b046024abee3012ced583a128b33cb8cbda2eb901f0f1290e43e",
+  "exact_frozen_test_payload_rows": 11077,
+  "exact_historical_test_pixel_claim": false,
+  "final_host_manifest_sha256": "60429cc8f00de5ffcb05b44a93a61ae30d7109ee99842b56ac192d73bd94b023",
+  "implementation_sha256": "a399bfcb0e4176bf3612a8cc1d5e7fcf60df9e7ef80ae10b91d86b22392d9d33",
+  "pixel_population": "canonical_current_S3_cutout_version_with_timestamp_only_fallbacks",
+  "role_seed": "latest-test-negative-roles-v2",
+  "roles": {
+    "achieved_fpr": {
+      "path": "results_v2/evaluation_v2/achieved_fpr.parquet",
+      "physical_groups": 12505,
+      "rows": 12512,
+      "sha256": "2dd559dbde377c53916b2a52925a8e10fc0f16b7e079162a02195e91a616b96f",
+      "spatial_groups": 1089
+    },
+    "threshold_calibration": {
+      "path": "results_v2/evaluation_v2/threshold_calibration.parquet",
+      "physical_groups": 19989,
+      "rows": 20002,
+      "sha256": "435119ef16722aac70eeaa8fa4e4c601011b3c120a5fa79c96a562fb1d42c46e",
+      "spatial_groups": 1768
+    }
+  },
+  "schema_version": 1,
+  "selection_rule": "whole spatial groups in stable hash order",
+  "source_population": "latest detector frozen test identities and labels with canonical current S3 pixels",
+  "source_test_manifest_sha256": "3a7a2a616bca2b31d0c0ec00bf86d15e87356d298087e14fa7ca6021481b6e2b",
+  "status": "latest_test_negative_roles_frozen_pre_score",
+  "train_manifest_sha256": "a0caa3824568f96010275e59d89d013a23ac7e6e6ae280de2c636a401fa38e5b",
+  "validation_manifest_sha256": "809729e63c9bd6fca96f51b4f8d244aeda604beca4135edcc428f431a9941ee9"
+}

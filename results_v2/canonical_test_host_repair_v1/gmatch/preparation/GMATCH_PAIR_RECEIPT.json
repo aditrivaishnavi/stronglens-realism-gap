@@ -1,0 +1,16 @@
+{
+  "authority_digest": "059fda928c4fd19d4c7f75d073ee14d4d2994e484b61e4889d15d535de5547c6",
+  "bare_payload_files_reopened": 43,
+  "bare_to_grec_host_store_exact": 43,
+  "flux_rescaling_applied": false,
+  "host_total_flux_floor_applied": false,
+  "injected_parent_files_reopened": 43,
+  "matched_targets": 43,
+  "pair_plan_manifest_sha256": "39f3b19e232f09aef40e8d6a107bf17ec80e655f410983cb40d7707e95218e2e",
+  "pair_rows": 86,
+  "pair_scene_links_manifest_sha256": "a71a482215ef295764f87859123f65820d47920f5ce1d61974494b35d4a65830",
+  "parent_host_plus_injection_exact": 43,
+  "rendered_pairs_manifest_sha256": "7f14ca3f5a0bcb576778c2f50524caf87b2efb1a351848ba88bbdf652db7d995",
+  "schema_version": 1,
+  "status": "gmatch_v2_zero_copy_pairs_validated"
+}

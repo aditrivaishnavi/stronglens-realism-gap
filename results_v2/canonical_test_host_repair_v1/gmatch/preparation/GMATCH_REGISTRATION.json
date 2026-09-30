@@ -1,0 +1,239 @@
+{
+  "authority_digest": "059fda928c4fd19d4c7f75d073ee14d4d2994e484b61e4889d15d535de5547c6",
+  "bootstrap_authorized": false,
+  "config_seal_sha256": "e9003cd57b331736dbb3df3054c8a8fb6eedd3b5a154d3a11914040244959095",
+  "config_sha256": "246b88eb8ac382c3320acdbf7835f44b18b8e07c50c418af327dcdc1a4e2c550",
+  "data_role": "final",
+  "dependency_lock_sha256": "1bef4b59214d85f7fde3887c90692a23b3e2ef6cdf0c77238a33209a3b07716d",
+  "feature_extraction_authorized": false,
+  "final_scoring_authorized": false,
+  "output_bindings": {
+    "analysis_manifest": {
+      "path": "gmatch_analysis_manifest.parquet",
+      "rows": 129,
+      "sha256": "fe158695c98dc6d85806b202d2dcfbb1dad9bfbc2b82b1354ca5768e7fa89a55"
+    },
+    "balance": {
+      "path": "balance_diagnostics.parquet",
+      "rows": 5,
+      "sha256": "f4d9084af069460ae53d43e755aea20b024ee7f7f392a2dd24076d50a66eac6e"
+    },
+    "host_adapter": {
+      "path": "host_adapter.parquet",
+      "rows": 4500,
+      "sha256": "30b0c90f1b0a2354abc7c389fc00d1b5e5bbcb471e7426bdd5434c6c269b728d"
+    },
+    "host_disposition": {
+      "path": "host_disposition.parquet",
+      "rows": 4500,
+      "sha256": "337cc3ceb76087ee1e4e154a303e9f88d87f3a58be17d67a7952c363ed7c96cf"
+    },
+    "host_tractor_adapter": {
+      "path": "host_tractor_adapter.parquet",
+      "rows": 4500,
+      "sha256": "471d320e888ceb685e853aa89af2b975c8917209ad63c7a63f2c5d6c0581b12b"
+    },
+    "matches": {
+      "path": "matches.parquet",
+      "rows": 43,
+      "sha256": "b16127143b0c9c1e62ddd7829209f2dd47a5d6e04435cf71e025c146913373ee"
+    },
+    "pair_plan": {
+      "path": "pair_plan.parquet",
+      "rows": 86,
+      "sha256": "39f3b19e232f09aef40e8d6a107bf17ec80e655f410983cb40d7707e95218e2e"
+    },
+    "pair_scene_links": {
+      "path": "pair_scene_links.parquet",
+      "rows": 43,
+      "sha256": "a71a482215ef295764f87859123f65820d47920f5ce1d61974494b35d4a65830"
+    },
+    "parent_theta15_adapter": {
+      "path": "parent_theta15_adapter.parquet",
+      "rows": 4500,
+      "sha256": "a54b08c0e8ee4c9259fa4aca3d7f326082b299ba30e8eaa3240412a228e08dbc"
+    },
+    "reference_adapter": {
+      "path": "reference_adapter.parquet",
+      "rows": 43,
+      "sha256": "43ead962c7371d42c6a9ad3f4f75861b60821c815017f79c507e7de2c253a1fb"
+    },
+    "reference_disposition": {
+      "path": "reference_disposition.parquet",
+      "rows": 43,
+      "sha256": "8c7ecddf6b9f8f8aa2b9849dd4c6156ed412cd73e4a90f5e93f1f83985e08faf"
+    },
+    "rendered_pairs": {
+      "path": "rendered_pairs_zero_copy.parquet",
+      "rows": 86,
+      "sha256": "7f14ca3f5a0bcb576778c2f50524caf87b2efb1a351848ba88bbdf652db7d995"
+    },
+    "scaler_comparison": {
+      "path": "scaler_policy_comparison.parquet",
+      "rows": 43,
+      "sha256": "b9c212bd58d0d56ddd051804b54f728477d17bf3b7c6968e088090c6a8c3290d"
+    }
+  },
+  "probe_fitting_authorized": false,
+  "scaler_diagnostics": {
+    "authority_rows": 4500,
+    "finite_count": {
+      "axis_ratio_q": 4500,
+      "depth5_r_mag": 4500,
+      "observed_zmag": 4500,
+      "psf_fwhm_r_arcsec": 4500,
+      "sersic_n": 4500
+    },
+    "ineligible_hosts": 0,
+    "iqr": {
+      "axis_ratio_q": 0.34962079133933555,
+      "depth5_r_mag": 0.41633649881539725,
+      "observed_zmag": 1.0567950650698492,
+      "psf_fwhm_r_arcsec": 0.31376147270202637,
+      "sersic_n": 3.0
+    },
+    "matching_candidates": 4500,
+    "median": {
+      "axis_ratio_q": 0.6087695572740404,
+      "depth5_r_mag": 24.295993050549264,
+      "observed_zmag": 19.39710237176541,
+      "psf_fwhm_r_arcsec": 1.3872898653320314,
+      "sersic_n": 2.5997047424316406
+    },
+    "missing_count": {
+      "axis_ratio_q": 0,
+      "depth5_r_mag": 0,
+      "observed_zmag": 0,
+      "psf_fwhm_r_arcsec": 0,
+      "sersic_n": 0
+    },
+    "policy": "component_wise_all_finite_values_exact_authorized_roster",
+    "prior_complete_case_comparison": {
+      "changed_assignment_count": 0,
+      "changed_references": [],
+      "iqr": {
+        "axis_ratio_q": 0.34962079133933555,
+        "depth5_r_mag": 0.41633649881539725,
+        "observed_zmag": 1.0567950650698492,
+        "psf_fwhm_r_arcsec": 0.31376147270202637,
+        "sersic_n": 3.0
+      },
+      "median": {
+        "axis_ratio_q": 0.6087695572740404,
+        "depth5_r_mag": 24.295993050549264,
+        "observed_zmag": 19.39710237176541,
+        "psf_fwhm_r_arcsec": 1.3872898653320314,
+        "sersic_n": 2.5997047424316406
+      },
+      "rows": 4500,
+      "status": "non_governing_comparator"
+    }
+  },
+  "schema_version": 1,
+  "scientific_contract": {
+    "covariates": [
+      "observed_zmag",
+      "sersic_n",
+      "axis_ratio_q",
+      "psf_fwhm_r_arcsec",
+      "depth5_r_mag"
+    ],
+    "host_rows": 4500,
+    "matching": {
+      "assignment": "maximum_cardinality_then_minimum_distance",
+      "candidate_eligibility": "all_five_covariates_finite",
+      "candidate_population": "exact_final_grec_hosts",
+      "centre": "median",
+      "component_caliper_standardised": 2.0,
+      "contract_version": "score_blind_robust_iqr_optimal_v2",
+      "covariates": [
+        "observed_zmag",
+        "sersic_n",
+        "axis_ratio_q",
+        "psf_fwhm_r_arcsec",
+        "depth5_r_mag"
+      ],
+      "distance": "robust_diagonal_euclidean",
+      "expected_complete_matching_candidates": 4500,
+      "expected_nonfinite_observed_zmag_hosts": 0,
+      "expected_scaler": {
+        "axis_ratio_q": {
+          "finite": 4500,
+          "iqr": 0.34962079133933555,
+          "median": 0.6087695572740404,
+          "missing": 0
+        },
+        "depth5_r_mag": {
+          "finite": 4500,
+          "iqr": 0.41633649881539725,
+          "median": 24.295993050549264,
+          "missing": 0
+        },
+        "observed_zmag": {
+          "finite": 4500,
+          "iqr": 1.0567950650698492,
+          "median": 19.39710237176541,
+          "missing": 0
+        },
+        "psf_fwhm_r_arcsec": {
+          "finite": 4500,
+          "iqr": 0.31376147270202637,
+          "median": 1.3872898653320314,
+          "missing": 0
+        },
+        "sersic_n": {
+          "finite": 4500,
+          "iqr": 3.0,
+          "median": 2.5997047424316406,
+          "missing": 0
+        }
+      },
+      "host_total_flux_floor": "forbidden",
+      "imputation": false,
+      "minimum_matched_references_for_future_five_fold_analysis": 10,
+      "missing_covariate_policy": "retain_in_scaler_authority_accounting_mark_ineligible_no_imputation",
+      "prior_scaler_comparator": "complete_case_4265_hosts_non_governing",
+      "replacement": false,
+      "scale": "interquartile_range",
+      "scaler_authority_rows": 4500,
+      "scaler_value_policy": "component_wise_all_finite_values_exact_authorized_roster",
+      "scaling_population": "exact_final_grec_hosts_only",
+      "targets_per_reference": 1,
+      "tie_rule": "sha256_sorted_identifiers",
+      "total_distance_caliper": 3.0,
+      "unmatched_references": "retain_with_disposition"
+    },
+    "pairing": {
+      "arms": [
+        "bare",
+        "injected"
+      ],
+      "bare_array_key": "cutout",
+      "bare_layout": "HWC",
+      "injected_array_key": "expectation_chw",
+      "injected_layout": "CHW",
+      "pixel_dtype": "float32",
+      "pixel_shape_chw": [
+        3,
+        101,
+        101
+      ],
+      "pixel_shape_hwc": [
+        101,
+        101,
+        3
+      ],
+      "rendering": "zero_copy_exact_parent_bytes",
+      "rows_per_matched_target": 2,
+      "scene_rule": "exact_radius_then_lexicographic_grec_row_id",
+      "source_flux_policy": "fixed_intrinsic",
+      "theta_e_arcsec": 1.5
+    },
+    "reference_rows": 43,
+    "theta_e_arcsec": 1.5
+  },
+  "source_tree_sha256": "fdd948ebe25d4fb82f9571dfd079c9255ef26bfee54c259df789c0bc10705b50",
+  "status": "gmatch_v2_score_blind_preparation_registered",
+  "strict_schema_allowlist_contract_sha256": "71ea93bad3d051b62364cda15fe6eb2ad0b107d29f5899b57ec4af00e769ce97",
+  "study_id": "stronglens_gmatch_v2_final_preparation"
+}

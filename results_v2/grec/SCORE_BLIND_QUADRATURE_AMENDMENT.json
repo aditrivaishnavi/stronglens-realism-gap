@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "status": "score_blind_quadrature_extension_authorized",
+  "authorized_at_utc": "2026-09-16T16:51:37Z",
+  "reason": "The production render stopped before scoring because one scene failed the preregistered 24-to-32 image-convergence gate. Extending quadrature order preserves every frozen tolerance and changes only numerical integration accuracy.",
+  "outcome_access": {
+    "cnn_scores_accessed": false,
+    "detection_outcomes_accessed": false,
+    "failure_was_renderer_diagnostic_only": true
+  },
+  "trigger": {
+    "completed_atomic_artifacts_before_failure": 46564,
+    "scene_index_zero_based": 46564,
+    "scene_id": "scene_f963fa7c5853f9c05259270bd19bd00c1cd5eb46",
+    "host_galaxy_id": "2090p200_1773",
+    "theta_e_arcsec": 0.75,
+    "order_32_unlensed_flux_relative_error": 0.0001516375721355434,
+    "order_32_previous_order_relative_l1": 0.009033661326401493,
+    "order_32_previous_order_relative_max": 0.016269803826872146
+  },
+  "base_orders": [
+    24,
+    32
+  ],
+  "supplemental_orders": [
+    48,
+    64,
+    96
+  ],
+  "selection_rule": "Use the first increasing order whose flux, relative-L1, and relative-maximum diagnostics pass the original unchanged tolerances; stop with an error if order 96 fails.",
+  "tolerances_unchanged": true,
+  "tolerances": {
+    "unlensed_flux_relative_error_max": 0.01,
+    "lensed_previous_order_relative_l1_max": 0.005,
+    "lensed_previous_order_relative_max_max": 0.02
+  },
+  "trigger_scene_extension_check": {
+    "first_passing_supplemental_order": 48,
+    "order_48_unlensed_flux_relative_error": 0.0009835079556810289,
+    "order_48_previous_order_relative_l1": 0.0014154119407007945,
+    "order_48_previous_order_relative_max": 0.0025658592878166674
+  },
+  "artifact_bindings": {
+    "production_config_path": "experiments_v2/grec_pnoise/config/production.toml",
+    "scene_table_path": "results_v2/grec/scenes/grec_scene_table.parquet",
+    "scene_receipt_path": "results_v2/grec/scenes/GREC_SCENE_TABLE_RECEIPT.json",
+    "renderer_validation_receipt_path": "results_v2/grec/RENDERER_VALIDATION_RECEIPT.json",
+    "resumable_runner_path": "experiments_v2/grec_pnoise/scripts/render_grec_resumable.py"
+  },
+  "production_config_sha256": "420e001332f0248c6264d6facb0d4af914344599773f8bb8207b8375e018f8b0",
+  "scene_table_sha256": "43638e10abd74e0196fd0e2312841048d09fb8944970db82bd1d5535f341237f",
+  "scene_receipt_sha256": "1194c664c1f1b54a8ebfdc1e22bcdd0d0daf1bad294bdf134ef6f44b3e989969",
+  "renderer_validation_receipt_sha256": "613fbc502fd570482f15cfe220b216566d64c7c21d4e85a38efad0796fa0ed03",
+  "resumable_runner_sha256": "c2e4f1b685f6d0ce6cfe2c553c662e7255650770b04308be5b3105563c5609d2",
+  "scientific_scope": {
+    "population_changed": false,
+    "scene_parameters_changed": false,
+    "renderer_equations_changed": false,
+    "psf_changed": false,
+    "noise_changed": false,
+    "threshold_changed": false,
+    "numerical_accuracy_only": true
+  }
+}

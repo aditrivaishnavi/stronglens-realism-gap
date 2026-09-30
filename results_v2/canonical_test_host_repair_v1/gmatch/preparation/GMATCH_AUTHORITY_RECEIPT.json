@@ -1,0 +1,76 @@
+{
+  "authority_digest": "059fda928c4fd19d4c7f75d073ee14d4d2994e484b61e4889d15d535de5547c6",
+  "detector_development_exclusion": {
+    "host_id_overlap_train_validation": 0,
+    "host_physical_group_overlap_train_validation": 0,
+    "passed": true,
+    "reference_id_overlap_train_validation": 0,
+    "reference_physical_group_overlap_train_validation": 0,
+    "references_present_in_test": 43,
+    "test_rows": 61498,
+    "train_rows": 290312,
+    "validation_rows": 62215
+  },
+  "detector_outcomes_used": false,
+  "detector_scores_used": false,
+  "feature_extraction_performed": false,
+  "hash_domains_distinct": true,
+  "host_array_hash_field": "host_pixel_sha256",
+  "outputs": {
+    "host_adapter": {
+      "path": "host_adapter.parquet",
+      "rows": 4500,
+      "sha256": "30b0c90f1b0a2354abc7c389fc00d1b5e5bbcb471e7426bdd5434c6c269b728d"
+    },
+    "host_tractor_adapter": {
+      "path": "host_tractor_adapter.parquet",
+      "rows": 4500,
+      "sha256": "471d320e888ceb685e853aa89af2b975c8917209ad63c7a63f2c5d6c0581b12b"
+    },
+    "parent_theta15_adapter": {
+      "path": "parent_theta15_adapter.parquet",
+      "rows": 4500,
+      "sha256": "a54b08c0e8ee4c9259fa4aca3d7f326082b299ba30e8eaa3240412a228e08dbc"
+    },
+    "reference_adapter": {
+      "path": "reference_adapter.parquet",
+      "rows": 43,
+      "sha256": "43ead962c7371d42c6a9ad3f4f75861b60821c815017f79c507e7de2c253a1fb"
+    }
+  },
+  "payload_file_hash_field": "host_payload_sha256",
+  "pixel_verification": {
+    "host_payloads_reopened": 4500,
+    "reference_payloads_reopened": 43
+  },
+  "schema_version": 1,
+  "source_bindings": {
+    "common_threshold_receipt": "eb43c67f60319c0f8ab2f53b2fd7abe1f655f1bbace49601b1d44bad56d4cb80",
+    "final_grec_selection": "fc9a4ab87d9665a12c2e57b2244dd82edff11f6e7d60a957c3e9e641ff7c6108",
+    "final_grec_selection_receipt": "9eec83e46fcf66f9338f626d656fe7da7c6eb534613a4e9d23dacd2075d11b27",
+    "gmatch_dataset_plan": "1f7bd04a45e431a29839f7e1c0a3f1e29970f70ed67e90ae7514051614616b40",
+    "governance_amendment": "74e511f3ad5f98a7a07b09450bf154b846544065ffeb024b33ae16bf58ba0654",
+    "grec_host_manifest": "48849ee336444bc3c2992beb4ba1a084d06c19f81a6c44010e8944ae07a45e02",
+    "grec_host_receipt": "54ae2a726efceff993dcbf4c3b55a6584ec5911f74de4cf9254f919500a1770c",
+    "grec_parent_manifest": "ee18c149c4a0a95fa568444245cfc8252c56d2c7aba675dec99cabe6511fa16d",
+    "grec_quadrature_amendment": "4e4359027327bae510dd56439f38ecb1214f88daab9a334fbab17159bf134fbf",
+    "grec_render_receipt": "73a429691c508c619dae86a9c343a0ca22de8a15394a96087c531bd2b161e8a2",
+    "grec_render_resume_audit": "2f2ed8f650ac0a9f99e64208197696b70afc8fbca435738073969d3adf408c4f",
+    "grec_scene_manifest": "032fc50a743e4ccd675a723d30095f65744930ce77e630bf8b2ad3d089da605a",
+    "grec_scene_receipt": "ad6c06fb930048a35de91f11cbc83ca52d8e5da9c59ab3d2c0bdd7c7918cfa8c",
+    "ground_rules": "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca",
+    "host_role_proposal": "065e5d2a1cbda0ee676353b3725eb2099d051a1d60a4e779ee0160150eb3180f",
+    "host_tractor_manifest": "e2d42fdf22c5fc0428bc894aab25debabc8300ab294431c7006e81d6427e1427",
+    "negative_role_receipt": "ebdabda7735c6ccfbf17df5d35b9b79324d1c7b5ec94ed4b555048bd54689acb",
+    "reference_payload_manifest": "8a2b86d369c3ab1627614bd1f7701d63fec385c3f04cb5681a3fa5e7bf6fa740",
+    "reference_roster": "91f540678278a9b2709d914417fb6b362d5cf71a39ccdeac5a0d05119a84a112",
+    "reference_summary": "6b94c9c6bdeb43030ffc402f045b239dcd065eb496fef13cf2c8ee8d4c982ddd",
+    "reference_tractor_manifest": "62d59f5c7e43173f50fed9b12a6daea78cb364e8f1a782bd1f86a80f7f192be5",
+    "reference_tractor_summary": "e66461fee7c4272ae70f1884c9fafd1d92c1e2d5802fd61648505c11eb59a63a",
+    "test_manifest": "3a7a2a616bca2b31d0c0ec00bf86d15e87356d298087e14fa7ca6021481b6e2b",
+    "train_manifest": "a0caa3824568f96010275e59d89d013a23ac7e6e6ae280de2c636a401fa38e5b",
+    "validation_manifest": "809729e63c9bd6fca96f51b4f8d244aeda604beca4135edcc428f431a9941ee9"
+  },
+  "status": "gmatch_v2_direct_authority_adapters_complete",
+  "strict_schema_allowlist_contract_sha256": "71ea93bad3d051b62364cda15fe6eb2ad0b107d29f5899b57ec4af00e769ce97"
+}
