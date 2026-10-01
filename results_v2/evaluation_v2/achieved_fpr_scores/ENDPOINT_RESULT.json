@@ -1,0 +1,19 @@
+{
+  "detections": 13,
+  "fraction": 0.0010390025575447571,
+  "interpretation": "Catalogue-negative exceedance at the once-frozen threshold; this result did not recalibrate the threshold.",
+  "physical_groups": 12505,
+  "role": "achieved_fpr",
+  "row_wilson_interval": [
+    0.0006073221300679856,
+    0.001776972918641104
+  ],
+  "rows": 12512,
+  "schema_version": 1,
+  "spatial_groups": 1089,
+  "spatial_multiplier_interval": [
+    0.0005457998929971707,
+    0.001655644452537967
+  ],
+  "status": "achieved_fpr_evaluation_complete"
+}

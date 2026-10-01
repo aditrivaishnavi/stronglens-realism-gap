@@ -1,0 +1,13 @@
+{
+  "detections": 39,
+  "fraction": 0.9069767441860465,
+  "interpretation": "Exact selected finite-cohort response at the once-frozen threshold.",
+  "physical_groups": 43,
+  "role": "terminal_confirmed",
+  "row_wilson_interval": null,
+  "rows": 43,
+  "schema_version": 1,
+  "spatial_groups": 43,
+  "spatial_multiplier_interval": null,
+  "status": "terminal_confirmed_evaluation_complete"
+}

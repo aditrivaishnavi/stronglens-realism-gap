@@ -1,0 +1,14 @@
+{
+  "detector_scores_used": false,
+  "manifest_sha256": "dc5c590eb54c5c24959a495ec3a411b0ca836c71624b6c8f404fd455436886f7",
+  "package_seal_sha256": "d985fccc133cca2d1392bbb3860d73b5cf5316886c24c1d698509b297ab3feec",
+  "payload_files_rehashed": 43,
+  "payload_manifest_sha256": "8a2b86d369c3ab1627614bd1f7701d63fec385c3f04cb5681a3fa5e7bf6fa740",
+  "pixel_arrays_rehashed": 43,
+  "role": "terminal_confirmed",
+  "rows": 43,
+  "schema_version": 1,
+  "source_manifest_sha256": "91f540678278a9b2709d914417fb6b362d5cf71a39ccdeac5a0d05119a84a112",
+  "source_receipt_sha256": "6b94c9c6bdeb43030ffc402f045b239dcd065eb496fef13cf2c8ee8d4c982ddd",
+  "status": "terminal_confirmed_manifest_frozen_pre_score"
+}

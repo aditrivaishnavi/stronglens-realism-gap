@@ -1,0 +1,26 @@
+{
+  "all_scientific_fields_within_rtol_1e_6_atol_1e_8": true,
+  "current_tractor_manifest_sha256": "cdf2d8a1f556e47e4a6a62000f8ce1e3f9fa3cee64b6b277742c008b31303a4f",
+  "eligibility_passed": 4500,
+  "final_selection_sha256": "f0f821e1acca7da9a1b6568d040e39a5289ef16d0f67dcc6a33c6d351409150f",
+  "maximum_absolute_differences": {
+    "flux_g": 3.825683592140194e-06,
+    "flux_r": 4.711914073141088e-06,
+    "flux_z": 4.707031223460945e-06,
+    "galdepth_r_tractor": 0.00021875000038562575,
+    "psfdepth_g": 0.0009375000008731149,
+    "psfdepth_r_tractor": 0.00042968749949068297,
+    "psfdepth_z": 3.0078125064392225e-05,
+    "psfsize_g": 5.914306644427825e-08,
+    "psfsize_r_tractor": 5.55114745282026e-08,
+    "psfsize_z": 4.956359855867731e-08,
+    "sersic": 1.947631833587593e-07,
+    "shape_e1": 2.6437377953492103e-08,
+    "shape_e2": 2.851638791767641e-08,
+    "shape_r": 9.138488765714214e-08
+  },
+  "rows": 4500,
+  "schema_version": 1,
+  "status": "complete_independent_current_tractor_crosscheck",
+  "unresolved_bricks": 0
+}

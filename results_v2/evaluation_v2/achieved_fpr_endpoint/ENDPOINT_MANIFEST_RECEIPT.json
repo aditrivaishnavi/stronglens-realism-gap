@@ -1,0 +1,14 @@
+{
+  "detector_scores_used": false,
+  "manifest_sha256": "8abb64f3cb09feed2b7a66de899a0f88f7a7e50509ac06be94e5e0528c7668a2",
+  "package_seal_sha256": "d985fccc133cca2d1392bbb3860d73b5cf5316886c24c1d698509b297ab3feec",
+  "payload_files_rehashed": 12512,
+  "payload_manifest_sha256": null,
+  "pixel_arrays_rehashed": 12512,
+  "role": "achieved_fpr",
+  "rows": 12512,
+  "schema_version": 1,
+  "source_manifest_sha256": "2dd559dbde377c53916b2a52925a8e10fc0f16b7e079162a02195e91a616b96f",
+  "source_receipt_sha256": "ebdabda7735c6ccfbf17df5d35b9b79324d1c7b5ec94ed4b555048bd54689acb",
+  "status": "achieved_fpr_manifest_frozen_pre_score"
+}

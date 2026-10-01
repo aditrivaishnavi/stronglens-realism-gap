@@ -1,0 +1,21 @@
+{
+  "calibration_manifest_sha256": "6dea8e9fce681d58c04e9010966832a15ae2a11e2eb2a80d65ebf07af150be9a",
+  "config": {
+    "config_contract_sha256": "a9421c68633a269c055f93aacd1dc720b4472fe704e170179fd60576084c9e05",
+    "config_file_sha256": "420e001332f0248c6264d6facb0d4af914344599773f8bb8207b8375e018f8b0",
+    "config_path": "experiments_v2/grec_pnoise/config/production.toml",
+    "governing_document_sha256": {
+      "evaluation_dataset_prep/GROUND_RULES.md": "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca",
+      "evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md": "be8260d121e7ff01ae5432a56b9cf24eac8831aedeb0dc27d14e29e21ae4fa0e",
+      "evaluation_dataset_prep/experiments/P_noise/DATASET_PLAN.md": "4c3cb2b4fdef0dfc58bb4001fdb9e30cae11d7322babb1c09b738a4f8ecc6349"
+    }
+  },
+  "detector_scores_used": false,
+  "materializer_implementation_sha256": "b93750fd3d1b5ddcee63fd51d373286986b47f4f4373edbce60263a7211924c7",
+  "pixel_artifacts_verified": 20002,
+  "rows": 20002,
+  "schema_version": 1,
+  "source_role_manifest_sha256": "435119ef16722aac70eeaa8fa4e4c601011b3c120a5fa79c96a562fb1d42c46e",
+  "source_role_receipt_sha256": "ebdabda7735c6ccfbf17df5d35b9b79324d1c7b5ec94ed4b555048bd54689acb",
+  "status": "threshold_calibration_manifest_frozen"
+}

@@ -1,0 +1,14 @@
+{
+  "manifest_sha256": "dc5c590eb54c5c24959a495ec3a411b0ca836c71624b6c8f404fd455436886f7",
+  "payload_files_and_arrays_rehashed": 43,
+  "result_recomputed": true,
+  "result_sha256": "470e0acdc19c9905c882ce946465c098184c45199665b88b629383c4f2784ee5",
+  "role": "terminal_confirmed",
+  "rows": 43,
+  "schema_version": 1,
+  "score_bits_recomputed": true,
+  "score_receipt_sha256": "34808142abb25cd145702fa29e636024359f85d664497d73a24d36c1c47e3046",
+  "scores_sha256": "93a1fa01245b57ef829ac135fe5e0c925e039ae31757099d583bebb045b2cdd8",
+  "status": "PASS",
+  "threshold_decisions_recomputed": true
+}

@@ -1,0 +1,154 @@
+{
+  "backend_profile": {
+    "cuda_version": null,
+    "cudnn_version": null,
+    "determinism": {
+      "cublas_workspace_config": ":4096:8",
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "deterministic_algorithms": true,
+      "deterministic_debug_mode": 2,
+      "float32_matmul_precision": "highest",
+      "mps_environment": {
+        "METAL_DEVICE_WRAPPER_TYPE": null,
+        "MTL_CAPTURE_ENABLED": null,
+        "PYTORCH_DEBUG_MPS_ALLOCATOR": null,
+        "PYTORCH_ENABLE_MPS_FALLBACK": "0",
+        "PYTORCH_MPS_FAST_MATH": "0",
+        "PYTORCH_MPS_HIGH_WATERMARK_RATIO": null,
+        "PYTORCH_MPS_LOW_WATERMARK_RATIO": null,
+        "PYTORCH_MPS_PREFER_METAL": "0"
+      },
+      "num_interop_threads": 18,
+      "num_threads": 6
+    },
+    "device_index": null,
+    "device_type": "mps",
+    "hardware": {
+      "apple": {
+        "chip_type": "Apple M5 Max",
+        "machine_model": "Mac17,6",
+        "machine_name": "MacBook Pro",
+        "model_number": "MGEE4LL/A",
+        "number_processors": "proc 18:6:0:12",
+        "physical_memory": "48 GB",
+        "sysctl_cpu_brand_string": "Apple M5 Max",
+        "sysctl_hw_model": "Mac17,6"
+      },
+      "mps_available": true,
+      "mps_built": true,
+      "name": "Apple Metal Performance Shaders"
+    },
+    "profile_sha256": "88964e2a54b09317d7c4e5a7a0909a4be7ec9cbd7499988d19adaaca2fb77b87",
+    "requested_device": "mps",
+    "runtime": {
+      "device_names": [],
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "platform": "macOS-26.4.1-arm64-arm-64bit",
+      "python": "3.12.13",
+      "torch": "2.7.0",
+      "torchvision": "0.22.0"
+    },
+    "schema_version": 1,
+    "torch_build_config_sha256": "4e66401c1c3ca819b3db659946c065007fe1d48c8f3b9e06b714712683ae948a"
+  },
+  "batch_decoupling": {
+    "batchnorm_all_using_running_statistics": true,
+    "batchnorm_layers": 110,
+    "dropout_all_inactive": true,
+    "dropout_layers": 1,
+    "model_training_mode": false,
+    "why_padding_is_safe": "in eval mode normalisation uses stored running statistics and dropout is the identity, so no row's output depends on the other rows sharing its batch; filler outputs are discarded and cannot affect real ones"
+  },
+  "batches": {
+    "batch_shape_fixed": true,
+    "batches": 1,
+    "filler_policy": "last",
+    "final_batch_padding": "last row repeated, outputs discarded",
+    "full_batches": 0,
+    "governing_filler": true,
+    "inference_batch_size": 64,
+    "padded_rows_discarded": 21,
+    "rows_scored": 43,
+    "terminal_batch_real_rows": 43
+  },
+  "checkpoint_sha256": "5d1082839aac7a0bfb89342f84a9a533b22e1111c15cb4711255ed1b524a2b8d",
+  "comparison": ">=",
+  "kernels": {
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true
+  },
+  "manifest_receipt_sha256": "577d68bb9352ef8f7b0f2570e3724ad66663f3d2f0b44226c9691f8022852c8c",
+  "manifest_sha256": "dc5c590eb54c5c24959a495ec3a411b0ca836c71624b6c8f404fd455436886f7",
+  "package_seal_sha256": "d985fccc133cca2d1392bbb3860d73b5cf5316886c24c1d698509b297ab3feec",
+  "requested_device": "mps",
+  "result": {
+    "detections": 39,
+    "fraction": 0.9069767441860465,
+    "interpretation": "Exact selected finite-cohort response at the once-frozen threshold.",
+    "physical_groups": 43,
+    "role": "terminal_confirmed",
+    "row_wilson_interval": null,
+    "rows": 43,
+    "schema_version": 1,
+    "spatial_groups": 43,
+    "spatial_multiplier_interval": null,
+    "status": "terminal_confirmed_evaluation_complete"
+  },
+  "role": "terminal_confirmed",
+  "rows": 43,
+  "runtime": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "pyarrow": "25.0.1",
+    "python": "3.12.13",
+    "torch": "2.7.0"
+  },
+  "schema_version": 1,
+  "scorer_closure": {
+    "backend_profile_sha256": "88964e2a54b09317d7c4e5a7a0909a4be7ec9cbd7499988d19adaaca2fb77b87",
+    "batch_size": 64,
+    "checkpoint_architecture": "efficientnet_v2_s",
+    "checkpoint_epoch": 160,
+    "checkpoint_path": "data/downloads/models/primary_seed42_epoch160.pt",
+    "checkpoint_sha256": "5d1082839aac7a0bfb89342f84a9a533b22e1111c15cb4711255ed1b524a2b8d",
+    "comparison": ">=",
+    "filler_policy": "last",
+    "native_logit_dtype": "float32",
+    "runtime_versions": {
+      "numpy": "2.5.3",
+      "pandas": "3.0.5",
+      "pyarrow": "25.0.1",
+      "python": "3.12.13",
+      "torch": "2.7.0",
+      "torchvision": "0.22.0"
+    },
+    "schema_version": 1,
+    "source_sha256": {
+      "dhs/__init__.py": "75ad4f4c2943325f88064ad2beae890b59674be2bf0404b30afc5584dc4de4bb",
+      "dhs/constants.py": "15cc0c5abbfa1daea1392638b2f2ff8733b217b31bfce346d63546da4363fce6",
+      "dhs/fixed_width_scoring.py": "e38fa3f837e33fe08a63bd152bc4e0b2396d027140af449376a0c3668cb1eba6",
+      "dhs/model.py": "41adddaafe5082eb43aa64eafb387d57725b84300a85102739ef7d78e84c3a25",
+      "dhs/preprocess.py": "8457a2d52472d34a22809ca103feaf92706f975fb075409363ef5fee270add2c",
+      "dhs/preprocess_spec.py": "bc207bade3147a7e641a0c74094e67227263116bce77d4e37f1145ce998a85ee",
+      "dhs/scoring_utils.py": "4ab9c4a0ca33957d5e378004f2ac05198d4535028c058f585c5cb36d81204c63",
+      "dhs/utils.py": "28dab8fc503ee3e36164616031a2c43c35b02964b00f61c6d60782b5f37104b9"
+    },
+    "wrapper_source_sha256": {
+      "backend.py": "d31379750c36ea99fbb60c7e3afcb1727c0abae2448a550e4406fbe925b5d0e6",
+      "cli.py": "2c8385ff9386982211fbedd5258673adeb77814104eead49595d19c4c4e717a0",
+      "contracts.py": "84e74fd8f1c26bac0f5e9bab6b78f12d209e8814bccbadeebdb30f7e1c50b561",
+      "inference.py": "629e476050eacd38a845fcab8c3d85705f7e47ed55f024d12f899287bffed1b2",
+      "scoring.py": "b35561f0017579179e664d6b8928fd80bcceb993745cca9d1f0aa875fd8a08fc",
+      "threshold.py": "ec911bdc49b551cdb69de6915ff3f2de6d8f14b26dc1aa9e905e2e5234b1c291"
+    }
+  },
+  "scores_sha256": "93a1fa01245b57ef829ac135fe5e0c925e039ae31757099d583bebb045b2cdd8",
+  "status": "terminal_confirmed_scores_complete",
+  "threshold_float32_bits": 1070149163,
+  "threshold_receipt_sha256": "eb43c67f60319c0f8ab2f53b2fd7abe1f655f1bbace49601b1d44bad56d4cb80",
+  "threshold_source_status": "common_threshold_frozen",
+  "threshold_was_recalibrated": false
+}

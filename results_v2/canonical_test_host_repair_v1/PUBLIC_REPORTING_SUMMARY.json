@@ -1,0 +1,162 @@
+{
+  "derived_artifacts": {
+    "results_v2/canonical_test_host_repair_v1/REPORTING_MATCHED_PIXEL_DIAGNOSTICS.parquet": {
+      "rows": 129,
+      "sha256": "f3c06f33b9148c61caa56b82ee7dc81d18c36bbc2cddc198d20b853b3aa80cc4"
+    },
+    "results_v2/canonical_test_host_repair_v1/REPORTING_PSRC_PAIR_DIAGNOSTICS.parquet": {
+      "rows": 1584,
+      "sha256": "5cf258184ed4ce15f99e7d6e1612285dedbbd144e9c6a76df0d766f85b30228a"
+    }
+  },
+  "gdomain_verification": {
+    "absolute_weight_by_population": {
+      "observed_reference": 3189.5000000000005,
+      "simulated": 3189.500000000001
+    },
+    "absolute_weight_total": 6379.0,
+    "dependency_components": 561,
+    "domain_match_unique_pixel_payload_union": 6444,
+    "observed_rows": 43,
+    "operational_head": {
+      "checkpoint_sha256": "5d1082839aac7a0bfb89342f84a9a533b22e1111c15cb4711255ed1b524a2b8d",
+      "device": "mps",
+      "maximum_absolute_logit_difference": 0.0,
+      "median_logit": {
+        "observed_reference": 19.684825897216797,
+        "simulated": -22.63314437866211
+      },
+      "reconstructed_logits_bit_exact": true,
+      "rows": 6379
+    },
+    "representations": {
+      "imagenet_effnet_v2_s": {
+        "component_equal_oof_auc": 0.9785283514934675,
+        "dimensions": 1280,
+        "maximum_absolute_oof_score_difference": 0.0,
+        "rows": 6379,
+        "same_version_refit_oof_scores_bit_exact": true
+      },
+      "operational_penultimate": {
+        "component_equal_oof_auc": 0.9913400552935434,
+        "dimensions": 1280,
+        "maximum_absolute_oof_score_difference": 0.0,
+        "rows": 6379,
+        "same_version_refit_oof_scores_bit_exact": true
+      },
+      "pixel_statistics": {
+        "component_equal_oof_auc": 0.9807448365587896,
+        "dimensions": 18,
+        "maximum_absolute_oof_score_difference": 0.0,
+        "rows": 6379,
+        "same_version_refit_oof_scores_bit_exact": true
+      },
+      "stein_ssl_resnet50": {
+        "component_equal_oof_auc": 0.9581869680706872,
+        "dimensions": 2048,
+        "maximum_absolute_oof_score_difference": 0.0,
+        "rows": 6379,
+        "same_version_refit_oof_scores_bit_exact": true
+      }
+    },
+    "rows": 6379,
+    "simulated_rows": 6336,
+    "sklearn_version": "1.9.1"
+  },
+  "matched_pixel_z_median": {
+    "cohort": "43 final G_match triplets",
+    "feature": "z_median",
+    "feature_index": 14,
+    "means": {
+      "bare": 0.005088188795123769,
+      "injected": 0.005094071337479427,
+      "observed_reference": 0.0114476403253976
+    },
+    "weighting": "unweighted finite-cohort mean within each 43-row arm"
+  },
+  "matched_stein_movement": {
+    "maximum": 5.204453468322754,
+    "mean": 0.23502676552811333,
+    "median": -0.0691382884979248,
+    "minimum": -0.9815151691436768,
+    "negative": 31,
+    "pairs": 43,
+    "positive": 12,
+    "representation": "stein_ssl_resnet50"
+  },
+  "psrc": {
+    "convergence_maximum_consecutive_relative_l1": 0.002211697541734651,
+    "host_spatial_groups": 1219,
+    "leave_one_out": {
+      "host_spatial_group_id": {
+        "all_positive": true,
+        "maximum_percentage_points": 0.5762987012987013,
+        "minimum_percentage_points": 0.5211038961038962,
+        "units": 1219
+      },
+      "source_id": {
+        "all_positive": true,
+        "maximum_percentage_points": 0.5801404853128992,
+        "minimum_percentage_points": 0.5248129903302318,
+        "units": 144
+      }
+    },
+    "pairs": 1584,
+    "source_only_r_band_flux": {
+      "definition": "renderer manifest sum before serialized float32 archive cast",
+      "equal_pairs": 0,
+      "median_sersic_to_structured_ratio": 1.0416876461265807,
+      "sersic_greater_pairs": 1249,
+      "structured_greater_pairs": 335
+    },
+    "source_only_r_band_peak": {
+      "definition": "maximum source-only expectation pixel in the r channel",
+      "equal_pairs": 0,
+      "median_sersic_to_structured_ratio": 1.1044436291982045,
+      "sersic_greater_pairs": 1516,
+      "structured_greater_pairs": 68
+    }
+  },
+  "renderer_and_fixed_supporting_cohorts": {
+    "convergence_diagnostic_rows": {
+      "absent_from_final_and_bound_generating_manifests": 41416,
+      "absent_from_final_manifest": 43780,
+      "present_in_final_manifest": 5720,
+      "recovered_from_bound_generating_manifest": 2364
+    },
+    "final_parent_rows": 49500,
+    "fixed_gain_cohort": {
+      "scenes": 198,
+      "scenes_on_final_parent_bank": 132,
+      "targets": 18,
+      "targets_on_final_parent_bank": 12
+    },
+    "fixed_photon_replay_cohort": {
+      "normalization_changes_on_final_parent_bank": 3,
+      "normalization_decision_changes": 3,
+      "parents": 571,
+      "parents_on_final_parent_bank": 416,
+      "rows": 4568,
+      "rows_on_final_parent_bank": 3328
+    },
+    "fixed_renderer_validation_cohort": {
+      "current_matched_scenes": 43,
+      "current_matched_scenes_in_fixed_validation_cohort": 21,
+      "scenes": 142,
+      "scope": "fixed numerical implementation cohort; not an exhaustive audit of the final matched assignments"
+    },
+    "order_48_scene": {
+      "current_artifact_exactly_matches_bound_order_48_artifact": true,
+      "current_manifest_reconstructed_order_field": 32,
+      "generating_order": 48,
+      "grec_row_id": "grec_192f763b52ecd57ca5b1145b43cadb93b5d4a6e9",
+      "host_galaxy_id": "2090p200_1773",
+      "reconstructed_order_field_used_as_generation_evidence": false,
+      "scene_id": "scene_f963fa7c5853f9c05259270bd19bd00c1cd5eb46"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Derived reporting reconciliation on frozen final products; no target selection, rendering, detector scoring, matching, or scientific estimand changed.",
+  "source_reconciliation_sha256": "e0cad7e1366df7e5349c3e0fd5f1884c16778f6efd385b51281a5054c125769b",
+  "status": "canonical_public_reporting_summary"
+}

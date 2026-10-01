@@ -1,0 +1,14 @@
+{
+  "manifest_sha256": "8abb64f3cb09feed2b7a66de899a0f88f7a7e50509ac06be94e5e0528c7668a2",
+  "payload_files_and_arrays_rehashed": 12512,
+  "result_recomputed": true,
+  "result_sha256": "19caec43fbe770526bf8acf27d29cc3023bb000c574efaf014c29ff09e52779b",
+  "role": "achieved_fpr",
+  "rows": 12512,
+  "schema_version": 1,
+  "score_bits_recomputed": true,
+  "score_receipt_sha256": "8a600699905e09d9246708ed0e2228983ee5de6afc150293d049eee0373645f9",
+  "scores_sha256": "d3cafe3193fd6c2d1d0bba95bbe3dcf75bd9cccd021e28d06be91105863edb5f",
+  "status": "PASS",
+  "threshold_decisions_recomputed": true
+}

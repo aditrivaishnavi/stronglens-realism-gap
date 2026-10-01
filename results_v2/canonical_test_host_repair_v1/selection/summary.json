@@ -1,0 +1,51 @@
+{
+  "allowed_pool_galaxy_id_manifest_sha256": "ffd336ec7240a79fa5d0b4e1e04abc57b26bdcc3599d200ff3ec26e8b72a8f16",
+  "allowed_pool_sha256": "f499d8ce61e01fb79d671f8f958e4a7d5dc9a349a8bf97f0ed2ba2064e4c380f",
+  "condition_support_sha256": "dd55918f23b3356430cbdc91eedd9ed9864f54a12ba7733c89a80feb5983246d",
+  "detector_scores_used": false,
+  "input_rows": 27950,
+  "input_sha256": {
+    "achieved_fpr": "2dd559dbde377c53916b2a52925a8e10fc0f16b7e079162a02195e91a616b96f",
+    "eligible": "91147024bd10b046024abee3012ced583a128b33cb8cbda2eb901f0f1290e43e",
+    "prior_selection": "60429cc8f00de5ffcb05b44a93a61ae30d7109ee99842b56ac192d73bd94b023",
+    "test": "3a7a2a616bca2b31d0c0ec00bf86d15e87356d298087e14fa7ca6021481b6e2b",
+    "threshold_calibration": "435119ef16722aac70eeaa8fa4e4c601011b3c120a5fa79c96a562fb1d42c46e"
+  },
+  "input_spatial_groups": 2243,
+  "maximum_hosts_per_spatial_group_per_cell": 5,
+  "minimum_spatial_groups_per_retained_cell": 100,
+  "per_cell_retained_from_prior": {
+    "1.05/24.5": 366,
+    "1.20/24.0": 359,
+    "1.20/24.5": 373,
+    "1.35/24.0": 377,
+    "1.35/24.5": 384,
+    "1.50/24.0": 357,
+    "1.50/24.5": 392,
+    "1.65/24.0": 362,
+    "1.65/24.5": 394
+  },
+  "pool_rule": "eligible intersect canonical test_negative; exclude frozen threshold-calibration and achieved-FPR spatial groups",
+  "proposed_grec_host_ids_sha256": "9d882cb84e0d12ad13748ca3dcc8a6a9827420108bfc39c2303f28357136c065",
+  "proposed_grec_hosts": 4500,
+  "proposed_grec_hosts_sha256": "87db72e2520648d6899e944d4b1b23cfaf70f62a2937f820700fa9a5bf4dd2f8",
+  "proposed_grec_rows_at_eleven_radii": 49500,
+  "repair_status": "canonical_test_negative_reselection_frozen",
+  "replaced_galaxy_ids": 1136,
+  "retained_cell_spatial_groups": {
+    "1.05/24.5": 307,
+    "1.20/24.0": 414,
+    "1.20/24.5": 500,
+    "1.35/24.0": 500,
+    "1.35/24.5": 500,
+    "1.50/24.0": 500,
+    "1.50/24.5": 500,
+    "1.65/24.0": 352,
+    "1.65/24.5": 356
+  },
+  "retained_condition_cells": 9,
+  "retained_from_prior_galaxy_ids": 3364,
+  "role_seed": "stronglens-latest-detector-evaluation-v1",
+  "schema_version": 1,
+  "status": "score_blind_role_proposal_not_final_assignment"
+}
