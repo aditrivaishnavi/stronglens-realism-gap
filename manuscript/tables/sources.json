@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "tables": {
+    "confirmed_43_provenance": {
+      "generator": "manuscript/generate_confirmed_43_provenance_table.py",
+      "generator_sha256": "9ecc9ba82ddd04169bb215073bc104f08706a60057e29788783a018f90daf39a",
+      "input": "manuscript/tables/confirmed_43_provenance.csv",
+      "input_sha256": "99b898da0be117b1102e923dabec02e11bf2624296a76242573f86e908843bcf",
+      "outputs": {
+        "manuscript/tables/confirmed_43_provenance.csv": "99b898da0be117b1102e923dabec02e11bf2624296a76242573f86e908843bcf",
+        "manuscript/tables/confirmed_43_provenance.tex": "fca2a8deb6b7f2b6dcffc056963bfa63e61fbc32607b52acc09c76979eb3bb54"
+      }
+    }
+  }
+}

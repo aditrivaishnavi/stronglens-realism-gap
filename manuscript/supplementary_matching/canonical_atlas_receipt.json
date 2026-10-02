@@ -1,0 +1,25 @@
+{
+  "status": "complete_final_43_pair_atlas",
+  "pairs": 43,
+  "pdf_pages": 44,
+  "observed_payload_files_verified": 43,
+  "matched_target_payload_files_verified": 43,
+  "observed_pixel_arrays_verified": 43,
+  "matched_target_pixel_arrays_verified": 43,
+  "output_pdf": "canonical_gmatch_cbright_confirmed_target_atlas.pdf",
+  "output_pdf_sha256": "3aaf0cc60246224cc23f4717288d0d056f02250a5006f8793a08d2cd61541d58",
+  "display": {
+    "mapping": "Legacy Survey/Stein dr2_rgb",
+    "m": 0.03,
+    "q": 20.0,
+    "full_field": true,
+    "panel_specific_crop": false,
+    "panel_specific_stretch": false
+  },
+  "authorities": {
+    "matches.parquet": "b16127143b0c9c1e62ddd7829209f2dd47a5d6e04435cf71e025c146913373ee",
+    "reference_adapter.parquet": "43ead962c7371d42c6a9ad3f4f75861b60821c815017f79c507e7de2c253a1fb",
+    "pair_plan.parquet": "39f3b19e232f09aef40e8d6a107bf17ec80e655f410983cb40d7707e95218e2e",
+    "brightness_design.parquet": "c09bf29230064e4a6a306bb6a6aac015c70e7e0fcf889314e58c3fb72c53b7ef"
+  }
+}

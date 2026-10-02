@@ -1,0 +1,108 @@
+{
+  "figures": {
+    "appendix_brightness_response.pdf": {
+      "description": "Fixed 43-target response over eight source magnitudes for expectation and photon arms under trained clip-10 preprocessing.",
+      "generator": "scripts/generate_revision_repair_figures.py",
+      "generator_sha256": "1ded1fd6e88523202beba52bba8aa56db43c3d00e314e8c269cad897468abcaf",
+      "input_sha256": {
+        "results_v2/canonical_test_host_repair_v1/revision_controls/brightness_cell_summary_clip10.parquet": "fa23f2f9d864a619c5f661df56e713bda3ad43c6cdc5a679e9a6daa14af80f9d"
+      },
+      "inputs": [
+        "results_v2/canonical_test_host_repair_v1/revision_controls/brightness_cell_summary_clip10.parquet"
+      ],
+      "output_sha256": "4072ca3d02a41d6fc748149b5a72e734db31704934bbf1c218cb56055a9c45ea"
+    },
+    "appendix_grec_cell_radius_response.pdf": {
+      "description": "Conditional G_rec recovery over all 99 occupied PSF-depth-radius cells, with 500 targets per point.",
+      "generator": "scripts/generate_revision_repair_figures.py",
+      "generator_sha256": "1ded1fd6e88523202beba52bba8aa56db43c3d00e314e8c269cad897468abcaf",
+      "input_sha256": {
+        "results_v2/canonical_test_host_repair_v1/revision_controls/grec_cell_radius_response.parquet": "8fb898dad32ab153d79abc78c3009a33db934843f5a2b99f6a71c93d3d739ebe"
+      },
+      "inputs": [
+        "results_v2/canonical_test_host_repair_v1/revision_controls/grec_cell_radius_response.parquet"
+      ],
+      "output_sha256": "0c261a5b126b736b93ff038ea509f5a2d0b02919046cedc1309cf622d6c9a757"
+    },
+    "appendix_missed_selected_systems.pdf": {
+      "description": "All four primary-detector non-detections in the selected 43-system endpoint under one fixed full-cutout display mapping.",
+      "generator": "scripts/generate_missed_system_cutouts.py",
+      "generator_sha256": "4720053d9308f165a110c6d1246be823648c92724a67d86df07f895448fbc828",
+      "input_sha256": {
+        "data/catalogues/lens_provenance.csv": "ed4b021c8db425958f7cf1d9ef2abeb93299fa5c9ab2a6b0faab98ae694f324f",
+        "evaluation_dataset_prep/candidate_payloads/positive/0728/0728p000_6851.npz": "232946d761a54b56c6bf81356dcf5610efaba5991251991b3621993a067378a1",
+        "evaluation_dataset_prep/candidate_payloads/positive/0753/0753m245_3999.npz": "373d07ebf03c33770bc9bd738a0ed135cbd658fede9ffd3ceaec352b884410a3",
+        "evaluation_dataset_prep/candidate_payloads/positive/3277/3277p137_6699.npz": "180ed133b86cc22c57f0dd2555428624d1356c917a2171d54d2f10b14c869b2f",
+        "evaluation_dataset_prep/candidate_payloads/positive/3450/3450p222_3227.npz": "b0f3224efcaf03f9eb7e4ce50a3bd9306018c01af68614be0e34708931a5cd38",
+        "results_v2/evaluation_v2/terminal_confirmed_endpoint/endpoint_manifest.parquet": "dc5c590eb54c5c24959a495ec3a411b0ca836c71624b6c8f404fd455436886f7",
+        "results_v2/evaluation_v2/terminal_confirmed_scores/endpoint_scores.parquet": "93a1fa01245b57ef829ac135fe5e0c925e039ae31757099d583bebb045b2cdd8"
+      },
+      "inputs": [
+        "results_v2/evaluation_v2/terminal_confirmed_endpoint/endpoint_manifest.parquet",
+        "results_v2/evaluation_v2/terminal_confirmed_scores/endpoint_scores.parquet",
+        "data/catalogues/lens_provenance.csv",
+        "evaluation_dataset_prep/candidate_payloads/positive/3450/3450p222_3227.npz",
+        "evaluation_dataset_prep/candidate_payloads/positive/3277/3277p137_6699.npz",
+        "evaluation_dataset_prep/candidate_payloads/positive/0753/0753m245_3999.npz",
+        "evaluation_dataset_prep/candidate_payloads/positive/0728/0728p000_6851.npz"
+      ],
+      "output_sha256": "40567fa6114a8664d76d74d0f4ec5e3c7fcffa9b6819dc54fefdeae7b1f3de9f",
+      "png_sha256": "539bd9effecfee0c0130d29b591a637656d187c102c843732c932f6ae954797d",
+      "selection": "All four rows with detected_at_frozen_threshold=false in the final 43-system endpoint; no subset or visual criterion."
+    },
+    "section2_data_training_flow.pdf": {
+      "description": "Two-panel flow of catalogue populations, grouped partitions, primary training, checkpoint sensitivity, calibration, and frozen evaluation roles.",
+      "generator": "scripts/generate_manuscript_flow_figures.py",
+      "generator_sha256": "21d0bec8df91a1d6f884900fc5b33416fd09838e2b1200db8a6b8df2a32b20b4",
+      "input_sha256": {
+        "data/manifests/split_summary.json": "a78ec15e4f73c05e49cbbffa124c7b88ff44f7c341a1b01b09f90e0f5c813898",
+        "experiments_v2/checkpoint_sensitivity_v2/config/panel.json": "fb21ae14b6c3e5a63c4628641358b1bd78b1ccbf748faf537acf14512585c915",
+        "results/populations/sample_flow.json": "b0da3b04a6b9114d02537a6ceb643e1dff3aee90472600ce4fa2ed48ae5596b2",
+        "results_v2/checkpoint_sensitivity_v2/FINAL_CHECKPOINT_SENSITIVITY_RESULTS.json": "2ed220da874d3fda85312aba10f835625b4e3644d48101d33a8c14217b460888",
+        "results_v2/evaluation_v2/PUBLIC_THRESHOLD_PROTOCOL.json": "5457841629730694a6bae7c706c4943d2808e492b61fbd09d7de86e9edcaf8c4",
+        "results_v2/evaluation_v2/achieved_fpr_endpoint/ENDPOINT_MANIFEST_RECEIPT.json": "678710d39e210f461830980e24c18b89929ca295a433e8f8516709a0263264eb",
+        "results_v2/evaluation_v2/terminal_confirmed_endpoint/ENDPOINT_MANIFEST_RECEIPT.json": "577d68bb9352ef8f7b0f2570e3724ad66663f3d2f0b44226c9691f8022852c8c"
+      },
+      "inputs": [
+        "results/populations/sample_flow.json",
+        "data/manifests/split_summary.json",
+        "experiments_v2/checkpoint_sensitivity_v2/config/panel.json",
+        "results_v2/evaluation_v2/PUBLIC_THRESHOLD_PROTOCOL.json",
+        "results_v2/evaluation_v2/achieved_fpr_endpoint/ENDPOINT_MANIFEST_RECEIPT.json",
+        "results_v2/evaluation_v2/terminal_confirmed_endpoint/ENDPOINT_MANIFEST_RECEIPT.json",
+        "results_v2/checkpoint_sensitivity_v2/FINAL_CHECKPOINT_SENSITIVITY_RESULTS.json"
+      ],
+      "output_sha256": "08ac48574bffef0dae12c302e3b097e140c39d841b6964dc605ac6a6a9a14a39",
+      "png_sha256": "bcd2fa7033eebc833a9d7e0877097e20dfe845ce3381facfb6ebed0cd861b302"
+    },
+    "section3_final_psrc_construction.pdf": {
+      "description": "Final score-blind illustrative P_src pair, retained in the analysis population, showing source expectation, target-plus-expectation, and scored photon draw 0.",
+      "generator": "scripts/generate_final_psrc_illustration.py",
+      "generator_sha256": "27d77e3a3c3bf544adb275977ee5f6ce19accc955afdee1adfaaac85831f9522",
+      "input_sha256": {
+        "results_v2/canonical_test_host_repair_v1/psrc/expectations/expectations/psrcpair_1aa521602e7230602b1c17a43145de950b0e07ea.npz": "c46f777a5b9d6e02b7b94051ffec4be59f37566586d8f30976961dc79b0570d8",
+        "results_v2/canonical_test_host_repair_v1/psrc/photons/pairs/psrcpair_1aa521602e7230602b1c17a43145de950b0e07ea.npz": "e45dc9cced02303ff68baaca394cfc0913fcd288de0607d69885460cbafa847b"
+      },
+      "inputs": [
+        "results_v2/canonical_test_host_repair_v1/psrc/expectations/expectations/psrcpair_1aa521602e7230602b1c17a43145de950b0e07ea.npz",
+        "results_v2/canonical_test_host_repair_v1/psrc/photons/pairs/psrcpair_1aa521602e7230602b1c17a43145de950b0e07ea.npz"
+      ],
+      "output_sha256": "cb36024fdd88cb771de14bac5d6c34e4c72989b18f80540ee8bc9708417e22bd",
+      "png_sha256": "a94ba3670fb7dc9d411657a43d0347d7d8469e7fd1bb193d545a550c93186a20",
+      "selection": "Maximum of the smaller structured/Sersic pre-score lensed r-band flux, with pair_id as deterministic tie-breaker; photon draw index fixed to 0."
+    },
+    "section5_grouped_recovery.pdf": {
+      "description": "Final equal-cell, equal-host recovery by Einstein radius with simultaneous host-spatial-group interval.",
+      "generator": "scripts/generate_final_recovery_figure.py",
+      "generator_sha256": "d1c7401a9c6fd11f510014fa6c9b311d7cfdca1248bacf143c98e141bd174922",
+      "input_sha256": {
+        "results_v2/canonical_test_host_repair_v1/grec/GREC_ANALYSIS.json": "b6f8ad72ff7da24a078a4a39aa258b9bd29164a53574e6df25c4a39c45c282a5"
+      },
+      "inputs": [
+        "results_v2/canonical_test_host_repair_v1/grec/GREC_ANALYSIS.json"
+      ],
+      "output_sha256": "1d6b36f5560ad9afbb068921913eda2ac57d77b3b4b5c9f0d2cde220372c6233"
+    }
+  },
+  "schema_version": 1
+}
