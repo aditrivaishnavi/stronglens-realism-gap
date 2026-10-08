@@ -1,8 +1,11 @@
 {
-  "config_bytes_sha256": "33fb3f0d1c4d418bce63da819e1e3d68b3e9e5d1e818df67377d6698d2c8948e",
+  "config_bytes_sha256": "f9562f6605bb623c77586b590b7e1ff41e73256447d55d1bb4caab45f86dbe00",
   "config_filename": "production.toml",
-  "normalized_full_config_sha256": "0d520aff9a61e4a9fb734d125211314a920339cf10e8ac90f2f0400984f21d86",
-  "normalized_scientific_config_sha256": "dfb3c762aa1b6a1af07d4213d4f4df93b7b2cba669ff2946467334e20d4e8f23",
+  "execution_config_bytes_sha256": "33fb3f0d1c4d418bce63da819e1e3d68b3e9e5d1e818df67377d6698d2c8948e",
+  "execution_normalized_full_config_sha256": "0d520aff9a61e4a9fb734d125211314a920339cf10e8ac90f2f0400984f21d86",
+  "execution_normalized_scientific_config_sha256": "dfb3c762aa1b6a1af07d4213d4f4df93b7b2cba669ff2946467334e20d4e8f23",
+  "normalized_full_config_sha256": "077623933b14e7bf0243120bc0d90f4e0d5352a28c69746f864e298ac47accb6",
+  "normalized_scientific_config_sha256": "e1af311b77b29a8aca906150cecc4f56fdbcee12de411b29eb8785cbb61fec25",
   "schema_version": 1,
   "scientific_sections": [
     "study",

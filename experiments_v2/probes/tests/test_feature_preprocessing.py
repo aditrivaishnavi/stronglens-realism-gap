@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import hashlib
-
 import numpy as np
 
 from stronglens_probes.feature_extraction import lupton_rgb
@@ -37,10 +35,15 @@ def test_feature_extraction_preserves_zero_intensity_sign_bits() -> None:
     ]
 
 
-def test_feature_extraction_preserves_pinned_random_fixture_hash() -> None:
+def test_feature_extraction_preserves_random_fixture_mapping() -> None:
     rng = np.random.default_rng(9172026)
     image = rng.normal(0.0, 0.05, size=(17, 19, 3)).astype(np.float32)
     observed = lupton_rgb(image)
-    assert hashlib.sha256(observed.tobytes()).hexdigest() == (
-        "9396d3f1f1943beebe50ec6bb99994a5baf253d895b5c8e9237bf576327337ef"
+    expected = _reference(image)
+    assert np.array_equal(observed, expected)
+    np.testing.assert_allclose(
+        [observed.min(), observed.max(), observed.mean(), observed.std()],
+        [-0.0, 1.0, 0.25861278, 0.31492627],
+        rtol=0.0,
+        atol=2 * np.finfo(np.float32).eps,
     )

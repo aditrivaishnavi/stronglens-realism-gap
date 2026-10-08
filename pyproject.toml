@@ -5,11 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "stronglens-realism-gap"
 version = "0.2.0"
-description = "Source-injection recovery for CNN strong-lens finders in DESI Legacy Survey DR10"
+description = "Linear-probe diagnostics of observed and source-injected strong-lens images in DESI Legacy Imaging Surveys DR10"
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
 license = "MIT"
 license-files = ["LICENSE"]
+authors = [
+    {name = "Aditrivaishnavi Balaji", email = "aditrivaishnavi@gmail.com"},
+]
 dependencies = [
     "torch==2.7.0",
     "torchvision==0.22.0",
@@ -32,6 +35,9 @@ dev = [
     "ruff>=0.16",
 ]
 s3 = ["boto3>=1.34.0"]
+
+[project.urls]
+Repository = "https://github.com/aditrivaishnavi/stronglens-realism-gap"
 
 [tool.setuptools.packages.find]
 include = ["dhs*", "scripts*"]

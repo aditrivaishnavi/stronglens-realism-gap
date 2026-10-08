@@ -1,0 +1,450 @@
+{
+  "hash_policy": {
+    "execution_sha256": "Hash of the retained execution artifact before public checkout-location sanitization.",
+    "public_sha256": "Hash of the tracked public artifact after path sanitization."
+  },
+  "history": {
+    "execution_ids_recomputed": false,
+    "original_tip": "74694e5ddad6d089e933696702710c4d7287f9b7",
+    "personal_roots_removed": true,
+    "unchanged_parent": "2358bbfd1fe345d8714f222ae724cd56abe65c47"
+  },
+  "protocol_lineage": {
+    "docs/G_MATCH_V2_AUTHORITY.md": {
+      "lineage_policy": "The private digest records pre-execution lineage. The public digest binds the final-state public protocol.",
+      "private_protocol_sha256": "e7844b93acf896458067160939d9e1345d458e411851ce5fb7afba6bb093efff",
+      "public_protocol_sha256": "bc70d391175125404883e522052ee30ce979f668699e77e93c43e08b7387266a"
+    },
+    "evaluation_dataset_prep/GROUND_RULES.md": {
+      "lineage_policy": "The private digest records pre-execution lineage. The public digest binds the final-state public protocol.",
+      "private_protocol_sha256": "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca",
+      "public_protocol_sha256": "4d021cdc3ebca350519d758946950294c15ee955a3c9355fb3db2d2463891695"
+    },
+    "evaluation_dataset_prep/experiments/G_match/DATASET_PLAN.md": {
+      "lineage_policy": "The private digest records pre-execution lineage. The public digest binds the final-state public protocol.",
+      "private_protocol_sha256": "1f7bd04a45e431a29839f7e1c0a3f1e29970f70ed67e90ae7514051614616b40",
+      "public_protocol_sha256": "7fed08fa66b9997033684578940e103c679d68065bfe496bc64b4aca12a0b8a7"
+    },
+    "evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md": {
+      "lineage_policy": "The private digest records pre-execution lineage. The public digest binds the final-state public protocol.",
+      "private_protocol_sha256": "be8260d121e7ff01ae5432a56b9cf24eac8831aedeb0dc27d14e29e21ae4fa0e",
+      "public_protocol_sha256": "bf50905a05c4246c38f35cf8b32d94690b84cf414d65aad166b6311ab8e45ffe"
+    },
+    "evaluation_dataset_prep/experiments/P_noise/DATASET_PLAN.md": {
+      "lineage_policy": "The private digest records pre-execution lineage. The public digest binds the final-state public protocol.",
+      "private_protocol_sha256": "4c3cb2b4fdef0dfc58bb4001fdb9e30cae11d7322babb1c09b738a4f8ecc6349",
+      "public_protocol_sha256": "c1d0f969e11428f497c39b6d944d662c19a70e656f8ffbbf955ac8b0764c6e7f"
+    },
+    "evaluation_dataset_prep/experiments/P_src/DATASET_PLAN.md": {
+      "lineage_policy": "The private digest records pre-execution lineage. The public digest binds the final-state public protocol.",
+      "private_protocol_sha256": "54338ed160a8b1b07858eab74e1c0b07ae6ab4190d7f526c3e6265b731a6ec82",
+      "public_protocol_sha256": "3cee9726238029f69315d348c4a011d28b57a07666634647241ba7813e82e304"
+    }
+  },
+  "sanitized_artifacts": [
+    {
+      "execution_sha256": "60429cc8f00de5ffcb05b44a93a61ae30d7109ee99842b56ac192d73bd94b023",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "evaluation_dataset_prep/final_selection/final_grec_selection.parquet",
+      "public_sha256": "ca6157d65a6532138b2b4e66858d4e5aa7a68692a141be2ba4a618ad5bd1b24a"
+    },
+    {
+      "execution_sha256": "fb21ae14b6c3e5a63c4628641358b1bd78b1ccbf748faf537acf14512585c915",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "experiments_v2/checkpoint_sensitivity_v2/config/panel.json",
+      "public_sha256": "0ab337eb369bbdab023692ef1aada2eaa4e0efe58dff8e59311750141f1486e7"
+    },
+    {
+      "execution_sha256": "69242d9e9bf1427c6d533330e9636712840045789c390d61125b833185b91055",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "experiments_v2/evaluation_endpoints_v2/config/production.json",
+      "public_sha256": "aa8cdda71f0013996f47eaa1685c1c953e20488ef75951fdbf49d35f2f6e04f9"
+    },
+    {
+      "execution_sha256": "952b5acfc48c12cea402200bc36f113498860123ed9f236ef9799c55e5a8baf2",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "experiments_v2/gmatch_canonical_repair_v1/config/CONFIG_SEAL.json",
+      "public_sha256": "c8aceb826d87a48a5716d9f8d768ac364c1d386edb213feeccc926b044292c4e"
+    },
+    {
+      "execution_sha256": "3cde5f697fa795f5d7987306ec620cb5cc39f52a251e0ad826eedceaae3fa2ff",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "experiments_v2/gmatch_canonical_repair_v1/config/production.toml",
+      "public_sha256": "af27464389b93056d64abf805a823a64b992d71c1ecfc013568e400fef579ea7"
+    },
+    {
+      "execution_sha256": "420e001332f0248c6264d6facb0d4af914344599773f8bb8207b8375e018f8b0",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "experiments_v2/grec_pnoise/config/production.toml",
+      "public_sha256": "23ee7fe0ec24fe3d0005b63124af825f7ec48d58134594221d4e3a993a3a147e"
+    },
+    {
+      "execution_sha256": "33fb3f0d1c4d418bce63da819e1e3d68b3e9e5d1e818df67377d6698d2c8948e",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "experiments_v2/pnoise_pilot_v2/config/production.toml",
+      "public_sha256": "f9562f6605bb623c77586b590b7e1ff41e73256447d55d1bb4caab45f86dbe00"
+    },
+    {
+      "execution_sha256": "c0e47be63d39909b7994df73c274a78e6b6e11832e3640cff54256e9dbdcadc9",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "experiments_v2/psrc/config/psrc_v2_parent_bound.yaml",
+      "public_sha256": "9c4c798a21e99ab52f2c4c15d9675faa2f0fe88fb37ca678747fd4ec8f6eadd6"
+    },
+    {
+      "execution_sha256": "2f50ae51e4f1707e65fda3d4afef8f325cd21f8c31630e7953cba95174b8bdcc",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "experiments_v2/revision_controls_canonical_repair_v1/config/protocol.json",
+      "public_sha256": "db1d026fd08c89c262cd99d1330a3184acf7bab79b4734f425c464e0410cf007"
+    },
+    {
+      "execution_sha256": "e4fdff976323f7830d83c09559978a3be5d70b1677352fe2bb9234b68c1c4fb2",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/checkpoint_sensitivity/panel.json",
+      "public_sha256": "1817fd5c9a482480acf67b8c8da13f096d7b8049587f2b2da812dee7d6c3315a"
+    },
+    {
+      "execution_sha256": "fc9a4ab87d9665a12c2e57b2244dd82edff11f6e7d60a957c3e9e641ff7c6108",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/gmatch/final_selection_adapter.parquet",
+      "public_sha256": "046ff399ccc23b82b7527f00ce65b78c7eedfcae26dee5bbf0b055eb1aa2a786"
+    },
+    {
+      "execution_sha256": "a54b08c0e8ee4c9259fa4aca3d7f326082b299ba30e8eaa3240412a228e08dbc",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/gmatch/preparation/parent_theta15_adapter.parquet",
+      "public_sha256": "2f1817914ece0cd8d069de5d6ad96faa2cda953aeb77d22f42e6e58c4affb182"
+    },
+    {
+      "execution_sha256": "9eb0019e443bf4b0a5b6b5f8bde9d6a47a57affcae785d24dfb4ba920defa28e",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/gmatch/production.toml",
+      "public_sha256": "07dde4a7e76b67f57f027b11c50c6d8f91a6ba991d39cd058b05f1b93fcb3cdc"
+    },
+    {
+      "execution_sha256": "b6f8ad72ff7da24a078a4a39aa258b9bd29164a53574e6df25c4a39c45c282a5",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/grec/GREC_ANALYSIS.json",
+      "public_sha256": "279d40cc3fb15120f9cfb62576210fd1cf87b47d4c9240a235e4d2b79d07ab56"
+    },
+    {
+      "execution_sha256": "54ae2a726efceff993dcbf4c3b55a6584ec5911f74de4cf9254f919500a1770c",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/grec/hosts/FINAL_GREC_HOSTS_RECEIPT.json",
+      "public_sha256": "f9f774068827c60c511c76e3403f6144aae5d61e5f8be39a9feeb6660133376d"
+    },
+    {
+      "execution_sha256": "48849ee336444bc3c2992beb4ba1a084d06c19f81a6c44010e8944ae07a45e02",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/grec/hosts/final_grec_hosts.parquet",
+      "public_sha256": "918d4a91b1f301f41a7f7ce7756f0dee63d558e9071f40018c63e004a8b5e342"
+    },
+    {
+      "execution_sha256": "5e18586bf84b3fcaf7fd5614ccd843f467802deaf15a8ca444717486061695b0",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/grec/parents/CANONICAL_REPAIR_CARRY_FORWARD_RECEIPT.json",
+      "public_sha256": "c709db5868902fcbb88a0532380bcd56fb5b70862e69b4301e8d283bc1fadf25"
+    },
+    {
+      "execution_sha256": "73a429691c508c619dae86a9c343a0ca22de8a15394a96087c531bd2b161e8a2",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/grec/parents/GREC_RENDER_RECEIPT.json",
+      "public_sha256": "d71925ae428c4736a09dafe4d45cda72586c5a2f31154fe79c26a8092c4050ab"
+    },
+    {
+      "execution_sha256": "ee18c149c4a0a95fa568444245cfc8252c56d2c7aba675dec99cabe6511fa16d",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/grec/parents/grec_parent_manifest.parquet",
+      "public_sha256": "0316bde7082e4dd24a4929b751ee85e56df72bcee32cafd68a911efc6a851d1d"
+    },
+    {
+      "execution_sha256": "ad6c06fb930048a35de91f11cbc83ca52d8e5da9c59ab3d2c0bdd7c7918cfa8c",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/grec/scenes/GREC_SCENE_TABLE_RECEIPT.json",
+      "public_sha256": "056801ac598145aee4b104e5d5dcc4072e05886b9c66aa6600f2f9c314f1642b"
+    },
+    {
+      "execution_sha256": "032fc50a743e4ccd675a723d30095f65744930ce77e630bf8b2ad3d089da605a",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/grec/scenes/grec_scene_table.parquet",
+      "public_sha256": "9861be3eb7f5b068b2cc90a828c40c96eae03f7353fa7ae0dde3280dca131076"
+    },
+    {
+      "execution_sha256": "3315084c075a90de5cedc7288aeb279a69d1f9a0c715bb22cd85446eb03c86b8",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/grec/scores/GREC_SCORE_RECEIPT.json",
+      "public_sha256": "cb07f4fccf4b30aa58489e63930d0730082814f8362dd8d93a6d24c176fc2bd7"
+    },
+    {
+      "execution_sha256": "24ab190331fb2c53fec64b53bdd00ddb45fd14762cbad8b8c87527fbfe939c2a",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/pnoise/PNOISE_ANALYSIS.json",
+      "public_sha256": "c0a1d30c60e859b3cd0a938bfda16ddb8c56259d9ddb650e4a35e598549c5c81"
+    },
+    {
+      "execution_sha256": "583ffab58f088771d1d507d8cbbfbd9153b239fb3b8261e725eb3d4c2f33d6ea",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/pnoise/physical/PNOISE_RENDER_RECEIPT.json",
+      "public_sha256": "bc79d02fbed908658f0f309be5db5bb3ecc1d917f4cc47420ff2d0b94fafc430"
+    },
+    {
+      "execution_sha256": "85000edb4fd85c1d77cc1c97360d9cccea00af2f11796ce3e4c0e129a7b3a361",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/pnoise/scores/PNOISE_SCORE_RECEIPT.json",
+      "public_sha256": "7bba321e6ecbc0bfd1a94892b85101eb76235dd5f4e09ee7a7ff29aceaca3ecc"
+    },
+    {
+      "execution_sha256": "f394cdfa1e404ad167bbb6d4b0b10eb562c2c9a8bfab001381e655a224fe6a40",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/PSRC_DRAW_COUNT_RECEIPT_V2.json",
+      "public_sha256": "fba13e48876ed80c47f9c20557c0f9422070b55e80a9785eda42ee99ebd8480d"
+    },
+    {
+      "execution_sha256": "8814764a93d02fee58490c630821ffa0510d998a80bc961636942d6786098023",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/PSRC_EXECUTION_LOCK.json",
+      "public_sha256": "9d87253f60256fdbb4526cd8d19c44c9ee1eda657abd340bc6b6b777e98a89c8"
+    },
+    {
+      "execution_sha256": "49319c9189cec9571367c89cf509014468d29da98df9da26081c81594f89be44",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/SOURCE_CARRY_FORWARD_RECEIPT.json",
+      "public_sha256": "aa4a17d99dceebd9b6acefd7c70552a772e1e7b1124d31309860923a2491214a"
+    },
+    {
+      "execution_sha256": "85910559af82a2b2e7a6cb4aa75de700a397d7032b69a036672336f11849aa47",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/analysis/RESULT.json",
+      "public_sha256": "3e51307ff291083ec3c858e87395f0a28b9c69fa4b974c621aad2692177f6d2c"
+    },
+    {
+      "execution_sha256": "1c9fc7ba6cd428bff2153a3bf7100df7e79d3c8b45c61bc7e01359eef5d4a872",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/authorities/FIXED_SCORER_RECEIPT.json",
+      "public_sha256": "28a96c7e3bea225e8c177f0b219a029dfd486b8c469db56aa8f52a3cd18194da"
+    },
+    {
+      "execution_sha256": "ad4ed0ef06557eabe20bdf4bd5145e3b9cb757e6b5cc2cda2b62bad4c3f86161",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/authorities/THRESHOLD_RECEIPT.json",
+      "public_sha256": "b876af5c60f382dba91a847c47d028f134b1a96612a95cdf2e050b4cc58b72d4"
+    },
+    {
+      "execution_sha256": "e4b43d13a89f27f8a44e78bdf50dc3b0114a4cf02e9343368322c2190c2c1105",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/config/psrc_v2_parent_bound.yaml",
+      "public_sha256": "de79be7f10cbe71c435372fbd97a3338e0e1d512d8e181b4e4f28a3c206eb405"
+    },
+    {
+      "execution_sha256": "6865330a8dd8c765b3f1f3c8b18b900285b7d399410335a1ed3d24e45ce3c87f",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/draw_pilot/PILOT_SCORE_RECEIPT.json",
+      "public_sha256": "7ccc71385ef47565024572c715a9121f8613c6afedc7637ca43c982e4a67bd6d"
+    },
+    {
+      "execution_sha256": "ebb878b7f4111961c9c25c89376299ec75e3cda1583347aeee988bfe929f16aa",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/expectations/EXPECTATION_RECEIPT.json",
+      "public_sha256": "b47e0e5df10d25c91416b3856da7dd32544180c7f912a529e66d755dadd70b57"
+    },
+    {
+      "execution_sha256": "3bc6f2ae843a3d803af436b79c0ee95b405356e1e2d185259db16a951be3d23b",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/final_design/PAIR_DESIGN_RECEIPT.json",
+      "public_sha256": "70e81effa465da6843ff02c05c98a4520bdb855ff7bcc150d265c93368bff1ed"
+    },
+    {
+      "execution_sha256": "2fdc4190ff1d5b1126da7ba3232436af3886c7654e995261266ba775fa8c31fa",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/final_design/pair_design.parquet",
+      "public_sha256": "eefba9e4ccc8fbf42950e2aa00fb5eb0c1ec4a610be27ad36203c8e4bafb8016"
+    },
+    {
+      "execution_sha256": "0ae5252352db73a2d60c27653d01dde56ca8e21510aef4352574b84dcc8a67f8",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/photons/PHOTON_RECEIPT.json",
+      "public_sha256": "a5e1ba695fddee93e4b0f8358d99fb063505884e5d15b73f97c4081385f3a73c"
+    },
+    {
+      "execution_sha256": "f4234455ed1941279d729265a16063d9305c1a7d19045c35683c1bff87b1ea8d",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/pilot_design/PAIR_DESIGN_RECEIPT.json",
+      "public_sha256": "519648b166268c082253faa768a77559ea9dd24299b984559764d30c2210f295"
+    },
+    {
+      "execution_sha256": "dd6154502fdfef35aa96e24de83438c9a33b48393277ba47da59692c82b4db22",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/pilot_design/pair_design.parquet",
+      "public_sha256": "7fb4b1bd67b26164c8226724e3cc6780efae18c10e522f5bb0f87e7b0c322f86"
+    },
+    {
+      "execution_sha256": "124974bbc1ce2fe1ce9abb76e0e97de5bfc1bccb415a29a1856baadaea109072",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/roles/ROLE_LEDGER_RECEIPT.json",
+      "public_sha256": "053c69927f1f51faffc579f3570a2189124d5fac3249f1c6ecbf052f08c8838a"
+    },
+    {
+      "execution_sha256": "b8cace38eaaf9e190a4aed3a5acaaaa1c57c0fb9e49239fa9886c626e77a7686",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/scores/SCORE_RECEIPT.json",
+      "public_sha256": "a5ffe60d038e7c0cb6e38eb04582d2e67a7ad6e294287366369f0d4747b815d1"
+    },
+    {
+      "execution_sha256": "75709bd824b23b0dd677fe5203b68b6586f45e1b9fa99579ceeb92a261d61b81",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/sources/pilot/SOURCE_VALIDATION.json",
+      "public_sha256": "4cab2a6d5720aa85640e386ee9da4f584a6819539fc943be226d68163ad5a88e"
+    },
+    {
+      "execution_sha256": "a23f8a203432aca5af4116e52b76dc8175efa8a648bb0dc5588a3dc32ec0d655",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/sources/pilot/selection/selection_receipt.json",
+      "public_sha256": "7c7e0ee6500b1fcb9bd7c66c00ff712d4855342507dfbae104ccbb33d06ce961"
+    },
+    {
+      "execution_sha256": "8e8c32edb33a2c7fdb8ccf96901962b43479b2489c6f31fa8f7e25f34ce59e99",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/psrc/sources/pilot/sources/receipt.json",
+      "public_sha256": "f3e398426e906b00997be3b4b6ab48bc553050ee99fc55d2cd1112cdda8d10e2"
+    },
+    {
+      "execution_sha256": "f0f821e1acca7da9a1b6568d040e39a5289ef16d0f67dcc6a33c6d351409150f",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/canonical_test_host_repair_v1/selection/final_grec_selection.parquet",
+      "public_sha256": "3531319dd9e79d4a004c1c47e461b1b28c280211296494df3fce60d35909ae88"
+    },
+    {
+      "execution_sha256": "90dd0383b3ee27f88da37615ba9b63a37c5aae00cf346237678168e95a2aebfb",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/checkpoint_sensitivity_v2/achieved_fpr/PANEL_SCORE_RECEIPT.json",
+      "public_sha256": "cb1f78dba6b643e2f6c88d3168c9b2b6c1547503f062015d38d00a3c599123f2"
+    },
+    {
+      "execution_sha256": "c2f100daa5cfd00567ef92c337b5e53852b0c7126fb9fd93913148a4983800f9",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/checkpoint_sensitivity_v2/calibration/PANEL_SCORE_RECEIPT.json",
+      "public_sha256": "a699b61e242694b8f8dd232c6a73d29c84d56ed6469fd9ea7ce2fb2722570d35"
+    },
+    {
+      "execution_sha256": "f1b4cb58226ae729ef18d188c2b95a0c44276779ba707e491ca82daab956379c",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/checkpoint_sensitivity_v2/grec/PANEL_SCORE_RECEIPT.json",
+      "public_sha256": "f797ee7c1058a238bd23c92d95c49acc1a7a248850a4139370fca277e05e0c70"
+    },
+    {
+      "execution_sha256": "adcfce79611d4620183da1bec77432b63f3c76a63391978853943c275c588860",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/checkpoint_sensitivity_v2/pnoise/PANEL_SCORE_RECEIPT.json",
+      "public_sha256": "ef30bf75e1e7b9d1387abd7e17bc2c2571b7ea19b4c664e2a793e8773c7ff254"
+    },
+    {
+      "execution_sha256": "2192e05844a02311dd23ce4a24b65b527b53f7ec02c7c8a62a8b6a7c1f87e8bc",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/checkpoint_sensitivity_v2/psrc/PANEL_SCORE_RECEIPT.json",
+      "public_sha256": "03afd108fd75948aa016fbebe92122e392c23c822b3213f2dcd0cad35e31277b"
+    },
+    {
+      "execution_sha256": "0645267ab5b20b3f618d9f1b6cd608f6895a7c245f2ccdc2d788df528e149ba7",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/checkpoint_sensitivity_v2/terminal_confirmed/PANEL_SCORE_RECEIPT.json",
+      "public_sha256": "ffbb668c68f2fe4f4444aa92e36857276a82ef7f255e2f99b5cebb1c3fe45d9f"
+    },
+    {
+      "execution_sha256": "8a600699905e09d9246708ed0e2228983ee5de6afc150293d049eee0373645f9",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/evaluation_v2/achieved_fpr_scores/ENDPOINT_SCORE_RECEIPT.json",
+      "public_sha256": "7d9c9ff0324126862cfc6699493c6624b04f2b1b1c95742108763e3b492e0355"
+    },
+    {
+      "execution_sha256": "52f016e23194353d2a70937f457d76dfa423d62d73e76239b2fa1671f4c11ee5",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/evaluation_v2/calibration_inputs/CALIBRATION_MANIFEST_RECEIPT.json",
+      "public_sha256": "827c73dc5add5ff66c525724e9286e7a625e4f157deb3a073477c68ca74134da"
+    },
+    {
+      "execution_sha256": "6dea8e9fce681d58c04e9010966832a15ae2a11e2eb2a80d65ebf07af150be9a",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/evaluation_v2/calibration_inputs/calibration_manifest.parquet",
+      "public_sha256": "338333e3525dfdb5fc9a7262deaaa8ee1db4ad1fe8539b85dc6b9739a238a601"
+    },
+    {
+      "execution_sha256": "d65e2e7c976cee98d06888de7646da8a02c23759aaa3223bdf06bc1879040258",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/evaluation_v2/calibration_scores/CALIBRATION_SCORE_RECEIPT.json",
+      "public_sha256": "7fe6ff3d7409c83f8f5c338bfbeb7d8acff8964449e12cf196016f14bc5a365e"
+    },
+    {
+      "execution_sha256": "34808142abb25cd145702fa29e636024359f85d664497d73a24d36c1c47e3046",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/evaluation_v2/terminal_confirmed_scores/ENDPOINT_SCORE_RECEIPT.json",
+      "public_sha256": "334a3c2eade9ce47e563b5d1a1f0a9c79ff599ad8d56d087f0775f66c4e1a302"
+    },
+    {
+      "execution_sha256": "15278c868f1f8837d7fc235aa737e29b84ae87630fa241ed59f4d3843a01aa47",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/grec/renderer_reconciliation_v1/sample_manifest.parquet",
+      "public_sha256": "d4d7d6e872d86949997c9a8d2cb7fd4db88f6dbf99fa631dc0ad500f33309fad"
+    },
+    {
+      "execution_sha256": "deff6ff6972c12395660148b854ac0e47c9335016ade41c4266f8f3b1c221601",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/pnoise/design_pilot/COMPARISON_ROLE_PIXEL_HASH_RECEIPT.json",
+      "public_sha256": "c3dabd45c8a8f8467ba7dda38a2e8150fb13ac99d62f8446d37e0275e40bbe4e"
+    },
+    {
+      "execution_sha256": "463f9a525ca8af6d0a91c55085a4616252edc08876df02d486c83ce3193f387a",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/pnoise/design_pilot/DESIGN_HOST_RECEIPT.json",
+      "public_sha256": "2d0e41569cc2ad1c6abe4f22f97f6d49ef3788aa3c835bd960474b8cb13e39c1"
+    },
+    {
+      "execution_sha256": "ed9282034c9c72c355fc721e4e57a023b337d373777a940af18288f6ba4cb33b",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/pnoise/design_pilot/DESIGN_ROLE_LEDGER_RECEIPT.json",
+      "public_sha256": "c1fb9173fc868a6c1c1d027d4dafe3aee829e93f0186ebdc02b37cfb8a932f48"
+    },
+    {
+      "execution_sha256": "cada410c670a2a7f4050d1e4e55e747a56fc7125ace44ce6d25e43d2e8c34181",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/pnoise/design_pilot/DESIGN_SCENE_RECEIPT.json",
+      "public_sha256": "8b0e31b109602c4df014f7658323931c12574433f99750ea90e794bba51c3e0e"
+    },
+    {
+      "execution_sha256": "7888ea54c235761f1498bf69ab523ea9ff0716e0c15fc6cedf108606dbf50192",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/pnoise/design_pilot/DESIGN_TEST_RECEIPT.json",
+      "public_sha256": "7e1458e98258ee5aec8215746333f09712c310534d007ba02476b5b07abee9eb"
+    },
+    {
+      "execution_sha256": "39baf085bb3e568f36fc0d3102eb413d53f28210692ed0cbb80ae37dc6ca0cd6",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/pnoise/design_pilot/PILOT_SCORE_RECEIPT.json",
+      "public_sha256": "60ca4d27add22881a5c8c31d4a135407e09953a6d314d60d02f6bc9fe09f9781"
+    },
+    {
+      "execution_sha256": "2905adfc61cdfafa5aafe9b0e22d3d868cb35484348d00eba48b8ed5ca711bc4",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/pnoise/design_pilot/PNOISE_DRAW_COUNT_RECEIPT.json",
+      "public_sha256": "1e3b99ed6200819a0ea3a16114ac68badb02f741e084225da5569f019be01b8b"
+    },
+    {
+      "execution_sha256": "1667b069bc65eaa763ba1bca66d9582e60f76c4c437db345f455e8f4c472aa17",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/pnoise/design_pilot/comparison_role_pixel_hashes.parquet",
+      "public_sha256": "3e49e160ff45f3ed286e821b7347e3813a713f898e5039a4f8764a6114ceed5d"
+    },
+    {
+      "execution_sha256": "6bc239e0b6ac3630af4e275b08ea3cec60c7592a9b9068688c193e79cde0b313",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/pnoise/design_pilot/design_host_manifest.parquet",
+      "public_sha256": "bc252641b2d98399189cd6e5af3e4d2dfc7b436d5c8f407e8a8527b03c692886"
+    },
+    {
+      "execution_sha256": "240849e6aa6ece0488b00c82856ebe7856ed6b15f307ca00282c9193d9090b14",
+      "identity_policy": "Original execution identifiers and scientific values are retained; only checkout-location metadata differs.",
+      "path": "results_v2/pnoise/design_pilot/design_scene_manifest.parquet",
+      "public_sha256": "edbea1b3157276bf21c77d95ce4b6d921855864d877072a05c49282bbd6cf5d4"
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Public checkout path sanitization for commits beginning 24 August 2026."
+}

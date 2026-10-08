@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: Please cite the accompanying RASTI manuscript.
+title: Linear-probe diagnostics of observed and source-injected strong-lens images in DESI Legacy Imaging Surveys DR10
+type: software
+authors:
+  - given-names: Aditrivaishnavi
+    family-names: Balaji
+    email: aditrivaishnavi@gmail.com
+repository-code: https://github.com/aditrivaishnavi/stronglens-realism-gap
+license: MIT
+preferred-citation:
+  type: article
+  title: Linear-probe diagnostics of observed and source-injected strong-lens images in DESI Legacy Imaging Surveys DR10
+  authors:
+    - given-names: Aditrivaishnavi
+      family-names: Balaji
+    - given-names: Parker T.
+      family-names: Johnson
+  year: 2026

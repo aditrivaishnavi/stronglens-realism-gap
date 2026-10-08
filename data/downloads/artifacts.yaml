@@ -1,0 +1,100 @@
+version: 1
+
+artifacts:
+  imagenet_efficientnet_v2_s:
+    destination: data/downloads/models/imagenet_efficientnet_v2_s.pth
+    sha256: dd5fe13b1d60ec15317ccc8ca158186e134d3366c3dde9cb9a4e301f2dc66c74
+    availability: public
+    public_url: https://download.pytorch.org/models/efficientnet_v2_s-dd5fe13b.pth
+
+  stein_ssl_resnet50:
+    destination: data/downloads/models/stein_ssl_resnet50.ckpt
+    sha256: d42798a4f5c165452a7a0ead8522abe096d49f2cb2ebc7792ca837ed5d90de3c
+    availability: upstream_archive
+    public_url: null
+    note: Retrieval location must be supplied before independent feature extraction.
+
+  primary_checkpoint:
+    destination: data/downloads/models/primary_seed42_epoch160.pt
+    bytes: 243435837
+    sha256: 5d1082839aac7a0bfb89342f84a9a533b22e1111c15cb4711255ed1b524a2b8d
+    availability: public_copy_pending
+    public_url: null
+
+  checkpoint_panel_weights:
+    destination: data/downloads/models/checkpoint_panel/
+    availability: public_copy_pending
+    public_url: null
+    manifest: experiments_v2/checkpoint_sensitivity_v2/config/panel.json
+
+  recovery_grid:
+    destination: data/downloads/current_pnoise_v1/cutouts.tar
+    bytes: 26639216640
+    sha256: 87746eac64ae45de9a2ff50bc0b35840452691dfadca3903fd96da6fff6aca62
+    availability: public_copy_pending
+    public_url: null
+
+  recovery_grid_metadata:
+    destination: data/downloads/current_pnoise_v1/cutout_metadata.parquet
+    bytes: 5824183
+    sha256: 2bd96c1f347fc87910462d09835cb4b90d61ac7810cfb88c2564343c7f6ae3d1
+    availability: public_copy_pending
+    public_url: null
+
+  source_photon_banks:
+    destination: data/downloads/current_pnoise_v1/source_photon_banks/
+    availability: public_copy_pending
+    public_url: null
+    manifest: results_v2/canonical_test_host_repair_v1/pnoise/physical/PNOISE_RENDER_RECEIPT.json
+
+  source_photon_staging_manifest:
+    destination: data/downloads/current_pnoise_v1/staging_manifest.json
+    sha256: 576174e9a6b605201af3ccff5e86d5b334b226b8031be4f0f2f1586aaf9692f4
+    availability: public_copy_pending
+    public_url: null
+
+  source_photon_config:
+    destination: data/downloads/current_pnoise_v1/config.json
+    sha256: d016ad4b4d28bc2d595deee34eefc4fea1b3ca28398c4b3779a66e1934191d9d
+    availability: public_copy_pending
+    public_url: null
+
+  historical_sampled_negatives:
+    destination: data/downloads/historical_sampled_negatives/
+    availability: public_copy_pending
+    public_url: null
+    note: Optional input for replaying the canonical target reselection.
+
+  historical_scoring_manifest:
+    destination: data/downloads/historical_sampled_negatives/development_train_val_localdisk.parquet
+    sha256: 3f1e432a8f11aa4cf8e1cdb083dd0d1b8e5c73e8b657b79bc9bb93eb3ac2fd24
+    availability: public_copy_pending
+    public_url: null
+
+  gmatch_pixel_payloads:
+    destination: evaluation_dataset_prep/candidate_payloads/
+    availability: public_copy_pending
+    public_url: null
+    note: Required only for pixel-level validation of the matched triplets.
+
+  psrc_photon_canary:
+    destination: experiments_v2/psrc/artifacts_v7/actual_photon_scoring_canary.json
+    availability: public_copy_pending
+    public_url: null
+    note: Optional validation artifact; not used as a scientific outcome.
+
+  cosmos_25_2:
+    destination: data/downloads/cosmos_25_2/
+    availability: upstream_archive
+    doi: https://doi.org/10.5281/zenodo.3242143
+    public_url: https://doi.org/10.5281/zenodo.3242143
+
+  legacy_survey_dr10:
+    destination: data/downloads/legacy_survey_dr10/
+    availability: upstream_archive
+    public_url: https://www.legacysurvey.org/dr10/
+    note: Raw survey pixels remain subject to the Legacy Surveys archive terms.
+
+notes:
+  - Raw DR10 and COSMOS pixels are not redistributed in Git.
+  - Public URLs for project-generated large artifacts will be added when the archival release is active.

@@ -44,7 +44,7 @@
     "scipy": "1.18.1",
     "torch": "2.7.0"
   },
-  "sample_manifest_sha256": "15278c868f1f8837d7fc235aa737e29b84ae87630fa241ed59f4d3843a01aa47",
+  "sample_manifest_sha256": "d4d7d6e872d86949997c9a8d2cb7fd4db88f6dbf99fa631dc0ad500f33309fad",
   "sample_rows": 142,
   "schema_version": 1,
   "spec_sha256": "88656779cdedb80675534ebce37f6c9d710e1b2cdaff0336f7aa55156720767f",

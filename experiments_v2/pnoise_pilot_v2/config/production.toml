@@ -127,7 +127,8 @@ expected_ordered_nodeids_sha256 = "5fe056b677a0c69b771d9852cc1b99514395e49318107
 
 [authorities.predecessor_config]
 path = "experiments_v2/grec_pnoise/config/production.toml"
-sha256 = "420e001332f0248c6264d6facb0d4af914344599773f8bb8207b8375e018f8b0"
+sha256 = "23ee7fe0ec24fe3d0005b63124af825f7ec48d58134594221d4e3a993a3a147e"
+execution_sha256 = "420e001332f0248c6264d6facb0d4af914344599773f8bb8207b8375e018f8b0"
 status = "implementation_candidate_not_execution_authority"
 
 [authorities.grec_host_manifest]

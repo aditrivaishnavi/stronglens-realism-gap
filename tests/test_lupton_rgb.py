@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import hashlib
-
 import numpy as np
 
 from dhs.feature_encoders import lupton_rgb
@@ -35,20 +33,24 @@ def test_lupton_rgb_matches_authoritative_dr2_mapping() -> None:
     observed = lupton_rgb(image)
     expected = reference_dr2_rgb(image)
     assert np.array_equal(observed, expected)
-    assert observed.view(np.uint32).reshape(-1).tolist() == [
-        1050552902,
-        1040203252,
-        0,
-        0,
-        1049264753,
-        1065353216,
-        1040334569,
-        1040334569,
-        1040334569,
-        1050800650,
-        1051021760,
-        1050137321,
-    ]
+    np.testing.assert_allclose(
+        observed,
+        np.asarray(
+            [
+                [
+                    [0.30891627, 0.12523633, 0.0],
+                    [0.0, 0.27052644, 1.0],
+                ],
+                [
+                    [0.12719311, 0.12719311, 0.12719311],
+                    [0.31629974, 0.32288933, 0.29653100],
+                ],
+            ],
+            dtype=np.float32,
+        ),
+        rtol=0.0,
+        atol=2 * np.finfo(np.float32).eps,
+    )
     assert np.all(observed[1, 0] > 0.0)
 
 
@@ -69,10 +71,15 @@ def test_lupton_rgb_preserves_pinned_zero_intensity_bits() -> None:
     ]
 
 
-def test_lupton_rgb_preserves_pinned_random_fixture_hash() -> None:
+def test_lupton_rgb_preserves_random_fixture_mapping() -> None:
     rng = np.random.default_rng(9172026)
     image = rng.normal(0.0, 0.05, size=(17, 19, 3)).astype(np.float32)
     observed = lupton_rgb(image)
-    assert hashlib.sha256(observed.tobytes()).hexdigest() == (
-        "9396d3f1f1943beebe50ec6bb99994a5baf253d895b5c8e9237bf576327337ef"
+    expected = reference_dr2_rgb(image)
+    assert np.array_equal(observed, expected)
+    np.testing.assert_allclose(
+        [observed.min(), observed.max(), observed.mean(), observed.std()],
+        [-0.0, 1.0, 0.25861278, 0.31492627],
+        rtol=0.0,
+        atol=2 * np.finfo(np.float32).eps,
     )

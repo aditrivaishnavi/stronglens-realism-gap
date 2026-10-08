@@ -315,6 +315,8 @@ def test_parent_parameter_tamper_fails_even_if_outer_hashes_are_rewritten(
 
 
 def _threshold_inputs(tmp_path: Path, config: dict) -> dict[str, Path]:
+    if not Path(config["scoring"]["checkpoint"]).resolve().is_file():
+        pytest.skip("external primary checkpoint is not staged")
     tmp_path.mkdir(parents=True, exist_ok=True)
     n = 20_000
     manifest = tmp_path / "calibration.parquet"

@@ -1,6 +1,6 @@
 {
   "authority_document_path": "docs/G_MATCH_V2_AUTHORITY.md",
-  "authority_document_sha256": "e7844b93acf896458067160939d9e1345d458e411851ce5fb7afba6bb093efff",
+  "authority_document_sha256": "bc70d391175125404883e522052ee30ce979f668699e77e93c43e08b7387266a",
   "bootstrap_authorized": false,
   "config_path": "config/production.toml",
   "config_sha256": "3cde5f697fa795f5d7987306ec620cb5cc39f52a251e0ad826eedceaae3fa2ff",

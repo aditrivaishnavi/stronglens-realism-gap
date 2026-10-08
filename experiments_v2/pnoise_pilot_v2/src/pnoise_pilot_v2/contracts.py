@@ -176,7 +176,12 @@ def _validate_config_seal(
     }
 
 
-def load_config(path: str | Path, *, verify_large_files: bool = True) -> dict[str, Any]:
+def load_config(
+    path: str | Path,
+    *,
+    verify_large_files: bool = True,
+    verify_external_artifacts: bool = True,
+) -> dict[str, Any]:
     config_path = ensure_no_final_outcome_path(path)
     with config_path.open("rb") as handle:
         config = tomllib.load(handle)
@@ -189,28 +194,32 @@ def load_config(path: str | Path, *, verify_large_files: bool = True) -> dict[st
     authorities = config.get("authorities")
     if not isinstance(authorities, dict) or not authorities:
         raise PilotContractError("successor configuration has no inherited authorities")
-    for name, record in authorities.items():
-        authority_path = ensure_no_final_outcome_path(record["path"])
-        if not authority_path.is_file():
-            raise PilotContractError(f"missing authority {name}: {authority_path}")
-        if not verify_large_files and name == "historical_cutout_tar":
-            continue
-        observed = sha256_file(authority_path)
-        if observed != record["sha256"]:
-            raise PilotContractError(
-                f"inherited authority drift at {name}: {observed} != {record['sha256']}"
-            )
+    if verify_external_artifacts:
+        for name, record in authorities.items():
+            authority_path = ensure_no_final_outcome_path(record["path"])
+            if not authority_path.is_file():
+                raise PilotContractError(f"missing authority {name}: {authority_path}")
+            if not verify_large_files and name == "historical_cutout_tar":
+                continue
+            observed = sha256_file(authority_path)
+            if observed != record["sha256"]:
+                raise PilotContractError(
+                    f"inherited authority drift at {name}: "
+                    f"{observed} != {record['sha256']}"
+                )
     root = Path(config["paths"]["repository_root"]).resolve()
-    for relative, expected in config.get("inherited_code", {}).items():
-        source = ensure_no_final_outcome_path(root / relative)
-        observed = sha256_file(source)
-        if observed != expected:
-            raise PilotContractError(
-                f"inherited code drift at {relative}: {observed} != {expected}"
-            )
-    checkpoint = ensure_no_final_outcome_path(config["scoring"]["checkpoint"])
-    if sha256_file(checkpoint) != config["scoring"]["checkpoint_sha256"]:
-        raise PilotContractError("authoritative checkpoint digest mismatch")
+    if verify_external_artifacts:
+        for relative, expected in config.get("inherited_code", {}).items():
+            source = ensure_no_final_outcome_path(root / relative)
+            observed = sha256_file(source)
+            if observed != expected:
+                raise PilotContractError(
+                    f"inherited code drift at {relative}: {observed} != {expected}"
+                )
+    if verify_external_artifacts:
+        checkpoint = ensure_no_final_outcome_path(config["scoring"]["checkpoint"])
+        if sha256_file(checkpoint) != config["scoring"]["checkpoint_sha256"]:
+            raise PilotContractError("authoritative checkpoint digest mismatch")
     config["__provenance__"] = {
         "path": str(config_path),
         "sha256": sha256_file(config_path),

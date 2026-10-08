@@ -1,0 +1,35 @@
+{
+  "abstract_words": 234,
+  "log_problems": {},
+  "pdf_pages": {
+    "manuscript.pdf": 27
+  },
+  "problems": [],
+  "schema_version": 1,
+  "scientific_authority_sha256": {
+    "results_v2/canonical_test_host_repair_v1/PUBLIC_REPORTING_SUMMARY.json": "fa1f0730dc2e146a7721e324fa484d01bcb31baa1a474eb6eef714c2c514d7f5",
+    "results_v2/canonical_test_host_repair_v1/PUBLIC_STUDY_AUTHORITY.json": "eeabfce1eeb8632a92b75731e1121f807ceb2d6a5c937bf347779f030a2a3dbe"
+  },
+  "sha256": {
+    "01_abstract.tex": "4c1414568bbb1f81c39ed0d1dc6357f22643d57052c5c8e34321a68e65ce9f4b",
+    "02_introduction.tex": "d9588c00d25da94dcd24c227eeb47248bfe57e7fa9dd61727a81aaeba6e57213",
+    "03_data_samples_detector.tex": "3e9f67beaa172dd40891824cbf40df49756e05412ddc16fc13dd15d4c04031ea",
+    "04_injection_models_experiments.tex": "46051182415b054d36b0e6959edf2a95074bfded58fc40e444a9cf0fc72ff17e",
+    "05_analysis_design_statistical_methods.tex": "7598ac96060a8ef59bb34ffcba8bfe2ecfd3f7eada6da3b29806058f4979b8b8",
+    "06_results.tex": "987ffb3089867375480ccb672f1dafbf133f5995041aba21b575bbb8205bd041",
+    "07_discussion.tex": "ae1d16e50974d1d0873bb0052e805573adf6730b4c58072f5d69b167a0eb6e8c",
+    "08_conclusions.tex": "6e7c1ba09f961844f44983536f69a10731cafbd853775341a3fa0c0263167658",
+    "09_declarations.tex": "ecd6b4ca41673cfa9a2d730233397168fe626208b6035709bf41630a26af370a",
+    "A2_supplementary_analyses.tex": "78c32c7646f7e2c1433097963f760b7ae6323bd591a14ac9aea3c3571093a231",
+    "SUPPORTING_EVIDENCE_INDEX.md": "743d87d877575b098f995d8781b28194f6d80436e853fa236d28685d643f064c",
+    "build_documents.py": "9cd9ce2c4119c87f420ef7755911b36eecdf070b76105951ae1b0a15d55cf684",
+    "generate_confirmed_43_provenance_table.py": "9ecc9ba82ddd04169bb215073bc104f08706a60057e29788783a018f90daf39a",
+    "main.tex": "71867c1cd8153d5b259d1e28b385be5cfce128d5d3bbce828650a11477844e59",
+    "manuscript.pdf": "5d84e7c549a16c0f7877c978079deb1a2d8cf4192523b838a8b68d38c7484bbd",
+    "tables/confirmed_43_provenance.csv": "99b898da0be117b1102e923dabec02e11bf2624296a76242573f86e908843bcf",
+    "tables/confirmed_43_provenance.tex": "fca2a8deb6b7f2b6dcffc056963bfa63e61fbc32607b52acc09c76979eb3bb54",
+    "tables/sources.json": "b7ef7ceb039075fb10ffa9da4d6e1b826d6cf8d20d1a8afbbf642f4e48e789b7",
+    "verify_submission.py": "d6b660bb27d1c8899a68d066237b9cbd233b885d1567c5693a8f4e4c5d61e04d"
+  },
+  "status": "manuscript_checks_pass"
+}

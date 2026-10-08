@@ -774,9 +774,9 @@
       "config_file_sha256": "420e001332f0248c6264d6facb0d4af914344599773f8bb8207b8375e018f8b0",
       "config_path": "experiments_v2/grec_pnoise/config/production.toml",
       "governing_document_sha256": {
-        "evaluation_dataset_prep/GROUND_RULES.md": "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca",
-        "evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md": "be8260d121e7ff01ae5432a56b9cf24eac8831aedeb0dc27d14e29e21ae4fa0e",
-        "evaluation_dataset_prep/experiments/P_noise/DATASET_PLAN.md": "4c3cb2b4fdef0dfc58bb4001fdb9e30cae11d7322babb1c09b738a4f8ecc6349"
+        "evaluation_dataset_prep/GROUND_RULES.md": "4d021cdc3ebca350519d758946950294c15ee955a3c9355fb3db2d2463891695",
+        "evaluation_dataset_prep/experiments/G_rec/DATASET_PLAN.md": "bf50905a05c4246c38f35cf8b32d94690b84cf414d65aad166b6311ab8e45ffe",
+        "evaluation_dataset_prep/experiments/P_noise/DATASET_PLAN.md": "c1d0f969e11428f497c39b6d944d662c19a70e656f8ffbbf955ac8b0764c6e7f"
       }
     },
     "mcse_receipt_sha256": "2905adfc61cdfafa5aafe9b0e22d3d868cb35484348d00eba48b8ed5ca711bc4",

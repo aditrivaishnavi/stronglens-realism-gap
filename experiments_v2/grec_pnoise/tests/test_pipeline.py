@@ -111,6 +111,9 @@ def make_scenes(tmp_path: Path, config: dict) -> pd.DataFrame:
 def make_threshold_receipt(
     tmp_path: Path, config: dict, values: np.ndarray | None = None
 ) -> Path:
+    checkpoint = Path(config["scoring"]["checkpoint"]).resolve()
+    if not checkpoint.is_file():
+        pytest.skip("external primary checkpoint is not staged")
     n = int(config["threshold"]["minimum_calibration_rows"])
     values = (
         np.linspace(-8.0, 8.0, n, dtype=np.float32)
@@ -818,6 +821,8 @@ def test_inference_averages_draws_then_hosts(tmp_path: Path, config: dict):
 
 
 def test_mps_profile_binds_actual_apple_hardware_and_environment(config: dict):
+    if not torch.backends.mps.is_available():
+        pytest.skip("Apple MPS backend is unavailable on this platform")
     profile = backend_profile(config, "mps")
     apple = profile["hardware"]["apple"]
     assert apple["chip_type"] == "Apple M5 Max"
@@ -1077,6 +1082,8 @@ def test_one_draw_mcse_is_unavailable_not_zero(tmp_path: Path, config: dict):
 
 
 def test_scorer_closure_binds_local_wrappers(config: dict):
+    if not Path(config["scoring"]["checkpoint"]).resolve().is_file():
+        pytest.skip("external primary checkpoint is not staged")
     closure = fixed_scorer_closure(config, "cpu")
     wrappers = closure["wrapper_source_sha256"]
     assert {

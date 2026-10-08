@@ -1,113 +1,96 @@
-# stronglens-realism-gap
+# Linear-probe diagnostics of strong-lens source injection
 
-**A morphological barrier: quantifying the injection realism gap for CNN strong lens finders in DESI Legacy Survey DR10**
+Code, compact data products, results, and manuscript sources for:
 
-This repository contains all code, data, results, and the manuscript for the paper submitted to RAS Techniques and Instruments (RASTI). The injection-recovery pipeline measures how well a CNN strong-lens finder can distinguish real gravitational lenses from synthetic injections based on Sersic profiles, and quantifies the resulting "realism gap" that limits completeness estimates.
+> **Linear-probe diagnostics of observed and source-injected strong-lens
+> images in DESI Legacy Imaging Surveys DR10**
 
-## Key results
+The primary investigation applies one dependency-aware linear-probe protocol
+to the operational detector's penultimate features, Stein self-supervised
+survey features, generic ImageNet features, and elementary pixel statistics.
+Matched controls constrain interpretation; recovery, source/photon,
+and fixed-target brightness experiments separately characterize detector response.
 
-- A logistic regression linear probe on CNN penultimate-layer embeddings achieves **AUC = 0.997 +/- 0.003** (five-fold cross-validation; bootstrap 95% CI: [0.996, 1.000]) for separating real lenses from injections, demonstrating that the CNN trivially distinguishes them.
-- Marginal completeness at the CNN's operating threshold (p > 0.3) is **5.18%** (5697/110,000 injections detected) over the full parameter grid — implying a severe injection realism gap.
-- The gap is consistent with a **morphological** barrier: Frechet distance analysis shows the separation emerges in learned mid-level features, not in simple photometry.
-- Adding Poisson noise to injections does not close the gap (marginal completeness drops to 3.79%), though paired McNemar tests reveal a statistically significant effect at intermediate source magnitudes (source mag 21--22: p = 3.2e-4; source mag 22--23: p = 2.8e-4), with pooled McNemar chi-squared p = 1.2e-5 across mag 20--23.
+## Reported results
 
-## Repository structure
+- **Observed endpoint:** the primary EfficientNetV2-S detector flags 39 of 43
+  selected confirmed systems at the primary threshold.
+- **\(G_{\rm domain}\):** component-weighted OOF AUC is 0.991340 in
+  operational penultimate features, 0.958187 in Stein features, 0.978528 in
+  ImageNet features, and 0.980745 in pixel statistics. The existing
+  operational lens score separately ranks the same populations with AUC
+  0.980306. These are not independent replications or physical-realism ranks.
+- **\(G_{\rm match}\):** mean injected-minus-bare movement is +0.023183 in
+  operational features, +0.235027 in Stein features, +0.024792 in ImageNet
+  features, and -0.029207 in pixel statistics. Operational movement is
+  positive for 27 targets and negative for 16.
+- **\(G_{\rm rec}\):** 1,710 of 49,500 declared recovery-grid injections are
+  detected (3.4545%). This is conditional recovery on the grid, not population
+  completeness.
+- **\(P_{\rm src}\):** the single-Sérsic arm exceeds the structured F814W arm
+  by +0.560290 percentage points, with interval [+0.283912, +0.932231].
+  This compares complete source constructions rather than morphology alone.
+- **\(P_{\rm noise}\):** adding the declared \(g=150\) arc-associated Poisson
+  term changes recovery from 3.4545% to 2.2515%, a paired change of -1.203030
+  percentage points, interval [-1.387747, -1.027768].
+- **Fixed-target brightness and source-photon response:** 344 expectation
+  images and 2,752 photon images give 3,096 retained clip-10 score rows over
+  magnitudes 18.5--25.5. This is not a visibility-completeness analysis.
 
-```
-├── paper/                        # RASTI manuscript and figures
-│   ├── balaji_johnson_2026_rasti.tex  # LaTeX source
-│   ├── balaji_johnson_2026_rasti.pdf  # Compiled PDF
-│   ├── fig1–fig5*.pdf            # Publication figures
-│   └── generate_all_figures.py   # Regenerate the completeness, UMAP, score, and bright-arc figures
-├── dhs/                          # Core Python library
-│   ├── injection_engine.py       # SIE lens model + Sersic sources + ray-tracing
-│   ├── model.py                  # EfficientNetV2-S architecture
-│   ├── data.py                   # Dataset and dataloader
-│   ├── train.py                  # Training loop
-│   ├── preprocess.py             # Cutout preprocessing (annulus normalisation)
-│   └── scripts/                  # Training and evaluation runners
-├── scripts/                      # Analysis and diagnostic scripts
-│   ├── feature_space_analysis.py # Linear probe + Frechet distance
-│   ├── selection_function_grid.py# Completeness grid over (theta_E, mag)
-│   ├── permutation_bootstrap_auc.py  # Statistical significance tests
-│   ├── mcnemar_bright_arc.py     # McNemar test for Poisson effect
-│   └── ...                       # Additional diagnostics
-├── configs/                      # Experiment configuration
-│   ├── injection_priors.yaml     # Injection parameter distributions
-│   └── paperIV_efficientnet_v2_s_v4_finetune.yaml  # CNN training config
-├── tests/                        # Unit and integration tests
-├── sim_to_real_validations/      # Sim-to-real validation experiments
-├── results/                      # D06 experiment outputs
-│   └── D06_corrected_priors/     # Final run with K-corrected priors
-│       ├── analysis/             # Aggregate summary JSON
-│       ├── linear_probe/         # Embeddings, probe weights, AUC
-│       ├── grid_*/               # Completeness grids (with/without Poisson)
-│       ├── ba_*/                 # Bright-arc experiment variants
-│       ├── poisson_diagnostics/  # Paired Poisson analysis + McNemar
-│       ├── gallery/              # 271 lens thumbnails + HTML gallery
-│       └── provenance.json       # Reproducibility checksums
-├── data/
-│   └── positives/
-│       └── desi_candidates.csv   # DESI Strong Lensing catalogue cross-match
-└── docs/                         # Technical documentation
-    ├── REPRODUCIBILITY_GUIDE.md
-    ├── TECHNICAL_SPECIFICATIONS.md
-    └── EXPERIMENT_REGISTRY.md
-```
+Together these results do not assign the broad simulation-to-observation
+difference to one cause. They do not support a large fitted-Sérsic suppression
+under the tested seeing-limited constructions; target selection, mass
+assignment, complex configurations, source-noise/pedestal construction, and
+survey processing remain important limitations.
 
-## Reproducing the paper
+## Repository layout
 
-### Prerequisites
+- `dhs/` — detector, rendering, pairing, matching, and statistics code.
+- `scripts/` — reproducible command-line analyses.
+- `configs/` — split, rendering, and Poisson configurations.
+- `data/manifests/` — separate portable train, validation, and test manifests.
+- `results_v2/` — compact scores, features, results, and verification
+  records; the public authority below identifies the paper-bound artifacts.
+- `experiments_v2/` — declared protocols and analysis packages.
+- `manuscript/` — paper source, compiled manuscript, figures, and scientific supplement.
+- `docs/` — methods, data, and reproduction instructions.
+- `tests/` — physics, statistics, split, and result regression tests.
 
-```bash
-pip install -r requirements.txt
-```
+Public-data boundaries and repository size choices are documented in
+`docs/LICENSING_AND_DATA_POLICY.md` and `docs/LARGE_FILE_POLICY.md`.
 
-Key dependencies: Python 3.12+, PyTorch 2.1+, torchvision, numpy, scipy, scikit-learn, matplotlib, pandas, astropy, umap-learn.
-
-### Regenerating figures
-
-The completeness, UMAP, score-distribution, and bright-arc figures can be regenerated from the included result files:
+## Quick start
 
 ```bash
-cd stronglens-realism-gap
-python paper/generate_all_figures.py
+uv sync --locked --extra dev
+make test-all PYTHON="uv run python"
 ```
 
-The real-vs-injected comparison figure:
+Tests needing external checkpoints or image payloads report explicit skips
+when those artifacts are unavailable. The reported outputs and submission
+documents are regression-tested by:
 
 ```bash
-python scripts/generate_comparison_figure.py
+uv run pytest -q tests/test_public_canonical_authority.py
+uv run pytest -q tests/test_submission_documents.py
+uv run pytest -q tests/test_public_manifests.py
 ```
 
-### Running the full pipeline
+The public study authority and reporting reconciliation are:
 
-The full pipeline requires:
-1. Access to DESI Legacy Survey DR10 cutouts (via the Legacy Survey cutout service or local brick files)
-2. A trained CNN checkpoint (available on request or via the training scripts)
-3. GPU compute for training and inference
+- `results_v2/canonical_test_host_repair_v1/PUBLIC_STUDY_AUTHORITY.json`;
+- `results_v2/canonical_test_host_repair_v1/PUBLIC_REPORTING_SUMMARY.json`.
 
-See `docs/REPRODUCIBILITY_GUIDE.md` for detailed instructions.
-
-## Data
-
-- **Real lenses**: 112 Tier-A spectroscopically confirmed lenses (validation set; 389 Tier-A in total) from the DESI Strong Lensing catalogue, cross-matched with DR10 imaging.
-- **Injections**: Synthetic lensed arcs generated by `dhs/injection_engine.py` using SIE lens models and Sersic source profiles, injected into real DR10 galaxy cutouts.
-- **Negatives**: ~447,000 non-lens cutouts (312,744 training, 134,149 validation) from the DR10 Tractor catalogue, selected with magnitude and colour cuts spanning the full range of galaxy morphologies.
+The complete pixel-level rendering and detector rescoring require DR10 cutouts,
+the COSMOS source sample, and the primary detector checkpoint. See
+`docs/REPRODUCIBILITY.md`.
 
 ## Citation
 
-If you use this code or the results in your work, please cite:
+Please cite the accompanying RASTI manuscript. Citation metadata will be
+updated with the journal DOI after publication.
 
-```bibtex
-@unpublished{balaji2026morphological,
-  title={A morphological barrier: quantifying the injection realism gap for CNN strong lens finders in DESI Legacy Survey DR10},
-  author={Balaji, Aditrivaishnavi and Johnson, Parker T.},
-  note={Submitted to RAS Techniques and Instruments (under review)},
-  year={2026}
-}
-```
+## Licence
 
-## License
-
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+Software is MIT-licensed; see `LICENSE`. Manuscript, figure, derived-data, and
+third-party-data terms are described in `docs/LICENSING_AND_DATA_POLICY.md`.

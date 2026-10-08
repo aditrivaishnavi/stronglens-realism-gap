@@ -48,8 +48,8 @@ EXPECTED_SHA256 = {
     "5fa79c96a562fb1d42c46e",
     "achieved_fpr": "2dd559dbde377c53916b2a52925a8e10fc0f16b7e079162a"
     "02195e91a616b96f",
-    "prior_selection": "60429cc8f00de5ffcb05b44a93a61ae30d7109ee99842b56"
-    "ac192d73bd94b023",
+    "prior_selection": "ca6157d65a6532138b2b4e66858d4e5aa7a68692a141be2ba"
+    "4a618ad5bd1b24a",
 }
 EXPECTED_ALLOWED_ROWS = 27_950
 EXPECTED_ALLOWED_GROUPS = 2_243

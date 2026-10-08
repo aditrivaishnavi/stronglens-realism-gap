@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import re
@@ -65,6 +66,13 @@ def pdf_pages(path: Path) -> int:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--write-receipt",
+        action="store_true",
+        help="replace the committed receipt after an intentional evidence update",
+    )
+    arguments = parser.parse_args()
     problems: list[str] = []
 
     count = abstract_word_count()
@@ -291,11 +299,21 @@ def main() -> None:
         "log_problems": log_problems,
         "problems": problems,
     }
-    (ROOT / "VERIFICATION_RECEIPT.json").write_text(
-        json.dumps(receipt, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
-    )
-    print(ROOT / "VERIFICATION_RECEIPT.json")
+    receipt_path = ROOT / "VERIFICATION_RECEIPT.json"
+    if arguments.write_receipt:
+        receipt_path.write_text(
+            json.dumps(receipt, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+        print(receipt_path)
+    else:
+        committed = json.loads(receipt_path.read_text(encoding="utf-8"))
+        if committed != receipt:
+            problems.append(
+                "committed manuscript receipt differs; run with "
+                "--write-receipt only after reviewing the evidence changes"
+            )
+        print(f"verified {receipt_path}")
     if problems:
         raise SystemExit("\n".join(problems))
 

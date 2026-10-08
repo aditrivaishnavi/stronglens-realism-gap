@@ -137,11 +137,11 @@ stop_before_feature_authorization = true
 
 [authorities.ground_rules]
 path = "evaluation_dataset_prep/GROUND_RULES.md"
-sha256 = "d237c59ac37badef6e2083f3a92dfefc22057ccd981abc5cec79d64f02d269ca"
+sha256 = "4d021cdc3ebca350519d758946950294c15ee955a3c9355fb3db2d2463891695"
 
 [authorities.gmatch_dataset_plan]
 path = "evaluation_dataset_prep/experiments/G_match/DATASET_PLAN.md"
-sha256 = "1f7bd04a45e431a29839f7e1c0a3f1e29970f70ed67e90ae7514051614616b40"
+sha256 = "7fed08fa66b9997033684578940e103c679d68065bfe496bc64b4aca12a0b8a7"
 
 [authorities.reference_roster]
 path = "evaluation_dataset_prep/reference_cohort/confirmed_43.parquet"
