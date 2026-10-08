@@ -1,0 +1,190 @@
+\section{Discussion}
+\label{sec:discussion}
+
+The operational detector's penultimate features strongly distinguish the
+selected observed and injected populations, showing that its trained
+representation can serve as a detector-specific diagnostic. The same
+separation appears in self-supervised survey features, generic ImageNet
+features, and elementary pixel statistics, so it is not confined to the
+lens-trained representation.
+
+The controls add two distinct observations: a leading pixel-statistic offset
+predates insertion, and matched injections have a near-zero mean signed
+movement along the separately fitted operational observed--bare axis, with
+heterogeneous pairwise shifts. The separate recovery, source-photon,
+source-construction, and fixed-target brightness experiments characterize
+responses to controlled image changes. The matched controls locate differences
+that predate injection, while the recovery experiments measure how the fixed
+detector responds when source photons, source construction, or brightness are
+changed.
+
+\subsection{What the recovery measurements represent}
+\label{sec:discussion_recovery}
+
+The detector responds to 39/43 selected confirmed systems but to 3.45 per cent
+of the fixed injection grid. These summaries describe different cohorts and
+weighting schemes. The selected systems come from heterogeneous discovery
+programmes, whereas \(G_{\rm rec}\) averages equally over nine observing
+cells, 4,500 targets, and 11 Einstein radii
+\citep{Huang2020,Huang2021,Stein2022,Storfer2024,Sonnenfeld2023,Sonnenfeld2024}.
+
+On the 43 fixed targets, expectation-image recovery peaks at magnitude 20.5
+and is lower at the two brighter nodes. Thus recovery is non-monotonic over
+the tested intrinsic-magnitude range.
+
+\subsection{Feature diagnostics, matching, and mass-model scope}
+\label{sec:discussion_deflector}
+
+The fixed lens head is one affine projection of the operational feature
+vector. Its AUC of 0.980 shows that the existing score already expresses a
+strong separating direction. Using the same cross-fitted readout for all four
+representations shows whether the operational features are uniquely sensitive
+to population identity. The probe and fixed head are complementary readouts
+of the same feature vector, while the pixel-statistic AUC of 0.981 shows that
+elementary image summaries also carry a strong separating direction.
+
+The leading native-pixel offset is already present between the observed
+references and bare targets (Section~\ref{sec:matched_probe_results}).
+Foreground light, background estimation, survey processing, and sample
+selection are all plausible contributors to that offset. The measured offset
+is present before insertion; these analyses do not separate the possible
+contributions listed above.
+
+\(G_{\rm match}\) asks how one fixed injection moves each matched target along
+an observed--bare axis. Its operational mean is near zero, but individual
+shifts range from \(-0.453\) to \(+0.998\).
+The near-zero cohort mean therefore coexists with substantial individual
+movements. Matching reduces differences in the five recorded central-object
+and observing quantities. The observed--bare readout describes differences
+between complete cutouts; insertion measures movement along that readout on
+the same targets. Redshift, velocity dispersion, stellar mass, source
+properties, and environment remain outside that matching set. The radius
+curve similarly describes response over assigned grid values rather than
+target-specific inferred lens models.
+
+\subsection{Arc-photon-noise treatment}
+\label{sec:discussion_noise}
+
+The negative aggregate photon effect persists across the 12
+validation-selected checkpoints
+(Section~\ref{sec:checkpoint_sensitivity_results}). The primary checkpoint's
+radius-specific band is a different summary: it includes zero through
+1.5 arcsec and lies below zero at larger tested radii
+(Section~\ref{sec:poisson_results}).
+
+Only the extra shot-noise term associated with injected flux is changed.
+The observed target already contains its realised sky, detector, coaddition,
+neighbours, and foreground light. The adopted effective gain is approximate,
+and the intervention operates on post-coadd cutouts rather than reconstructing
+exposure-level correlated noise or resampling. Eight draws control
+finite-photon Monte Carlo error for the adopted
+\(g=150\ {\rm e^{-}\,nmgy^{-1}}\) source-photon law. Gain-model and
+threshold-calibration uncertainty remain outside the reported interval.
+
+\subsection{Source-construction result}
+\label{sec:discussion_source}
+
+Under the tested construction, single-S\'{e}rsic recovery is about
+0.56 percentage points higher than structured-source recovery. All 12
+validation-selected checkpoint estimates have the same sign with
+7/12 intervals excluding zero. Under the terminal-epoch policy all 12 estimates
+retain that sign, while 8/12 intervals exclude zero. The direction is
+therefore consistent across the examined policies, but interval exclusion is
+checkpoint-policy-dependent. The estimand compares the two complete
+source-construction pipelines.
+
+The empirical arm is constructed from selected high-S/N F814W images by
+deconvolution and reconvolution to a common resolution, followed by
+non-negative projection, centring, support restriction, and normalization.
+Its spatial map therefore contains both source structure and the effects of
+measurement and regularization. Each arm reuses its own F814W-derived map
+across \(g,r,z\); the tested construction has no colour gradients or
+chromatic morphology.
+Both arms share the selected targets, assigned SIE-plus-shear mappings,
+effective PSF, modelled photon law, threshold, and post-coadd insertion.
+In the noiseless known-source test, global flux, centring, and normalization
+errors remain within the stated tolerances
+(Appendix~\ref{app:source_transfer_followup}).
+
+Future paired studies can vary source support, regularization, correlated
+measurement noise, and
+band-dependent morphology while continuing to hold targets, lens mappings,
+fluxes, and photon draws fixed.
+
+\subsection{Renderer qualification and numerical scope}
+\label{sec:discussion_renderer}
+
+Agreement in the fixed 142-scene validation cohort supports the numerical
+implementation within its tested configurations
+(Appendix~\ref{app:renderer_reconciliation}). These numerical checks do not
+test the astrophysical adequacy of the adopted source, lens, PSF, or detector
+models.
+
+\subsection{Relation to published pipelines and resolution}
+\label{sec:discussion_literature}
+
+Published pipelines differ in their source constructions, deflector
+information, and observing regimes: fully simulated \textit{Euclid}-like
+images expose selection dependence on source and lens parameters
+\citep{Herle2024}, whereas HSC and other recent pipelines use real galaxy
+stamps and, in some cases, more tightly constrained deflector information
+\citep{Canameras2021,Rojas2022,Schuldt2023,Canameras2024}. These approaches
+vary choices beyond the paired structured--S\'{e}rsic intervention studied
+here.
+
+Resolution is especially important. At DR10 resolution, the effective PSF
+smooths the rendered lensed images and reduces the observable fine structure
+inherited from the source templates. HST, \textit{Euclid}, and seeing-limited
+ground-based data resolve different source structure, so the magnitude and
+direction of source-construction effects can vary with resolution. Source,
+mass, PSF, detector, and processing choices should therefore be tested at the
+resolution at which a selection function will be applied.
+
+\subsection{Limitations and future work}
+\label{sec:limitations}
+
+Inference is restricted to the sampled systems and tested pipelines.
+Generalizing these results to another lens population is limited by missing
+physical covariates, mass parameters assigned independently of the target
+galaxies, single-band source morphology, post-coadd insertion, approximate PSF
+and gain models, and unknown overlap with Stein's pretraining data. The
+operational evaluations retain the detector's trained 20--32-pixel annulus and
+clip-10 map, making that mapping part of the operational estimand.
+
+The detector panel contains 12 correlated variants of one architecture and
+training pipeline. Sampler and schedule changes are
+evaluated only at seed 42, the positive-example-set contrast changes several
+properties together, and no between-checkpoint contrast interval is attached.
+Each estimate conditions on an empirically calibrated threshold, so the panel
+combines training variation with calibration-tail variation. It therefore
+tests variation within this training family rather than across independent
+detector architectures.
+The operational feature analysis uses only the primary checkpoint. All four
+probes share the 43 observed references; dependency-closed folds keep linked
+images together, and component-equal weights prevent repeated injections from
+receiving disproportionate weight.
+
+Future work should first construct a deflector sample with reliable redshifts,
+velocity dispersions or other mass proxies, then assign mass and environment
+jointly with observed light. Controlled mass-model factors should include
+density slope, composite baryonic and dark components, external convergence,
+multiple deflectors, and line-of-sight structure. Each factor should be varied
+within matched targets rather than inferred from an unpaired population
+contrast.
+
+Source tests should use multiple real-galaxy catalogues and latent-source
+methods, band-dependent morphology and colour gradients, with support,
+regularization, and correlated noise varied explicitly. The
+structured--S\'{e}rsic intervention should be repeated at space-based and
+ground-based resolution under the same underlying systems.
+Exposure-level injection before coaddition would test PSF, noise correlation,
+deblending, masking, and processing provenance that cutout-level addition
+leaves fixed.
+
+Future studies should predefine the simulated population, detector, and
+thresholds; preserve system- or target-level grouping; report support in every
+conditional cell; and combine unpaired comparisons with bare-target and paired
+controls. Repeating the diagnostic under such controlled pipeline changes can
+identify which changes alter observed--injected separation. Pairing those
+changes with selection-function and downstream population-inference metrics
+would connect the diagnostic to survey performance.

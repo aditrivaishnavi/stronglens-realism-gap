@@ -1,0 +1,27 @@
+\begin{abstract}
+Injection--recovery characterizes CNN strong-lens finders, but its
+interpretation depends on the simulated images presented to the detector. For
+a frozen EfficientNetV2-S trained on DESI Legacy Imaging Surveys DR10 cutouts,
+we measure conditional recovery and observed--injected distinguishability
+separately. Matched and paired controls identify differences already present
+before source insertion and measure detector responses to specified
+construction changes. Dependency-aware linear probes compare four
+representations---the operational detector's pooled penultimate features,
+self-supervised survey features, ImageNet features, and pixel statistics---for
+43 selected observed systems and 6,336 source-injected images.
+The populations separate in all four representations, with out-of-fold
+receiver-operating-characteristic AUCs of 0.991, 0.958, 0.979, and 0.981,
+respectively. A leading pixel-statistic offset is already present between
+observed systems and bare targets. Along a separately fitted operational
+observed--bare axis, the mean injection movement is near zero despite
+heterogeneous pairwise effects. Separately, the finder recovers 3.45 per cent
+of a 49,500-scene grid with no visibility cut. Modelled source-photon sampling
+lowers recovery, whereas the single-S\'{e}rsic construction is recovered more
+often than its paired structured-source counterpart. On 43 fixed targets,
+expectation-image recovery varies non-monotonically with source brightness and
+peaks at 18.6 per cent.
+Together, these analyses reveal differences between the selected populations
+within the actual finder, identify a pre-insertion offset, and measure
+responses to controlled injection choices. They provide a practical basis for
+comparing future injection pipelines using trained finders.
+\end{abstract}

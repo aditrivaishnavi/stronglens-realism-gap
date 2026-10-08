@@ -1,0 +1,51 @@
+\section{Introduction}
+
+Strong gravitational lenses constrain galaxy mass profiles, dark-matter
+structure, and cosmological distances \citep[e.g.][]{Treu2010,Collett2015}.
+Building large samples requires scalable discovery methods, including
+convolutional neural networks (CNNs). Population inference also requires a
+selection function: a model of whether a lens is physically detectable and
+whether a specified search procedure finds it
+\citep{Sonnenfeld2023,Sonnenfeld2024}. Injection--recovery measures the
+response after synthetic lensed light is added to survey images. Without a
+separate detectability condition, its recovery fraction combines physical
+visibility with finder response.
+
+CNN lens finders perform well on simulated benchmarks and labelled
+observational samples \citep[e.g.][]{Petrillo2017,Lanusse2018,Jacobs2019,
+Canameras2021,Storfer2024}, but their calibration depends on the simulations
+used. Some pipelines inject parametric S\'{e}rsic sources lensed by idealised
+mass models \citep[e.g.][]{Herle2024}; others use images of observed galaxies
+as source-plane templates \citep[e.g.][]{Canameras2021,Rojas2022,Schuldt2023}.
+Cross-pipeline results combine differences in target selection, lens models,
+source distributions, image processing, and source structure
+\citep{Jaelani2024,Canameras2024}. A classifier two-sample test
+asks whether a model can tell which of two samples an object came from using
+only a chosen representation \citep{LopezPazOquab2017}. In strong-lens work,
+self-supervised survey representations have supported lens discovery
+\citep{Stein2022}, while domain-adaptation methods have explicitly addressed
+differences between simulated and observed lens data \citep{Parul2025}.
+A linear probe is an \(L_2\)-regularised logistic regression fitted to frozen
+features; its receiver-operating-characteristic area under the curve (AUC)
+measures how well the two samples are separated on held-out data.
+
+Injection recovery measures how often a finder responds to a specified
+simulated population. A complementary representation-level comparison asks
+how clearly observed and injected populations separate in a chosen feature
+space. We therefore use a linear probe of the operational detector's pooled
+penultimate features as a detector-specific diagnostic. It reuses the trained
+representation to evaluate a held-out observed--injected readout for the fixed
+finder. We
+apply the same dependency-aware procedure to self-supervised survey features,
+generic ImageNet features, and elementary pixel statistics to map how broadly
+separation appears across representations. Comparing the four protocols shows
+whether separation is specific to the lens-trained network or also appears in
+unrelated learned and pixel-level representations.
+
+We interpret the comparison using the existing lens-classification score,
+native-pixel summaries, and matched observed--bare--injected controls.
+We also measure how the fixed detector responds to the injection grid,
+source-photon sampling, source construction, and source brightness. Together,
+these analyses distinguish
+population-level representation differences from responses to controlled
+construction choices.

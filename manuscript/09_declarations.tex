@@ -1,0 +1,124 @@
+\section*{Acknowledgements}
+
+Author contributions: Aditrivaishnavi Balaji conceived and led the project,
+formulated the research questions, designed the study, developed and validated
+the software and injection--recovery pipeline, curated the data and verified
+its provenance, designed and executed the experiments and statistical
+analyses, interpreted the results, produced the figures, tables, and
+reproducibility materials, and drafted and revised the manuscript. Parker
+T. Johnson supervised and mentored the project, advised on the astrophysical
+context, methodology, and scientific interpretation, and critically reviewed
+the manuscript. Both authors reviewed and approved the final manuscript.
+
+The Legacy Surveys consist of three individual and complementary projects:
+the Dark Energy Camera Legacy Survey (DECaLS; Proposal ID 2014B-0404; PIs:
+David Schlegel and Arjun Dey), the Beijing--Arizona Sky Survey (BASS; NOAO
+Proposal ID 2015A-0801; PIs: Zhou Xu and Xiaohui Fan), and the Mayall
+\(z\)-band Legacy Survey (MzLS; Proposal ID 2016A-0453; PI: Arjun Dey).
+DECaLS, BASS, and MzLS together include data obtained, respectively, at the
+Blanco telescope, Cerro Tololo Inter-American Observatory, NSF's NOIRLab; the
+Bok telescope, Steward Observatory, University of Arizona; and the Mayall
+telescope, Kitt Peak National Observatory, NOIRLab. Pipeline processing and
+analyses of the data were supported by NOIRLab and the Lawrence Berkeley
+National Laboratory (LBNL). The Legacy Surveys project is honoured to be
+permitted to conduct astronomical research on Iolkam Du'ag (Kitt Peak), a
+mountain with particular significance to the Tohono O'odham Nation.
+
+NOIRLab is operated by the Association of Universities for Research in
+Astronomy under a cooperative agreement with the National Science Foundation.
+LBNL is managed by the Regents of the University of California under contract
+to the U.S. Department of Energy.
+
+This project used data obtained with the Dark Energy Camera (DECam), which was
+constructed by the Dark Energy Survey (DES) collaboration. Funding for the DES
+Projects has been provided by the U.S. Department of Energy, the U.S. National
+Science Foundation, the Ministry of Science and Education of Spain, the
+Science and Technology Facilities Council of the United Kingdom, the Higher
+Education Funding Council for England, the National Center for Supercomputing
+Applications at the University of Illinois at Urbana--Champaign, the Kavli
+Institute of Cosmological Physics at the University of Chicago, Center for
+Cosmology and Astro-Particle Physics at the Ohio State University, the
+Mitchell Institute for Fundamental Physics and Astronomy at Texas A\&M
+University, Financiadora de Estudos e Projetos, Fundacao Carlos Chagas Filho
+de Amparo a Pesquisa do Estado do Rio de Janeiro, Conselho Nacional de
+Desenvolvimento Cientifico e Tecnologico and the Ministerio da Ciencia,
+Tecnologia e Inovacao, the Deutsche Forschungsgemeinschaft and the
+Collaborating Institutions in the Dark Energy Survey. The Collaborating
+Institutions are Argonne National Laboratory, the University of California at
+Santa Cruz, the University of Cambridge, Centro de Investigaciones
+Energeticas, Medioambientales y Tecnologicas--Madrid, the University of
+Chicago, University College London, the DES--Brazil Consortium, the University
+of Edinburgh, the Eidgenossische Technische Hochschule (ETH) Zurich, Fermi
+National Accelerator Laboratory, the University of Illinois at
+Urbana--Champaign, the Institut de Ciencies de l'Espai (IEEC/CSIC), the
+Institut de Fisica d'Altes Energies, Lawrence Berkeley National Laboratory,
+the Ludwig Maximilians Universitat Munchen and the associated Excellence
+Cluster Universe, the University of Michigan, NSF's NOIRLab, the University
+of Nottingham, the Ohio State University, the University of Pennsylvania, the
+University of Portsmouth, SLAC National Accelerator Laboratory, Stanford
+University, the University of Sussex, and Texas A\&M University.
+
+BASS is a key project of the Telescope Access Program, funded by the National
+Astronomical Observatories of China, the Chinese Academy of Sciences (Strategic
+Priority Research Program ``The Emergence of Cosmological Structures'', grant
+XDB09000000), and the Special Fund for Astronomy from the Ministry of Finance.
+BASS is also supported by the External Cooperation Program of the Chinese
+Academy of Sciences (grant 114A11KYSB20160057) and the Chinese National Natural
+Science Foundation (grants 12120101003 and 11433005).
+
+The Legacy Survey team makes use of data products from the Near-Earth Object
+Wide-field Infrared Survey Explorer (NEOWISE), a project of the Jet Propulsion
+Laboratory/California Institute of Technology funded by the National
+Aeronautics and Space Administration. Legacy Surveys imaging of the DESI
+footprint is supported by the Director, Office of Science, Office of High
+Energy Physics of the U.S. Department of Energy under contract
+DE-AC02-05CH1123; the National Energy Research Scientific Computing Center, a
+DOE Office of Science User Facility under the same contract; and the U.S.
+National Science Foundation, Division of Astronomical Sciences, under contract
+AST-0950945 to NOAO.
+
+This work used \textsc{PyTorch} and \textsc{torchvision} for neural-network
+training and inference; \textsc{NumPy}, \textsc{SciPy}, \textsc{pandas}, and
+\textsc{pyarrow} for numerical and tabular analysis; \textsc{scikit-learn} for
+classification metrics and linear probes; \textsc{healpy} for HEALPix
+grouping; \textsc{Astropy} for coordinates; \textsc{GalSim} for COSMOS source
+construction; and \textsc{Matplotlib} for figures.
+
+AI language models (Claude, Anthropic; ChatGPT, OpenAI) were used as coding
+assistants during the development of analysis scripts and for manuscript
+copy-editing. All AI-assisted code was reviewed, tested, and verified by the
+authors, who are solely responsible for the scientific content of this paper.
+
+\section*{Data availability}
+
+DESI Legacy Imaging Surveys DR10 imaging and catalogues are publicly available
+at \url{https://www.legacysurvey.org/dr10/}. The GalSim COSMOS 25.2 source
+products are the archived dataset of \citet{Mandelbaum2012},
+\url{https://doi.org/10.5281/zenodo.3242143}.
+The configurations, analysis code, compact score and feature tables,
+out-of-fold predictions, and provenance records used to inspect the reported
+calculations are available at
+\url{https://github.com/aditrivaishnavi/stronglens-realism-gap}. A public,
+versioned archival release of the remaining redistributable project products
+will be deposited no later than publication, and its DOI will be added to the
+final article. It will include the exact primary EfficientNetV2-S checkpoint
+(SHA-256
+\texttt{5d1082839aac7a0b\allowbreak
+fb89342f84a9a533\allowbreak
+b22e1111c15cb471\allowbreak
+1255ed1b524a2b8d}), the 12-checkpoint panel manifest and hashes, and the
+compact panel score and result tables. If repository size limits require it,
+the checkpoint weights will occupy separate DOI-linked records. Because of
+their size, the generated image banks will be archived separately from the
+compact analysis products.
+
+Third-party DR10 and COSMOS pixels remain subject to their source archives and
+licences rather than being redistributed as original data by this work.
+
+\section*{Conflict of interest}
+
+The authors declare no conflict of interest.
+
+\section*{Funding}
+
+The authors declare no funding.

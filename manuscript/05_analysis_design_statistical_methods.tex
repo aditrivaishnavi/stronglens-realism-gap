@@ -1,0 +1,473 @@
+\section{Analysis design and statistical methods}
+\label{sec:analysis_design}
+
+This section defines the operating points, estimators, and uncertainty
+procedures used for the experiment sets in Table~\ref{tab:simulation_sets}.
+
+\subsection{Evaluation cohorts, scoring procedure, and operating points}
+\label{sec:scoring_contract}
+
+The primary selected-system endpoint uses the 43-system evaluation cohort
+defined in Section~\ref{sec:data_partitions}. None was used for detector
+fitting or validation, detector-model selection, threshold calibration, or
+exploratory feature-analysis development. The 20 systems assigned to that
+exploratory role are excluded from this denominator.
+
+Two disjoint catalogue-negative samples are drawn as whole spatial groups
+from the detector's negative test population. The threshold sample contains
+20,002 rows in 1,768 spatial groups. A second sample contains 12,512 rows in
+1,089 spatial groups and is used only to measure the achieved FPR without
+modifying the calibrated threshold.
+
+For the primary analyses, the selected-system endpoint, \(G_{\rm rec}\),
+\(P_{\rm noise}\), and \(P_{\rm src}\) use the same epoch-160
+EfficientNetV2-S checkpoint, preprocessing, and scoring procedure. The
+network is in evaluation mode:
+all batch-normalisation layers use stored running statistics and dropout is
+inactive. Inference uses float32 operations.
+Logits define the operating point because extreme float32 sigmoid values can
+saturate numerically. The displayed
+\(p=\operatorname{sigmoid}(\ell)\) is not treated as a calibrated
+probability. Execution-environment and batching details are reported in
+Appendix~\ref{app:technical_validation}.
+
+For \(N_0\) calibration negatives with native float32 logits sorted in
+descending order
+\(s_{(1)}\geq\cdots\geq s_{(N_0)}\), a target FPR \(\alpha\) permits
+\(k=\lfloor\alpha N_0\rfloor\) exceedances. We choose
+\begin{equation}
+\begin{aligned}
+ t_\alpha
+ &=\operatorname{nextafter}_{32}\!\left(s_{(k+1)},+\infty\right),\\
+ D_i(t_\alpha)&=\mathbb{I}(\ell_i\geq t_\alpha).
+\end{aligned}
+\label{eq:common_threshold}
+\end{equation}
+With \(N_0=20\,002\), \(\alpha=10^{-3}\), and \(k=20\),
+this gives \(t_{10^{-3}}\simeq1.572\) and 20 calibration exceedances. The
+full-precision float32 value is reported in
+Appendix~\ref{app:technical_validation}. The threshold is applied unchanged
+to every primary detector-response analysis; the feature probes do not use it.
+
+\subsection{Detector-checkpoint sensitivity}
+\label{sec:checkpoint_sensitivity_methods}
+
+The primary detector is the seed-42 epoch-160 checkpoint trained with reviewed
+and additional catalogue candidates. The sensitivity analysis selects the
+highest-validation-AP checkpoint from each of the 12 training runs, retaining the earlier epoch
+under ties. Each checkpoint receives its own threshold from the same
+calibration sample using Equation~\ref{eq:common_threshold}, and that
+threshold is applied to the common evaluation data.
+The target \(10^{-3}\) defines the empirical calibration rate.
+Checkpoint-specific estimates and intervals condition on \(t_m\).
+
+The pixels, estimators, and dependence-aware resampling procedures are
+unchanged across checkpoints; only model weights, scores, and thresholds
+vary. The operational \(G_{\rm domain}\) and \(G_{\rm match}\) probes
+characterize only the designated primary checkpoint and are not repeated
+across the panel. The panel tests how thresholded detector responses change
+across trained models; the feature-space analysis is performed only for the
+primary detector. The 12 checkpoints are correlated variants within one
+detector design \citep{Schaefer2018,Canameras2024}. We report both
+validation-selected and terminal-epoch checkpoints; comparisons between
+these checkpoint policies are exploratory.
+
+\subsection{Detector-performance and recovery estimators}
+\label{sec:performance_estimators}
+
+For a labelled population at a stated threshold, recall is
+\({\rm TP}/({\rm TP}+{\rm FN})\), FPR is
+\({\rm FP}/({\rm FP}+{\rm TN})\), and precision is
+\({\rm TP}/({\rm TP}+{\rm FP})\). ROC AUC measures ranking across all
+thresholds, with half credit for ties. The reported precision--recall summary
+is average precision. The Brier score is
+\begin{equation}
+ B = \frac{1}{n}\sum_{i=1}^{n}(p_i-y_i)^2 .
+\label{eq:brier_score}
+\end{equation}
+Validation-positive metrics use noisy reviewed and additional catalogue
+candidate labels and are development diagnostics, not estimates on confirmed
+systems.
+
+For a named injection population \(Q\), recovery at threshold \(t\) is
+\begin{equation}
+ \widehat C_Q(t)
+ = \frac{1}{|Q|}\sum_{i\in Q}\mathbb{I}(\ell_i\geq t).
+\label{eq:conditional_recovery}
+\end{equation}
+This quantity is conditional on the target population, source and mass-model
+priors, observing-condition grid, visibility policy, detector, and threshold
+specified for \(Q\). We call this quantity conditional recovery rather than
+survey-population completeness.
+Because \(G_{\rm rec}\) imposes no independent detectability or visibility
+condition, its recovery fraction combines configurations that may not be
+physically detectable with the finder's response; it is not an estimate of
+finder response conditional on detectability alone.
+
+For \(x\) row-level successes among \(n\) rows, the 95 per cent Wilson score
+interval \citep{Wilson1927} is
+\begin{equation}
+\begin{aligned}
+ p_{\rm W} &=
+ \frac{\widehat p+z^2/(2n)}{1+z^2/n},\\
+ \Delta_{\rm W} &=
+ \frac{z}{1+z^2/n}
+ \sqrt{\frac{\widehat p(1-\widehat p)}{n}+\frac{z^2}{4n^2}},
+ \\
+ {\rm CI}_{\rm W} &= [p_{\rm W}-\Delta_{\rm W},p_{\rm W}+\Delta_{\rm W}],\\
+ \widehat p &= x/n,\qquad z=\Phi^{-1}(0.975)\simeq1.96 .
+\end{aligned}
+\label{eq:wilson_interval}
+\end{equation}
+We apply this row-level interval to the achieved-FPR endpoint. Because nearby
+catalogue rows can be dependent, that endpoint also receives a 10,000-draw
+spatial-group interval: each draw assigns one independent mean-one
+exponential multiplier to each spatial group and takes the weighted ratio of
+exceedances to rows. The Wilson and multiplier intervals correspond to
+different dependence summaries. The 43 selected confirmed systems are
+reported as an exact finite cohort without a binomial or population interval.
+
+For \(G_{\rm rec}\), let \(D_{chr}\) be the threshold indicator for target
+\(h\) in retained observing cell \(c\) at radius \(r\). With nine cells, 500
+targets in each cell, and 11 radii per target, the primary point estimator is
+\begin{equation}
+\widehat C_{\rm rec}
+=\frac{1}{9}\sum_{c=1}^{9}\frac{1}{500}\sum_{h=1}^{500}
+  \frac{1}{11}\sum_{r=1}^{11}D_{chr}.
+\label{eq:grec_balanced_recovery}
+\end{equation}
+Thus cells, targets within cells, and the 11 radius nodes receive equal
+weight. This equals the raw row mean because the design is balanced; it is
+not a survey-population weighting.
+
+Sampling uncertainty uses 10,000 exponential-multiplier draws at the
+injection-target spatial-group level. A group receives one global multiplier
+per draw, and that same multiplier follows all of its targets wherever they
+occur across cells and follows every radius of each target. Within each cell,
+the weighted target mean is formed as a ratio. To remove finite-draw ratio
+bias without changing the joint covariance, the draw distribution for every
+cell--radius entry is recentered to its exact equal-target point estimate.
+The overall 95 per cent interval is the 2.5th and 97.5th percentiles of the
+recentered, equal-cell and equal-radius draws.
+
+The radius curve averages cells and targets at each radius. Its unstudentised
+simultaneous band uses
+\begin{equation}
+\begin{aligned}
+ q_{0.95}
+ &=\operatorname{quantile}_{0.95}
+ \left(
+ \left\{\max_r\left|\widehat C^{*(b)}_r-\widehat C_r\right|\right\}
+ _{b=1}^{10000}\right),\\
+ {\cal B}_r&=[\widehat C_r-q_{0.95},\,\widehat C_r+q_{0.95}] .
+\end{aligned}
+\label{eq:grec_simultaneous_band}
+\end{equation}
+The band is not clipped to \([0,1]\). Every cell--radius estimate has 500
+distinct targets; the resampling unit, rather than the injection count,
+defines independent support.
+
+\subsection{Linear probes and grouped evaluation}
+\label{sec:linear_probe_methods}
+
+A linear probe consists of fold-local standardisation followed by
+\(L_2\)-regularised logistic regression on features computed with encoder
+weights held fixed. Every probe uses \(C=1\), the \texttt{lbfgs} solver,
+\texttt{max\_iter}=5000, estimator seed 42, and scikit-learn 1.9.1. The
+weighted mean and variance used by \texttt{StandardScaler} are fitted only on
+the training folds, and the same training weights are supplied to the
+logistic-regression fit.
+
+Dependency groups are defined without examining feature values. They are the
+transitive union of shared physical group, NSIDE\(=128\) NESTED HEALPix cell
+\citep{Gorski2005}, within-population spatial group, reference identity,
+injection-target identity and underlying-scene identity, source, lens, PSF, renderer and
+render-parameter identities, random-draw identity, and base or final pixel
+hash. Every resulting dependency component remains wholly in one of five
+folds; score-blind fold allocation uses seed 42. This closes indirect links,
+including a reference geographically linked to an injection target in a
+different nominal pair.
+
+Across the full set of rows eligible to fit an axis, the two fitting classes
+receive equal total base weight. Within a class, every dependency component receives equal total
+weight, divided equally over its rows. Each fold fit uses the corresponding
+weights of its retained training components without fold-specific
+renormalisation. For fitting-roster size \(N\), class \(y\) represented by
+\(K_y\) components, and \(n_{c,y}\) class-\(y\) rows in component \(c\), the
+weight is
+\begin{equation}
+ w_i=\frac{N}{2K_y n_{c,y}}.
+\label{eq:probe_weights}
+\end{equation}
+For \(G_{\rm domain}\), the weights sum to 6,379, with 3,189.5 assigned to
+each class. Consequently, repeated radii from one connected target do
+not receive eleven times the training weight of a singleton component. The
+same full-roster component-equal, class-balanced weights define the primary
+pooled out-of-fold (OOF) ROC AUC. A row-weighted OOF AUC is retained only as
+a diagnostic.
+ROC AUC uses half credit for tied positive--negative scores.
+
+The domain probe compares all 43 selected confirmed systems with the exact
+6,336-row \(G_{\rm domain}\) subset in 576 injection targets. The common
+dependency graph contains 561 components: 43 contain observed rows, 520
+contain simulated rows, and two contain both. There are zero component
+crossings over the five folds. The comparison uses four feature sets. The
+operational representation \(z(x)\) is the 1,280-component output after the
+primary detector's global-average-pooling layer and before its dropout and
+linear classifier. The existing lens head evaluates
+\begin{equation}
+ h(x)=w_{\rm lens}^{\mathsf T}z(x)+b .
+\label{eq:fixed_head}
+\end{equation}
+The operational domain probe instead fits fold-specific regularized linear
+readouts of fold-standardized \(z(x)\) to observed-versus-injected labels,
+using training rows only. This examines the representation that feeds the
+finder without restricting the diagnostic to its learned lens-classification
+direction. The existing lens head is reported as a fixed-score baseline
+alongside the four fitted feature protocols. Both use the
+detector-native full \(101\times101\) \(g,r,z\) input with the trained mapping
+defined in Section~\ref{sec:preprocessing}.
+
+The Stein representation is the 2,048-component global-average-pooled output
+of its self-supervised ResNet-50 before the projection head
+\citep{Stein2022}. Its encoder was trained with a contrastive objective on
+unlabelled Legacy Survey images. Object-level overlap between those
+pretraining images and the present cutouts is unknown, so the Stein result is
+interpreted as feature-protocol sensitivity. The generic ImageNet
+representation is the 1,280-component global-average-pooled output of a
+separate EfficientNetV2-S, with different weights from the lens-label-conditioned
+operational detector. The fourth representation contains 18 fixed pixel
+statistics. Each representation includes its own preprocessing. The two
+external deep encoders use the Legacy Survey display mapping adopted by
+\citet{Stein2022}. For nanomaggy
+channels \(x_c\), let \(u_c=a_cx_c+m\), with
+\((a_g,a_r,a_z)=(6.0,3.4,2.2)\), \(m=0.03\), and \(q=20\). The exact mapping is
+\begin{equation}
+\begin{aligned}
+ I&={1\over3}\sum_{c\in\{g,r,z\}}\max(0,u_c),\\
+ F(I)&={\operatorname{asinh}(qI)\over\sqrt q\,I_{\rm safe}},\\
+ (R,G,B)&=\operatorname{clip}_{[0,1]}\!\left[(u_z,u_r,u_g)F(I)\right],
+\end{aligned}
+\label{eq:rgb_preprocessing}
+\end{equation}
+where \(I_{\rm safe}=I+10^{-6}\mathbf{1}[I=0]\). The Stein input is
+the central \(96\times96\) pixels. The ImageNet input uses all
+\(101\times101\) pixels, is bilinearly resized with antialiasing to
+\(384\times384\), and receives the standard ImageNet channel normalisation.
+The pixel representation records, separately in each \(g,r,z\) band, the
+mean, standard deviation, median, 99th percentile, minimum, and maximum.
+Probe comparisons therefore diagnose the frozen representation together with
+its preprocessing, not encoder weights alone.
+
+\(G_{\rm domain}\) reports dependency-component-equal pooled OOF AUCs as
+finite-cohort, model-conditional point estimates. No resampling interval or
+significance test is attached. We compare all four representations on the
+same rows, folds, component weights, and observed--injected labels. The five
+fold-level AUCs show how performance varies across held-out subsets containing
+only eight or nine observed systems.
+
+\subsection{Unpaired separation and matched controls}
+\label{sec:decomposition_methods}
+
+We distinguish three questions. An unpaired real--injection probe asks whether
+the selected populations are separable. A real--bare-target probe measures
+separation present before an arc is added. A bare--injected comparison holds
+the target fixed and measures how the added arc moves that target in feature
+space. We interpret these estimands separately because they answer different
+population and paired-movement questions.
+
+The matched-baseline set \(G_{\rm match}\) uses the exact 43 selected confirmed
+systems as observed references. They are matched without replacement to the
+4,500 \(G_{\rm rec}\) injection targets on observed \(z\)-band magnitude,
+catalogue S\'{e}rsic index, axis ratio, \(r\)-band PSF FWHM, and \(r\)-band
+depth. No detector score or representation feature enters matching.
+
+For each covariate \(k\), the complete 4,500-target sample supplies the median
+\(m_k\) and interquartile range \(s_k\), using all finite values of that
+component. We define \(z_{ik}=(x_{ik}-m_k)/s_k\). All five values must be
+finite for a target to be eligible; all 4,500 targets meet this requirement,
+and no imputation is used. A reference--target edge is allowed only when
+\begin{equation}
+\begin{aligned}
+ |z_{{\rm ref},k}-z_{{\rm target},k}|&\leq2
+ &&\text{for every }k,\\
+ \left[\sum_k(z_{{\rm ref},k}-z_{{\rm target},k})^2\right]^{1/2}
+ &\leq3 .
+\end{aligned}
+\label{eq:gmatch_calipers}
+\end{equation}
+Among allowed edges, maximum-cardinality then minimum-total-distance
+assignment is used, with SHA-256-sorted identifiers breaking ties. All 43
+references are matched to unique targets.
+
+The supplementary material includes the complete full-field reference--target
+atlas, the matching and brightness-parent tables, covariate balance summaries,
+and the code used to generate the displays.
+
+Each target contributes its exact stored bare cutout and its exact
+\(\theta_{\rm E}=1.5\)-arcsec \(G_{\rm rec}\) deterministic expectation image. There is no
+rerendering, post-render selection, flux rescaling, imputation, replacement,
+or target-brightness floor. The resulting 43 observed--bare--injected
+triplets form 43 closed dependency components.
+
+In each representation and fold, the logistic axis is fitted only to the
+training-fold observed and bare rows, with observed as the positive direction;
+injected rows fit neither the axis nor its scale. Let \(a_{jf}^{x}\) denote a
+held-out decision-function score for target \(j\), fold \(f\), and arm
+\(x\in\{{\rm bare},{\rm inj}\}\). We standardise both arms using the weighted
+mean \(\mu_f^{\rm bare}\) and population standard deviation
+\(\sigma_f^{\rm bare}\) of the training-fold bare scores:
+\begin{equation}
+\begin{aligned}
+\widetilde a_{jf}^{\,x}
+&=\frac{a_{jf}^{x}-\mu_f^{\rm bare}}{\sigma_f^{\rm bare}},\\
+M_j&=\widetilde a_{jf}^{\,{\rm inj}}-\widetilde a_{jf}^{\,{\rm bare}},
+\qquad
+\widehat\Delta_{\rm match}=\frac{1}{43}\sum_{j=1}^{43}M_j .
+\end{aligned}
+\label{eq:gmatch_movement}
+\end{equation}
+Here \(M_j\) is an equal-target movement measured in training-bare
+standard-deviation units toward the observed-reference side of a cross-fitted
+axis.
+
+Pooled observed--bare, observed--injected, and injected--bare AUCs, with half
+credit for ties, summarize the same fitted axis. These point summaries
+condition on the frozen score-blind assignment; no formal interval or
+significance test is attached. The matching set contains five measured
+central-object and observing quantities; complete photometric-redshift and
+source-magnitude covariates are unavailable, and the observed central-object
+quantities can include lensed-source light.
+
+\subsection{Fixed-target brightness and source-photon response}
+\label{sec:bounded_control_methods}
+
+\(C_{\rm bright}\) uses equation~\eqref{eq:brightness_control} on 43 fixed
+targets under the detector's trained 20--32-pixel annulus and clip-10
+preprocessing. For each target and magnitude, photon indicators are first
+averaged over the eight keyed draws; the resulting target-level values are
+then averaged equally over targets. Primary summaries are recovery and
+native-logit response over magnitude; photon-minus-expectation is the paired
+secondary contrast. If \(\widehat R_d\) is the equal-target photon recovery at
+one magnitude for draw index \(d\), the finite-draw diagnostic is
+\begin{equation}
+ {\rm MCSE}_{\rm bright}
+ =\frac{{\rm sd}(\widehat R_1,\ldots,\widehat R_8)}{\sqrt{8}} .
+\label{eq:brightness_mcse}
+\end{equation}
+No population interval or visibility admission rule is attached. Source-only
+in-stamp flux and peak intensity are diagnostics rather than calibrated arc
+S/N.
+
+\subsection{Arc-level Poisson experiment}
+\label{sec:poisson_methods}
+
+\(P_{\rm noise}\) compares all 49,500 stored \(G_{\rm rec}\) expectations
+with eight modelled source-photon realizations per scene at
+\(g=150\ {\rm e^{-}\,nmgy^{-1}}\), using the common threshold. The target
+and expected arc remain fixed; only source-photon realization changes
+(Section~\ref{sec:noise_model}).
+
+Let \(D^{\rm E}_{chr}\) denote the deterministic expectation decision and
+\(D^{\rm M}_{chrd}\) the modelled-photon decision for draw \(d\). The primary
+modelled-photon-minus-expectation estimand is
+\begin{equation}
+\widehat\Delta_{\rm noise}
+=\frac{1}{9}\sum_{c=1}^{9}\frac{1}{500}\sum_{h=1}^{500}
+ \frac{1}{11}\sum_{r=1}^{11}
+ \left\{\frac{1}{8}\sum_{d=1}^{8}D^{\rm M}_{chrd}-D^{\rm E}_{chr}\right\}.
+\label{eq:pnoise_risk_difference}
+\end{equation}
+Photon draws are therefore averaged within deterministic expectation scene
+before radii are averaged within target; targets and retained cells then
+receive equal weight. Repeated photon draws never increase a target's
+scientific weight.
+
+The sampling interval uses 10,000 target-spatial-group exponential-multiplier
+draws with the same global grouping, equal-cell weighting, and cell--radius
+recentering as \(G_{\rm rec}\). Its uncertainty is conditional on the
+realized target and source construction and does not include gain-model or
+threshold-calibration uncertainty. The radius-specific effects receive the
+same maximum-absolute-deviation simultaneous-band construction as
+equation~\eqref{eq:grec_simultaneous_band}. Gained and lost threshold
+crossings are reported as descriptive probabilities over the complete
+scene--draw rows.
+
+For scene \(i\), let \(s_i^2\) be the sample variance of its eight modelled
+threshold indicators and let \(w_i=1/49\,500\), which is the final
+equal-cell, equal-target, equal-radius weight under the balanced design. The
+finite-draw contribution is
+\begin{equation}
+ {\rm MCSE}_{\rm noise}
+ =\left(\sum_{i=1}^{49\,500}w_i^2\frac{s_i^2}{8}\right)^{1/2}.
+\label{eq:pnoise_mcse}
+\end{equation}
+The estimate applies to the specified stochastic source-photon model, whose
+\(g=150\) conversion and post-coadd construction define the intervention.
+
+\subsection{Paired source estimators}
+\label{sec:paired_source_estimators}
+
+For pair \(j\) and photon draw \(d\), let \(D^{\rm ser}_{jd}\) and
+\(D^{\rm str}_{jd}\) indicate whether the corresponding photon-realized images
+from the single-S\'{e}rsic and structured constructions exceed the common
+logit threshold. The underlying source constructions are deterministic, but
+the scored rows are draw-specific images. The primary estimand is the
+S\'{e}rsic-minus-structured photon-averaged risk difference,
+\begin{equation}
+\widehat\Delta_{\rm src}
+=\frac{1}{1584}\sum_{j=1}^{1584}\frac{1}{8}\sum_{d=1}^{8}
+ \left(D^{\rm ser}_{jd}-D^{\rm str}_{jd}\right).
+\label{eq:psrc_risk_difference}
+\end{equation}
+Operationally, draw differences are first averaged within pair; pairs are
+then averaged within each of the nine fixed target cells and cells are
+averaged equally. The expression above is identical because every cell has
+the same number of pairs, every cell--radius block contains all 16 source
+strata, every selected source is used 11 times, and all base analysis weights
+are one.
+
+The 95 per cent interval is a 10,000-draw multiway exponential-multiplier
+interval. Each draw assigns one global mean-one exponential multiplier to
+each of the 1,219 target spatial groups and applies it to that group's rows in
+every cell and radius. It independently assigns one multiplier to each of the
+144 empirical sources; source multipliers are normalised to mean one within
+each of the 16 fixed source strata. The product of the spatial and source
+multipliers weights each pair, after which equal-cell ratio estimates are
+averaged. Draws are recentered to \(\widehat\Delta_{\rm src}\), and the 2.5th
+and 97.5th percentiles form the reported interval. This procedure preserves
+dependence from repeated sources and geographically linked targets. The
+resulting interval is a design-based approximation, not an exact
+binary-outcome interval.
+
+Finite-photon-draw Monte Carlo uncertainty is reported separately. Let
+\(\widehat\Delta_d\) be the same equal-cell risk difference computed from
+draw index \(d\) alone. Then
+\begin{equation}
+ {\rm MCSE}_{\rm src}
+ =\frac{{\rm sd}(\widehat\Delta_1,\ldots,\widehat\Delta_8)}{\sqrt{8}} .
+\label{eq:psrc_mcse}
+\end{equation}
+The point estimate and multiplier interval condition on the
+calibrated threshold. The empirical construction retains measurement
+uncertainty, making the estimand a comparison of the complete
+source-construction pathways.
+
+\subsection{Interpretation of estimates and intervals}
+\label{sec:reporting_methods}
+
+The achieved-FPR, \(G_{\rm rec}\), \(P_{\rm noise}\), and \(P_{\rm src}\)
+intervals use the 95 per cent procedures defined above. The selected
+43-system endpoint and both feature-probe analyses are finite-cohort point
+summaries without population intervals. The four feature protocols form one
+finite-cohort comparison. The operational probes characterize the primary epoch-160
+checkpoint; the 12-checkpoint panel evaluates thresholded detector-response
+sensitivity and does not repeat the feature probes.
+
+Each thresholded estimate conditions on the threshold calibrated
+for its checkpoint.
+Multiplier intervals describe the specified target/source dependence but do
+not incorporate detector-training, threshold-calibration, gain-model, source
+reconstruction, or population-transport uncertainty. Finite-photon MCSE is
+reported separately from sampling uncertainty. Formal equivalence assessment
+would require a predefined margin beyond these estimation summaries.
